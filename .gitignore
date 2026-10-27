@@ -1,0 +1,32 @@
+# Dependencies & Caches
+node_modules/
+.next/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment & Vercel
+.env
+.env.local
+.env*.local
+.vercel/
+
+# Agent, Skill, and IDE Configuration (Do NOT commit to GitHub)
+.*
+!.gitignore
+!.env.example
+/agent/
+/skills/
+/skills-lock.json
+/ralph-wiggum/
+/data/
+
+# Test artifacts
+test-results/
+playwright-report/
+blob-report/
+playwright/.cache/
+
+# OS metadata
+Thumbs.db
+.DS_Store

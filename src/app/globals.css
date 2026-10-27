@@ -1,0 +1,108 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'AutomateDisplay';
+  src: url('/fonts/automate-logo.woff2') format('woff2'),
+       url('/fonts/automate-logo.woff') format('woff');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --color-midnight: #0B1220;
+  --color-navy: #14233D;
+  --color-cyan: #00B8F0;
+  --color-teal: #0D8C7D;
+  --color-teal-hover: #0B7568;
+  --color-teal-active: #085E54;
+  --color-text-primary: #F5F7FC;
+  --color-text-secondary: #9BAAC2;
+  --color-border-subtle: #29374D;
+  --font-heading: var(--font-manrope), sans-serif;
+  --font-sans: var(--font-inter), sans-serif;
+  --font-automata: 'AutomateDisplay', sans-serif;
+}
+
+@layer base {
+  :root {
+    --background: #0B1220;
+    --foreground: #F5F7FC;
+    --card: #14233D;
+    --card-foreground: #F5F7FC;
+    --primary: #0D8C7D;
+    --primary-foreground: #ffffff;
+    --secondary: #14233D;
+    --secondary-foreground: #F5F7FC;
+    --muted: #14233D;
+    --muted-foreground: #9BAAC2;
+    --accent: #00B8F0;
+    --accent-foreground: #0B1220;
+    --border: #29374D;
+    --border-subtle: #29374D;
+    --radius: 0.5rem;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    background-color: #0B1220;
+    color: #F5F7FC;
+  }
+
+  body {
+    background-color: #0B1220;
+    color: #F5F7FC;
+    font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-manrope), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+
+  /* Custom text selection */
+  ::selection {
+    background-color: #00B8F0;
+    color: #0B1220;
+  }
+
+  /* Accessible focus indicators */
+  :focus-visible {
+    outline: 2px solid #00B8F0;
+    outline-offset: 2px;
+  }
+}
+
+/* Reduced motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0B1220;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #29374D;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3B4E6B;
+}
