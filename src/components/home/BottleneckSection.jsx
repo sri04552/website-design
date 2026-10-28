@@ -106,12 +106,12 @@ export function BottleneckSection() {
               </figure>
             </div>
 
-            {/* Supporting Prose with dashes removed */}
-            <p className="mt-5 text-[14px] sm:text-[15px] text-[#475569] leading-[1.7] font-normal">
+            {/* Supporting Prose with increased 2px font size */}
+            <p className="mt-5 text-[16px] sm:text-[17px] text-[#475569] leading-[1.75] font-normal">
               Most businesses do not have bad products or services. Their website simply leaks potential customers before they have a chance to call. Whether your site is too slow on mobile phones, your ad budget gets spent on random clicks, or customer inquiries go unanswered after work hours, here is how we fix each leak so you get steady, qualified customer enquiries.
             </p>
 
-            {/* WhatsApp Direct Action Button */}
+            {/* WhatsApp Direct Action Button with standardized size */}
             <div className="mt-6 w-full">
               <a
                 href={`https://wa.me/916304299387?text=${encodeURIComponent(
@@ -120,7 +120,7 @@ export function BottleneckSection() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Discuss fixing your website bottlenecks directly on WhatsApp"
-                className="w-full inline-flex items-center justify-center gap-2 bg-[#0D8C7D] hover:bg-[#0B7568] active:bg-[#085E54] text-white text-xs sm:text-sm font-semibold px-4.5 py-3 rounded-lg shadow-xs hover:shadow transition-all"
+                className="w-full inline-flex items-center justify-center gap-2 bg-[#0D8C7D] hover:bg-[#0B7568] active:bg-[#085E54] text-white text-sm sm:text-base font-semibold px-6 py-3.5 rounded-lg shadow-sm hover:shadow transition-all min-h-[48px]"
               >
                 <WhatsAppIcon className="w-4 h-4 text-white" />
                 <span>Fix Your Website Leaks on WhatsApp</span>
@@ -156,7 +156,7 @@ export function BottleneckSection() {
                   >
                     {item.problemTitle}
                   </h3>
-                  <p className="text-sm sm:text-[15px] text-[#475569] leading-relaxed font-normal">
+                  <p className="text-[16px] sm:text-[17px] text-[#475569] leading-relaxed font-normal">
                     {item.problemDescription}
                   </p>
                 </div>
@@ -170,7 +170,7 @@ export function BottleneckSection() {
                   <h4 className="mt-2 text-base sm:text-lg font-bold text-emerald-950 leading-snug">
                     {item.solutionTitle}
                   </h4>
-                  <p className="mt-2 text-sm sm:text-[15px] text-emerald-900/85 leading-relaxed font-normal">
+                  <p className="mt-2 text-[16px] sm:text-[17px] text-emerald-950/90 leading-relaxed font-normal">
                     {item.solutionDescription}
                   </p>
                 </div>

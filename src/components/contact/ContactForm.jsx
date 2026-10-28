@@ -332,7 +332,7 @@ export function ContactForm({ preselectedService = "" }) {
         </Button>
       </div>
 
-      <p className="text-center text-xs text-slate-500">
+      <p className="text-center text-[13.5px] sm:text-sm text-slate-500">
         We respect your privacy. No spam, sales pressure, or sharing of contact details.
       </p>
     </form>

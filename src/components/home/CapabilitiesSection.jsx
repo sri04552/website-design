@@ -186,8 +186,8 @@ export function CapabilitiesSection() {
             Digital Services Engineered for Real Business Growth
           </h2>
 
-          {/* Section Subtitle Paragraph strictly 14px-15px */}
-          <p className="mt-2.5 text-[14px] sm:text-[15px] text-[#475569] leading-[1.65] max-w-2xl mx-auto font-normal">
+          {/* Section Subtitle Paragraph increased by 2px */}
+          <p className="mt-3 text-[16px] sm:text-[17px] text-[#475569] leading-[1.7] max-w-2xl mx-auto font-normal">
             Clean website design, targeted customer acquisition, and 24/7 automation built to help businesses in Eluru and pan-India capture and convert qualified leads.
           </p>
         </header>
@@ -247,8 +247,8 @@ export function CapabilitiesSection() {
                       {item.title}
                     </h3>
 
-                    {/* Concise Description */}
-                    <p className="mt-2.5 text-[14px] sm:text-[15px] text-[#475569] leading-relaxed font-normal">
+                    {/* Concise Description increased by 2px */}
+                    <p className="mt-2.5 text-[16px] sm:text-[17px] text-[#475569] leading-relaxed font-normal">
                       {item.description}
                     </p>
                   </div>
@@ -279,10 +279,10 @@ export function CapabilitiesSection() {
           className="mt-8 sm:mt-10 bg-white rounded-2xl border border-slate-200/90 p-6 sm:p-8 shadow-xs flex flex-col sm:flex-row items-center justify-between gap-4"
         >
           <div className="text-center sm:text-left">
-            <h4 className="text-sm font-bold text-[#0F172A]">
+            <h4 className="text-base font-bold text-[#0F172A]">
               Need a custom package or want to discuss a new digital project?
             </h4>
-            <p className="text-xs sm:text-[13px] text-[#64748B] mt-0.5">
+            <p className="text-[14px] sm:text-[15px] text-[#64748B] mt-1">
               Available for in-person meetings in Eluru and virtual consultations across India.
             </p>
           </div>
@@ -293,11 +293,11 @@ export function CapabilitiesSection() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Chat directly on WhatsApp about your digital project"
-            className="inline-flex items-center gap-2 bg-[#0D8C7D] hover:bg-[#0B7568] active:bg-[#085E54] text-white text-xs sm:text-sm font-semibold px-4.5 py-2 rounded-lg shadow-xs hover:shadow transition-all shrink-0"
+            className="inline-flex items-center justify-center gap-2 bg-[#0D8C7D] hover:bg-[#0B7568] active:bg-[#085E54] text-white text-sm sm:text-base font-semibold px-6 py-3.5 rounded-lg shadow-sm hover:shadow transition-all shrink-0 min-h-[48px]"
           >
-            <WhatsAppIcon className="w-3.5 h-3.5 text-white" />
+            <WhatsAppIcon className="w-4 h-4 text-white" />
             <span>Chat on WhatsApp</span>
-            <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
+            <ArrowRight className="w-4 h-4" aria-hidden="true" />
           </a>
         </aside>
       </div>

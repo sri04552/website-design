@@ -43,11 +43,11 @@ export function Footer() {
                 </span>
               </Link>
 
-              <p className="text-[#9BAAC2] text-[14px] leading-[1.7] max-w-sm">
+              <p className="text-[#9BAAC2] text-[16px] leading-[1.75] max-w-sm">
                 {siteConfig.shortDescription}
               </p>
 
-              <div className="pt-2 space-y-2 text-xs text-[#9BAAC2]">
+              <div className="pt-2 space-y-2 text-[13.5px] sm:text-sm text-[#9BAAC2]">
                 <div className="flex items-center gap-2">
                   <ShieldCheck className="w-4 h-4 text-[#0D8C7D] shrink-0" />
                   <span>No lock-in contracts, 100% direct code ownership</span>
@@ -69,7 +69,7 @@ export function Footer() {
                   <li key={service.id}>
                     <Link
                       href={service.href}
-                      className="text-[#9BAAC2] hover:text-[#00B8F0] transition-colors flex items-center gap-1 group text-[14px]"
+                      className="text-[#9BAAC2] hover:text-[#00B8F0] transition-colors flex items-center gap-1 group text-[15.5px]"
                     >
                       <span>{service.shortTitle}</span>
                       <ArrowRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-[#00B8F0]" />
@@ -89,7 +89,7 @@ export function Footer() {
                   <li key={service.id}>
                     <Link
                       href={service.href}
-                      className="text-[#9BAAC2] hover:text-[#00B8F0] transition-colors flex items-center gap-1 group text-[14px]"
+                      className="text-[#9BAAC2] hover:text-[#00B8F0] transition-colors flex items-center gap-1 group text-[15.5px]"
                     >
                       <span>{service.shortTitle}</span>
                       <ArrowRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-[#00B8F0]" />
@@ -108,7 +108,7 @@ export function Footer() {
                 <li>
                   <Link
                     href="/portfolio"
-                    className="text-[#9BAAC2] hover:text-[#00B8F0] transition-colors text-[14px]"
+                    className="text-[#9BAAC2] hover:text-[#00B8F0] transition-colors text-[15.5px]"
                   >
                     Demonstration Work
                   </Link>
@@ -116,7 +116,7 @@ export function Footer() {
                 <li>
                   <Link
                     href="/about"
-                    className="text-[#9BAAC2] hover:text-[#00B8F0] transition-colors text-[14px]"
+                    className="text-[#9BAAC2] hover:text-[#00B8F0] transition-colors text-[15.5px]"
                   >
                     About Us
                   </Link>
@@ -124,7 +124,7 @@ export function Footer() {
                 <li>
                   <Link
                     href="/contact"
-                    className="text-[#9BAAC2] hover:text-[#00B8F0] transition-colors text-[14px]"
+                    className="text-[#9BAAC2] hover:text-[#00B8F0] transition-colors text-[15.5px]"
                   >
                     Contact
                   </Link>
@@ -132,7 +132,7 @@ export function Footer() {
                 <li>
                   <Link
                     href="/privacy-policy"
-                    className="text-[#9BAAC2] hover:text-[#00B8F0] transition-colors text-[14px]"
+                    className="text-[#9BAAC2] hover:text-[#00B8F0] transition-colors text-[15.5px]"
                   >
                     Privacy Policy
                   </Link>

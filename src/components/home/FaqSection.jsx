@@ -89,8 +89,8 @@ export function FaqSection() {
               Everything You Need to Know Before Getting Started
             </h2>
 
-            {/* Lead Prose */}
-            <p className="mt-3 text-[14px] sm:text-[15px] text-[#475569] leading-[1.7] font-normal max-w-2xl">
+            {/* Lead Prose increased by 2px */}
+            <p className="mt-3 text-[16px] sm:text-[17px] text-[#475569] leading-[1.75] font-normal max-w-2xl">
               Have questions about our pricing, timelines, or how our services work? Here are straight, transparent answers to the questions business owners ask us most.
             </p>
           </div>
@@ -132,7 +132,7 @@ export function FaqSection() {
                       role="region"
                       className="px-5 sm:px-6 pb-6 pt-0"
                     >
-                      <p className="pt-2 text-[14px] sm:text-[15px] text-[#475569] leading-relaxed font-normal">
+                      <p className="pt-2 text-[16px] sm:text-[17px] text-[#475569] leading-relaxed font-normal">
                         {faq.answer}
                       </p>
                     </div>
@@ -142,13 +142,13 @@ export function FaqSection() {
             })}
           </div>
 
-          {/* Bottom Support Bar with standardized card padding */}
+          {/* Bottom Support Bar with standardized card padding and equal button sizes */}
           <div className="mt-10 sm:mt-12 bg-white rounded-2xl border border-sky-200/80 p-6 sm:p-8 shadow-xs text-center flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="text-center sm:text-left">
               <h3 className="text-base font-bold text-[#0F172A]">
                 Have a question not listed here?
               </h3>
-              <p className="text-xs sm:text-[13.5px] text-[#64748B] mt-1">
+              <p className="text-[14px] sm:text-[15.5px] text-[#64748B] mt-1">
                 We are always happy to answer your specific questions with zero sales pressure.
               </p>
             </div>
@@ -156,10 +156,10 @@ export function FaqSection() {
             <div className="flex flex-wrap items-center justify-center gap-3 shrink-0 w-full sm:w-auto">
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-1.5 bg-[#0F172A] hover:bg-slate-800 text-white text-xs sm:text-sm font-semibold px-5 py-2.5 rounded-lg transition-colors"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#0F172A] hover:bg-slate-800 text-white text-sm sm:text-base font-semibold px-6 py-3.5 rounded-lg transition-colors min-h-[48px]"
               >
                 <span>Send an Inquiry</span>
-                <ArrowRight className="w-3.5 h-3.5" />
+                <ArrowRight className="w-4 h-4" />
               </Link>
               <a
                 href={`https://wa.me/916304299387?text=${encodeURIComponent(
@@ -168,7 +168,7 @@ export function FaqSection() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Ask your question directly on WhatsApp"
-                className="inline-flex items-center gap-2 bg-emerald-50 hover:bg-emerald-100 text-emerald-900 border border-emerald-300/80 text-xs sm:text-sm font-semibold px-5 py-2.5 rounded-lg transition-colors"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-emerald-50 hover:bg-emerald-100 text-emerald-900 border border-emerald-300/80 text-sm sm:text-base font-semibold px-6 py-3.5 rounded-lg transition-colors min-h-[48px]"
               >
                 <WhatsAppIcon className="w-4 h-4 text-emerald-600" />
                 <span>Ask on WhatsApp</span>

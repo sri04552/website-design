@@ -97,8 +97,8 @@ export function ProcessSection() {
             From Initial Idea to Live Results in 4 Clear Steps
           </h2>
 
-          {/* Lead Prose strictly 14px-15px */}
-          <p className="mt-3 text-[14px] sm:text-[15px] text-[#475569] leading-[1.7] font-normal max-w-2xl">
+          {/* Lead Prose increased by 2px */}
+          <p className="mt-3 text-[16px] sm:text-[17px] text-[#475569] leading-[1.75] font-normal max-w-2xl">
             A transparent, predictable roadmap with clear communication at every stage. No guesswork, no endless delays, and no micromanagement required.
           </p>
         </div>
@@ -146,8 +146,8 @@ export function ProcessSection() {
                     </h3>
                   </div>
 
-                  {/* Step Description strictly 14px-15px */}
-                  <p className="text-[13.5px] sm:text-[14px] text-[#475569] leading-[1.65] font-normal">
+                  {/* Step Description increased by 2px */}
+                  <p className="text-[15.5px] sm:text-[16px] text-[#475569] leading-relaxed font-normal">
                     {item.description}
                   </p>
                 </div>
@@ -156,15 +156,15 @@ export function ProcessSection() {
           })}
         </div>
 
-        {/* Clean, Grounded Action Row */}
+        {/* Clean, Grounded Action Row with standardized equal button sizes */}
         <div className="mt-10 sm:mt-12 text-center">
-          <p className="text-[14px] sm:text-[15px] text-[#475569] mb-3.5 font-normal">
+          <p className="text-[16px] sm:text-[17px] text-[#475569] mb-4 font-normal">
             Have a project in mind for web, advertising, or automation?
           </p>
-          <div className="inline-flex flex-wrap items-center justify-center gap-3">
+          <div className="inline-flex flex-wrap items-center justify-center gap-3 w-full sm:w-auto">
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 bg-[#0F172A] hover:bg-slate-800 active:bg-slate-900 text-white text-xs sm:text-sm font-semibold px-5 py-2.5 rounded-lg shadow-xs hover:shadow transition-all"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#0F172A] hover:bg-slate-800 active:bg-slate-900 text-white text-sm sm:text-base font-semibold px-6 py-3.5 rounded-lg shadow-sm hover:shadow transition-all min-h-[48px]"
             >
               <span>Contact Us for a Quote</span>
               <ArrowRight className="w-4 h-4" />
@@ -176,7 +176,7 @@ export function ProcessSection() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Direct WhatsApp consultation"
-              className="inline-flex items-center gap-2 bg-emerald-50 hover:bg-emerald-100 active:bg-emerald-200 text-emerald-900 border border-emerald-300/80 text-xs sm:text-sm font-semibold px-5 py-2.5 rounded-lg transition-colors"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-emerald-50 hover:bg-emerald-100 active:bg-emerald-200 text-emerald-900 border border-emerald-300/80 text-sm sm:text-base font-semibold px-6 py-3.5 rounded-lg transition-colors min-h-[48px]"
             >
               <WhatsAppIcon className="w-4 h-4 text-emerald-600" />
               <span>Chat on WhatsApp</span>

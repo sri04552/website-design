@@ -81,9 +81,10 @@ export function Navbar() {
           {/* Left Brand Wordmark with Automata Display Font Style */}
           <Link
             href="/"
+            onClick={() => setMobileMenuOpen(false)}
             className="flex items-center gap-2 group focus-visible:outline-[#00B8F0] rounded-lg p-1"
           >
-            {/* Minimalist infinity loop icon matching reference */}
+            {/* Minimalist infinity loop icon */}
             <div
               className={`w-7 h-7 rounded-lg flex items-center justify-center transition-colors ${
                 isTransparent ? "text-[#00B8F0]" : "text-[#0284C7]"
@@ -115,10 +116,10 @@ export function Navbar() {
             </span>
           </Link>
 
-          {/* Desktop Right Navigation with WordPress-Style Hover Underline */}
+          {/* Desktop Right Navigation with WordPress-Style Hover Underline (Hidden below lg) */}
           <nav
             aria-label="Main Navigation"
-            className="hidden md:flex items-center gap-7 lg:gap-8"
+            className="hidden lg:flex items-center gap-7 lg:gap-8"
           >
             <div className="flex items-center gap-6 lg:gap-7">
               {navLinks.map((item) => {
@@ -147,10 +148,10 @@ export function Navbar() {
                   <Link
                     key={item.href}
                     href={item.href}
-                    className={`relative py-1 text-[13px] sm:text-[13.5px] font-semibold tracking-wider transition-colors duration-150 group ${linkColorClass}`}
+                    className={`relative py-1 text-[13.5px] sm:text-[14px] font-semibold tracking-wider transition-colors duration-150 group ${linkColorClass}`}
                   >
                     <span>{item.label}</span>
-                    {/* WordPress-style animated underline on hover and active */}
+                    {/* Animated underline on hover and active */}
                     <span
                       className={`absolute bottom-[-2px] left-0 h-[2px] transition-all duration-200 ${
                         isActive ? "w-full" : "w-0 group-hover:w-full"
@@ -162,34 +163,24 @@ export function Navbar() {
               })}
             </div>
 
-            {/* Darkened Teal Primary CTA Button - Redirects directly to WhatsApp chat */}
+            {/* Desktop CTA Button */}
             <a
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-[#0D8C7D] hover:bg-[#0B7568] active:bg-[#085E54] text-white text-xs sm:text-sm font-semibold px-4 sm:px-4.5 py-2 rounded-lg shadow-sm hover:shadow transition-all duration-150 focus-visible:outline-[#00B8F0]"
+              className="inline-flex items-center justify-center gap-2 bg-[#0D8C7D] hover:bg-[#0B7568] active:bg-[#085E54] text-white text-sm font-semibold px-5 py-2.5 rounded-lg shadow-sm hover:shadow transition-all duration-150 focus-visible:outline-[#00B8F0]"
             >
               <span>Let&apos;s Talk</span>
-              <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+              <ArrowRight className="w-4 h-4" />
             </a>
           </nav>
 
-          {/* Mobile Menu Button */}
-          <div className="flex md:hidden items-center gap-2.5">
-            <a
-              href={whatsappUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 bg-[#0D8C7D] hover:bg-[#0B7568] text-white text-xs font-semibold px-2.5 py-1.5 rounded-md"
-            >
-              <span>Talk</span>
-              <ArrowRight className="w-3 h-3" />
-            </a>
-
+          {/* Mobile & Tablet Menu Button (Talk CTA button removed per user request) */}
+          <div className="flex lg:hidden items-center">
             <button
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className={`p-1.5 rounded-lg transition-colors focus-visible:outline-[#00B8F0] ${
+              className={`p-2 rounded-lg transition-colors focus-visible:outline-[#00B8F0] ${
                 isTransparent
                   ? "text-[#F5F7FC] hover:bg-[#14233D]"
                   : "text-[#0F172A] hover:bg-slate-100"
@@ -199,54 +190,67 @@ export function Navbar() {
               aria-controls="mobile-navigation"
             >
               {mobileMenuOpen ? (
-                <X className="w-5 h-5 sm:w-6 sm:h-6" />
+                <X className="w-6 h-6" />
               ) : (
-                <Menu className="w-5 h-5 sm:w-6 sm:h-6" />
+                <Menu className="w-6 h-6" />
               )}
             </button>
           </div>
         </div>
       </div>
 
-      {/* Mobile Drawer Navigation */}
+      {/* Mobile & Tablet Drawer Navigation with Full Height and Smooth Scrolling */}
       {mobileMenuOpen && (
         <div
           id="mobile-navigation"
-          className="fixed inset-x-0 top-[75px] bottom-0 bg-[#0B1220] z-50 border-t border-[#29374D] px-6 py-6 flex flex-col justify-between md:hidden"
+          className={`fixed inset-x-0 top-[75px] h-[calc(100dvh-75px)] z-50 px-6 py-6 flex flex-col justify-between overflow-y-auto lg:hidden transition-all duration-200 ${
+            pathname === "/" && !isScrolled
+              ? "bg-[#0B1220] border-t border-[#29374D] text-[#F5F7FC]"
+              : "bg-white/98 backdrop-blur-md border-t border-slate-200 text-[#0F172A] shadow-2xl"
+          }`}
         >
           <div className="space-y-4">
-            <div className="space-y-2">
+            <nav aria-label="Mobile Navigation" className="space-y-2">
               {navLinks.map((item) => {
                 const isActive =
                   item.href === "/"
                     ? pathname === "/"
                     : pathname.startsWith(item.href);
 
+                const isDarkTheme = pathname === "/" && !isScrolled;
+
                 return (
                   <Link
                     key={item.href}
                     href={item.href}
-                    className={`block px-3 py-2.5 rounded-lg text-sm sm:text-base font-semibold tracking-wider ${
+                    onClick={() => setMobileMenuOpen(false)}
+                    className={`block px-4 py-3 rounded-lg text-base font-semibold tracking-wider transition-colors min-h-[48px] flex items-center ${
                       isActive
-                        ? "bg-[#14233D] text-[#00B8F0]"
-                        : "text-[#9BAAC2] hover:bg-[#14233D]/60 hover:text-[#F5F7FC]"
+                        ? isDarkTheme
+                          ? "bg-[#14233D] text-[#00B8F0]"
+                          : "bg-sky-50 text-[#0284C7] font-bold"
+                        : isDarkTheme
+                        ? "text-[#9BAAC2] hover:bg-[#14233D]/60 hover:text-[#F5F7FC]"
+                        : "text-[#334155] hover:bg-slate-100 hover:text-[#0F172A]"
                     }`}
                   >
                     {item.label}
                   </Link>
                 );
               })}
-            </div>
+            </nav>
           </div>
 
-          <div className="pt-5 border-t border-[#29374D] space-y-3">
+          {/* Drawer Bottom CTA Button with Standard Equal Sizing */}
+          <div className="pt-6 border-t border-slate-200/80 dark:border-[#29374D] mt-6">
             <a
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 bg-[#0D8C7D] hover:bg-[#0B7568] text-white text-sm font-semibold px-4 py-2.5 rounded-lg w-full"
+              onClick={() => setMobileMenuOpen(false)}
+              className="w-full inline-flex items-center justify-center gap-2 bg-[#0D8C7D] hover:bg-[#0B7568] active:bg-[#085E54] text-white text-base font-semibold px-6 py-3.5 rounded-lg shadow-sm transition-all min-h-[48px]"
             >
-              <span>Let&apos;s Talk</span>
+              <span>Let&apos;s Talk on WhatsApp</span>
               <ArrowRight className="w-4 h-4" />
             </a>
           </div>

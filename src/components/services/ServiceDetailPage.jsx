@@ -83,12 +83,12 @@ export function ServiceDetailPage({ service }) {
                 <AlertTriangle className="w-4 h-4 text-rose-600" />
                 <span>{service.problemStatement.headline}</span>
               </div>
-              <p className="text-xs sm:text-sm text-slate-600">
+              <p className="text-sm sm:text-base text-slate-600">
                 Most businesses struggle with the same recurring issues:
               </p>
               <ul className="space-y-3 pt-2">
                 {service.problemStatement.points.map((point, idx) => (
-                  <li key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
+                  <li key={idx} className="flex items-start gap-2.5 text-sm sm:text-base text-slate-700">
                     <span className="text-rose-500 font-bold shrink-0 mt-0.5">✕</span>
                     <span>{point}</span>
                   </li>
@@ -102,14 +102,14 @@ export function ServiceDetailPage({ service }) {
                 <Sparkles className="w-4 h-4 text-blue-600" />
                 <span>{service.solutionStatement.headline}</span>
               </div>
-              <p className="text-xs sm:text-sm text-slate-700 leading-relaxed">
+              <p className="text-sm sm:text-base text-slate-700 leading-relaxed">
                 {service.solutionStatement.description}
               </p>
               <div className="pt-2 border-t border-blue-200/60">
                 <h4 className="text-xs font-bold text-slate-900 uppercase tracking-wider mb-2">
                   Key Advantages
                 </h4>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-slate-700">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm text-slate-700">
                   <div className="flex items-center gap-1.5">
                     <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
                     <span>Direct WhatsApp & Call funnels</span>

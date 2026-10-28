@@ -15,7 +15,7 @@ export default function PortfolioPage() {
           <h1 className="text-3xl sm:text-4xl font-extrabold text-[#F5F7FC] tracking-tight">
             Portfolio
           </h1>
-          <p className="mt-4 text-[14px] sm:text-[15px] text-[#9BAAC2] leading-[1.7]">
+          <p className="mt-4 text-[16px] sm:text-[17px] text-[#9BAAC2] leading-[1.75]">
             This section will be built systematically phase by phase.
           </p>
         </div>
