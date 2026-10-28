@@ -2,7 +2,7 @@ import { Container } from "@/components/ui/Container";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 
 export const metadata = {
-  title: "AI Video Generation | AMOGHA Digital",
+  title: "AI Video Generation | Amogha Digital",
   description: "Social media video reels and bilingual narration.",
 };
 

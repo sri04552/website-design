@@ -7,7 +7,6 @@ import {
   Send,
   CheckCircle2,
   AlertCircle,
-  MessageCircle,
   Loader2,
 } from "lucide-react";
 
@@ -113,7 +112,6 @@ export function ContactForm({ preselectedService = "" }) {
               size="md"
               className="w-full sm:w-auto"
             >
-              <MessageCircle className="w-4 h-4" />
               <span>Need an instant reply? Message Us Directly</span>
             </Button>
           </div>

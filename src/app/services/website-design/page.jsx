@@ -2,7 +2,7 @@ import { Container } from "@/components/ui/Container";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 
 export const metadata = {
-  title: "Website Design & Development | AMOGHA Digital",
+  title: "Website Design & Development | Amogha Digital",
   description: "Custom web development services.",
 };
 

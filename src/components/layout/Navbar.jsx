@@ -72,7 +72,7 @@ export function Navbar() {
 
   // Direct WhatsApp chat redirection for "Let's Talk" CTA
   const whatsappUrl = `https://wa.me/916304299387?text=${encodeURIComponent(
-    "Hello! I would like to discuss a project with AMOGHA Digital."
+    "Hello! I would like to discuss a project with Amogha Digital."
   )}`;
 
   // Homepage starts transparent at scroll = 0, transitions to pure white when scrolled
@@ -93,11 +93,11 @@ export function Navbar() {
             href="/"
             onClick={() => setMobileMenuOpen(false)}
             className="flex items-center group focus-visible:outline-[#00B8F0] rounded-lg py-1"
-            aria-label="AMOGHA Digital Home"
+            aria-label="Amogha Digital Home"
           >
             <Image
               src={isTransparent ? "/assets/logo-blue.webp" : "/assets/logo-ribbon.webp"}
-              alt="AMOGHA Digital"
+              alt="Amogha Digital"
               width={800}
               height={213}
               priority

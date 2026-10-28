@@ -3,7 +3,6 @@ import {
   Sparkles,
   ArrowRight,
 } from "lucide-react";
-import { WhatsAppIcon } from "@/components/ui/WhatsAppIcon";
 
 export function BottleneckSection() {
   const bottlenecks = [
@@ -20,19 +19,19 @@ export function BottleneckSection() {
     {
       id: "ad-waste",
       tag: "ADVERTISING THAT ACTUALLY WORKS",
-      problemTitle: "Spending Money on Ads but Getting Zero Real Inquiries",
+      problemTitle: "Spending Money on Ads but Getting Zero Real Enquiries",
       problemDescription:
         "Many business owners spend thousands on Facebook or Instagram 'boost post' buttons, only to get random likes and accidental clicks from people who never buy. You end up burning your monthly marketing budget with no genuine phone calls to show for it.",
       solutionTitle: "Ads Shown Only to People Ready to Buy Right Now",
       solutionDescription:
-        "We set up targeted Google and social media campaigns focused strictly on high-intent buyers in your city actively searching for your services today. Every rupee spent brings genuine customer inquiries directly to your WhatsApp and phone.",
+        "We set up targeted Google and social media campaigns focused strictly on high-intent buyers in your city actively searching for your services today. Every rupee spent brings genuine customer enquiries directly to your WhatsApp and phone.",
     },
     {
       id: "response-leak",
-      tag: "NEVER MISS A CUSTOMER INQUIRY",
+      tag: "NEVER MISS A CUSTOMER ENQUIRY",
       problemTitle: "Losing Customers in the Evening and on Weekends",
       problemDescription:
-        "Over 60% of customers search for services at night or during weekends when your office is closed. If they fill out an inquiry form and do not hear back within minutes, they move on and message another business that replies immediately.",
+        "Over 60% of customers search for services at night or during weekends when your office is closed. If they fill out an enquiry form and do not hear back within minutes, they move on and message another business that replies immediately.",
       solutionTitle: "Instant 24/7 WhatsApp Replies That Book Customers For You",
       solutionDescription:
         "We connect a smart automated WhatsApp assistant that welcomes new visitors in under 2 seconds, answers common questions, shares your pricing or catalog, and collects appointment details even while you sleep.",
@@ -89,7 +88,7 @@ export function BottleneckSection() {
               <figure className="relative aspect-[16/10] w-full m-0 bg-[#E0F2FE]">
                 <Image
                   src="/assets/bottleneck-solution.webp"
-                  alt="Comparison of common website bottlenecks like slow mobile speed and missed inquiries versus automated lead capture solutions"
+                  alt="Comparison of common website bottlenecks like slow mobile speed and missed enquiries versus automated lead capture solutions"
                   title="Website Problem and Solution Diagnostic"
                   width={1200}
                   height={750}
@@ -106,21 +105,20 @@ export function BottleneckSection() {
 
             {/* Supporting Prose with increased 2px font size */}
             <p className="mt-5 text-[16px] sm:text-[17px] text-[#475569] leading-[1.75] font-normal">
-              Most businesses do not have bad products or services. Their website simply leaks potential customers before they have a chance to call. Whether your site is too slow on mobile phones, your ad budget gets spent on random clicks, or customer inquiries go unanswered after work hours, here is how we fix each leak so you get steady, qualified customer enquiries.
+              Most businesses do not have bad products or services. Their website simply leaks potential customers before they have a chance to call. Whether your site is too slow on mobile phones, your ad budget gets spent on random clicks, or customer enquiries go unanswered after work hours, here is how we fix each leak so you get steady, qualified customer enquiries.
             </p>
 
             {/* WhatsApp Direct Action Button with standardized size */}
             <div className="mt-6 w-full">
               <a
                 href={`https://wa.me/916304299387?text=${encodeURIComponent(
-                  "Hello! I saw your website breakdown and want to discuss fixing my website to get more customer inquiries."
+                  "Hello! I saw your website breakdown and want to discuss fixing my website to get more customer enquiries."
                 )}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Discuss fixing your website bottlenecks"
                 className="w-full inline-flex items-center justify-center gap-2 bg-[#0D8C7D] hover:bg-[#0B7568] active:bg-[#085E54] text-white text-sm sm:text-base font-semibold px-6 py-3.5 rounded-lg shadow-sm hover:shadow transition-all min-h-[48px]"
               >
-                <WhatsAppIcon className="w-4 h-4 text-white" />
                 <span>Fix Your Website Leaks</span>
                 <ArrowRight className="w-4 h-4" aria-hidden="true" />
               </a>

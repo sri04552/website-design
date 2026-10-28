@@ -3,7 +3,6 @@ import {
   Sparkles,
   ArrowRight,
 } from "lucide-react";
-import { WhatsAppIcon } from "@/components/ui/WhatsAppIcon";
 
 export function ProcessSection() {
   const steps = [
@@ -41,7 +40,7 @@ export function ProcessSection() {
   const howToJsonLd = {
     "@context": "https://schema.org",
     "@type": "HowTo",
-    name: "How AMOGHA Digital Delivers Digital Projects in 4 Steps",
+    name: "How Amogha Digital Delivers Digital Projects in 4 Steps",
     description:
       "A structured 4-step framework covering project discovery, custom design & build, speed and conversion testing, and live handover with 100% asset ownership.",
     step: steps.map((item, index) => ({
@@ -136,14 +135,13 @@ export function ProcessSection() {
             </Link>
             <a
               href={`https://wa.me/916304299387?text=${encodeURIComponent(
-                "Hello! I saw your 4-step process and would like to discuss a project with AMOGHA Digital."
+                "Hello! I saw your 4-step process and would like to discuss a project with Amogha Digital."
               )}`}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Direct project consultation"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-emerald-50 hover:bg-emerald-100 active:bg-emerald-200 text-emerald-900 border border-emerald-300/80 text-sm sm:text-base font-semibold px-6 py-3.5 rounded-lg transition-colors min-h-[48px]"
             >
-              <WhatsAppIcon className="w-4 h-4 text-emerald-600" />
               <span>Direct Project Consultation</span>
             </a>
           </div>

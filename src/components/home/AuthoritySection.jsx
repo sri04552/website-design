@@ -187,7 +187,6 @@ export function AuthoritySection() {
                   aria-label="Request free search and speed audit on WhatsApp"
                   className="w-full inline-flex items-center justify-center gap-2 bg-[#0D8C7D] hover:bg-[#0B7568] active:bg-[#085E54] text-white text-xs sm:text-sm font-semibold px-4 py-2.5 rounded-lg shadow-xs hover:shadow transition-all"
                 >
-                  <MessageCircle className="w-3.5 h-3.5" aria-hidden="true" />
                   <span>Request Free Search &amp; Speed Audit</span>
                   <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
                 </a>

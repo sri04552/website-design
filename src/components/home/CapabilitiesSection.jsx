@@ -11,7 +11,6 @@ import {
   Video,
 } from "lucide-react";
 import { siteConfig } from "@/config/site";
-import { WhatsAppIcon } from "@/components/ui/WhatsAppIcon";
 
 export function CapabilitiesSection() {
   const capabilities = [
@@ -295,7 +294,6 @@ export function CapabilitiesSection() {
             aria-label="Discuss digital services for your business"
             className="inline-flex items-center justify-center gap-2 bg-[#0D8C7D] hover:bg-[#0B7568] active:bg-[#085E54] text-white text-sm sm:text-base font-semibold px-6 py-3.5 rounded-lg shadow-sm hover:shadow transition-all shrink-0 min-h-[48px]"
           >
-            <WhatsAppIcon className="w-4 h-4 text-white" />
             <span>Discuss Your Project</span>
             <ArrowRight className="w-4 h-4" aria-hidden="true" />
           </a>

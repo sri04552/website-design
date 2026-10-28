@@ -10,7 +10,6 @@ import {
   CheckCircle2,
   AlertTriangle,
   ArrowRight,
-  MessageCircle,
   HelpCircle,
   Layers,
   Sparkles,
@@ -65,7 +64,6 @@ export function ServiceDetailPage({ service }) {
                 <ArrowRight className="w-4 h-4" />
               </Button>
               <Button href={whatsappHref} variant="whatsapp" size="lg">
-                <MessageCircle className="w-4 h-4" />
                 <span>Start Direct Consultation</span>
               </Button>
             </div>

@@ -2,7 +2,7 @@ import { Container } from "@/components/ui/Container";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 
 export const metadata = {
-  title: "About Us | AMOGHA Digital",
+  title: "About Us | Amogha Digital",
   description: "Independent digital practice based in Eluru, Andhra Pradesh.",
 };
 

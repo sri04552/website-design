@@ -2,7 +2,7 @@ import { Container } from "@/components/ui/Container";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 
 export const metadata = {
-  title: "Privacy Policy | AMOGHA Digital",
+  title: "Privacy Policy | Amogha Digital",
   description: "Privacy commitments and data handling.",
 };
 

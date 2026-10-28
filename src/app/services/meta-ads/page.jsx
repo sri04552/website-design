@@ -2,7 +2,7 @@ import { Container } from "@/components/ui/Container";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 
 export const metadata = {
-  title: "Meta Ads Management | AMOGHA Digital",
+  title: "Meta Ads Management | Amogha Digital",
   description: "Targeted social advertising campaigns.",
 };
 

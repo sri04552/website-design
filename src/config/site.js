@@ -5,7 +5,7 @@
 
 export const siteConfig = {
   // Configurable business identity
-  name: process.env.NEXT_PUBLIC_BUSINESS_NAME || "AMOGHA Digital",
+  name: process.env.NEXT_PUBLIC_BUSINESS_NAME || "Amogha Digital",
   tagline: "High-Performance Websites, Targeted Advertising & AI Automation",
   shortDescription:
     "Independent freelance digital partner helping businesses in Eluru, Andhra Pradesh, and across India scale online with custom web development, paid advertising, and automated workflows.",

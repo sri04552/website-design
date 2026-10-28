@@ -3,7 +3,6 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Sparkles, ChevronDown, ArrowRight } from "lucide-react";
-import { WhatsAppIcon } from "@/components/ui/WhatsAppIcon";
 
 export function FaqSection() {
   const [openIndex, setOpenIndex] = useState(0); // Open first FAQ by default
@@ -158,7 +157,7 @@ export function FaqSection() {
                 href="/contact"
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#0F172A] hover:bg-slate-800 text-white text-sm sm:text-base font-semibold px-6 py-3.5 rounded-lg transition-colors min-h-[48px]"
               >
-                <span>Send an Inquiry</span>
+                <span>Send an Enquiry</span>
                 <ArrowRight className="w-4 h-4" />
               </Link>
               <a
@@ -170,7 +169,6 @@ export function FaqSection() {
                 aria-label="Ask your question directly"
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-emerald-50 hover:bg-emerald-100 text-emerald-900 border border-emerald-300/80 text-sm sm:text-base font-semibold px-6 py-3.5 rounded-lg transition-colors min-h-[48px]"
               >
-                <WhatsAppIcon className="w-4 h-4 text-emerald-600" />
                 <span>Ask a Quick Question</span>
               </a>
             </div>
