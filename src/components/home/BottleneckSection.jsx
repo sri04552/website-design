@@ -2,7 +2,6 @@ import Image from "next/image";
 import {
   Sparkles,
   ArrowRight,
-  CheckCircle2,
 } from "lucide-react";
 import { WhatsAppIcon } from "@/components/ui/WhatsAppIcon";
 
@@ -143,11 +142,12 @@ export function BottleneckSection() {
                   </span>
                 </div>
 
-                {/* The Problem Block - Apple-style spacious typography */}
+                {/* The Problem Block with red eyebrow badge (no icons) */}
                 <div className="space-y-2">
-                  <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-rose-600">
-                    <span className="w-1.5 h-1.5 rounded-full bg-rose-500 shrink-0" aria-hidden="true" />
-                    <span>The Problem</span>
+                  <div>
+                    <span className="inline-block px-2.5 py-1 rounded-md bg-rose-50 border border-rose-200/80 text-rose-700 text-[11px] font-bold uppercase tracking-wider">
+                      The Problem
+                    </span>
                   </div>
                   <h3
                     id={`heading-${item.id}`}
@@ -160,11 +160,12 @@ export function BottleneckSection() {
                   </p>
                 </div>
 
-                {/* The Solution Block - Clean typography without green background */}
+                {/* The Solution Block with green eyebrow badge (no icons) */}
                 <div className="mt-6 space-y-2">
-                  <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#0284C7]">
-                    <CheckCircle2 className="w-4 h-4 text-[#0284C7] shrink-0" aria-hidden="true" />
-                    <span>Our Solution</span>
+                  <div>
+                    <span className="inline-block px-2.5 py-1 rounded-md bg-emerald-50 border border-emerald-200/80 text-emerald-800 text-[11px] font-bold uppercase tracking-wider">
+                      Our Solution
+                    </span>
                   </div>
                   <h4 className="text-base sm:text-lg font-bold text-[#0F172A] leading-snug">
                     {item.solutionTitle}
