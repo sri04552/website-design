@@ -1,10 +1,16 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
 import {
   Sparkles,
   ArrowRight,
+  Maximize2,
 } from "lucide-react";
+import { ImageZoomModal } from "@/components/ui/ImageZoomModal";
 
 export function BottleneckSection() {
+  const [isImageModalOpen, setIsImageModalOpen] = useState(false);
   const bottlenecks = [
     {
       id: "speed-seo",
@@ -83,25 +89,47 @@ export function BottleneckSection() {
               The 3 Hidden Reasons Most Business Websites Fail to Get Calls
             </h2>
 
-            {/* Supporting Visual Mockup */}
-            <div className="mt-5 w-full rounded-2xl overflow-hidden border border-sky-200/80 shadow-[0_6px_24px_rgba(2,132,199,0.06)] bg-white">
-              <figure className="relative aspect-[16/10] w-full m-0 bg-[#E0F2FE]">
-                <Image
-                  src="/assets/bottleneck-solution.webp"
-                  alt="Comparison of common website bottlenecks like slow mobile speed and missed enquiries versus automated lead capture solutions"
-                  title="Website Problem and Solution Diagnostic"
-                  width={1200}
-                  height={750}
-                  loading="lazy"
-                  decoding="async"
-                  className="w-full h-full object-cover"
-                  unoptimized
-                />
-                <figcaption className="sr-only">
-                  Diagnostic illustration showing how slow mobile websites and delayed responses cause businesses to lose customers to competitors.
-                </figcaption>
-              </figure>
+            {/* Supporting Visual Mockup with click-to-zoom interactive popup */}
+            <div className="mt-5 w-full rounded-2xl overflow-hidden border border-sky-200/80 shadow-[0_6px_24px_rgba(2,132,199,0.06)] bg-white group/image">
+              <button
+                type="button"
+                onClick={() => setIsImageModalOpen(true)}
+                aria-label="Click to enlarge and zoom photo"
+                className="relative block w-full text-left cursor-zoom-in focus-visible:outline-2 focus-visible:outline-[#00B8F0] focus-visible:outline-offset-2"
+              >
+                <figure className="relative aspect-[16/10] w-full m-0 bg-[#E0F2FE]">
+                  <Image
+                    src="/assets/bottleneck-solution.webp"
+                    alt="Comparison of common website bottlenecks like slow mobile speed and missed enquiries versus automated lead capture solutions"
+                    title="Click to view full photo and zoom"
+                    width={1200}
+                    height={750}
+                    loading="lazy"
+                    decoding="async"
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover/image:scale-[1.02]"
+                    unoptimized
+                  />
+                  <figcaption className="sr-only">
+                    Diagnostic illustration showing how slow mobile websites and delayed responses cause businesses to lose customers to competitors.
+                  </figcaption>
+
+                  {/* Visual Click-To-Zoom Badge */}
+                  <div className="absolute bottom-3 right-3 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-900/85 backdrop-blur-sm text-white text-[12px] font-semibold shadow-md group-hover/image:bg-[#0284C7] transition-all">
+                    <Maximize2 className="w-3.5 h-3.5 text-[#00B8F0] group-hover/image:text-white" />
+                    <span>Tap to zoom</span>
+                  </div>
+                </figure>
+              </button>
             </div>
+
+            {/* Photo Lightbox Popup with Zoom-In, Zoom-Out, and Pan */}
+            <ImageZoomModal
+              isOpen={isImageModalOpen}
+              onClose={() => setIsImageModalOpen(false)}
+              src="/assets/bottleneck-solution.webp"
+              alt="Website problem and solution diagnostic breakdown"
+              title="Website Problem & Solution Diagnostic"
+            />
 
             {/* Supporting Prose with increased 2px font size */}
             <p className="mt-5 text-[16px] sm:text-[17px] text-[#475569] leading-[1.75] font-normal">
