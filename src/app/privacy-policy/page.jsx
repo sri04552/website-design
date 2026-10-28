@@ -2,7 +2,7 @@ import { Container } from "@/components/ui/Container";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 
 export const metadata = {
-  title: "Privacy Policy | Sri Digital Studio",
+  title: "Privacy Policy | AMOGHA Digital",
   description: "Privacy commitments and data handling.",
 };
 

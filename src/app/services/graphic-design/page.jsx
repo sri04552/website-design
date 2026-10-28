@@ -2,7 +2,7 @@ import { Container } from "@/components/ui/Container";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 
 export const metadata = {
-  title: "Graphic Design & Brand Identity | Sri Digital Studio",
+  title: "Graphic Design & Brand Identity | AMOGHA Digital",
   description: "Brand identities, packaging, and marketing creatives.",
 };
 

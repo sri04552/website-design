@@ -8,7 +8,7 @@ import { ProcessSection } from "@/components/home/ProcessSection";
 import { FaqSection } from "@/components/home/FaqSection";
 
 export const metadata = {
-  title: "Sri Digital Studio | Web Development, Performance Marketing & AI Automation",
+  title: "AMOGHA Digital | Web Development, Performance Marketing & AI Automation",
   description:
     "We engineer high-performance custom websites, ROI-driven marketing campaigns, and intelligent AI automation systems designed to capture qualified leads, streamline operations, and scale modern businesses in Eluru and pan-India.",
   keywords: [

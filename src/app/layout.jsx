@@ -39,7 +39,7 @@ export const metadata = {
     "Google Ads Freelancer Andhra Pradesh",
     "AI Automation Chatbots India",
     "Digital Marketing Agency Eluru",
-    "Automate Media Web Design",
+    "AMOGHA Digital Web Design",
     "High Performance Business Websites",
   ],
   authors: [{ name: siteConfig.name, url: siteConfig.url }],

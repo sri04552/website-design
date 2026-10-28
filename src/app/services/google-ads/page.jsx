@@ -2,7 +2,7 @@ import { Container } from "@/components/ui/Container";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 
 export const metadata = {
-  title: "Google Ads Management | Sri Digital Studio",
+  title: "Google Ads Management | AMOGHA Digital",
   description: "High-intent search advertising campaigns.",
 };
 

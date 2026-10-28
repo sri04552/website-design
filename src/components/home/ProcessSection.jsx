@@ -45,7 +45,7 @@ export function ProcessSection() {
   const howToJsonLd = {
     "@context": "https://schema.org",
     "@type": "HowTo",
-    name: "How Sri Digital Studio Delivers Digital Projects in 4 Steps",
+    name: "How AMOGHA Digital Delivers Digital Projects in 4 Steps",
     description:
       "A structured 4-step framework covering project discovery, custom design & build, speed and conversion testing, and live handover with 100% asset ownership.",
     step: steps.map((item, index) => ({
@@ -101,16 +101,11 @@ export function ProcessSection() {
                 className="group relative bg-[#F8FAFC] hover:bg-white rounded-2xl border border-slate-200/90 hover:border-sky-300/80 p-6 sm:p-8 shadow-[0_2px_12px_rgba(15,23,42,0.03)] hover:shadow-[0_12px_32px_rgba(2,132,199,0.08)] transition-all duration-200 flex flex-col justify-between"
               >
                 <div>
-                  {/* Top Header: Step Number, Tag & Badge without divider lines */}
+                  {/* Top Header: Tag & Badge without number or divider lines */}
                   <div className="flex items-center justify-between gap-2 mb-4">
-                    <div className="flex items-center gap-2.5">
-                      <span className="w-8 h-8 rounded-lg bg-[#0F172A] text-white text-xs font-extrabold flex items-center justify-center shrink-0 tracking-wider">
-                        {item.step}
-                      </span>
-                      <span className="text-sm sm:text-base font-bold text-[#0284C7] uppercase tracking-wide">
-                        {item.tag}
-                      </span>
-                    </div>
+                    <span className="text-sm sm:text-base font-bold text-[#0284C7] uppercase tracking-wide">
+                      {item.tag}
+                    </span>
 
                     <span className="inline-flex items-center text-[11.5px] font-semibold text-emerald-800 bg-emerald-50 border border-emerald-200/80 px-3 py-0.5 rounded-full">
                       {item.badge}
@@ -150,7 +145,7 @@ export function ProcessSection() {
             </Link>
             <a
               href={`https://wa.me/916304299387?text=${encodeURIComponent(
-                "Hello! I saw your 4-step process and would like to discuss a project with Sri Digital Studio."
+                "Hello! I saw your 4-step process and would like to discuss a project with AMOGHA Digital."
               )}`}
               target="_blank"
               rel="noopener noreferrer"

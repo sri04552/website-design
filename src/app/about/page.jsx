@@ -2,7 +2,7 @@ import { Container } from "@/components/ui/Container";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 
 export const metadata = {
-  title: "About Us | Sri Digital Studio",
+  title: "About Us | AMOGHA Digital",
   description: "Independent digital practice based in Eluru, Andhra Pradesh.",
 };
 

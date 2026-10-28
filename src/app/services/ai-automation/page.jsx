@@ -2,7 +2,7 @@ import { Container } from "@/components/ui/Container";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 
 export const metadata = {
-  title: "AI Automation & Chatbots | Sri Digital Studio",
+  title: "AI Automation & Chatbots | AMOGHA Digital",
   description: "Workflow automation and smart WhatsApp assistants.",
 };
 

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { siteConfig } from "@/config/site";
 import {
@@ -18,29 +19,14 @@ export function Footer() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 sm:gap-12">
             {/* Column 1: Studio Identity */}
             <div className="lg:col-span-2 space-y-4">
-              <Link href="/" className="inline-flex items-center gap-2.5">
-                <div className="w-8 h-8 rounded-lg flex items-center justify-center text-[#00B8F0]">
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="w-7 h-7"
-                    aria-hidden="true"
-                  >
-                    <path d="M18.178 8c5.096 0 5.096 8 0 8-5.095 0-7.133-8-12.739-8-4.585 0-4.585 8 0 8 5.606 0 7.644-8 12.74-8z" />
-                  </svg>
-                </div>
-                <span
-                  className="font-extrabold text-[#F5F7FC] text-lg tracking-[0.12em] uppercase"
-                  style={{
-                    fontFamily: "var(--font-automata), var(--font-manrope), sans-serif",
-                  }}
-                >
-                  {siteConfig.name}
-                </span>
+              <Link href="/" className="inline-block py-1" aria-label="AMOGHA Digital Home">
+                <Image
+                  src="/assets/logo-white.webp"
+                  alt="AMOGHA Digital"
+                  width={800}
+                  height={213}
+                  className="h-9 sm:h-10 w-auto object-contain"
+                />
               </Link>
 
               <p className="text-[#9BAAC2] text-[16px] leading-[1.75] max-w-sm">

@@ -1,10 +1,20 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { siteConfig } from "@/config/site";
-import { Menu, X, ArrowRight } from "lucide-react";
+import {
+  Menu,
+  X,
+  ArrowRight,
+  Home,
+  Layers,
+  BookOpen,
+  User,
+  PhoneCall,
+} from "lucide-react";
 
 export function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -53,16 +63,16 @@ export function Navbar() {
   }, [mobileMenuOpen]);
 
   const navLinks = [
-    { label: "HOME", href: "/" },
-    { label: "SERVICES", href: "/services" },
-    { label: "BLOGS", href: "/blogs" },
-    { label: "ABOUT", href: "/about" },
-    { label: "CONTACT", href: "/contact" },
+    { label: "HOME", href: "/", icon: Home },
+    { label: "SERVICES", href: "/services", icon: Layers },
+    { label: "BLOGS", href: "/blogs", icon: BookOpen },
+    { label: "ABOUT", href: "/about", icon: User },
+    { label: "CONTACT", href: "/contact", icon: PhoneCall },
   ];
 
   // Direct WhatsApp chat redirection for "Let's Talk" CTA
   const whatsappUrl = `https://wa.me/916304299387?text=${encodeURIComponent(
-    "Hello! I would like to discuss a project for my business."
+    "Hello! I would like to discuss a project with AMOGHA Digital."
   )}`;
 
   // Homepage starts transparent at scroll = 0, transitions to pure white when scrolled
@@ -78,42 +88,21 @@ export function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-[75px]">
-          {/* Left Brand Wordmark with Automata Display Font Style */}
+          {/* Left Brand Logo Image with Business Name Included */}
           <Link
             href="/"
             onClick={() => setMobileMenuOpen(false)}
-            className="flex items-center gap-2 group focus-visible:outline-[#00B8F0] rounded-lg p-1"
+            className="flex items-center group focus-visible:outline-[#00B8F0] rounded-lg py-1"
+            aria-label="AMOGHA Digital Home"
           >
-            {/* Minimalist infinity loop icon */}
-            <div
-              className={`w-7 h-7 rounded-lg flex items-center justify-center transition-colors ${
-                isTransparent ? "text-[#00B8F0]" : "text-[#0284C7]"
-              }`}
-            >
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="w-6 h-6"
-                aria-hidden="true"
-              >
-                <path d="M18.178 8c5.096 0 5.096 8 0 8-5.095 0-7.133-8-12.739-8-4.585 0-4.585 8 0 8 5.606 0 7.644-8 12.74-8z" />
-              </svg>
-            </div>
-            {/* Brand Wordmark styled in Automata Display Font Style */}
-            <span
-              className={`text-sm sm:text-base lg:text-lg uppercase transition-colors tracking-[0.14em] font-extrabold ${
-                isTransparent ? "text-[#F5F7FC]" : "text-[#0F172A]"
-              }`}
-              style={{
-                fontFamily: "'AutomateDisplay', var(--font-manrope), sans-serif",
-              }}
-            >
-              {siteConfig.name || "AUTOMATE MEDIA"}
-            </span>
+            <Image
+              src={isTransparent ? "/assets/logo-white.webp" : "/assets/logo.webp"}
+              alt="AMOGHA Digital"
+              width={800}
+              height={213}
+              priority
+              className="h-9 sm:h-10 w-auto object-contain transition-opacity duration-200"
+            />
           </Link>
 
           {/* Desktop Right Navigation with WordPress-Style Hover Underline (Hidden below lg) */}
@@ -175,7 +164,7 @@ export function Navbar() {
             </a>
           </nav>
 
-          {/* Mobile & Tablet Menu Button (Talk CTA button removed per user request) */}
+          {/* Mobile & Tablet Animated Hamburger Button */}
           <div className="flex lg:hidden items-center">
             <button
               type="button"
@@ -189,73 +178,100 @@ export function Navbar() {
               aria-expanded={mobileMenuOpen}
               aria-controls="mobile-navigation"
             >
-              {mobileMenuOpen ? (
-                <X className="w-6 h-6" />
-              ) : (
-                <Menu className="w-6 h-6" />
-              )}
+              <div className="relative w-6 h-6 flex items-center justify-center">
+                <Menu
+                  className={`w-6 h-6 absolute transition-all duration-300 transform ${
+                    mobileMenuOpen
+                      ? "opacity-0 rotate-90 scale-75 pointer-events-none"
+                      : "opacity-100 rotate-0 scale-100 pointer-events-auto"
+                  }`}
+                />
+                <X
+                  className={`w-6 h-6 absolute transition-all duration-300 transform ${
+                    mobileMenuOpen
+                      ? "opacity-100 rotate-0 scale-100 pointer-events-auto"
+                      : "opacity-0 -rotate-90 scale-75 pointer-events-none"
+                  }`}
+                />
+              </div>
             </button>
           </div>
         </div>
       </div>
 
-      {/* Mobile & Tablet Drawer Navigation with Full Height and Smooth Scrolling */}
-      {mobileMenuOpen && (
-        <div
-          id="mobile-navigation"
-          className={`fixed inset-x-0 top-[75px] h-[calc(100dvh-75px)] z-50 px-6 py-6 flex flex-col justify-between overflow-y-auto lg:hidden transition-all duration-200 ${
-            pathname === "/" && !isScrolled
-              ? "bg-[#0B1220] border-t border-[#29374D] text-[#F5F7FC]"
-              : "bg-white/98 backdrop-blur-md border-t border-slate-200 text-[#0F172A] shadow-2xl"
-          }`}
-        >
-          <div className="space-y-4">
-            <nav aria-label="Mobile Navigation" className="space-y-2">
-              {navLinks.map((item) => {
-                const isActive =
-                  item.href === "/"
-                    ? pathname === "/"
-                    : pathname.startsWith(item.href);
+      {/* Mobile & Tablet Drawer Navigation with Smooth Opening and Closing Transitions */}
+      <div
+        id="mobile-navigation"
+        className={`fixed inset-x-0 top-[75px] h-[calc(100dvh-75px)] z-50 px-6 py-6 flex flex-col justify-between overflow-y-auto lg:hidden transition-all duration-300 ease-in-out transform ${
+          mobileMenuOpen
+            ? "opacity-100 translate-y-0 pointer-events-auto visible"
+            : "opacity-0 -translate-y-4 pointer-events-none invisible"
+        } ${
+          pathname === "/" && !isScrolled
+            ? "bg-[#0B1220] border-t border-[#29374D] text-[#F5F7FC]"
+            : "bg-white/98 backdrop-blur-md border-t border-slate-200 text-[#0F172A] shadow-2xl"
+        }`}
+      >
+        <div className="space-y-4">
+          <nav aria-label="Mobile Navigation" className="space-y-2.5">
+            {navLinks.map((item) => {
+              const Icon = item.icon;
+              const isActive =
+                item.href === "/"
+                  ? pathname === "/"
+                  : pathname.startsWith(item.href);
 
-                const isDarkTheme = pathname === "/" && !isScrolled;
+              const isDarkTheme = pathname === "/" && !isScrolled;
 
-                return (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    onClick={() => setMobileMenuOpen(false)}
-                    className={`block px-4 py-3 rounded-lg text-base font-semibold tracking-wider transition-colors min-h-[48px] flex items-center ${
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={`px-4 py-3 rounded-xl text-base font-semibold tracking-wider transition-all min-h-[50px] flex items-center gap-3.5 ${
+                    isActive
+                      ? isDarkTheme
+                        ? "bg-[#14233D] text-[#00B8F0] shadow-sm"
+                        : "bg-sky-50 text-[#0284C7] font-bold shadow-xs"
+                      : isDarkTheme
+                      ? "text-[#9BAAC2] hover:bg-[#14233D]/60 hover:text-[#F5F7FC]"
+                      : "text-[#334155] hover:bg-slate-100 hover:text-[#0F172A]"
+                  }`}
+                >
+                  <div
+                    className={`w-8 h-8 rounded-lg flex items-center justify-center shrink-0 transition-colors ${
                       isActive
                         ? isDarkTheme
-                          ? "bg-[#14233D] text-[#00B8F0]"
-                          : "bg-sky-50 text-[#0284C7] font-bold"
+                          ? "bg-[#00B8F0]/20 text-[#00B8F0]"
+                          : "bg-[#0284C7]/10 text-[#0284C7]"
                         : isDarkTheme
-                        ? "text-[#9BAAC2] hover:bg-[#14233D]/60 hover:text-[#F5F7FC]"
-                        : "text-[#334155] hover:bg-slate-100 hover:text-[#0F172A]"
+                        ? "bg-[#14233D] text-slate-400"
+                        : "bg-slate-100 text-slate-500"
                     }`}
                   >
-                    {item.label}
-                  </Link>
-                );
-              })}
-            </nav>
-          </div>
-
-          {/* Drawer Bottom CTA Button with Standard Equal Sizing */}
-          <div className="pt-6 border-t border-slate-200/80 dark:border-[#29374D] mt-6">
-            <a
-              href={whatsappUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => setMobileMenuOpen(false)}
-              className="w-full inline-flex items-center justify-center gap-2 bg-[#0D8C7D] hover:bg-[#0B7568] active:bg-[#085E54] text-white text-base font-semibold px-6 py-3.5 rounded-lg shadow-sm transition-all min-h-[48px]"
-            >
-              <span>Start a Project Discussion</span>
-              <ArrowRight className="w-4 h-4" />
-            </a>
-          </div>
+                    <Icon className="w-4 h-4" aria-hidden="true" />
+                  </div>
+                  <span>{item.label}</span>
+                </Link>
+              );
+            })}
+          </nav>
         </div>
-      )}
+
+        {/* Drawer Bottom CTA Button with Standard Equal Sizing */}
+        <div className="pt-6 border-t border-slate-200/80 dark:border-[#29374D] mt-6">
+          <a
+            href={whatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => setMobileMenuOpen(false)}
+            className="w-full inline-flex items-center justify-center gap-2 bg-[#0D8C7D] hover:bg-[#0B7568] active:bg-[#085E54] text-white text-base font-semibold px-6 py-3.5 rounded-lg shadow-sm transition-all min-h-[48px]"
+          >
+            <span>Start a Project Discussion</span>
+            <ArrowRight className="w-4 h-4" />
+          </a>
+        </div>
+      </div>
     </header>
   );
 }

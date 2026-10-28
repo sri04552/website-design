@@ -2,7 +2,7 @@ import { Container } from "@/components/ui/Container";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 
 export const metadata = {
-  title: "Contact | Sri Digital Studio",
+  title: "Contact | AMOGHA Digital",
   description: "Get in touch for custom digital projects.",
 };
 
