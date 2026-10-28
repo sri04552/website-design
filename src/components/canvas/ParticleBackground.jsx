@@ -54,7 +54,11 @@ export function ParticleBackground() {
       color: particleColors[Math.floor(Math.random() * particleColors.length)],
     }));
 
+    let isVisible = true;
+
     const render = () => {
+      if (!isVisible) return;
+
       ctx.clearRect(0, 0, width, height);
 
       // Draw faint connecting lines between nearby particles
@@ -104,6 +108,24 @@ export function ParticleBackground() {
       }
     };
 
+    // Only render canvas when Hero is visible on screen, pausing when scrolled past
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          isVisible = entry.isIntersecting;
+          if (isVisible && !prefersReducedMotion) {
+            cancelAnimationFrame(animationFrameId);
+            animationFrameId = requestAnimationFrame(render);
+          } else {
+            cancelAnimationFrame(animationFrameId);
+          }
+        });
+      },
+      { threshold: 0 }
+    );
+
+    observer.observe(canvas);
+
     render();
 
     const handleResize = () => {
@@ -113,7 +135,7 @@ export function ParticleBackground() {
         if (p.x > width) p.x = Math.random() * width;
         if (p.y > height) p.y = Math.random() * height;
       }
-      if (prefersReducedMotion) {
+      if (prefersReducedMotion || isVisible) {
         render();
       }
     };
@@ -121,6 +143,7 @@ export function ParticleBackground() {
     window.addEventListener("resize", handleResize);
 
     return () => {
+      observer.disconnect();
       cancelAnimationFrame(animationFrameId);
       window.removeEventListener("resize", handleResize);
     };

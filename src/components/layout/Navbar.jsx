@@ -80,7 +80,7 @@ export function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 inset-x-0 z-50 w-full transition-all duration-300 ${
+      className={`fixed top-0 inset-x-0 z-50 w-full transform-gpu transition-all duration-300 ${
         isTransparent
           ? "bg-transparent border-b border-transparent text-[#F5F7FC]"
           : "bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm text-[#0F172A]"
