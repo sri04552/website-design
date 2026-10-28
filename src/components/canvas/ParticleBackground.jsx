@@ -33,24 +33,22 @@ export function ParticleBackground() {
 
     setCanvasDimensions();
 
-    // Spawn sparse particles: ~50 on desktop, ~28 on mobile
-    const particleCount = width < 768 ? 28 : 55;
-    const maxDistance = width < 768 ? 95 : 125;
+    // Lightweight ambient particles: 22 on desktop, 14 on mobile
+    const particleCount = width < 768 ? 14 : 22;
 
     // Palette: subtle electric cyan and muted steel navy
     const particleColors = [
-      "rgba(0, 184, 240, 0.55)", // Electric cyan
-      "rgba(0, 184, 240, 0.35)",
-      "rgba(74, 107, 148, 0.45)", // Muted blue/navy
-      "rgba(155, 170, 194, 0.35)", // Steel
+      "rgba(0, 184, 240, 0.45)",
+      "rgba(0, 184, 240, 0.25)",
+      "rgba(74, 107, 148, 0.35)",
     ];
 
     const particles = Array.from({ length: particleCount }, () => ({
       x: Math.random() * width,
       y: Math.random() * height,
-      vx: (Math.random() - 0.5) * 0.28,
-      vy: (Math.random() - 0.5) * 0.28,
-      radius: Math.random() * 1.2 + 0.8,
+      vx: (Math.random() - 0.5) * 0.2,
+      vy: (Math.random() - 0.5) * 0.2,
+      radius: Math.random() * 1.5 + 0.8,
       color: particleColors[Math.floor(Math.random() * particleColors.length)],
     }));
 
@@ -61,29 +59,7 @@ export function ParticleBackground() {
 
       ctx.clearRect(0, 0, width, height);
 
-      // Draw faint connecting lines between nearby particles
-      for (let i = 0; i < particles.length; i++) {
-        for (let j = i + 1; j < particles.length; j++) {
-          const dx = particles[i].x - particles[j].x;
-          const dy = particles[i].y - particles[j].y;
-          const distSq = dx * dx + dy * dy;
-          const maxDistSq = maxDistance * maxDistance;
-
-          if (distSq < maxDistSq) {
-            const dist = Math.sqrt(distSq);
-            // Ultra-faint line opacity: max 0.16
-            const alpha = (1 - dist / maxDistance) * 0.16;
-            ctx.beginPath();
-            ctx.moveTo(particles[i].x, particles[i].y);
-            ctx.lineTo(particles[j].x, particles[j].y);
-            ctx.strokeStyle = `rgba(0, 184, 240, ${alpha})`;
-            ctx.lineWidth = 0.75;
-            ctx.stroke();
-          }
-        }
-      }
-
-      // Draw and move particles
+      // Draw and move particles with ultra-lightweight single-pass rendering
       for (const p of particles) {
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);

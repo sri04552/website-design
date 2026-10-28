@@ -74,7 +74,7 @@ export function BottleneckSection() {
         {/* Asymmetric 2-Column Split: Editorial & Visual Left, Problem/Solution Stack Right */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
           {/* Left Column: Sticky Context, Visual & Action (5 cols on lg) */}
-          <div className="lg:col-span-5 lg:sticky lg:top-24 flex flex-col items-start">
+          <div className="lg:col-span-5 lg:sticky lg:top-24 transform-gpu flex flex-col items-start">
             {/* Eyebrow Pill - Hidden on Mobile and Tablet, Visible on Desktop */}
             <div className="hidden lg:inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-sky-200/90 text-sky-800 text-xs font-semibold tracking-wider uppercase mb-3.5 shadow-xs">
               <Sparkles className="w-3.5 h-3.5 text-[#00B8F0]" aria-hidden="true" />

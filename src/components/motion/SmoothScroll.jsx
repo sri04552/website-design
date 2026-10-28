@@ -1,48 +1,70 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 import { usePathname } from "next/navigation";
-import Lenis from "lenis";
 
 export function SmoothScroll() {
   const pathname = usePathname();
-  const lenisRef = useRef(null);
 
+  // Reset scroll to top on page navigation
   useEffect(() => {
-    // Check if user prefers reduced motion
-    const prefersReducedMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)"
-    ).matches;
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+  }, [pathname]);
 
-    if (prefersReducedMotion) return;
+  // Smooth scroll handler for anchor links with native GPU compositor acceleration
+  useEffect(() => {
+    // Compatibility stub for any components calling window.lenis
+    window.lenis = {
+      scrollTo: (target, options = {}) => {
+        if (typeof target === "number") {
+          window.scrollTo({
+            top: target,
+            behavior: options.immediate ? "instant" : "smooth",
+          });
+        } else if (typeof target === "string") {
+          const el = document.querySelector(target);
+          if (el) {
+            el.scrollIntoView({
+              behavior: options.immediate ? "instant" : "smooth",
+              block: "start",
+            });
+          }
+        }
+      },
+      stop: () => {},
+      start: () => {},
+    };
 
-    const lenis = new Lenis({
-      autoRaf: true,
-      lerp: 0.1,
-      orientation: "vertical",
-      gestureOrientation: "vertical",
-      smoothWheel: true,
-      wheelMultiplier: 0.85,
-      touchMultiplier: 1.0,
-      anchors: true,
-    });
+    const handleAnchorClick = (e) => {
+      const link = e.target.closest("a[href*='#']");
+      if (!link) return;
 
-    lenisRef.current = lenis;
-    window.lenis = lenis;
+      const href = link.getAttribute("href");
+      if (!href) return;
+
+      const hashIndex = href.indexOf("#");
+      if (hashIndex === -1) return;
+
+      const hash = href.slice(hashIndex);
+      if (!hash || hash === "#") return;
+
+      const targetEl = document.querySelector(hash);
+      if (targetEl) {
+        e.preventDefault();
+        targetEl.scrollIntoView({ behavior: "smooth", block: "start" });
+        if (window.history.pushState) {
+          window.history.pushState(null, "", hash);
+        }
+      }
+    };
+
+    document.addEventListener("click", handleAnchorClick);
 
     return () => {
-      lenis.destroy();
-      lenisRef.current = null;
+      document.removeEventListener("click", handleAnchorClick);
       delete window.lenis;
     };
   }, []);
-
-  // Reset scroll position on route change
-  useEffect(() => {
-    if (lenisRef.current) {
-      lenisRef.current.scrollTo(0, { immediate: true });
-    }
-  }, [pathname]);
 
   return null;
 }
