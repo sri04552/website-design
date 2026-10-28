@@ -2,10 +2,6 @@ import Link from "next/link";
 import {
   Sparkles,
   ArrowRight,
-  MessageSquareText,
-  Palette,
-  CheckCheck,
-  Rocket,
 } from "lucide-react";
 import { WhatsAppIcon } from "@/components/ui/WhatsAppIcon";
 
@@ -18,8 +14,6 @@ export function ProcessSection() {
       title: "Discovery & Project Blueprint",
       description:
         "A focused conversation to understand your business goals, target audience, and outline a fixed quote with clear milestones and zero surprise fees.",
-      icon: MessageSquareText,
-      iconColor: "text-sky-600 bg-sky-50 border-sky-200/80",
     },
     {
       step: "02",
@@ -28,8 +22,6 @@ export function ProcessSection() {
       title: "Custom Design & Rapid Build",
       description:
         "Clean, mobile-first design and functional builds tailored to your brand, with private preview links shared for your direct review and feedback.",
-      icon: Palette,
-      iconColor: "text-indigo-600 bg-indigo-50 border-indigo-200/80",
     },
     {
       step: "03",
@@ -38,8 +30,6 @@ export function ProcessSection() {
       title: "Performance & Quality Testing",
       description:
         "Rigorous testing for sub-2 second mobile loading, local Google search visibility, ad tracking, and reliable automated workflows before going live.",
-      icon: CheckCheck,
-      iconColor: "text-amber-600 bg-amber-50 border-amber-200/80",
     },
     {
       step: "04",
@@ -48,8 +38,6 @@ export function ProcessSection() {
       title: "Official Launch & Full Handover",
       description:
         "Production deployment with 100% asset and code ownership transferred to you, complete with a walkthrough guide and ongoing support.",
-      icon: Rocket,
-      iconColor: "text-emerald-600 bg-emerald-50 border-emerald-200/80",
     },
   ];
 
@@ -72,7 +60,7 @@ export function ProcessSection() {
     <section
       id="process"
       aria-labelledby="process-heading"
-      className="relative py-16 sm:py-20 lg:py-24 bg-white border-t border-slate-200/80 text-[#0F172A]"
+      className="relative py-[24px] lg:py-[48px] bg-white border-t border-slate-200/80 text-[#0F172A]"
     >
       {/* Schema.org HowTo Microdata */}
       <script
@@ -106,7 +94,6 @@ export function ProcessSection() {
         {/* 4-Step Modular Grid (2x2 on tablet/desktop, stacked on mobile) */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 items-stretch">
           {steps.map((item) => {
-            const IconComponent = item.icon;
             return (
               <article
                 key={item.step}
@@ -130,21 +117,13 @@ export function ProcessSection() {
                     </span>
                   </div>
 
-                  {/* Icon & Title Row - Centered vertically */}
-                  <div className="flex items-center gap-3.5 mb-2.5">
-                    <div
-                      className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 border ${item.iconColor}`}
-                      aria-hidden="true"
-                    >
-                      <IconComponent className="w-5 h-5" />
-                    </div>
-                    <h3
-                      id={`step-heading-${item.step}`}
-                      className="text-base sm:text-lg font-bold text-[#0F172A] leading-snug group-hover:text-[#0284C7] transition-colors"
-                    >
-                      {item.title}
-                    </h3>
-                  </div>
+                  {/* Card Title without heading icon, keeping number above */}
+                  <h3
+                    id={`step-heading-${item.step}`}
+                    className="text-lg sm:text-xl font-bold text-[#0F172A] leading-snug group-hover:text-[#0284C7] transition-colors mb-2.5"
+                  >
+                    {item.title}
+                  </h3>
 
                   {/* Step Description increased by 2px */}
                   <p className="text-[15.5px] sm:text-[16px] text-[#475569] leading-relaxed font-normal">
@@ -175,11 +154,11 @@ export function ProcessSection() {
               )}`}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Direct WhatsApp consultation"
+              aria-label="Direct project consultation"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-emerald-50 hover:bg-emerald-100 active:bg-emerald-200 text-emerald-900 border border-emerald-300/80 text-sm sm:text-base font-semibold px-6 py-3.5 rounded-lg transition-colors min-h-[48px]"
             >
               <WhatsAppIcon className="w-4 h-4 text-emerald-600" />
-              <span>Chat on WhatsApp</span>
+              <span>Direct Project Consultation</span>
             </a>
           </div>
         </div>

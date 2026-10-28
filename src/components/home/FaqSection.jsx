@@ -63,7 +63,7 @@ export function FaqSection() {
     <section
       id="faq"
       aria-labelledby="faq-heading"
-      className="relative py-16 sm:py-20 lg:py-24 bg-[#F0F7FF] border-t border-sky-100 text-[#0F172A]"
+      className="relative py-[24px] lg:py-[48px] bg-[#F0F7FF] border-t border-sky-100 text-[#0F172A]"
     >
       {/* Schema.org FAQ Microdata */}
       <script
@@ -167,11 +167,11 @@ export function FaqSection() {
                 )}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Ask your question directly on WhatsApp"
+                aria-label="Ask your question directly"
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-emerald-50 hover:bg-emerald-100 text-emerald-900 border border-emerald-300/80 text-sm sm:text-base font-semibold px-6 py-3.5 rounded-lg transition-colors min-h-[48px]"
               >
                 <WhatsAppIcon className="w-4 h-4 text-emerald-600" />
-                <span>Ask on WhatsApp</span>
+                <span>Ask a Quick Question</span>
               </a>
             </div>
           </div>

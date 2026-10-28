@@ -114,7 +114,7 @@ export function ContactForm({ preselectedService = "" }) {
               className="w-full sm:w-auto"
             >
               <MessageCircle className="w-4 h-4" />
-              <span>Need an instant reply? Chat on WhatsApp</span>
+              <span>Need an instant reply? Message Us Directly</span>
             </Button>
           </div>
         )}

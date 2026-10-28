@@ -250,7 +250,7 @@ export function Navbar() {
               onClick={() => setMobileMenuOpen(false)}
               className="w-full inline-flex items-center justify-center gap-2 bg-[#0D8C7D] hover:bg-[#0B7568] active:bg-[#085E54] text-white text-base font-semibold px-6 py-3.5 rounded-lg shadow-sm transition-all min-h-[48px]"
             >
-              <span>Let&apos;s Talk on WhatsApp</span>
+              <span>Start a Project Discussion</span>
               <ArrowRight className="w-4 h-4" />
             </a>
           </div>

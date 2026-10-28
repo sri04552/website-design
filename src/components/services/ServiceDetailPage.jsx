@@ -66,7 +66,7 @@ export function ServiceDetailPage({ service }) {
               </Button>
               <Button href={whatsappHref} variant="whatsapp" size="lg">
                 <MessageCircle className="w-4 h-4" />
-                <span>Discuss on WhatsApp</span>
+                <span>Start Direct Consultation</span>
               </Button>
             </div>
           </div>

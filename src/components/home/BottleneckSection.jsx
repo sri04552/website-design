@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import {
   Sparkles,
   ArrowRight,
@@ -59,7 +58,7 @@ export function BottleneckSection() {
     <section
       id="bottlenecks"
       aria-labelledby="bottlenecks-heading"
-      className="relative py-16 sm:py-20 lg:py-24 bg-[#F0F7FF] border-t border-sky-100 text-[#0F172A]"
+      className="relative py-[24px] lg:py-[48px] bg-[#F0F7FF] border-t border-sky-100 text-[#0F172A]"
     >
       {/* Schema.org FAQ Microdata */}
       <script
@@ -119,11 +118,11 @@ export function BottleneckSection() {
                 )}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Discuss fixing your website bottlenecks directly on WhatsApp"
+                aria-label="Discuss fixing your website bottlenecks"
                 className="w-full inline-flex items-center justify-center gap-2 bg-[#0D8C7D] hover:bg-[#0B7568] active:bg-[#085E54] text-white text-sm sm:text-base font-semibold px-6 py-3.5 rounded-lg shadow-sm hover:shadow transition-all min-h-[48px]"
               >
                 <WhatsAppIcon className="w-4 h-4 text-white" />
-                <span>Fix Your Website Leaks on WhatsApp</span>
+                <span>Fix Your Website Leaks</span>
                 <ArrowRight className="w-4 h-4" aria-hidden="true" />
               </a>
             </div>
@@ -161,16 +160,16 @@ export function BottleneckSection() {
                   </p>
                 </div>
 
-                {/* The Solution Block - Apple-style clean elevated card */}
-                <div className="mt-6 rounded-xl bg-emerald-50/70 border border-emerald-100 p-5 sm:p-6">
-                  <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-emerald-800">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" aria-hidden="true" />
+                {/* The Solution Block - Clean typography without green background */}
+                <div className="mt-6 space-y-2">
+                  <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#0284C7]">
+                    <CheckCircle2 className="w-4 h-4 text-[#0284C7] shrink-0" aria-hidden="true" />
                     <span>Our Solution</span>
                   </div>
-                  <h4 className="mt-2 text-base sm:text-lg font-bold text-emerald-950 leading-snug">
+                  <h4 className="text-base sm:text-lg font-bold text-[#0F172A] leading-snug">
                     {item.solutionTitle}
                   </h4>
-                  <p className="mt-2 text-[16px] sm:text-[17px] text-emerald-950/90 leading-relaxed font-normal">
+                  <p className="text-[16px] sm:text-[17px] text-[#475569] leading-relaxed font-normal">
                     {item.solutionDescription}
                   </p>
                 </div>

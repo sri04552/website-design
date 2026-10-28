@@ -161,7 +161,7 @@ export function CapabilitiesSection() {
     <section
       id="capabilities"
       aria-labelledby="capabilities-heading"
-      className="relative py-16 sm:py-20 lg:py-24 bg-[#F8FAFC] border-t border-slate-200/90 text-[#0F172A]"
+      className="relative py-[24px] lg:py-[48px] bg-[#F8FAFC] border-t border-slate-200/90 text-[#0F172A]"
     >
       {/* Schema.org ItemList Microdata */}
       <script
@@ -292,11 +292,11 @@ export function CapabilitiesSection() {
             )}`}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Chat directly on WhatsApp about your digital project"
+            aria-label="Discuss digital services for your business"
             className="inline-flex items-center justify-center gap-2 bg-[#0D8C7D] hover:bg-[#0B7568] active:bg-[#085E54] text-white text-sm sm:text-base font-semibold px-6 py-3.5 rounded-lg shadow-sm hover:shadow transition-all shrink-0 min-h-[48px]"
           >
             <WhatsAppIcon className="w-4 h-4 text-white" />
-            <span>Chat on WhatsApp</span>
+            <span>Discuss Your Project</span>
             <ArrowRight className="w-4 h-4" aria-hidden="true" />
           </a>
         </aside>
