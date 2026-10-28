@@ -164,30 +164,30 @@ export function Navbar() {
             </a>
           </nav>
 
-          {/* Mobile & Tablet Animated Hamburger Button */}
+          {/* Mobile & Tablet Animated Hamburger Button with background, border and box shadow */}
           <div className="flex lg:hidden items-center">
             <button
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className={`p-2 rounded-lg transition-colors focus-visible:outline-[#00B8F0] ${
+              className={`w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-200 active:scale-95 focus-visible:outline-2 focus-visible:outline-[#00B8F0] ${
                 isTransparent
-                  ? "text-[#F5F7FC] hover:bg-[#14233D]"
-                  : "text-[#0F172A] hover:bg-slate-100"
+                  ? "bg-[#14233D]/90 backdrop-blur-md border border-[#29374D] text-[#F5F7FC] shadow-[0_4px_16px_rgba(0,0,0,0.35)] hover:border-[#00B8F0]/50 hover:bg-[#1A2C4C]"
+                  : "bg-white border border-slate-200 text-[#0F172A] shadow-[0_2px_8px_rgba(15,23,42,0.08)] hover:border-slate-300 hover:bg-slate-50 hover:shadow-[0_4px_12px_rgba(15,23,42,0.12)]"
               }`}
               aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
               aria-expanded={mobileMenuOpen}
               aria-controls="mobile-navigation"
             >
-              <div className="relative w-6 h-6 flex items-center justify-center">
+              <div className="relative w-5 h-5 flex items-center justify-center">
                 <Menu
-                  className={`w-6 h-6 absolute transition-all duration-300 transform ${
+                  className={`w-5 h-5 absolute transition-all duration-300 transform ${
                     mobileMenuOpen
                       ? "opacity-0 rotate-90 scale-75 pointer-events-none"
                       : "opacity-100 rotate-0 scale-100 pointer-events-auto"
                   }`}
                 />
                 <X
-                  className={`w-6 h-6 absolute transition-all duration-300 transform ${
+                  className={`w-5 h-5 absolute transition-all duration-300 transform ${
                     mobileMenuOpen
                       ? "opacity-100 rotate-0 scale-100 pointer-events-auto"
                       : "opacity-0 -rotate-90 scale-75 pointer-events-none"
