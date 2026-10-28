@@ -11,7 +11,6 @@ export function ProcessSection() {
       step: "01",
       tag: "STRATEGY & SCOPE",
       badge: "Clear Roadmap",
-      title: "Discovery & Project Blueprint",
       description:
         "A focused conversation to understand your business goals, target audience, and outline a fixed quote with clear milestones and zero surprise fees.",
     },
@@ -19,7 +18,6 @@ export function ProcessSection() {
       step: "02",
       tag: "DESIGN & BUILD",
       badge: "Custom Crafted",
-      title: "Custom Design & Rapid Build",
       description:
         "Clean, mobile-first design and functional builds tailored to your brand, with private preview links shared for your direct review and feedback.",
     },
@@ -27,7 +25,6 @@ export function ProcessSection() {
       step: "03",
       tag: "SPEED & QUALITY",
       badge: "Quality Verified",
-      title: "Performance & Quality Testing",
       description:
         "Rigorous testing for sub-2 second mobile loading, local Google search visibility, ad tracking, and reliable automated workflows before going live.",
     },
@@ -35,7 +32,6 @@ export function ProcessSection() {
       step: "04",
       tag: "LAUNCH & HANDOVER",
       badge: "100% Asset Ownership",
-      title: "Official Launch & Full Handover",
       description:
         "Production deployment with 100% asset and code ownership transferred to you, complete with a walkthrough guide and ongoing support.",
     },
@@ -51,7 +47,7 @@ export function ProcessSection() {
     step: steps.map((item, index) => ({
       "@type": "HowToStep",
       position: index + 1,
-      name: item.title,
+      name: item.tag,
       text: item.description,
     })),
   };
@@ -98,27 +94,22 @@ export function ProcessSection() {
               <article
                 key={item.step}
                 aria-labelledby={`step-heading-${item.step}`}
-                className="group relative bg-[#F8FAFC] hover:bg-white rounded-2xl border border-slate-200/90 hover:border-sky-300/80 p-6 sm:p-8 shadow-[0_2px_12px_rgba(15,23,42,0.03)] hover:shadow-[0_12px_32px_rgba(2,132,199,0.08)] transition-all duration-200 flex flex-col justify-between"
+                className="group relative bg-[#F8FAFC] hover:bg-white rounded-2xl border border-slate-200/90 hover:border-sky-300/80 px-4 py-6 sm:p-8 shadow-[0_2px_12px_rgba(15,23,42,0.03)] hover:shadow-[0_12px_32px_rgba(2,132,199,0.08)] transition-all duration-200 flex flex-col justify-between"
               >
                 <div>
                   {/* Top Header: Tag & Badge without number or divider lines */}
-                  <div className="flex items-center justify-between gap-2 mb-4">
-                    <span className="text-sm sm:text-base font-bold text-[#0284C7] uppercase tracking-wide">
+                  <div className="flex items-center justify-between gap-2 mb-3">
+                    <h3
+                      id={`step-heading-${item.step}`}
+                      className="text-sm sm:text-base font-bold text-[#0284C7] uppercase tracking-wide"
+                    >
                       {item.tag}
-                    </span>
+                    </h3>
 
                     <span className="inline-flex items-center text-[11.5px] font-semibold text-emerald-800 bg-emerald-50 border border-emerald-200/80 px-3 py-0.5 rounded-full">
                       {item.badge}
                     </span>
                   </div>
-
-                  {/* Card Title without heading icon, keeping number above */}
-                  <h3
-                    id={`step-heading-${item.step}`}
-                    className="text-lg sm:text-xl font-bold text-[#0F172A] leading-snug group-hover:text-[#0284C7] transition-colors mb-2.5"
-                  >
-                    {item.title}
-                  </h3>
 
                   {/* Step Description increased by 2px */}
                   <p className="text-[15.5px] sm:text-[16px] text-[#475569] leading-relaxed font-normal">

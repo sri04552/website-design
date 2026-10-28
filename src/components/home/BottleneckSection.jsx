@@ -133,7 +133,7 @@ export function BottleneckSection() {
               <article
                 key={item.id}
                 aria-labelledby={`heading-${item.id}`}
-                className="bg-white rounded-2xl border border-sky-200/80 p-6 sm:p-8 shadow-[0_4px_20px_rgba(2,132,199,0.04)] hover:shadow-[0_8px_28px_rgba(2,132,199,0.08)] transition-all duration-200 flex flex-col justify-between"
+                className="bg-white rounded-2xl border border-sky-200/80 px-4 py-6 sm:p-8 shadow-[0_4px_20px_rgba(2,132,199,0.04)] hover:shadow-[0_8px_28px_rgba(2,132,199,0.08)] transition-all duration-200 flex flex-col justify-between"
               >
                 {/* Module Category Tag without divider lines or badges */}
                 <div className="mb-4">

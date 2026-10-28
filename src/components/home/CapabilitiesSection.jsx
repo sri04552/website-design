@@ -225,7 +225,7 @@ export function CapabilitiesSection() {
                 </figure>
 
                 {/* Compact Card Content with standardized padding */}
-                <div className="p-6 sm:p-8 flex flex-col flex-1 justify-between">
+                <div className="px-4 py-6 sm:p-8 flex flex-col flex-1 justify-between">
                   <div>
                     {/* Tag & Icon Row */}
                     <div className="flex items-center justify-between gap-2 mb-3">
@@ -276,7 +276,7 @@ export function CapabilitiesSection() {
         {/* Consultation Strip with standardized card padding */}
         <aside
           aria-label="Free Consultation & Growth Audit"
-          className="mt-8 sm:mt-10 bg-white rounded-2xl border border-slate-200/90 p-6 sm:p-8 shadow-xs flex flex-col sm:flex-row items-center justify-between gap-4"
+          className="mt-8 sm:mt-10 bg-white rounded-2xl border border-slate-200/90 px-4 py-6 sm:p-8 shadow-xs flex flex-col sm:flex-row items-center justify-between gap-4"
         >
           <div className="text-center sm:text-left">
             <h4 className="text-base font-bold text-[#0F172A]">

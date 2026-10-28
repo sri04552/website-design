@@ -109,7 +109,7 @@ export function FaqSection() {
                     onClick={() => toggleFaq(index)}
                     aria-expanded={isOpen}
                     aria-controls={`faq-answer-${index}`}
-                    className="w-full p-5 sm:p-6 flex items-center justify-between gap-4 text-left font-bold text-[#0F172A] hover:text-[#0284C7] transition-colors focus-visible:outline-[#00B8F0]"
+                    className="w-full px-4 py-5 sm:p-6 flex items-center justify-between gap-4 text-left font-bold text-[#0F172A] hover:text-[#0284C7] transition-colors focus-visible:outline-[#00B8F0]"
                   >
                     <span className="text-[15px] sm:text-base leading-snug">
                       {faq.question}
@@ -130,7 +130,7 @@ export function FaqSection() {
                     <div
                       id={`faq-answer-${index}`}
                       role="region"
-                      className="px-5 sm:px-6 pb-6 pt-0"
+                      className="px-4 sm:px-6 pb-6 pt-0"
                     >
                       <p className="pt-2 text-[16px] sm:text-[17px] text-[#475569] leading-relaxed font-normal">
                         {faq.answer}
@@ -143,7 +143,7 @@ export function FaqSection() {
           </div>
 
           {/* Bottom Support Bar with standardized card padding and equal button sizes */}
-          <div className="mt-10 sm:mt-12 bg-white rounded-2xl border border-sky-200/80 p-6 sm:p-8 shadow-xs text-center flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="mt-10 sm:mt-12 bg-white rounded-2xl border border-sky-200/80 px-4 py-6 sm:p-8 shadow-xs text-center flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="text-center sm:text-left">
               <h3 className="text-base font-bold text-[#0F172A]">
                 Have a question not listed here?

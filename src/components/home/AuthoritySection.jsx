@@ -131,7 +131,7 @@ export function AuthoritySection() {
 
           {/* Right Column: Comparative Infrastructure Audit Card (5 cols on lg) */}
           <div className="lg:col-span-5 w-full">
-            <div className="bg-white rounded-2xl border border-sky-200/80 p-5 sm:p-6 shadow-[0_8px_30px_rgba(2,132,199,0.06)] flex flex-col justify-between">
+            <div className="bg-white rounded-2xl border border-sky-200/80 px-4 py-5 sm:p-6 shadow-[0_8px_30px_rgba(2,132,199,0.06)] flex flex-col justify-between">
               <div>
                 {/* Card Header */}
                 <div className="border-b border-slate-100 pb-3.5 mb-4">

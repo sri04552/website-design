@@ -94,7 +94,7 @@ export function ContactForm({ preselectedService = "" }) {
 
   if (status === "success") {
     return (
-      <div className="bg-emerald-50/90 border border-emerald-200 rounded-2xl p-6 sm:p-8 text-center space-y-4 shadow-xs">
+      <div className="bg-emerald-50/90 border border-emerald-200 rounded-2xl px-4 py-6 sm:p-8 text-center space-y-4 shadow-xs">
         <div className="w-12 h-12 bg-emerald-600 text-white rounded-full flex items-center justify-center mx-auto">
           <CheckCircle2 className="w-6 h-6" />
         </div>
@@ -133,7 +133,7 @@ export function ContactForm({ preselectedService = "" }) {
   return (
     <form
       onSubmit={handleSubmit}
-      className="bg-white border border-slate-200 rounded-2xl p-6 sm:p-8 shadow-xs space-y-5"
+      className="bg-white border border-slate-200 rounded-2xl px-4 py-6 sm:p-8 shadow-xs space-y-5"
       noValidate
     >
       {/* Error alert */}

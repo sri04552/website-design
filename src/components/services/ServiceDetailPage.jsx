@@ -78,7 +78,7 @@ export function ServiceDetailPage({ service }) {
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
             {/* Problem Card */}
-            <div className="lg:col-span-6 bg-rose-50/50 border border-rose-200/80 rounded-3xl p-6 sm:p-8 space-y-4">
+            <div className="lg:col-span-6 bg-rose-50/50 border border-rose-200/80 rounded-3xl px-4 py-6 sm:p-8 space-y-4">
               <div className="flex items-center gap-2 text-rose-800 font-bold text-sm uppercase tracking-wider">
                 <AlertTriangle className="w-4 h-4 text-rose-600" />
                 <span>{service.problemStatement.headline}</span>
@@ -97,7 +97,7 @@ export function ServiceDetailPage({ service }) {
             </div>
 
             {/* Solution Card */}
-            <div className="lg:col-span-6 bg-blue-50/50 border border-blue-200/80 rounded-3xl p-6 sm:p-8 space-y-4">
+            <div className="lg:col-span-6 bg-blue-50/50 border border-blue-200/80 rounded-3xl px-4 py-6 sm:p-8 space-y-4">
               <div className="flex items-center gap-2 text-blue-800 font-bold text-sm uppercase tracking-wider">
                 <Sparkles className="w-4 h-4 text-blue-600" />
                 <span>{service.solutionStatement.headline}</span>
@@ -152,7 +152,7 @@ export function ServiceDetailPage({ service }) {
             {service.deliverables.map((item, idx) => (
               <div
                 key={idx}
-                className="bg-white rounded-2xl border border-slate-200 p-6 shadow-xs space-y-2 hover:border-blue-300 transition-all"
+                className="bg-white rounded-2xl border border-slate-200 px-4 py-6 sm:p-6 shadow-xs space-y-2 hover:border-blue-300 transition-all"
               >
                 <div className="flex items-center gap-2">
                   <div className="w-6 h-6 rounded-md bg-blue-100 text-blue-700 flex items-center justify-center text-xs font-bold shrink-0">
@@ -171,7 +171,7 @@ export function ServiceDetailPage({ service }) {
 
           {/* Ideal for banner */}
           {service.idealFor && (
-            <div className="mt-12 bg-white rounded-2xl border border-slate-200 p-6 sm:p-8">
+            <div className="mt-12 bg-white rounded-2xl border border-slate-200 px-4 py-6 sm:p-8">
               <h3 className="text-sm font-bold text-slate-900 uppercase tracking-wider mb-4">
                 Who This Service Helps Most
               </h3>
@@ -208,7 +208,7 @@ export function ServiceDetailPage({ service }) {
               {service.process.map((step, idx) => (
                 <div
                   key={idx}
-                  className="bg-white rounded-2xl border border-slate-200 p-6 shadow-xs space-y-3"
+                  className="bg-white rounded-2xl border border-slate-200 px-4 py-6 sm:p-6 shadow-xs space-y-3"
                 >
                   <span className="text-2xl font-black text-blue-600">
                     {step.step}
@@ -246,7 +246,7 @@ export function ServiceDetailPage({ service }) {
               {relatedProjects.map((p) => (
                 <div
                   key={p.id}
-                  className="bg-slate-800/80 border border-slate-700 rounded-2xl p-6 sm:p-7 space-y-4"
+                  className="bg-slate-800/80 border border-slate-700 rounded-2xl px-4 py-6 sm:p-7 space-y-4"
                 >
                   <div className="flex items-center justify-between">
                     <span className="text-xs font-semibold text-blue-400">
@@ -293,7 +293,7 @@ export function ServiceDetailPage({ service }) {
                 {service.faqs.map((faq, idx) => (
                   <div
                     key={idx}
-                    className="bg-white rounded-xl border border-slate-200 p-5 sm:p-6"
+                    className="bg-white rounded-xl border border-slate-200 px-4 py-5 sm:p-6"
                   >
                     <h3 className="text-base font-bold text-slate-900 flex items-start gap-2">
                       <HelpCircle className="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
