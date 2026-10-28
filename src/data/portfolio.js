@@ -102,7 +102,7 @@ export const portfolioProjects = [
     category: "Graphic Design & Brand Identity",
     serviceSlug: "graphic-design",
     clientType: "Artisanal A2 Milk & Organic Ghee Producer (Concept)",
-    location: "Vijayawada - Eluru Belt",
+    location: "Vijayawada and Eluru Region",
     tagline: "Complete heritage brand identity, glass bottle packaging, and social design system.",
     summary:
       "A distinctive visual brand system created for a farm-fresh dairy brand, combining traditional South Indian rural typography with modern minimalist packaging that commands premium shelf space.",

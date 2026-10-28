@@ -282,9 +282,9 @@ export function ContactForm({ preselectedService = "" }) {
             onChange={handleChange}
             className="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 text-slate-900 text-sm focus:border-blue-600 focus:ring-1 focus:ring-blue-600 outline-none transition-all bg-white"
           >
-            <option value="under-15k">₹10,000 - ₹20,000 (Starter project)</option>
-            <option value="20k-40k">₹20,000 - ₹40,000 (Standard business scope)</option>
-            <option value="40k-80k">₹40,000 - ₹80,000 (Multi-service / custom)</option>
+            <option value="under-15k">₹10,000 to ₹20,000 (Starter project)</option>
+            <option value="20k-40k">₹20,000 to ₹40,000 (Standard business scope)</option>
+            <option value="40k-80k">₹40,000 to ₹80,000 (Multi-service / custom)</option>
             <option value="80k-plus">₹80,000+ (Full scale growth)</option>
             <option value="flexible">Flexible / Need guidance</option>
           </select>

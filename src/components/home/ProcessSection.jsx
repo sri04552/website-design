@@ -72,7 +72,7 @@ export function ProcessSection() {
     <section
       id="process"
       aria-labelledby="process-heading"
-      className="relative py-[48px] bg-white border-t border-slate-200/80 text-[#0F172A]"
+      className="relative py-16 sm:py-20 lg:py-24 bg-white border-t border-slate-200/80 text-[#0F172A]"
     >
       {/* Schema.org HowTo Microdata */}
       <script
@@ -111,16 +111,16 @@ export function ProcessSection() {
               <article
                 key={item.step}
                 aria-labelledby={`step-heading-${item.step}`}
-                className="group relative bg-[#F8FAFC] hover:bg-white rounded-2xl border border-slate-200/90 hover:border-sky-300/80 p-6 sm:p-7 shadow-[0_2px_12px_rgba(15,23,42,0.03)] hover:shadow-[0_12px_32px_rgba(2,132,199,0.08)] transition-all duration-200 flex flex-col justify-between"
+                className="group relative bg-[#F8FAFC] hover:bg-white rounded-2xl border border-slate-200/90 hover:border-sky-300/80 p-6 sm:p-8 shadow-[0_2px_12px_rgba(15,23,42,0.03)] hover:shadow-[0_12px_32px_rgba(2,132,199,0.08)] transition-all duration-200 flex flex-col justify-between"
               >
                 <div>
-                  {/* Top Header: Step Number, Tag & Badge */}
-                  <div className="flex items-center justify-between gap-2 border-b border-slate-200/70 pb-3 mb-4">
+                  {/* Top Header: Step Number, Tag & Badge without divider lines */}
+                  <div className="flex items-center justify-between gap-2 mb-4">
                     <div className="flex items-center gap-2.5">
                       <span className="w-8 h-8 rounded-lg bg-[#0F172A] text-white text-xs font-extrabold flex items-center justify-center shrink-0 tracking-wider">
                         {item.step}
                       </span>
-                      <span className="text-[13px] sm:text-[14px] font-bold text-[#0284C7] uppercase tracking-wide">
+                      <span className="text-sm sm:text-base font-bold text-[#0284C7] uppercase tracking-wide">
                         {item.tag}
                       </span>
                     </div>

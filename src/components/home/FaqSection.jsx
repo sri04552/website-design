@@ -32,12 +32,12 @@ export function FaqSection() {
     {
       question: "Why custom-engineered websites instead of slow generic templates?",
       answer:
-        "Slow generic website templates rely on heavy, bloated third-party plugins that cause sluggish loading speeds (4–6 seconds), frequent security vulnerabilities, and demoted Google search rankings. We build clean, modern, lightweight websites that load in under 2 seconds on mobile data, pass Google Core Web Vitals, and keep visitors engaged.",
+        "Slow generic website templates rely on heavy, bloated third-party plugins that cause sluggish loading speeds (4 to 6 seconds), frequent security vulnerabilities, and demoted Google search rankings. We build clean, modern, lightweight websites that load in under 2 seconds on mobile data, pass Google Core Web Vitals, and keep visitors engaged.",
     },
     {
       question: "What happens after my website or ad campaigns are launched?",
       answer:
-        "We don't disappear after launch. We provide a hands-on walkthrough showing you how to manage new inquiries, monitor early ad performance to reduce cost-per-lead, and offer ongoing direct support for updates, maintenance, and future growth.",
+        "We do not disappear after launch. We provide a hands-on walkthrough showing you how to manage new inquiries, monitor early ad performance to reduce cost-per-lead, and offer ongoing direct support for updates, maintenance, and future growth.",
     },
   ];
 
@@ -63,7 +63,7 @@ export function FaqSection() {
     <section
       id="faq"
       aria-labelledby="faq-heading"
-      className="relative py-[48px] bg-[#F0F7FF] border-t border-sky-100 text-[#0F172A]"
+      className="relative py-16 sm:py-20 lg:py-24 bg-[#F0F7FF] border-t border-sky-100 text-[#0F172A]"
     >
       {/* Schema.org FAQ Microdata */}
       <script
@@ -71,107 +71,109 @@ export function FaqSection() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
 
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="text-center flex flex-col items-center mb-10 sm:mb-12">
-          {/* Eyebrow Pill */}
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-sky-200/90 text-sky-800 text-xs font-semibold tracking-wider uppercase mb-3.5 shadow-xs">
-            <Sparkles className="w-3.5 h-3.5 text-[#00B8F0]" aria-hidden="true" />
-            <span>FREQUENTLY ASKED QUESTIONS</span>
-          </div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto">
+          {/* Section Header */}
+          <div className="text-center flex flex-col items-center mb-10 sm:mb-12">
+            {/* Eyebrow Pill */}
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-sky-200/90 text-sky-800 text-xs font-semibold tracking-wider uppercase mb-3.5 shadow-xs">
+              <Sparkles className="w-3.5 h-3.5 text-[#00B8F0]" aria-hidden="true" />
+              <span>FREQUENTLY ASKED QUESTIONS</span>
+            </div>
 
-          {/* Main H2 */}
-          <h2
-            id="faq-heading"
-            className="text-2xl sm:text-3.5xl lg:text-[34px] font-extrabold tracking-tight text-[#0F172A] leading-[1.25]"
-          >
-            Everything You Need to Know Before Getting Started
-          </h2>
+            {/* Main H2 */}
+            <h2
+              id="faq-heading"
+              className="text-2xl sm:text-3.5xl lg:text-[34px] font-extrabold tracking-tight text-[#0F172A] leading-[1.25]"
+            >
+              Everything You Need to Know Before Getting Started
+            </h2>
 
-          {/* Lead Prose strictly 14px-15px */}
-          <p className="mt-3 text-[14px] sm:text-[15px] text-[#475569] leading-[1.7] font-normal max-w-2xl">
-            Have questions about our pricing, timelines, or how our services work? Here are straight, transparent answers to the questions business owners ask us most.
-          </p>
-        </div>
-
-        {/* FAQ Accordion Stack */}
-        <div className="space-y-3.5">
-          {faqs.map((faq, index) => {
-            const isOpen = openIndex === index;
-            return (
-              <div
-                key={index}
-                className="bg-white rounded-xl border border-sky-200/80 shadow-[0_2px_12px_rgba(2,132,199,0.03)] hover:border-sky-300 transition-colors overflow-hidden"
-              >
-                <button
-                  type="button"
-                  onClick={() => toggleFaq(index)}
-                  aria-expanded={isOpen}
-                  aria-controls={`faq-answer-${index}`}
-                  className="w-full p-4.5 sm:p-5 flex items-center justify-between gap-4 text-left font-bold text-[#0F172A] hover:text-[#0284C7] transition-colors focus-visible:outline-[#00B8F0]"
-                >
-                  <span className="text-[14.5px] sm:text-base leading-snug">
-                    {faq.question}
-                  </span>
-                  <div
-                    className={`w-7 h-7 rounded-full flex items-center justify-center shrink-0 border transition-all duration-200 ${
-                      isOpen
-                        ? "bg-[#0284C7] text-white border-[#0284C7] rotate-180"
-                        : "bg-slate-50 text-slate-500 border-slate-200"
-                    }`}
-                    aria-hidden="true"
-                  >
-                    <ChevronDown className="w-4 h-4" />
-                  </div>
-                </button>
-
-                {isOpen && (
-                  <div
-                    id={`faq-answer-${index}`}
-                    role="region"
-                    className="px-4.5 sm:px-5 pb-5 pt-0 border-t border-slate-100"
-                  >
-                    <p className="pt-3.5 text-[13.5px] sm:text-[14.5px] text-[#475569] leading-[1.65] font-normal">
-                      {faq.answer}
-                    </p>
-                  </div>
-                )}
-              </div>
-            );
-          })}
-        </div>
-
-        {/* Bottom Fallback Support Bar */}
-        <div className="mt-10 sm:mt-12 bg-white rounded-2xl border border-sky-200/80 p-5 sm:p-6 shadow-xs text-center flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="text-center sm:text-left">
-            <h3 className="text-sm sm:text-base font-bold text-[#0F172A]">
-              Have a question not listed here?
-            </h3>
-            <p className="text-xs sm:text-[13.5px] text-[#64748B] mt-0.5">
-              We&apos;re always happy to answer your specific questions with zero sales pressure.
+            {/* Lead Prose */}
+            <p className="mt-3 text-[14px] sm:text-[15px] text-[#475569] leading-[1.7] font-normal max-w-2xl">
+              Have questions about our pricing, timelines, or how our services work? Here are straight, transparent answers to the questions business owners ask us most.
             </p>
           </div>
 
-          <div className="flex flex-wrap items-center justify-center gap-3 shrink-0 w-full sm:w-auto">
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-1.5 bg-[#0F172A] hover:bg-slate-800 text-white text-xs sm:text-sm font-semibold px-4.5 py-2.5 rounded-lg transition-colors"
-            >
-              <span>Send an Inquiry</span>
-              <ArrowRight className="w-3.5 h-3.5" />
-            </Link>
-            <a
-              href={`https://wa.me/916304299387?text=${encodeURIComponent(
-                "Hello! I have a question about your digital services that wasn't in the FAQ."
-              )}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Ask your question directly on WhatsApp"
-              className="inline-flex items-center gap-2 bg-emerald-50 hover:bg-emerald-100 text-emerald-900 border border-emerald-300/80 text-xs sm:text-sm font-semibold px-4.5 py-2.5 rounded-lg transition-colors"
-            >
-              <WhatsAppIcon className="w-4 h-4 text-emerald-600" />
-              <span>Ask on WhatsApp</span>
-            </a>
+          {/* FAQ Accordion Stack */}
+          <div className="space-y-4">
+            {faqs.map((faq, index) => {
+              const isOpen = openIndex === index;
+              return (
+                <div
+                  key={index}
+                  className="bg-white rounded-xl border border-sky-200/80 shadow-[0_2px_12px_rgba(2,132,199,0.03)] hover:border-sky-300 transition-colors overflow-hidden"
+                >
+                  <button
+                    type="button"
+                    onClick={() => toggleFaq(index)}
+                    aria-expanded={isOpen}
+                    aria-controls={`faq-answer-${index}`}
+                    className="w-full p-5 sm:p-6 flex items-center justify-between gap-4 text-left font-bold text-[#0F172A] hover:text-[#0284C7] transition-colors focus-visible:outline-[#00B8F0]"
+                  >
+                    <span className="text-[15px] sm:text-base leading-snug">
+                      {faq.question}
+                    </span>
+                    <div
+                      className={`w-7 h-7 rounded-full flex items-center justify-center shrink-0 border transition-all duration-200 ${
+                        isOpen
+                          ? "bg-[#0284C7] text-white border-[#0284C7] rotate-180"
+                          : "bg-slate-50 text-slate-500 border-slate-200"
+                      }`}
+                      aria-hidden="true"
+                    >
+                      <ChevronDown className="w-4 h-4" />
+                    </div>
+                  </button>
+
+                  {isOpen && (
+                    <div
+                      id={`faq-answer-${index}`}
+                      role="region"
+                      className="px-5 sm:px-6 pb-6 pt-0"
+                    >
+                      <p className="pt-2 text-[14px] sm:text-[15px] text-[#475569] leading-relaxed font-normal">
+                        {faq.answer}
+                      </p>
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+
+          {/* Bottom Support Bar with standardized card padding */}
+          <div className="mt-10 sm:mt-12 bg-white rounded-2xl border border-sky-200/80 p-6 sm:p-8 shadow-xs text-center flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div className="text-center sm:text-left">
+              <h3 className="text-base font-bold text-[#0F172A]">
+                Have a question not listed here?
+              </h3>
+              <p className="text-xs sm:text-[13.5px] text-[#64748B] mt-1">
+                We are always happy to answer your specific questions with zero sales pressure.
+              </p>
+            </div>
+
+            <div className="flex flex-wrap items-center justify-center gap-3 shrink-0 w-full sm:w-auto">
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-1.5 bg-[#0F172A] hover:bg-slate-800 text-white text-xs sm:text-sm font-semibold px-5 py-2.5 rounded-lg transition-colors"
+              >
+                <span>Send an Inquiry</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
+              <a
+                href={`https://wa.me/916304299387?text=${encodeURIComponent(
+                  "Hello! I have a question about your digital services that was not in the FAQ."
+                )}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Ask your question directly on WhatsApp"
+                className="inline-flex items-center gap-2 bg-emerald-50 hover:bg-emerald-100 text-emerald-900 border border-emerald-300/80 text-xs sm:text-sm font-semibold px-5 py-2.5 rounded-lg transition-colors"
+              >
+                <WhatsAppIcon className="w-4 h-4 text-emerald-600" />
+                <span>Ask on WhatsApp</span>
+              </a>
+            </div>
           </div>
         </div>
       </div>

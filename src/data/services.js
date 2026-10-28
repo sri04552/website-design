@@ -247,7 +247,7 @@ export const servicesData = {
       headline: "The Cost of Slow Customer Follow-Ups",
       points: [
         "Inquiries arriving at night, on weekends, or during busy hours sit unanswered for hours, causing hot prospects to contact competitors.",
-        "Staff spending 2-3 hours daily answering the same 10 repetitive questions (pricing, location, timings, basic catalog).",
+        "Staff spending 2 to 3 hours daily answering the same 10 repetitive questions (pricing, location, timings, basic catalog).",
         "Leads captured in spreadsheets or messaging apps getting lost with zero automated follow-up sequences.",
         "Manual data entry between forms, CRM, invoices, and accounting systems creating human error and operational drag.",
       ],
@@ -255,7 +255,7 @@ export const servicesData = {
     solutionStatement: {
       headline: "Practical AI That Does Real Work for Your Business",
       description:
-        "We build practical, reliable automations that connect your customer communication channels directly to your business systems. No gimmicks—just intelligent assistants that answer common questions accurately, qualify prospects, and notify you instantly when a high-value customer needs your attention.",
+        "We build practical, reliable automations that connect your customer communication channels directly to your business systems. No gimmicks, just intelligent assistants that answer common questions accurately, qualify prospects, and notify you instantly when a high-value customer needs your attention.",
     },
     deliverables: [
       {

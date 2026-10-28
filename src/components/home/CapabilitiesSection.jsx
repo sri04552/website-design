@@ -129,7 +129,7 @@ export function CapabilitiesSection() {
   const servicesJsonLd = {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    name: `${siteConfig.name} - Core Services`,
+    name: `${siteConfig.name}: Core Services`,
     description:
       "Website design, Meta & Google ads, workflow automation, graphic design, and AI video generation for businesses in Eluru and pan-India.",
     itemListElement: capabilities.map((item, index) => ({
@@ -161,7 +161,7 @@ export function CapabilitiesSection() {
     <section
       id="capabilities"
       aria-labelledby="capabilities-heading"
-      className="relative py-[48px] bg-[#F8FAFC] border-t border-slate-200/90 text-[#0F172A]"
+      className="relative py-16 sm:py-20 lg:py-24 bg-[#F8FAFC] border-t border-slate-200/90 text-[#0F172A]"
     >
       {/* Schema.org ItemList Microdata */}
       <script
@@ -224,18 +224,18 @@ export function CapabilitiesSection() {
                   />
                 </figure>
 
-                {/* Compact Card Content */}
-                <div className="p-5 sm:p-5.5 flex flex-col flex-1 justify-between">
+                {/* Compact Card Content with standardized padding */}
+                <div className="p-6 sm:p-8 flex flex-col flex-1 justify-between">
                   <div>
                     {/* Tag & Icon Row */}
-                    <div className="flex items-center justify-between gap-2 mb-2.5">
+                    <div className="flex items-center justify-between gap-2 mb-3">
                       <span
-                        className={`inline-block px-2 py-0.5 rounded text-[10.5px] font-bold tracking-wider uppercase border ${item.tagColor}`}
+                        className={`inline-block px-2.5 py-0.5 rounded text-[11px] font-bold tracking-wider uppercase border ${item.tagColor}`}
                       >
                         {item.tag}
                       </span>
-                      <div className="w-7 h-7 rounded-md bg-slate-100 flex items-center justify-center text-slate-700 group-hover:bg-[#00B8F0]/10 group-hover:text-[#00B8F0] transition-colors">
-                        <Icon className="w-3.5 h-3.5" aria-hidden="true" />
+                      <div className="w-8 h-8 rounded-lg bg-slate-100 flex items-center justify-center text-slate-700 group-hover:bg-[#00B8F0]/10 group-hover:text-[#00B8F0] transition-colors">
+                        <Icon className="w-4 h-4" aria-hidden="true" />
                       </div>
                     </div>
 
@@ -247,14 +247,14 @@ export function CapabilitiesSection() {
                       {item.title}
                     </h3>
 
-                    {/* Concise 2-line Description strictly 14px-15px */}
-                    <p className="mt-2 text-[14px] sm:text-[14.5px] text-[#475569] leading-[1.6] font-normal">
+                    {/* Concise Description */}
+                    <p className="mt-2.5 text-[14px] sm:text-[15px] text-[#475569] leading-relaxed font-normal">
                       {item.description}
                     </p>
                   </div>
 
-                  {/* Card Bottom CTA Link */}
-                  <div className="mt-4 pt-3.5 border-t border-slate-100">
+                  {/* Card Bottom CTA Link without divider lines */}
+                  <div className="mt-5">
                     <Link
                       href={item.href}
                       aria-label={item.ctaAriaLabel}
@@ -273,10 +273,10 @@ export function CapabilitiesSection() {
           })}
         </div>
 
-        {/* Compact Consultation Strip */}
+        {/* Consultation Strip with standardized card padding */}
         <aside
           aria-label="Free Consultation & Growth Audit"
-          className="mt-8 sm:mt-10 bg-white rounded-xl border border-slate-200/90 p-4 sm:p-5 shadow-xs flex flex-col sm:flex-row items-center justify-between gap-3.5"
+          className="mt-8 sm:mt-10 bg-white rounded-2xl border border-slate-200/90 p-6 sm:p-8 shadow-xs flex flex-col sm:flex-row items-center justify-between gap-4"
         >
           <div className="text-center sm:text-left">
             <h4 className="text-sm font-bold text-[#0F172A]">
