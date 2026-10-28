@@ -155,7 +155,7 @@ export function FaqSection() {
             <div className="flex flex-wrap items-center justify-center gap-3 shrink-0 w-full sm:w-auto">
               <Link
                 href="/contact"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#0F172A] hover:bg-slate-800 text-white text-sm sm:text-base font-semibold px-6 py-3.5 rounded-lg transition-colors min-h-[48px]"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#0F172A] hover:bg-slate-800 text-white text-base font-semibold px-6 py-3.5 rounded-lg transition-colors min-h-[48px]"
               >
                 <span>Send an Enquiry</span>
                 <ArrowRight className="w-4 h-4" />
@@ -167,7 +167,7 @@ export function FaqSection() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Ask your question directly"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-emerald-50 hover:bg-emerald-100 text-emerald-900 border border-emerald-300/80 text-sm sm:text-base font-semibold px-6 py-3.5 rounded-lg transition-colors min-h-[48px]"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-emerald-50 hover:bg-emerald-100 text-emerald-900 border border-emerald-300/80 text-base font-semibold px-6 py-3.5 rounded-lg transition-colors min-h-[48px]"
               >
                 <span>Ask a Quick Question</span>
               </a>

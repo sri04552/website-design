@@ -257,7 +257,7 @@ export function CapabilitiesSection() {
                     <Link
                       href={item.href}
                       aria-label={item.ctaAriaLabel}
-                      className="inline-flex items-center gap-1.5 text-xs sm:text-[13px] font-semibold text-[#0D8C7D] hover:text-[#0B7568] transition-colors group/link"
+                      className="inline-flex items-center gap-1.5 text-[14.5px] sm:text-[14px] font-semibold text-[#0D8C7D] hover:text-[#0B7568] transition-colors group/link"
                     >
                       <span>{item.ctaText}</span>
                       <ArrowRight
@@ -292,7 +292,7 @@ export function CapabilitiesSection() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Discuss digital services for your business"
-            className="inline-flex items-center justify-center gap-2 bg-[#0D8C7D] hover:bg-[#0B7568] active:bg-[#085E54] text-white text-sm sm:text-base font-semibold px-6 py-3.5 rounded-lg shadow-sm hover:shadow transition-all shrink-0 min-h-[48px]"
+            className="inline-flex items-center justify-center gap-2 bg-[#0D8C7D] hover:bg-[#0B7568] active:bg-[#085E54] text-white text-base font-semibold px-6 py-3.5 rounded-lg shadow-sm hover:shadow transition-all shrink-0 min-h-[48px]"
           >
             <span>Discuss Your Project</span>
             <ArrowRight className="w-4 h-4" aria-hidden="true" />

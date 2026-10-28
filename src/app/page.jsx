@@ -99,7 +99,7 @@ export default function HomePage() {
             {/* Primary CTA - Darkened Teal */}
             <Link
               href="/contact"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#0D8C7D] hover:bg-[#0B7568] active:bg-[#085E54] text-white font-semibold text-sm sm:text-base px-6 sm:px-7 py-3.5 rounded-lg shadow-sm hover:shadow transition-all duration-150 min-h-[48px] focus-visible:outline-[#00B8F0]"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#0D8C7D] hover:bg-[#0B7568] active:bg-[#085E54] text-white font-semibold text-base px-6 sm:px-7 py-3.5 rounded-lg shadow-sm hover:shadow transition-all duration-150 min-h-[48px] focus-visible:outline-[#00B8F0]"
             >
               <span>Start a Project</span>
               <Sparkles className="w-4 h-4 text-white/90" />
@@ -108,7 +108,7 @@ export default function HomePage() {
             {/* Secondary CTA - High-contrast visible button */}
             <Link
               href="/services"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-slate-800/90 hover:bg-slate-700/90 active:bg-slate-800 text-white border border-slate-600 hover:border-slate-400 font-semibold text-sm sm:text-base px-6 sm:px-7 py-3.5 rounded-lg transition-all duration-150 shadow-xs hover:shadow min-h-[48px] focus-visible:outline-[#00B8F0]"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-slate-800/90 hover:bg-slate-700/90 active:bg-slate-800 text-white border border-slate-600 hover:border-slate-400 font-semibold text-base px-6 sm:px-7 py-3.5 rounded-lg transition-all duration-150 shadow-xs hover:shadow min-h-[48px] focus-visible:outline-[#00B8F0]"
             >
               <span>Explore Services</span>
               <ArrowRight className="w-4 h-4 text-slate-300 group-hover:text-white transition-colors" />

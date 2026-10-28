@@ -319,12 +319,12 @@ export function ContactForm({ preselectedService = "" }) {
           {status === "submitting" ? (
             <>
               <Loader2 className="w-4 h-4 animate-spin" />
-              <span>Sending Inquiry...</span>
+              <span>Sending Enquiry...</span>
             </>
           ) : (
             <>
               <Send className="w-4 h-4" />
-              <span>Send Project Inquiry</span>
+              <span>Send Project Enquiry</span>
             </>
           )}
         </Button>

@@ -128,7 +128,7 @@ export function ProcessSection() {
           <div className="inline-flex flex-wrap items-center justify-center gap-3 w-full sm:w-auto">
             <Link
               href="/contact"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#0F172A] hover:bg-slate-800 active:bg-slate-900 text-white text-sm sm:text-base font-semibold px-6 py-3.5 rounded-lg shadow-sm hover:shadow transition-all min-h-[48px]"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#0F172A] hover:bg-slate-800 active:bg-slate-900 text-white text-base font-semibold px-6 py-3.5 rounded-lg shadow-sm hover:shadow transition-all min-h-[48px]"
             >
               <span>Contact Us for a Quote</span>
               <ArrowRight className="w-4 h-4" />
@@ -140,7 +140,7 @@ export function ProcessSection() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Direct project consultation"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-emerald-50 hover:bg-emerald-100 active:bg-emerald-200 text-emerald-900 border border-emerald-300/80 text-sm sm:text-base font-semibold px-6 py-3.5 rounded-lg transition-colors min-h-[48px]"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-emerald-50 hover:bg-emerald-100 active:bg-emerald-200 text-emerald-900 border border-emerald-300/80 text-base font-semibold px-6 py-3.5 rounded-lg transition-colors min-h-[48px]"
             >
               <span>Direct Project Consultation</span>
             </a>

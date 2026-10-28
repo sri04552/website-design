@@ -117,7 +117,7 @@ export function BottleneckSection() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Discuss fixing your website bottlenecks"
-                className="w-full inline-flex items-center justify-center gap-2 bg-[#0D8C7D] hover:bg-[#0B7568] active:bg-[#085E54] text-white text-sm sm:text-base font-semibold px-6 py-3.5 rounded-lg shadow-sm hover:shadow transition-all min-h-[48px]"
+                className="w-full inline-flex items-center justify-center gap-2 bg-[#0D8C7D] hover:bg-[#0B7568] active:bg-[#085E54] text-white text-base font-semibold px-6 py-3.5 rounded-lg shadow-sm hover:shadow transition-all min-h-[48px]"
               >
                 <span>Fix Your Website Leaks</span>
                 <ArrowRight className="w-4 h-4" aria-hidden="true" />
