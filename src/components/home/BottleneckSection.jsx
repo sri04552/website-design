@@ -135,11 +135,14 @@ export function BottleneckSection() {
                 aria-labelledby={`heading-${item.id}`}
                 className="bg-white rounded-2xl border border-sky-200/80 px-4 py-6 sm:p-8 shadow-[0_4px_20px_rgba(2,132,199,0.04)] hover:shadow-[0_8px_28px_rgba(2,132,199,0.08)] transition-all duration-200 flex flex-col justify-between"
               >
-                {/* Module Category Tag without divider lines or badges */}
+                {/* Module Category Heading */}
                 <div className="mb-4">
-                  <span className="text-xs font-bold text-[#0284C7] uppercase tracking-wider">
+                  <h3
+                    id={`heading-${item.id}`}
+                    className="text-lg sm:text-xl font-bold text-[#0284C7] uppercase tracking-wide leading-snug"
+                  >
                     {item.tag}
-                  </span>
+                  </h3>
                 </div>
 
                 {/* The Problem Block with red eyebrow badge (no icons) */}
@@ -149,12 +152,9 @@ export function BottleneckSection() {
                       The Problem
                     </span>
                   </div>
-                  <h3
-                    id={`heading-${item.id}`}
-                    className="text-base sm:text-lg font-bold text-[#0F172A] leading-snug"
-                  >
+                  <h4 className="text-base sm:text-lg font-bold text-[#0F172A] leading-snug">
                     {item.problemTitle}
-                  </h3>
+                  </h4>
                   <p className="text-[16px] sm:text-[17px] text-[#475569] leading-relaxed font-normal">
                     {item.problemDescription}
                   </p>
