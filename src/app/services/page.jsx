@@ -12,9 +12,6 @@ import {
   Sparkles,
   PhoneCall,
   Search,
-  Globe2,
-  MessageSquare,
-  Cpu,
   Layers,
 } from "lucide-react";
 
@@ -268,60 +265,6 @@ export default function ServicesPage() {
         </Container>
       </section>
 
-      {/* Serving Across India & Worldwide Section with exact 48px top and bottom padding */}
-      <section className="bg-white py-[48px] border-b border-slate-200">
-        <Container>
-          <div className="rounded-3xl bg-gradient-to-br from-sky-50/60 via-white to-blue-50/60 border border-sky-200/90 p-6 sm:p-10 lg:p-12 shadow-[0_8px_30px_rgba(2,132,199,0.06)]">
-            <div className="max-w-3xl mx-auto text-center space-y-3 mb-10">
-              <h2 className="font-heading text-2xl sm:text-3.5xl font-extrabold text-[#0F172A] tracking-tight leading-tight">
-                Serving Growing Businesses Across India &amp; Globally
-              </h2>
-              <p className="text-[16px] sm:text-[15px] text-[#475569] leading-relaxed font-normal">
-                As an independent digital agency, we deliver complete end-to-end digital solutions for businesses in every state and industry, backed by seamless remote collaboration and proven growth frameworks.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="bg-white rounded-2xl border border-sky-100 p-6 space-y-3 shadow-2xs">
-                <div className="w-9 h-9 rounded-lg bg-sky-50 text-[#0284C7] flex items-center justify-center">
-                  <MessageSquare className="w-5 h-5" />
-                </div>
-                <h3 className="font-bold text-slate-900 text-base">
-                  Clear Multi-Lingual Collaboration
-                </h3>
-                <p className="text-xs sm:text-[13.5px] text-slate-600 leading-relaxed font-normal">
-                  Smooth, transparent communication in English and regional languages so your business requirements, target audience, and goals are understood and executed with precision.
-                </p>
-              </div>
-
-              <div className="bg-white rounded-2xl border border-sky-100 p-6 space-y-3 shadow-2xs">
-                <div className="w-9 h-9 rounded-lg bg-teal-50 text-[#0D8C7D] flex items-center justify-center">
-                  <Cpu className="w-5 h-5" />
-                </div>
-                <h3 className="font-bold text-slate-900 text-base">
-                  Frictionless Remote Execution
-                </h3>
-                <p className="text-xs sm:text-[13.5px] text-slate-600 leading-relaxed font-normal">
-                  From real-time preview links and digital asset approvals to WhatsApp status updates, our cloud-first workflow keeps you informed at every milestone wherever your company is based.
-                </p>
-              </div>
-
-              <div className="bg-white rounded-2xl border border-sky-100 p-6 space-y-3 shadow-2xs">
-                <div className="w-9 h-9 rounded-lg bg-blue-50 text-[#0284C7] flex items-center justify-center">
-                  <ShieldCheck className="w-5 h-5" />
-                </div>
-                <h3 className="font-bold text-slate-900 text-base">
-                  Dedicated Direct Attention
-                </h3>
-                <p className="text-xs sm:text-[13.5px] text-slate-600 leading-relaxed font-normal">
-                  Work directly with our core specialists rather than through middle agencies. We provide dedicated attention, transparent reporting, and high accountability for every project.
-                </p>
-              </div>
-            </div>
-          </div>
-        </Container>
-      </section>
-
       {/* Services FAQ Section with exact 48px top and bottom padding */}
       <section className="bg-[#F0F7FF] py-[48px] border-b border-sky-100">
         <Container>
@@ -341,7 +284,7 @@ export default function ServicesPage() {
             </p>
           </div>
 
-          <div className="max-w-3xl mx-auto">
+          <div className="max-w-5xl mx-auto">
             <ServicesContactForm />
           </div>
         </Container>
