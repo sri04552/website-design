@@ -272,21 +272,10 @@ export default function ServicesPage() {
         </Container>
       </section>
 
-      {/* Last Section: Contact & Project Proposal Form with All Services Dropdown */}
+      {/* Last Section: Project Proposal & Discussion Form */}
       <section id="proposal-form" className="bg-[#F8FAFC] py-[48px] border-t border-slate-200/90 text-[#0F172A]">
         <Container>
-          <div className="max-w-3xl mx-auto text-center mb-8 space-y-2.5">
-            <h2 className="font-heading text-2xl sm:text-3.5xl lg:text-[36px] font-extrabold tracking-tight text-[#0F172A] leading-tight">
-              Ready to Scale Your Business? Let&apos;s Discuss Your Project
-            </h2>
-            <p className="text-[16px] sm:text-[15px] text-[#475569] leading-relaxed font-normal max-w-2xl mx-auto">
-              Fill out the form below to receive a customized proposal and transparent pricing for your digital requirements. We typically respond within 24 hours.
-            </p>
-          </div>
-
-          <div className="max-w-5xl mx-auto">
-            <ServicesContactForm />
-          </div>
+          <ServicesContactForm />
         </Container>
       </section>
     </>
