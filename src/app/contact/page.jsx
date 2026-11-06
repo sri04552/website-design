@@ -19,7 +19,7 @@ import {
 export const metadata = {
   title: "Contact Us | Start Your Project | Amogha Digital",
   description:
-    "Get in touch with Amogha Digital for custom website development, Meta & Google ads management, and 24/7 AI WhatsApp automation. Fast 24-hour turnaround.",
+    "Get in touch with Amogha Digital for custom website development, Meta & Google ads management, and 24/7 AI WhatsApp automation. Fast replies within minutes.",
   keywords: [
     "Contact Amogha Digital",
     "Hire Web Developer India",
@@ -98,7 +98,7 @@ export default function ContactPage() {
             <h1 className="font-heading text-3xl sm:text-5xl lg:text-[56px] font-extrabold tracking-tight text-[#F5F7FC] leading-[1.12]">
               Let&apos;s Discuss Your Project.{" "}
               <span className="block mt-1 sm:mt-2 text-[#00B8F0]">
-                Direct Feedback Within 24 Hours.
+                Direct Replies Within Minutes.
               </span>
             </h1>
 
@@ -146,10 +146,10 @@ export default function ContactPage() {
                 <div className="space-y-1">
                   <div className="flex items-center gap-2 text-slate-900 font-bold text-sm">
                     <Clock className="w-4 h-4 text-[#0284C7]" />
-                    <span>24-Hour Diagnostic Response</span>
+                    <span>Replies Within Minutes</span>
                   </div>
                   <p className="text-xs sm:text-[13.5px] text-[#475569] leading-relaxed pl-6">
-                    Every message is personally reviewed and answered within 24 business hours.
+                    Every message is personally reviewed and answered within minutes.
                   </p>
                 </div>
 
@@ -268,7 +268,7 @@ export default function ContactPage() {
                 How fast will I receive a response?
               </h3>
               <p className="text-[14px] sm:text-[13.5px] text-slate-600 leading-relaxed font-normal">
-                We review every inquiry personally and respond within 24 business hours with an initial scope review, technical recommendation, and price estimate.
+                We review every inquiry immediately and reply within minutes with an initial scope review, technical recommendation, and price estimate. No waiting around.
               </p>
             </div>
 

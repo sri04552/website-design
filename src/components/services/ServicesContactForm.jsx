@@ -186,7 +186,7 @@ export function ServicesContactForm() {
           </h3>
           <p className="text-[16px] sm:text-[15px] text-[#475569] leading-relaxed max-w-md mx-auto">
             Thank you for reaching out. We have logged your request for{" "}
-            <span className="font-semibold text-slate-900">{selectedServiceObj?.label}</span>. We will review your project details and follow up with a proposal within 24 hours.
+            <span className="font-semibold text-slate-900">{selectedServiceObj?.label}</span>. We are reviewing your project details right now and will reply within minutes.
           </p>
         </div>
 
@@ -236,10 +236,10 @@ export function ServicesContactForm() {
             <div className="space-y-1">
               <div className="flex items-center gap-2 text-slate-900 font-bold text-sm">
                 <Clock className="w-4 h-4 text-[#0284C7]" />
-                <span>24-Hour Turnaround</span>
+                <span>Replies Within Minutes</span>
               </div>
               <p className="text-xs sm:text-[13.5px] text-[#475569] leading-relaxed pl-6">
-                Direct response and scope outline within 24 business hours.
+                Direct response and scope outline within minutes, not days.
               </p>
             </div>
 

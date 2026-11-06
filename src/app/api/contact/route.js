@@ -147,7 +147,7 @@ export async function POST(request) {
     return NextResponse.json(
       {
         success: true,
-        message: "Thank you for reaching out! We have received your inquiry and will respond within 24 hours.",
+        message: "Thank you for reaching out! We have received your inquiry and will respond within minutes.",
       },
       { status: 200 }
     );
