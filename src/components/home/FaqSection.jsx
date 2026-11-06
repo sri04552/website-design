@@ -62,7 +62,7 @@ export function FaqSection() {
     <section
       id="faq"
       aria-labelledby="faq-heading"
-      className="relative py-[24px] lg:py-[48px] bg-[#F0F7FF] border-t border-sky-100 text-[#0F172A]"
+      className="relative py-[48px] bg-[#F0F7FF] border-t border-sky-100 text-[#0F172A]"
     >
       {/* Schema.org FAQ Microdata */}
       <script

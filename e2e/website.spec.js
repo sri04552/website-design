@@ -69,7 +69,7 @@ test.describe('Midnight Signal Hero & Website Suite', () => {
   test('Services overview page renders', async ({ page }) => {
     await page.goto('/services');
     await expect(page).toHaveTitle(/Services/i);
-    await expect(page.locator('h1')).toContainText('Digital Services');
+    await expect(page.locator('h1')).toContainText('High-Performance Systems');
   });
 
   // 3. Individual Service Pages

@@ -7,7 +7,6 @@ import { ServicesFaqAccordion } from "@/components/services/ServicesFaqAccordion
 import {
   ShieldCheck,
   Zap,
-  CheckCircle2,
   ArrowRight,
   Sparkles,
   PhoneCall,
@@ -15,6 +14,7 @@ import {
   Globe2,
   MessageSquare,
   Cpu,
+  Bot,
 } from "lucide-react";
 
 export const metadata = {
@@ -96,15 +96,15 @@ export default function ServicesPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      {/* Hero Section (Deep Midnight Theme with Layered Radial Lighting & Masked Grid) */}
-      <section className="relative bg-[#0B1220] border-b border-[#29374D] pt-28 sm:pt-36 pb-16 sm:pb-24 overflow-hidden">
+      {/* Hero Section: Modern, Non-Traditional Editorial Layout with 48px Bottom Padding */}
+      <section className="relative bg-[#0B1220] border-b border-[#29374D] pt-[123px] pb-[48px] overflow-hidden">
         {/* Layered Radial Mesh Lighting */}
         <div
           className="absolute inset-0 pointer-events-none z-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_25%,rgba(20,35,61,0.9)_0%,rgba(11,18,32,1)_100%)]"
           aria-hidden="true"
         />
 
-        {/* Subtle Zero-Overhead CSS Architectural Grid */}
+        {/* Zero-Overhead CSS Architectural Grid */}
         <div
           className="absolute inset-0 pointer-events-none z-0 bg-[linear-gradient(to_right,#14233D_1px,transparent_1px),linear-gradient(to_bottom,#14233D_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_40%,#000_65%,transparent_100%)] opacity-30"
           aria-hidden="true"
@@ -113,28 +113,30 @@ export default function ServicesPage() {
         <Container className="relative z-10">
           <Breadcrumbs items={[{ label: "Services", href: "/services" }]} />
 
-          <div className="max-w-4xl mt-8 space-y-6">
+          <div className="max-w-4xl mt-6 space-y-6">
             {/* Eyebrow Badge matching Homepage */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#29374D] bg-[#14233D]/80 backdrop-blur-xs shadow-xs">
               <Sparkles className="w-3.5 h-3.5 text-[#00B8F0] shrink-0" aria-hidden="true" />
               <span className="text-[11px] sm:text-xs font-semibold tracking-wider text-[#00B8F0] uppercase">
-                Digital Presence to Business Systems
+                DIGITAL SYSTEMS &amp; CAPABILITIES
               </span>
             </div>
 
-            {/* Cinematic Main H1 Title */}
-            <h1 className="font-heading text-3xl sm:text-4.5xl lg:text-5.5xl font-extrabold tracking-tight text-[#F5F7FC] leading-[1.12]">
-              Digital Services &amp; Growth Systems Engineered for{" "}
-              <span className="text-[#00B8F0]">Measurable Revenue</span>
+            {/* High-Impact Headline */}
+            <h1 className="font-heading text-3xl sm:text-5xl lg:text-[56px] font-extrabold tracking-tight text-[#F5F7FC] leading-[1.12]">
+              High-Performance Systems.{" "}
+              <span className="block mt-1 sm:mt-2">
+                Built for <span className="text-[#00B8F0]">Predictable Revenue</span>.
+              </span>
             </h1>
 
             {/* Supporting Paragraph (16px mobile, 15px desktop matching homepage) */}
-            <p className="text-[16px] sm:text-[15px] text-[#9BAAC2] leading-[1.75] font-normal max-w-3xl">
-              We engineer custom, mobile-first websites that load in under 1.5 seconds, run targeted Meta and Google ad campaigns that produce qualified buyer inquiries, and deploy 24/7 WhatsApp AI automation that saves your team hours every week. Built to scale modern businesses seamlessly.
+            <p className="text-[16px] sm:text-[15px] text-[#9BAAC2] leading-[1.75] font-normal max-w-2xl">
+              Engineering custom websites with sub-1.5s load speeds, targeted Meta and Google advertising funnels, and 24/7 automated WhatsApp workflows designed to capture and convert qualified buyers.
             </p>
 
             {/* Horizontally Aligned Action Buttons with Standard min-h-[48px] */}
-            <div className="pt-2 flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
+            <div className="pt-1 flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
               <Link
                 href="/contact"
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#0D8C7D] hover:bg-[#0B7568] active:bg-[#085E54] text-white font-semibold text-base px-7 py-3.5 rounded-lg shadow-sm hover:shadow transition-all min-h-[48px]"
@@ -151,14 +153,30 @@ export default function ServicesPage() {
                 <ArrowRight className="w-4 h-4 text-[#00B8F0]" />
               </a>
             </div>
+
+            {/* Modern 3-Pillar Architectural Benchmark Strip */}
+            <div className="pt-4 border-t border-[#29374D]/80 grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs sm:text-[13px] text-[#9BAAC2]">
+              <div className="flex items-center gap-2">
+                <Zap className="w-4 h-4 text-[#00B8F0] shrink-0" />
+                <span>Sub-1.5s Mobile Speed Standard</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <ShieldCheck className="w-4 h-4 text-[#0D8C7D] shrink-0" />
+                <span>100% Direct Code Ownership</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Bot className="w-4 h-4 text-[#00B8F0] shrink-0" />
+                <span>24/7 Automated Lead Capture</span>
+              </div>
+            </div>
           </div>
         </Container>
       </section>
 
-      {/* Main Services Section (Atmospheric Soft Sky Tint Background) */}
+      {/* Main Services Section with exact 48px top and bottom padding */}
       <section
         id="service-grid"
-        className="relative bg-[#F0F7FF] py-16 sm:py-24 border-b border-sky-100 text-[#0F172A] overflow-hidden"
+        className="relative bg-[#F0F7FF] py-[48px] border-b border-sky-100 text-[#0F172A] overflow-hidden"
       >
         {/* Soft Radial Ambient Wash */}
         <div
@@ -167,15 +185,15 @@ export default function ServicesPage() {
         />
 
         <Container className="relative z-10">
-          <div className="max-w-3xl mb-12 sm:mb-16">
-            {/* Eyebrow Pill */}
+          <div className="max-w-3xl mb-10">
+            {/* Eyebrow Pill matching Homepage */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-sky-200/90 text-sky-800 text-xs font-semibold tracking-wider uppercase mb-3.5 shadow-xs">
               <Sparkles className="w-3.5 h-3.5 text-[#00B8F0]" aria-hidden="true" />
               <span>CORE CAPABILITIES &amp; DELIVERABLES</span>
             </div>
 
             {/* Main Section H2 matching Homepage */}
-            <h2 className="font-heading text-2xl sm:text-3.5xl lg:text-[36px] font-extrabold tracking-tight text-[#0F172A] leading-[1.25]">
+            <h2 className="font-heading text-2xl sm:text-3.5xl lg:text-[34px] font-extrabold tracking-tight text-[#0F172A] leading-[1.25]">
               Digital Services Engineered for Real Business Growth
             </h2>
 
@@ -185,15 +203,15 @@ export default function ServicesPage() {
             </p>
           </div>
 
-          {/* Unique, Modern Filterable Grid with Rich Visual Assets */}
+          {/* Unique, Modern Filterable Grid with Streamlined Cards */}
           <ServicesFilterableGrid />
         </Container>
       </section>
 
-      {/* Client Assurance & Guarantees Strip */}
-      <section className="bg-[#F8FAFC] py-16 sm:py-20 border-b border-slate-200 text-[#0F172A]">
+      {/* Client Assurance & Guarantees Strip with exact 48px top and bottom padding */}
+      <section className="bg-[#F8FAFC] py-[48px] border-b border-slate-200 text-[#0F172A]">
         <Container>
-          <div className="max-w-3xl mx-auto text-center mb-10 sm:mb-12">
+          <div className="max-w-3xl mx-auto text-center mb-8">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-slate-200 text-sky-800 text-xs font-semibold tracking-wider uppercase mb-3 shadow-xs">
               <ShieldCheck className="w-3.5 h-3.5 text-[#0D8C7D]" />
               <span>CLIENT ASSURANCE &amp; PEACE OF MIND</span>
@@ -255,8 +273,8 @@ export default function ServicesPage() {
         </Container>
       </section>
 
-      {/* Serving Telugu States & Pan-India Section (Atmospheric Gradient Container) */}
-      <section className="bg-white py-16 sm:py-20 border-b border-slate-200">
+      {/* Serving Telugu States & Pan-India Section with exact 48px top and bottom padding */}
+      <section className="bg-white py-[48px] border-b border-slate-200">
         <Container>
           <div className="rounded-3xl bg-gradient-to-br from-sky-50/60 via-white to-blue-50/60 border border-sky-200/90 p-6 sm:p-10 lg:p-12 shadow-[0_8px_30px_rgba(2,132,199,0.06)]">
             <div className="max-w-3xl mx-auto text-center space-y-3 mb-10">
@@ -313,58 +331,10 @@ export default function ServicesPage() {
         </Container>
       </section>
 
-      {/* Services FAQ Section (Interactive Accordion matching Homepage) */}
-      <section className="bg-[#F0F7FF] py-16 sm:py-24 border-b border-sky-100">
+      {/* Services FAQ Section with exact 48px top and bottom padding (Clean End of Page) */}
+      <section className="bg-[#F0F7FF] py-[48px] border-b border-sky-100">
         <Container>
           <ServicesFaqAccordion />
-        </Container>
-      </section>
-
-      {/* Final Diagnostic Conversion CTA (Dark Midnight Theme matching Homepage) */}
-      <section className="relative bg-[#0B1220] py-16 sm:py-24 text-center overflow-hidden">
-        {/* Deep Atmospheric Glow */}
-        <div
-          className="absolute inset-0 pointer-events-none z-0 bg-[radial-gradient(ellipse_70%_60%_at_50%_50%,rgba(20,35,61,0.9)_0%,rgba(11,18,32,1)_100%)]"
-          aria-hidden="true"
-        />
-
-        <Container className="relative z-10">
-          <div className="max-w-3xl mx-auto space-y-6">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#29374D] bg-[#14233D] text-[11px] font-semibold text-[#00B8F0] uppercase tracking-wider shadow-xs">
-              <Sparkles className="w-3.5 h-3.5 text-[#00B8F0]" />
-              <span>Zero-Pressure Project Consultation</span>
-            </div>
-
-            <h2 className="font-heading text-2xl sm:text-4xl font-extrabold text-[#F5F7FC] tracking-tight leading-tight">
-              Not Sure Which Solution Fits Your Current Business Stage?
-            </h2>
-
-            <p className="text-[16px] sm:text-[15px] text-[#9BAAC2] leading-relaxed font-normal max-w-2xl mx-auto">
-              Share your current business website URL or outline your growth objectives. We will analyze your digital footprint and provide a clear, prioritized action plan with zero sales pressure.
-            </p>
-
-            <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link
-                href="/contact"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#0D8C7D] hover:bg-[#0B7568] active:bg-[#085E54] text-white font-semibold text-base px-7 py-3.5 rounded-lg shadow-sm hover:shadow transition-all min-h-[48px]"
-              >
-                <span>Request Project Proposal</span>
-                <Sparkles className="w-4 h-4 text-white/90" />
-              </Link>
-
-              <a
-                href={`https://wa.me/916304299387?text=${encodeURIComponent(
-                  "Hello! I am reviewing your services page and would like guidance on which solution fits my business best."
-                )}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#14233D] hover:bg-[#1A2C4C] text-[#F5F7FC] font-semibold text-base px-6 py-3.5 rounded-lg border border-[#29374D] hover:border-[#00B8F0]/40 transition-all min-h-[48px]"
-              >
-                <span>Direct WhatsApp Consultation</span>
-                <ArrowRight className="w-4 h-4 text-[#00B8F0]" />
-              </a>
-            </div>
-          </div>
         </Container>
       </section>
     </>

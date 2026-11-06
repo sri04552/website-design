@@ -14,7 +14,7 @@ export function Footer() {
   return (
     <footer className="bg-[#0B1220] text-[#9BAAC2] border-t border-[#29374D]">
       {/* Main Footer Links */}
-      <div className="py-12 sm:py-16">
+      <div className="py-[48px]">
         <Container>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 sm:gap-12">
             {/* Column 1: Studio Identity */}

@@ -160,7 +160,7 @@ export function CapabilitiesSection() {
     <section
       id="capabilities"
       aria-labelledby="capabilities-heading"
-      className="relative py-[24px] lg:py-[48px] bg-[#F8FAFC] border-t border-slate-200/90 text-[#0F172A]"
+      className="relative py-[48px] bg-[#F8FAFC] border-t border-slate-200/90 text-[#0F172A]"
     >
       {/* Schema.org ItemList Microdata */}
       <script

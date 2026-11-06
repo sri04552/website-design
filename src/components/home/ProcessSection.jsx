@@ -55,7 +55,7 @@ export function ProcessSection() {
     <section
       id="process"
       aria-labelledby="process-heading"
-      className="relative py-[24px] lg:py-[48px] bg-white border-t border-slate-200/80 text-[#0F172A]"
+      className="relative py-[48px] bg-white border-t border-slate-200/80 text-[#0F172A]"
     >
       {/* Schema.org HowTo Microdata */}
       <script

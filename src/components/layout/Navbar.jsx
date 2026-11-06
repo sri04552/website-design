@@ -23,18 +23,17 @@ export function Navbar() {
 
   // Scroll listener: transparent at top of homepage, sticky white header upon scroll
   useEffect(() => {
-    let ticking = false;
+    let lastScrolled = window.scrollY > 20;
+    setIsScrolled(lastScrolled);
+
     const handleScroll = () => {
-      if (!ticking) {
-        window.requestAnimationFrame(() => {
-          setIsScrolled(window.scrollY > 20);
-          ticking = false;
-        });
-        ticking = true;
+      const scrolled = window.scrollY > 20;
+      if (scrolled !== lastScrolled) {
+        lastScrolled = scrolled;
+        setIsScrolled(scrolled);
       }
     };
 
-    handleScroll();
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -85,7 +84,7 @@ export function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 inset-x-0 z-50 w-full transform-gpu transition-all duration-300 ${
+      className={`fixed top-0 inset-x-0 z-50 w-full transition-[background-color,border-color,box-shadow] duration-200 ${
         isTransparent
           ? "bg-transparent border-b border-transparent text-[#F5F7FC]"
           : "bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm text-[#0F172A]"

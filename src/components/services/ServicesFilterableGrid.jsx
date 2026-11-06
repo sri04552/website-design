@@ -12,8 +12,6 @@ import {
   Video,
   CheckCircle2,
   ArrowRight,
-  AlertCircle,
-  Sparkles,
 } from "lucide-react";
 
 export function ServicesFilterableGrid() {
@@ -41,15 +39,12 @@ export function ServicesFilterableGrid() {
       image: "/assets/website-design.webp",
       imageAlt: "Custom responsive website design and mobile web development",
       tagline:
-        "High-performance, mobile-first websites engineered to load in under 1.5 seconds and turn visitors into direct phone calls and customer enquiries.",
-      problemSolved:
-        "Replaces bloated, slow-loading templates that lose mobile visitors and fail to rank on Google in local search markets.",
+        "High-performance, mobile-first websites engineered to load in under 1.5 seconds and turn visitors into direct customer enquiries.",
       deliverables: [
-        "Sub-1.5s mobile speed on 4G/5G connections (90+ PageSpeed score)",
+        "Sub-1.5s mobile load speed (90+ PageSpeed score)",
         "Direct WhatsApp and click-to-call conversion hooks",
-        "Semantic on-page Local SEO markup and Schema architecture",
+        "Semantic on-page Local SEO markup & Schema data",
       ],
-      idealFor: ["Showrooms & Retailers", "Clinics & Doctors", "Exporters & B2B", "Professional Services"],
     },
     {
       id: "meta-ads",
@@ -64,15 +59,12 @@ export function ServicesFilterableGrid() {
       image: "/assets/meta-ads.webp",
       imageAlt: "Targeted Facebook and Instagram advertising campaigns and lead generation",
       tagline:
-        "Laser-targeted advertising campaigns on Facebook and Instagram that put your offer in front of qualified buyers ready to purchase.",
-      problemSolved:
-        "Stops wasting marketing budget on vanity 'boost post' clicks that generate zero verified customer inquiries.",
+        "Targeted advertising campaigns on Facebook and Instagram that put your offer in front of qualified buyers ready to purchase.",
       deliverables: [
-        "Geo-fenced local buyer audience targeting tailored to your market",
-        "High-converting visual ad creatives and direct-response copywriting",
-        "Direct WhatsApp Messenger lead capture with transparent weekly ROI tracking",
+        "Geo-fenced buyer audience targeting for local markets",
+        "High-converting visual ad creatives & direct-response copy",
+        "Direct WhatsApp lead routing with weekly ROI tracking",
       ],
-      idealFor: ["Retail Showrooms", "Real Estate Promoters", "Hospitals & Diagnostics", "Educational Academies"],
     },
     {
       id: "google-ads",
@@ -88,14 +80,11 @@ export function ServicesFilterableGrid() {
       imageAlt: "High-intent Google Search advertising and PPC campaign management",
       tagline:
         "Capture active buyers the exact second they search for your products or services on Google Search and Google Maps.",
-      problemSolved:
-        "Eliminates wasted ad spend on broad informational queries by filtering negative keywords and bidding on high-intent buying terms.",
       deliverables: [
-        "Keyword hierarchy targeting high-intent local search queries",
-        "Negative keyword exclusion filters preventing wasted ad spend",
-        "Conversion and call tracking setup connected directly to your phone",
+        "Keyword hierarchy targeting high-intent buying searches",
+        "Negative keyword filters preventing wasted budget on wrong clicks",
+        "Conversion and call tracking connected directly to your phone",
       ],
-      idealFor: ["Healthcare Specialists", "Emergency Services", "Industrial Suppliers", "Commercial Services"],
     },
     {
       id: "ai-automation",
@@ -111,14 +100,11 @@ export function ServicesFilterableGrid() {
       imageAlt: "Intelligent automated 24/7 WhatsApp customer service assistant",
       tagline:
         "Intelligent automated assistants that qualify leads, answer customer questions, and dispatch catalog previews on WhatsApp 24/7.",
-      problemSolved:
-        "Stops losing valuable evening and weekend customer inquiries when staff is unavailable to respond.",
       deliverables: [
-        "24/7 automated WhatsApp inquiry bot trained on your products and pricing",
-        "Instant Google Sheets & CRM lead logging with owner notification alerts",
-        "Smart routing rules escalating ready buyers directly to human phone calls",
+        "24/7 automated WhatsApp inquiry bot trained on your products",
+        "Instant Google Sheets & CRM lead sync with phone alerts",
+        "Smart routing escalating ready buyers directly to phone calls",
       ],
-      idealFor: ["High-Volume Retail", "Hospital Appointments", "Wholesale Distributors", "Customer Support"],
     },
     {
       id: "graphic-design",
@@ -134,14 +120,11 @@ export function ServicesFilterableGrid() {
       imageAlt: "Professional vector brand logo and commercial graphic design collateral",
       tagline:
         "Cohesive visual branding, vector logos, social media graphics, and print collateral that establish instant authority and customer trust.",
-      problemSolved:
-        "Fixes blurry, pixelated logos and inconsistent colors across social profiles, signage, and invoices that undermine customer confidence.",
       deliverables: [
-        "Scalable master vector logo package (SVG, high-res PNG, PDF formats)",
-        "Defined brand style guide with official color codes (HEX, CMYK) and typography",
-        "Print-ready promotional banners, visiting cards, and social media template kit",
+        "Scalable master vector logo package (SVG, PNG, PDF)",
+        "Brand style guide with official color codes and typography rules",
+        "Print-ready promotional collateral & social template kit",
       ],
-      idealFor: ["New Brand Launches", "Food & Dairy Brands", "Packaging Products", "Growing Enterprises"],
     },
     {
       id: "ai-video",
@@ -157,14 +140,11 @@ export function ServicesFilterableGrid() {
       imageAlt: "High-retention vertical 9:16 video reels and AI short-form commercials",
       tagline:
         "High-impact 9:16 vertical video ads, localized product showcase reels, and bilingual explainer videos engineered for high retention.",
-      problemSolved:
-        "Solves the bottleneck of needing daily Instagram Reels and YouTube Shorts without paying for expensive camera crews and studio setups.",
       deliverables: [
-        "1080x1920 vertical video reels optimized for Instagram, YouTube & Facebook",
-        "Natural bilingual voiceover audio in clear Telugu and Indian English",
-        "Kinetic on-screen animated captions and strong first-3-second retention hooks",
+        "1080x1920 vertical reels optimized for Instagram & YouTube",
+        "Natural bilingual voiceover audio in Telugu and English",
+        "Kinetic animated subtitles with first-3-second retention hooks",
       ],
-      idealFor: ["Coaching Academies", "Product Showcases", "Event Promotions", "Social Influencer Brands"],
     },
   ];
 
@@ -174,7 +154,7 @@ export function ServicesFilterableGrid() {
       : services.filter((s) => s.category === activeFilter);
 
   return (
-    <div className="space-y-10">
+    <div className="space-y-8">
       {/* Category Filter Tabs */}
       <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-2.5 pb-2">
         {filterTabs.map((tab) => {
@@ -195,7 +175,7 @@ export function ServicesFilterableGrid() {
         })}
       </div>
 
-      {/* 6 Modern, Unique Commercial Service Cards Grid */}
+      {/* Modern, Streamlined Service Cards Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 items-stretch">
         {filteredServices.map((service) => {
           const Icon = service.icon;
@@ -217,7 +197,7 @@ export function ServicesFilterableGrid() {
                   unoptimized
                 />
                 <div
-                  className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent pointer-events-none"
+                  className="absolute inset-0 bg-gradient-to-t from-black/45 via-black/10 to-transparent pointer-events-none"
                   aria-hidden="true"
                 />
 
@@ -239,9 +219,9 @@ export function ServicesFilterableGrid() {
                 </div>
               </figure>
 
-              {/* Card Content with Standardized 16px Mobile / 32px Desktop Padding */}
+              {/* Streamlined Card Content with standardized padding (16px mobile, 32px desktop) */}
               <div className="px-4 py-6 sm:p-8 flex flex-col flex-1 justify-between space-y-5">
-                <div className="space-y-4">
+                <div className="space-y-3.5">
                   {/* Card Title */}
                   <h3 className="text-xl sm:text-[22px] font-bold text-[#0F172A] leading-snug group-hover:text-[#0284C7] transition-colors">
                     {service.title}
@@ -252,21 +232,10 @@ export function ServicesFilterableGrid() {
                     {service.tagline}
                   </p>
 
-                  {/* Problem Solved Callout */}
-                  <div className="bg-rose-50/70 border border-rose-200/70 rounded-xl p-3.5 space-y-1">
-                    <div className="flex items-center gap-1.5 text-rose-800 text-[11px] font-bold uppercase tracking-wider">
-                      <AlertCircle className="w-3.5 h-3.5 text-rose-600 shrink-0" />
-                      <span>The Problem We Fix:</span>
-                    </div>
-                    <p className="text-xs sm:text-[13px] text-slate-700 leading-normal">
-                      {service.problemSolved}
-                    </p>
-                  </div>
-
-                  {/* Tangible Deliverables List */}
-                  <div className="space-y-2 pt-1">
+                  {/* Concise Key Deliverables */}
+                  <div className="pt-2 border-t border-slate-100 space-y-2">
                     <span className="text-[11px] font-bold text-slate-900 uppercase tracking-wider block">
-                      Core Deliverables:
+                      Key Highlights:
                     </span>
                     <ul className="space-y-2">
                       {service.deliverables.map((item, idx) => (
@@ -280,23 +249,9 @@ export function ServicesFilterableGrid() {
                       ))}
                     </ul>
                   </div>
-
-                  {/* Ideal For Badges */}
-                  <div className="pt-2 border-t border-slate-100">
-                    <div className="flex flex-wrap gap-1.5">
-                      {service.idealFor.map((tag, idx) => (
-                        <span
-                          key={idx}
-                          className="text-[11px] font-medium text-slate-600 bg-slate-100/90 px-2 py-0.5 rounded-md"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
                 </div>
 
-                {/* Card Action Button (Full-Width High-Impact CTA) */}
+                {/* Card Action Button */}
                 <div className="pt-4 border-t border-slate-100">
                   <Link
                     href={service.href}
