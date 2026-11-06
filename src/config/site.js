@@ -24,7 +24,7 @@ export const siteConfig = {
     // Set NEXT_PUBLIC_WHATSAPP_NUMBER in .env.local to override
     whatsappNumber: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "916304299387",
     whatsappDefaultMessage:
-      "Hello! I saw your portfolio and would like to discuss a digital project for my business.",
+      "Hello! I would like to discuss a digital project for my business.",
     
     // Contact email
     // Set NEXT_PUBLIC_CONTACT_EMAIL in .env.local
@@ -44,7 +44,7 @@ export const siteConfig = {
   navItems: [
     { label: "Home", href: "/" },
     { label: "Services", href: "/services" },
-    { label: "Portfolio", href: "/portfolio" },
+    { label: "Blogs", href: "/blogs" },
     { label: "About", href: "/about" },
     { label: "Contact", href: "/contact" },
   ],

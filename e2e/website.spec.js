@@ -101,35 +101,28 @@ test.describe('Midnight Signal Hero & Website Suite', () => {
     await expect(page.locator('h1')).toHaveText('Blogs');
   });
 
-  // 5. Portfolio Page
-  test('Portfolio page renders', async ({ page }) => {
-    await page.goto('/portfolio');
-    await expect(page).toHaveTitle(/Portfolio/i);
-    await expect(page.locator('h1')).toHaveText('Portfolio');
-  });
-
-  // 6. About Page
+  // 5. About Page
   test('About page renders', async ({ page }) => {
     await page.goto('/about');
     await expect(page).toHaveTitle(/About/i);
     await expect(page.locator('h1')).toHaveText('About Us');
   });
 
-  // 7. Contact Page
+  // 6. Contact Page
   test('Contact page renders', async ({ page }) => {
     await page.goto('/contact');
     await expect(page).toHaveTitle(/Contact/i);
     await expect(page.locator('h1')).toHaveText('Contact');
   });
 
-  // 8. Privacy Policy Page
+  // 7. Privacy Policy Page
   test('Privacy policy renders', async ({ page }) => {
     await page.goto('/privacy-policy');
     await expect(page).toHaveTitle(/Privacy Policy/i);
     await expect(page.locator('h1')).toHaveText('Privacy Policy');
   });
 
-  // 9. Mobile Navigation Drawer Test
+  // 8. Mobile Navigation Drawer Test
   test('Mobile viewport displays toggleable menu with navigation links', async ({ page }) => {
     await page.setViewportSize({ width: 375, height: 667 });
     await page.goto('/');

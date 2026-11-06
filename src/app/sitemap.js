@@ -13,7 +13,6 @@ export default function sitemap() {
     { url: `${baseUrl}/services/ai-automation`, lastModified: currentDate, changeFrequency: "monthly", priority: 0.8 },
     { url: `${baseUrl}/services/graphic-design`, lastModified: currentDate, changeFrequency: "monthly", priority: 0.8 },
     { url: `${baseUrl}/services/ai-video`, lastModified: currentDate, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${baseUrl}/portfolio`, lastModified: currentDate, changeFrequency: "weekly", priority: 0.8 },
     { url: `${baseUrl}/blogs`, lastModified: currentDate, changeFrequency: "weekly", priority: 0.8 },
     { url: `${baseUrl}/about`, lastModified: currentDate, changeFrequency: "monthly", priority: 0.7 },
     { url: `${baseUrl}/contact`, lastModified: currentDate, changeFrequency: "monthly", priority: 0.8 },

@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { siteConfig } from "@/config/site";
-import { portfolioProjects } from "@/data/portfolio";
 import { Container } from "@/components/ui/Container";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { Badge } from "@/components/ui/Badge";
@@ -24,11 +23,6 @@ export function ServiceDetailPage({ service }) {
         `Hi! I'm interested in your ${service.title} service for my business.`
       )}`
     : "/contact#whatsapp-note";
-
-  // Related concept projects
-  const relatedProjects = portfolioProjects.filter(
-    (p) => p.serviceSlug === service.slug
-  );
 
   return (
     <div className="pb-20 space-y-16 sm:space-y-24">
@@ -217,57 +211,6 @@ export function ServiceDetailPage({ service }) {
                   <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
                     {step.desc}
                   </p>
-                </div>
-              ))}
-            </div>
-          </Container>
-        </section>
-      )}
-
-      {/* Related Demonstration Showcase */}
-      {relatedProjects.length > 0 && (
-        <section className="bg-slate-900 text-white py-16 sm:py-20 rounded-3xl mx-4 sm:mx-6 lg:mx-8">
-          <Container>
-            <div className="max-w-2xl mb-8">
-              <Badge variant="dark" className="bg-slate-800 text-blue-400 border-slate-700 mb-3">
-                Concept Application
-              </Badge>
-              <h2 className="text-2xl sm:text-3xl font-bold text-white">
-                How This Looks in Practice
-              </h2>
-              <p className="mt-2 text-slate-400 text-sm">
-                Explore a functional demonstration project built using this exact service stack.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {relatedProjects.map((p) => (
-                <div
-                  key={p.id}
-                  className="bg-slate-800/80 border border-slate-700 rounded-2xl px-4 py-6 sm:p-7 space-y-4"
-                >
-                  <div className="flex items-center justify-between">
-                    <span className="text-xs font-semibold text-blue-400">
-                      {p.clientType}
-                    </span>
-                    <Badge variant="neutral" className="bg-slate-700 text-slate-200 border-slate-600 text-[10px]">
-                      Demonstration
-                    </Badge>
-                  </div>
-                  <h3 className="text-xl font-bold text-white">{p.title}</h3>
-                  <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                    {p.summary}
-                  </p>
-                  <div className="pt-2 flex items-center justify-between border-t border-slate-700/80 text-xs">
-                    <span className="text-slate-400">{p.location}</span>
-                    <Link
-                      href="/portfolio"
-                      className="text-blue-400 hover:text-blue-300 font-semibold flex items-center gap-1"
-                    >
-                      <span>View in Portfolio</span>
-                      <ArrowRight className="w-3.5 h-3.5" />
-                    </Link>
-                  </div>
                 </div>
               ))}
             </div>
