@@ -140,7 +140,7 @@ export default function ServicesPage() {
                 href="#proposal-form"
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#0D8C7D] hover:bg-[#0B7568] active:bg-[#085E54] text-white font-semibold text-base px-7 py-3.5 rounded-lg shadow-sm hover:shadow transition-all min-h-[48px]"
               >
-                <span>Request Project Proposal</span>
+                <span>Get a Free Quote</span>
                 <Sparkles className="w-4 h-4 text-white/90" />
               </a>
 

@@ -72,25 +72,7 @@ test.describe('Midnight Signal Hero & Website Suite', () => {
     await expect(page.locator('h1')).toContainText('High-Performance Systems');
   });
 
-  // 3. Individual Service Pages
-  const services = [
-    { slug: 'website-design', title: 'Website Design & Development' },
-    { slug: 'meta-ads', title: 'Meta Ads Management' },
-    { slug: 'google-ads', title: 'Google Ads Management' },
-    { slug: 'ai-automation', title: 'AI Automation & Chatbots' },
-    { slug: 'graphic-design', title: 'Graphic Design & Brand Identity' },
-    { slug: 'ai-video', title: 'AI Video Generation' },
-  ];
-
-  for (const s of services) {
-    test(`Service page /services/${s.slug} renders`, async ({ page }) => {
-      await page.goto(`/services/${s.slug}`);
-      await expect(page).toHaveTitle(new RegExp(s.slug.replace('-', ' '), 'i'));
-      await expect(page.locator('h1')).toHaveText(s.title);
-    });
-  }
-
-  // 4. Blogs Page
+  // 3. Blogs Page
   test('Blogs page renders', async ({ page }) => {
     await page.goto('/blogs');
     await expect(page).toHaveTitle(/Blogs/i);

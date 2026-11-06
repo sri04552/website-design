@@ -28,7 +28,7 @@ export function CapabilitiesSection() {
       imageTitle: "Website Design & Development",
       imageCaption:
         "Custom website design, business websites, e-commerce stores, and responsive web development optimized for local SEO.",
-      href: "/services/website-design",
+      href: "/services",
       ctaText: "Explore Website Design",
       ctaAriaLabel: "Learn more about website design and development services",
     },
@@ -46,7 +46,7 @@ export function CapabilitiesSection() {
       imageTitle: "Meta Ads Management (Facebook & Instagram)",
       imageCaption:
         "Targeted Facebook and Instagram paid advertising campaigns generating verified inquiries and customer conversions.",
-      href: "/services/meta-ads",
+      href: "/services",
       ctaText: "Explore Meta Ads",
       ctaAriaLabel: "Learn more about Meta Facebook and Instagram advertising services",
     },
@@ -64,7 +64,7 @@ export function CapabilitiesSection() {
       imageTitle: "Google Ads Search & Local Services Campaign Management",
       imageCaption:
         "High-intent Google Search advertising campaigns capturing qualified local search buyers in Andhra Pradesh.",
-      href: "/services/google-ads",
+      href: "/services",
       ctaText: "Explore Google Ads",
       ctaAriaLabel: "Learn more about Google Ads search and local campaign management",
     },
@@ -82,7 +82,7 @@ export function CapabilitiesSection() {
       imageTitle: "Business Workflow Automation & WhatsApp AI Chatbots",
       imageCaption:
         "Intelligent WhatsApp chatbots and business workflow automation to handle inquiries and schedule appointments 24/7.",
-      href: "/services/ai-automation",
+      href: "/services",
       ctaText: "Explore Automation",
       ctaAriaLabel: "Learn more about business workflow automation and WhatsApp chatbot solutions",
     },
@@ -100,7 +100,7 @@ export function CapabilitiesSection() {
       imageTitle: "Graphic Design & Visual Brand Identity",
       imageCaption:
         "Comprehensive graphic design and corporate visual identity deliverables for modern businesses.",
-      href: "/services/graphic-design",
+      href: "/services",
       ctaText: "Explore Graphic Design",
       ctaAriaLabel: "Learn more about graphic design and branding services",
     },
@@ -118,7 +118,7 @@ export function CapabilitiesSection() {
       imageTitle: "AI Video Generation & Commercial Reel Production",
       imageCaption:
         "High-impact promotional AI video ads and social media video content engineered for high engagement.",
-      href: "/services/ai-video",
+      href: "/services",
       ctaText: "Explore AI Video",
       ctaAriaLabel: "Learn more about AI video generation and commercial reel production",
     },
