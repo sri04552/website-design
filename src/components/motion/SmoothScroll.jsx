@@ -1,39 +1,49 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 import { usePathname } from "next/navigation";
-import Lenis from "lenis";
-import "lenis/dist/lenis.css";
 
 export function SmoothScroll() {
   const pathname = usePathname();
-  const lenisRef = useRef(null);
 
+  // Reset scroll to top on page navigation
   useEffect(() => {
-    // Respect user reduced-motion preferences
-    const prefersReducedMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)"
-    ).matches;
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+  }, [pathname]);
 
-    if (prefersReducedMotion) return;
+  // Smooth scroll handler for anchor links with native GPU compositor acceleration
+  useEffect(() => {
+    // Provide a full compatibility bridge for any components calling window.lenis
+    window.lenis = {
+      scrollTo: (target, options = {}) => {
+        if (typeof target === "number") {
+          window.scrollTo({
+            top: target,
+            behavior: options.immediate ? "instant" : "smooth",
+          });
+        } else if (typeof target === "string") {
+          const el = document.querySelector(target);
+          if (el) {
+            const yOffset = options.offset || -80;
+            const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
+            window.scrollTo({
+              top: y,
+              behavior: options.immediate ? "instant" : "smooth",
+            });
+          }
+        } else if (target && typeof target === "object" && target.getBoundingClientRect) {
+          const yOffset = options.offset || -80;
+          const y = target.getBoundingClientRect().top + window.pageYOffset + yOffset;
+          window.scrollTo({
+            top: y,
+            behavior: options.immediate ? "instant" : "smooth",
+          });
+        }
+      },
+      stop: () => {},
+      start: () => {},
+    };
 
-    // Instantiate Lenis smooth scrolling
-    const lenis = new Lenis({
-      autoRaf: true,
-      duration: 1.2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      orientation: "vertical",
-      gestureOrientation: "vertical",
-      smoothWheel: true,
-      wheelMultiplier: 1.0,
-      touchMultiplier: 1.0,
-      prevent: (node) => node.hasAttribute("data-lenis-prevent"),
-    });
-
-    lenisRef.current = lenis;
-    window.lenis = lenis;
-
-    // Smooth scroll for anchor/hash links
     const handleAnchorClick = (e) => {
       const link = e.target.closest("a[href*='#']");
       if (!link) return;
@@ -50,7 +60,12 @@ export function SmoothScroll() {
       const targetEl = document.querySelector(hash);
       if (targetEl) {
         e.preventDefault();
-        lenis.scrollTo(targetEl, { offset: -80 });
+        const yOffset = -80;
+        const y = targetEl.getBoundingClientRect().top + window.pageYOffset + yOffset;
+        window.scrollTo({
+          top: y,
+          behavior: "smooth",
+        });
         if (window.history.pushState) {
           window.history.pushState(null, "", hash);
         }
@@ -61,20 +76,9 @@ export function SmoothScroll() {
 
     return () => {
       document.removeEventListener("click", handleAnchorClick);
-      lenis.destroy();
-      lenisRef.current = null;
       delete window.lenis;
     };
   }, []);
-
-  // Reset scroll position on route change
-  useEffect(() => {
-    if (lenisRef.current) {
-      lenisRef.current.scrollTo(0, { immediate: true });
-    } else {
-      window.scrollTo({ top: 0, left: 0, behavior: "instant" });
-    }
-  }, [pathname]);
 
   return null;
 }

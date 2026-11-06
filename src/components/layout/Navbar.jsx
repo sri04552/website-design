@@ -23,9 +23,14 @@ export function Navbar() {
 
   // Scroll listener: transparent at top of homepage, sticky white header upon scroll
   useEffect(() => {
+    let ticking = false;
     const handleScroll = () => {
-      if (typeof window !== "undefined") {
-        setIsScrolled(window.scrollY > 20);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setIsScrolled(window.scrollY > 20);
+          ticking = false;
+        });
+        ticking = true;
       }
     };
 

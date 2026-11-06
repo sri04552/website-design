@@ -82,8 +82,8 @@ export default function HomePage() {
             </span>
           </h1>
 
-          {/* SEO-Optimized Supporting Paragraph with desktop 15px font size */}
-          <p className="mt-5 sm:mt-7 text-[16px] sm:text-[15px] text-[#9BAAC2] max-w-[720px] leading-[1.75] font-normal">
+          {/* SEO-Optimized Supporting Paragraph: 16px on mobile and 16px on desktop */}
+          <p className="mt-5 sm:mt-7 text-[16px] text-[#9BAAC2] max-w-[720px] leading-[1.75] font-normal">
             We engineer high-performance custom websites, ROI-driven marketing
             campaigns, and intelligent AI automation systems designed to
             capture qualified leads, streamline operations, and scale modern
