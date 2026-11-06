@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { StaticParticles } from "@/components/canvas/StaticParticles";
 import { ArrowRight, Sparkles } from "lucide-react";
 import { siteConfig } from "@/config/site";
 import { CapabilitiesSection } from "@/components/home/CapabilitiesSection";
@@ -58,6 +59,9 @@ export default function HomePage() {
           className="absolute inset-0 pointer-events-none z-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_45%,rgba(20,35,61,0.85)_0%,rgba(11,18,32,0)_100%)]"
           aria-hidden="true"
         />
+
+        {/* Ambient static particles (zero motion, zero performance cost) */}
+        <StaticParticles />
 
         {/* Main Hero Content */}
         <div className="relative z-10 max-w-5xl mx-auto text-center flex flex-col items-center pt-8 sm:pt-12">
