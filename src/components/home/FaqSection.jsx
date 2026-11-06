@@ -88,8 +88,8 @@ export function FaqSection() {
               Everything You Need to Know Before Getting Started
             </h2>
 
-            {/* Lead Prose increased by 2px */}
-            <p className="mt-3 text-[16px] sm:text-[17px] text-[#475569] leading-[1.75] font-normal max-w-2xl">
+            {/* Lead Prose */}
+            <p className="mt-3 text-[16px] sm:text-[15px] text-[#475569] leading-[1.75] font-normal max-w-2xl">
               Have questions about our pricing, timelines, or how our services work? Here are straight, transparent answers to the questions business owners ask us most.
             </p>
           </div>
@@ -131,7 +131,7 @@ export function FaqSection() {
                       role="region"
                       className="px-4 sm:px-6 pb-6 pt-0"
                     >
-                      <p className="pt-2 text-[16px] sm:text-[17px] text-[#475569] leading-relaxed font-normal">
+                      <p className="pt-2 text-[16px] sm:text-[15px] text-[#475569] leading-relaxed font-normal">
                         {faq.answer}
                       </p>
                     </div>
@@ -147,7 +147,7 @@ export function FaqSection() {
               <h3 className="text-base font-bold text-[#0F172A]">
                 Have a question not listed here?
               </h3>
-              <p className="text-[14px] sm:text-[15.5px] text-[#64748B] mt-1">
+              <p className="text-[14px] sm:text-[15px] text-[#64748B] mt-1">
                 We are always happy to answer your specific questions with zero sales pressure.
               </p>
             </div>

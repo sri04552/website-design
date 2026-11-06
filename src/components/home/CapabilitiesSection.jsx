@@ -186,7 +186,7 @@ export function CapabilitiesSection() {
           </h2>
 
           {/* Section Subtitle Paragraph increased by 2px */}
-          <p className="mt-3 text-[16px] sm:text-[17px] text-[#475569] leading-[1.7] max-w-2xl mx-auto font-normal">
+          <p className="mt-3 text-[16px] sm:text-[15px] text-[#475569] leading-[1.7] max-w-2xl mx-auto font-normal">
             Clean website design, targeted customer acquisition, and 24/7 automation built to help businesses in Eluru and pan-India capture and convert qualified leads.
           </p>
         </header>
@@ -247,7 +247,7 @@ export function CapabilitiesSection() {
                     </h3>
 
                     {/* Concise Description increased by 2px */}
-                    <p className="mt-2.5 text-[16px] sm:text-[17px] text-[#475569] leading-relaxed font-normal">
+                    <p className="mt-2.5 text-[16px] sm:text-[15px] text-[#475569] leading-relaxed font-normal">
                       {item.description}
                     </p>
                   </div>

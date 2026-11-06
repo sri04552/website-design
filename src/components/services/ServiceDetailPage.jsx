@@ -48,7 +48,7 @@ export function ServiceDetailPage({ service }) {
               {service.heroHeadline}
             </h1>
 
-            <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-3xl">
+            <p className="text-base sm:text-[15px] text-slate-600 leading-relaxed max-w-3xl">
               {service.heroSubheadline}
             </p>
 
@@ -75,12 +75,12 @@ export function ServiceDetailPage({ service }) {
                 <AlertTriangle className="w-4 h-4 text-rose-600" />
                 <span>{service.problemStatement.headline}</span>
               </div>
-              <p className="text-sm sm:text-base text-slate-600">
+              <p className="text-sm sm:text-[15px] text-slate-600">
                 Most businesses struggle with the same recurring issues:
               </p>
               <ul className="space-y-3 pt-2">
                 {service.problemStatement.points.map((point, idx) => (
-                  <li key={idx} className="flex items-start gap-2.5 text-sm sm:text-base text-slate-700">
+                  <li key={idx} className="flex items-start gap-2.5 text-sm sm:text-[15px] text-slate-700">
                     <span className="text-rose-500 font-bold shrink-0 mt-0.5">✕</span>
                     <span>{point}</span>
                   </li>
@@ -94,7 +94,7 @@ export function ServiceDetailPage({ service }) {
                 <Sparkles className="w-4 h-4 text-blue-600" />
                 <span>{service.solutionStatement.headline}</span>
               </div>
-              <p className="text-sm sm:text-base text-slate-700 leading-relaxed">
+              <p className="text-sm sm:text-[15px] text-slate-700 leading-relaxed">
                 {service.solutionStatement.description}
               </p>
               <div className="pt-2 border-t border-blue-200/60">
@@ -135,7 +135,7 @@ export function ServiceDetailPage({ service }) {
             <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900">
               What You Receive With This Service
             </h2>
-            <p className="mt-3 text-slate-600 text-sm sm:text-base">
+            <p className="mt-3 text-slate-600 text-sm sm:text-[15px]">
               Concrete items delivered with every project. No ambiguity, hidden surprises, or unfinished assets.
             </p>
           </div>
@@ -191,7 +191,7 @@ export function ServiceDetailPage({ service }) {
               <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900">
                 How We Execute This Service
               </h2>
-              <p className="mt-3 text-slate-600 text-sm sm:text-base">
+              <p className="mt-3 text-slate-600 text-sm sm:text-[15px]">
                 A structured 4-step workflow keeping you informed at every milestone.
               </p>
             </div>
@@ -240,7 +240,7 @@ export function ServiceDetailPage({ service }) {
                       <HelpCircle className="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
                       <span>{faq.q}</span>
                     </h3>
-                    <p className="mt-2 text-sm text-slate-600 leading-relaxed pl-7">
+                    <p className="mt-2 text-sm sm:text-[15px] text-slate-600 leading-relaxed pl-7">
                       {faq.a}
                     </p>
                   </div>
@@ -260,7 +260,7 @@ export function ServiceDetailPage({ service }) {
               <h2 className="text-2xl sm:text-3xl font-bold text-slate-900">
                 Start Your {service.shortTitle} Project
               </h2>
-              <p className="text-sm text-slate-600 max-w-lg mx-auto">
+              <p className="text-sm sm:text-[15px] text-slate-600 max-w-lg mx-auto">
                 Fill out the form below or message directly on WhatsApp to discuss your timeline, requirements, and scope.
               </p>
             </div>

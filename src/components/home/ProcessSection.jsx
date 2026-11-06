@@ -80,8 +80,8 @@ export function ProcessSection() {
             From Initial Idea to Live Results in 4 Clear Steps
           </h2>
 
-          {/* Lead Prose increased by 2px */}
-          <p className="mt-3 text-[16px] sm:text-[17px] text-[#475569] leading-[1.75] font-normal max-w-2xl">
+          {/* Lead Prose */}
+          <p className="mt-3 text-[16px] sm:text-[15px] text-[#475569] leading-[1.75] font-normal max-w-2xl">
             A transparent, predictable roadmap with clear communication at every stage. No guesswork, no endless delays, and no micromanagement required.
           </p>
         </div>
@@ -110,8 +110,8 @@ export function ProcessSection() {
                     </span>
                   </div>
 
-                  {/* Step Description increased by 2px */}
-                  <p className="text-[15.5px] sm:text-[16px] text-[#475569] leading-relaxed font-normal">
+                  {/* Step Description */}
+                  <p className="text-[15.5px] sm:text-[15px] text-[#475569] leading-relaxed font-normal">
                     {item.description}
                   </p>
                 </div>
@@ -122,7 +122,7 @@ export function ProcessSection() {
 
         {/* Clean, Grounded Action Row with standardized equal button sizes */}
         <div className="mt-10 sm:mt-12 text-center">
-          <p className="text-[16px] sm:text-[17px] text-[#475569] mb-4 font-normal">
+          <p className="text-[16px] sm:text-[15px] text-[#475569] mb-4 font-normal">
             Have a project in mind for web, advertising, or automation?
           </p>
           <div className="inline-flex flex-wrap items-center justify-center gap-3 w-full sm:w-auto">

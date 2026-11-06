@@ -131,8 +131,8 @@ export function BottleneckSection() {
               title="Website Problem & Solution Diagnostic"
             />
 
-            {/* Supporting Prose with increased 2px font size */}
-            <p className="mt-5 text-[16px] sm:text-[17px] text-[#475569] leading-[1.75] font-normal">
+            {/* Supporting Prose with desktop 15px font size */}
+            <p className="mt-5 text-[16px] sm:text-[15px] text-[#475569] leading-[1.75] font-normal">
               Most businesses do not have bad products or services. Their website simply leaks potential customers before they have a chance to call. Whether your site is too slow on mobile phones, your ad budget gets spent on random clicks, or customer enquiries go unanswered after work hours, here is how we fix each leak so you get steady, qualified customer enquiries.
             </p>
 
@@ -181,7 +181,7 @@ export function BottleneckSection() {
                   <h4 className="text-base sm:text-lg font-bold text-[#0F172A] leading-snug">
                     {item.problemTitle}
                   </h4>
-                  <p className="text-[16px] sm:text-[17px] text-[#475569] leading-relaxed font-normal">
+                  <p className="text-[16px] sm:text-[15px] text-[#475569] leading-relaxed font-normal">
                     {item.problemDescription}
                   </p>
                 </div>
@@ -196,7 +196,7 @@ export function BottleneckSection() {
                   <h4 className="text-base sm:text-lg font-bold text-[#0F172A] leading-snug">
                     {item.solutionTitle}
                   </h4>
-                  <p className="text-[16px] sm:text-[17px] text-[#475569] leading-relaxed font-normal">
+                  <p className="text-[16px] sm:text-[15px] text-[#475569] leading-relaxed font-normal">
                     {item.solutionDescription}
                   </p>
                 </div>
