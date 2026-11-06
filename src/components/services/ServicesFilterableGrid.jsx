@@ -10,7 +10,6 @@ import {
   Bot,
   Palette,
   Video,
-  CheckCircle2,
   ArrowRight,
 } from "lucide-react";
 
@@ -18,7 +17,7 @@ export function ServicesFilterableGrid() {
   const [activeFilter, setActiveFilter] = useState("all");
 
   const filterTabs = [
-    { id: "all", label: "All Capabilities" },
+    { id: "all", label: "All Services" },
     { id: "web", label: "Web Development" },
     { id: "ads", label: "Paid Advertising" },
     { id: "automation", label: "AI & Automation" },
@@ -37,13 +36,13 @@ export function ServicesFilterableGrid() {
       slug: "website-design",
       href: "/services/website-design",
       image: "/assets/website-design.webp",
-      imageAlt: "Custom responsive website design and mobile web development",
+      imageAlt: "Custom responsive website design and SEO web development",
       tagline:
-        "High-performance, mobile-first websites engineered to load in under 1.5 seconds and turn visitors into direct customer enquiries.",
+        "Custom, mobile-friendly websites designed to rank high on Google search and convert visitors into paying clients.",
       deliverables: [
-        "Sub-1.5s mobile load speed (90+ PageSpeed score)",
-        "Direct WhatsApp and click-to-call conversion hooks",
-        "Semantic on-page Local SEO markup & Schema data",
+        "Google SEO architecture for higher local & national rankings",
+        "Mobile-first responsive design & conversion-focused layout",
+        "Direct WhatsApp and click-to-call lead generation buttons",
       ],
     },
     {
@@ -59,11 +58,11 @@ export function ServicesFilterableGrid() {
       image: "/assets/meta-ads.webp",
       imageAlt: "Targeted Facebook and Instagram advertising campaigns and lead generation",
       tagline:
-        "Targeted advertising campaigns on Facebook and Instagram that put your offer in front of qualified buyers ready to purchase.",
+        "Targeted advertising campaigns on Facebook and Instagram that put your offer in front of active buyers ready to purchase.",
       deliverables: [
-        "Geo-fenced buyer audience targeting for local markets",
-        "High-converting visual ad creatives & direct-response copy",
-        "Direct WhatsApp lead routing with weekly ROI tracking",
+        "Precision audience targeting for verified buyer demographics",
+        "High-converting ad copywriting & scroll-stopping visuals",
+        "Direct WhatsApp lead generation and transparent ROI tracking",
       ],
     },
     {
@@ -73,17 +72,17 @@ export function ServicesFilterableGrid() {
       tag: "GOOGLE ADS",
       tagColor: "bg-amber-50 text-amber-700 border-amber-200",
       icon: Search,
-      title: "Google Ads & Local Search PPC",
+      title: "Google Ads & Search PPC",
       slug: "google-ads",
       href: "/services/google-ads",
       image: "/assets/google-ads.webp",
       imageAlt: "High-intent Google Search advertising and PPC campaign management",
       tagline:
-        "Capture active buyers the exact second they search for your products or services on Google Search and Google Maps.",
+        "Capture active buyers the moment they search for your products or services on Google Search and Google Maps.",
       deliverables: [
-        "Keyword hierarchy targeting high-intent buying searches",
-        "Negative keyword filters preventing wasted budget on wrong clicks",
-        "Conversion and call tracking connected directly to your phone",
+        "High-intent buyer keyword research & competitive ad placement",
+        "Negative keyword filtering to eliminate wasted advertising budget",
+        "Direct phone call and customer inquiry conversion tracking",
       ],
     },
     {
@@ -93,17 +92,17 @@ export function ServicesFilterableGrid() {
       tag: "AI AUTOMATION",
       tagColor: "bg-teal-50 text-teal-700 border-teal-200",
       icon: Bot,
-      title: "AI Automation & WhatsApp Bots",
+      title: "AI Automation & WhatsApp Chatbots",
       slug: "ai-automation",
       href: "/services/ai-automation",
       image: "/assets/ai-automation.webp",
-      imageAlt: "Intelligent automated 24/7 WhatsApp customer service assistant",
+      imageAlt: "24/7 automated WhatsApp business customer assistant",
       tagline:
-        "Intelligent automated assistants that qualify leads, answer customer questions, and dispatch catalog previews on WhatsApp 24/7.",
+        "Automate customer inquiries, lead qualification, and appointment booking with 24/7 intelligent automated workflows.",
       deliverables: [
-        "24/7 automated WhatsApp inquiry bot trained on your products",
-        "Instant Google Sheets & CRM lead sync with phone alerts",
-        "Smart routing escalating ready buyers directly to phone calls",
+        "24/7 automated customer responses and instant inquiry handling",
+        "Instant lead notifications synced directly to your phone and CRM",
+        "Automated appointment booking and instant catalog sharing",
       ],
     },
     {
@@ -117,13 +116,13 @@ export function ServicesFilterableGrid() {
       slug: "graphic-design",
       href: "/services/graphic-design",
       image: "/assets/graphic-design.webp",
-      imageAlt: "Professional vector brand logo and commercial graphic design collateral",
+      imageAlt: "Custom brand logos and commercial graphic design collateral",
       tagline:
-        "Cohesive visual branding, vector logos, social media graphics, and print collateral that establish instant authority and customer trust.",
+        "Distinctive brand identity, memorable logos, and commercial marketing assets that build credibility and customer trust.",
       deliverables: [
-        "Scalable master vector logo package (SVG, PNG, PDF)",
-        "Brand style guide with official color codes and typography rules",
-        "Print-ready promotional collateral & social template kit",
+        "Custom brand logo design & complete visual identity guidelines",
+        "High-impact social media creatives & promotional advertising banners",
+        "Print-ready business stationery, brochures & marketing collateral",
       ],
     },
     {
@@ -133,17 +132,17 @@ export function ServicesFilterableGrid() {
       tag: "AI VIDEO",
       tagColor: "bg-rose-50 text-rose-700 border-rose-200",
       icon: Video,
-      title: "AI Video Generation for Reels",
+      title: "AI Video Creation for Reels & Ads",
       slug: "ai-video",
       href: "/services/ai-video",
       image: "/assets/ai-video.webp",
-      imageAlt: "High-retention vertical 9:16 video reels and AI short-form commercials",
+      imageAlt: "High-retention vertical 9:16 video reels and commercial advertisements",
       tagline:
-        "High-impact 9:16 vertical video ads, localized product showcase reels, and bilingual explainer videos engineered for high retention.",
+        "Engaging promotional videos and social media reels designed to build audience trust and drive customer conversions.",
       deliverables: [
-        "1080x1920 vertical reels optimized for Instagram & YouTube",
-        "Natural bilingual voiceover audio in Telugu and English",
-        "Kinetic animated subtitles with first-3-second retention hooks",
+        "High-engagement vertical 9:16 reels for Instagram & YouTube",
+        "Persuasive promotional scriptwriting & dynamic visual hooks",
+        "Professional voiceover narration tailored to your target audience",
       ],
     },
   ];
@@ -175,16 +174,17 @@ export function ServicesFilterableGrid() {
         })}
       </div>
 
-      {/* Modern, Streamlined Service Cards Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 items-stretch">
+      {/* Services Grid Using Home Page Card Styles */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 items-stretch">
         {filteredServices.map((service) => {
           const Icon = service.icon;
           return (
             <article
               key={service.id}
-              className="group bg-white rounded-2xl border border-slate-200/90 hover:border-[#00B8F0]/60 shadow-[0_2px_12px_rgba(15,23,42,0.03)] hover:shadow-[0_12px_32px_rgba(2,132,199,0.09)] hover:-translate-y-1 transition-all duration-200 flex flex-col overflow-hidden"
+              aria-labelledby={`card-heading-${service.id}`}
+              className="bg-white rounded-xl border border-slate-200/90 shadow-[0_2px_12px_rgba(15,23,42,0.03)] hover:shadow-[0_8px_24px_rgba(15,23,42,0.07)] hover:border-slate-300 transition-all duration-200 flex flex-col overflow-hidden group"
             >
-              {/* Visual Showcase Banner with Micro-Zoom */}
+              {/* Visual Showcase Banner with subtle hover zoom */}
               <figure className="relative aspect-[16/10] w-full overflow-hidden bg-[#F1F5F9] m-0">
                 <Image
                   src={service.image}
@@ -197,68 +197,64 @@ export function ServicesFilterableGrid() {
                   unoptimized
                 />
                 <div
-                  className="absolute inset-0 bg-gradient-to-t from-black/45 via-black/10 to-transparent pointer-events-none"
+                  className="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent pointer-events-none"
                   aria-hidden="true"
                 />
-
-                {/* Floating Monogram / Number Tag */}
-                <div className="absolute top-3.5 left-3.5">
-                  <span className="inline-flex items-center justify-center px-2.5 py-1 rounded-md bg-black/60 backdrop-blur-md border border-white/20 text-white text-[11px] font-bold tracking-wider font-mono shadow-sm">
-                    {service.number}
-                  </span>
-                </div>
-
-                {/* Floating Category Pill */}
-                <div className="absolute top-3.5 right-3.5">
-                  <span
-                    className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-bold tracking-wider uppercase border shadow-sm ${service.tagColor}`}
-                  >
-                    <Icon className="w-3 h-3" />
-                    <span>{service.tag}</span>
-                  </span>
-                </div>
               </figure>
 
-              {/* Streamlined Card Content with standardized padding (16px mobile, 32px desktop) */}
-              <div className="px-4 py-6 sm:p-8 flex flex-col flex-1 justify-between space-y-5">
-                <div className="space-y-3.5">
-                  {/* Card Title */}
-                  <h3 className="text-xl sm:text-[22px] font-bold text-[#0F172A] leading-snug group-hover:text-[#0284C7] transition-colors">
+              {/* Card Body matching Home Page padding and layout */}
+              <div className="px-4 py-6 sm:p-8 flex flex-col flex-1 justify-between">
+                <div>
+                  {/* Tag & Icon Row */}
+                  <div className="flex items-center justify-between gap-2 mb-3">
+                    <span
+                      className={`inline-block px-2.5 py-0.5 rounded text-[11px] font-bold tracking-wider uppercase border ${service.tagColor}`}
+                    >
+                      {service.tag}
+                    </span>
+                    <div className="w-8 h-8 rounded-lg bg-slate-100 flex items-center justify-center text-slate-700 group-hover:bg-[#00B8F0]/10 group-hover:text-[#00B8F0] transition-colors">
+                      <Icon className="w-4 h-4" aria-hidden="true" />
+                    </div>
+                  </div>
+
+                  {/* Card Title matching Home Page Size */}
+                  <h3
+                    id={`card-heading-${service.id}`}
+                    className="text-base sm:text-lg font-bold text-[#0F172A] tracking-tight group-hover:text-[#0284C7] transition-colors leading-[1.3]"
+                  >
                     {service.title}
                   </h3>
 
-                  {/* Value Proposition (16px mobile, 15px desktop) */}
-                  <p className="text-[16px] sm:text-[15px] text-[#475569] leading-relaxed font-normal">
+                  {/* SEO-friendly Value Proposition (16px mobile, 15px desktop) */}
+                  <p className="mt-2.5 text-[16px] sm:text-[15px] text-[#475569] leading-relaxed font-normal">
                     {service.tagline}
                   </p>
 
-                  {/* Concise Key Deliverables */}
-                  <div className="pt-2 border-t border-slate-100 space-y-2">
-                    <span className="text-[11px] font-bold text-slate-900 uppercase tracking-wider block">
-                      Key Highlights:
-                    </span>
-                    <ul className="space-y-2">
-                      {service.deliverables.map((item, idx) => (
-                        <li
-                          key={idx}
-                          className="flex items-start gap-2 text-xs sm:text-[13.5px] text-slate-700 leading-normal"
-                        >
-                          <CheckCircle2 className="w-4 h-4 text-[#0D8C7D] shrink-0 mt-0.5" />
-                          <span>{item}</span>
-                        </li>
-                      ))}
-                    </ul>
+                  {/* Modern Redesigned Key Highlights with clean feature capsules */}
+                  <div className="mt-4 pt-3.5 border-t border-slate-100 space-y-1.5">
+                    {service.deliverables.map((item, idx) => (
+                      <div
+                        key={idx}
+                        className="flex items-center gap-2.5 px-3 py-2 rounded-lg bg-[#F8FAFC] border border-slate-200/70 text-xs sm:text-[13px] text-slate-700 font-medium group-hover:bg-sky-50/40 group-hover:border-sky-200/80 transition-colors"
+                      >
+                        <span
+                          className="w-1.5 h-1.5 rounded-full bg-[#0D8C7D] shrink-0"
+                          aria-hidden="true"
+                        />
+                        <span className="leading-snug">{item}</span>
+                      </div>
+                    ))}
                   </div>
                 </div>
 
-                {/* Card Action Button */}
-                <div className="pt-4 border-t border-slate-100">
+                {/* Card Action Link */}
+                <div className="mt-5 pt-3 border-t border-slate-100">
                   <Link
                     href={service.href}
-                    className="w-full inline-flex items-center justify-between px-5 py-3 rounded-lg bg-sky-50 hover:bg-[#00B8F0] text-[#0284C7] hover:text-[#0B1220] font-semibold text-xs sm:text-sm transition-all duration-150 group/btn shadow-2xs"
+                    className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-[#0284C7] group-hover:text-[#00B8F0] transition-colors group/cta"
                   >
-                    <span>Explore Full Scope &amp; Deliverables</span>
-                    <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                    <span>Explore {service.title}</span>
+                    <ArrowRight className="w-4 h-4 group-hover/cta:translate-x-1 transition-transform" />
                   </Link>
                 </div>
               </div>

@@ -8,14 +8,14 @@ export const siteConfig = {
   name: process.env.NEXT_PUBLIC_BUSINESS_NAME || "Amogha Digital",
   tagline: "High-Performance Websites, Targeted Advertising & AI Automation",
   shortDescription:
-    "Specialized digital systems partner helping businesses in Eluru, Andhra Pradesh, and across India scale online with custom web development, performance advertising, and automated workflows.",
+    "Independent full-service digital agency delivering high-converting websites, targeted advertising campaigns, and intelligent automated workflows for businesses across India and globally.",
   
   // Location & service reach
   location: {
     city: "Eluru",
     state: "Andhra Pradesh",
     country: "India",
-    serviceArea: "Eluru, Vijayawada, West Godavari region, and remote clients pan-India",
+    serviceArea: "Serving businesses across India and international clients globally",
   },
 
   // Contact Channels (Configurable via Environment Variables)
@@ -34,7 +34,7 @@ export const siteConfig = {
     phone: process.env.NEXT_PUBLIC_PHONE_NUMBER || "+91 63042 99387",
     
     // Office / meeting note
-    availabilityNote: "Available for in-person meetings in Eluru & virtual consultations pan-India",
+    availabilityNote: "Available for project discussions and virtual consultations worldwide",
   },
 
   // Base URL for metadata and canonicals (set NEXT_PUBLIC_SITE_URL in .env.local)

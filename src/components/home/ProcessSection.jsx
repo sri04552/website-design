@@ -66,12 +66,6 @@ export function ProcessSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="max-w-3xl mx-auto text-center flex flex-col items-center mb-10 sm:mb-12">
-          {/* Eyebrow Pill */}
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-50 border border-slate-200/90 text-sky-800 text-xs font-semibold tracking-wider uppercase mb-3.5 shadow-xs">
-            <Sparkles className="w-3.5 h-3.5 text-[#00B8F0]" aria-hidden="true" />
-            <span>HOW WE WORK WITH YOU</span>
-          </div>
-
           {/* Main H2 */}
           <h2
             id="process-heading"

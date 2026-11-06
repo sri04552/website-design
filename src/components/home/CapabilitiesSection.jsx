@@ -171,12 +171,6 @@ export function CapabilitiesSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <header className="max-w-3xl mx-auto text-center">
-          {/* Eyebrow Pill */}
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-slate-200 text-sky-700 text-xs font-semibold tracking-wider uppercase mb-3.5 shadow-xs">
-            <Sparkles className="w-3.5 h-3.5 text-[#00B8F0]" aria-hidden="true" />
-            <span>SERVICES &amp; EXPERTISE</span>
-          </div>
-
           {/* Section Main H2 */}
           <h2
             id="capabilities-heading"

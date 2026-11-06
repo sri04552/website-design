@@ -29,9 +29,9 @@ export function ServicesFaqAccordion() {
         "You pay ad spend directly to Google and Meta using your own business card or UPI. We manage campaign structure, keyword research, targeting, ad creatives, and weekly optimization under a clear, transparent management retainer.",
     },
     {
-      question: "Can the 24/7 WhatsApp AI bot handle Telugu and English queries?",
+      question: "Can the 24/7 WhatsApp AI bot handle multiple languages and customer inquiries?",
       answer:
-        "Yes. Our WhatsApp assistants are configured to understand and respond in bilingual Telugu, English, or conversational phrasing. It answers frequently asked questions, shares pricing or catalog details, and escalates complex questions directly to your phone.",
+        "Yes. Our WhatsApp automated assistants are configured to understand and respond in English, Hindi, and regional languages. It handles common inquiries, shares product or service details, captures qualified lead information, and escalates active inquiries directly to your phone.",
     },
     {
       question: "What happens after my website or campaign goes live?",
@@ -48,15 +48,9 @@ export function ServicesFaqAccordion() {
     <div className="max-w-4xl mx-auto">
       {/* Section Header */}
       <div className="text-center flex flex-col items-center mb-10 sm:mb-12">
-        {/* Eyebrow Pill */}
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-sky-200/90 text-sky-800 text-xs font-semibold tracking-wider uppercase mb-3.5 shadow-xs">
-          <Sparkles className="w-3.5 h-3.5 text-[#00B8F0]" aria-hidden="true" />
-          <span>FREQUENTLY ASKED QUESTIONS</span>
-        </div>
-
         {/* Main H2 */}
         <h2 className="font-heading text-2xl sm:text-3.5xl lg:text-[34px] font-extrabold tracking-tight text-[#0F172A] leading-[1.25]">
-          Everything You Need to Know About Our Services
+          Frequently Asked Questions
         </h2>
 
         {/* Lead Prose */}

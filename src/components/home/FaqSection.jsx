@@ -74,12 +74,6 @@ export function FaqSection() {
         <div className="max-w-4xl mx-auto">
           {/* Section Header */}
           <div className="text-center flex flex-col items-center mb-10 sm:mb-12">
-            {/* Eyebrow Pill */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-sky-200/90 text-sky-800 text-xs font-semibold tracking-wider uppercase mb-3.5 shadow-xs">
-              <Sparkles className="w-3.5 h-3.5 text-[#00B8F0]" aria-hidden="true" />
-              <span>FREQUENTLY ASKED QUESTIONS</span>
-            </div>
-
             {/* Main H2 */}
             <h2
               id="faq-heading"
