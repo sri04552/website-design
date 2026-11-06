@@ -70,7 +70,6 @@ export function Navbar() {
     { label: "HOME", href: "/", icon: Home },
     { label: "SERVICES", href: "/services", icon: Layers },
     { label: "BLOGS", href: "/blogs", icon: BookOpen },
-    { label: "ABOUT", href: "/about", icon: User },
     { label: "CONTACT", href: "/contact", icon: PhoneCall },
   ];
 

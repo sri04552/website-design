@@ -101,14 +101,6 @@ export function Footer() {
                 </li>
                 <li>
                   <Link
-                    href="/about"
-                    className="text-[#9BAAC2] hover:text-[#00B8F0] transition-colors block text-[13px] sm:text-[13.5px]"
-                  >
-                    About Us
-                  </Link>
-                </li>
-                <li>
-                  <Link
                     href="/contact"
                     className="text-[#9BAAC2] hover:text-[#00B8F0] transition-colors block text-[13px] sm:text-[13.5px]"
                   >

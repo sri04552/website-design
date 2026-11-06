@@ -49,7 +49,6 @@ test.describe('Midnight Signal Hero & Website Suite', () => {
     await expect(header.getByText('HOME')).toBeVisible();
     await expect(header.getByText('SERVICES')).toBeVisible();
     await expect(header.getByText('BLOGS')).toBeVisible();
-    await expect(header.getByText('ABOUT')).toBeVisible();
     await expect(header.getByText('CONTACT')).toBeVisible();
     await expect(header.getByRole('link', { name: /Let's Talk/i }).first()).toBeVisible();
 
@@ -79,14 +78,7 @@ test.describe('Midnight Signal Hero & Website Suite', () => {
     await expect(page.locator('h1')).toHaveText('Blogs');
   });
 
-  // 5. About Page
-  test('About page renders', async ({ page }) => {
-    await page.goto('/about');
-    await expect(page).toHaveTitle(/About/i);
-    await expect(page.locator('h1')).toHaveText('About Us');
-  });
-
-  // 6. Contact Page
+  // 4. Contact Page
   test('Contact page renders', async ({ page }) => {
     await page.goto('/contact');
     await expect(page).toHaveTitle(/Contact/i);
@@ -115,7 +107,6 @@ test.describe('Midnight Signal Hero & Website Suite', () => {
     await expect(page.locator('#mobile-navigation').getByText('HOME')).toBeVisible();
     await expect(page.locator('#mobile-navigation').getByText('SERVICES')).toBeVisible();
     await expect(page.locator('#mobile-navigation').getByText('BLOGS')).toBeVisible();
-    await expect(page.locator('#mobile-navigation').getByText('ABOUT')).toBeVisible();
     await expect(page.locator('#mobile-navigation').getByText('CONTACT')).toBeVisible();
 
     // Close menu
