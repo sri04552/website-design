@@ -247,15 +247,27 @@ export function ServicesFilterableGrid() {
                   </div>
                 </div>
 
-                {/* Card Action Link */}
+                {/* Card CTA Link */}
                 <div className="mt-5 pt-3 border-t border-slate-100">
-                  <Link
-                    href={service.href}
-                    className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-[#0284C7] group-hover:text-[#00B8F0] transition-colors group/cta"
+                  <a
+                    href="#proposal-form"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      const target = document.getElementById("proposal-form");
+                      if (target) {
+                        target.scrollIntoView({ behavior: "smooth" });
+                        window.dispatchEvent(
+                          new CustomEvent("select-service", {
+                            detail: { serviceId: service.id },
+                          })
+                        );
+                      }
+                    }}
+                    className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-[#0284C7] hover:text-[#00B8F0] transition-colors group/cta cursor-pointer"
                   >
-                    <span>Explore {service.title}</span>
+                    <span>Request Proposal</span>
                     <ArrowRight className="w-4 h-4 group-hover/cta:translate-x-1 transition-transform" />
-                  </Link>
+                  </a>
                 </div>
               </div>
             </article>

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { siteConfig } from "@/config/site";
 import {
   Send,
@@ -35,6 +35,17 @@ export function ServicesContactForm() {
 
   const [status, setStatus] = useState("idle"); // 'idle' | 'submitting' | 'success' | 'error'
   const [errorMessage, setErrorMessage] = useState("");
+
+  // Listen for service selection events triggered from card CTA links
+  useEffect(() => {
+    const handleSelectService = (e) => {
+      if (e.detail?.serviceId) {
+        setFormData((prev) => ({ ...prev, service: e.detail.serviceId }));
+      }
+    };
+    window.addEventListener("select-service", handleSelectService);
+    return () => window.removeEventListener("select-service", handleSelectService);
+  }, []);
 
   const servicesList = [
     { id: "website-design", label: "Website Design & Development" },
