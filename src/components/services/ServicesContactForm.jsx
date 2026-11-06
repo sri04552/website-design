@@ -254,8 +254,7 @@ export function ServicesContactForm() {
           </div>
 
           {/* Direct Communication Details */}
-          <div className="p-5 rounded-xl bg-white border border-slate-200/90 shadow-2xs space-y-3 text-xs sm:text-[13.5px]">
-            <div className="text-slate-900 font-bold">Direct Channels:</div>
+          <div className="p-5 rounded-xl bg-white border border-slate-200/90 shadow-2xs space-y-2.5 text-xs sm:text-[13.5px]">
             <div className="flex items-center gap-2 text-slate-700">
               <Phone className="w-4 h-4 text-[#0D8C7D] shrink-0" />
               <span>{siteConfig.contact.phone} (Phone &amp; WhatsApp)</span>
@@ -263,9 +262,6 @@ export function ServicesContactForm() {
             <div className="flex items-center gap-2 text-slate-700">
               <Mail className="w-4 h-4 text-[#0284C7] shrink-0" />
               <span>{siteConfig.contact.email}</span>
-            </div>
-            <div className="text-[12px] text-slate-500 pt-1 border-t border-slate-100">
-              Consultation hours: Mon – Sat, 9:00 AM – 7:30 PM IST
             </div>
           </div>
         </div>
