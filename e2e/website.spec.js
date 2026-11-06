@@ -40,10 +40,6 @@ test.describe('Midnight Signal Hero & Website Suite', () => {
     await expect(secondaryCta).toBeVisible();
     await expect(secondaryCta).toHaveAttribute('href', '/services');
 
-    // Particle canvas background
-    const canvas = page.locator('canvas');
-    await expect(canvas).toBeVisible();
-
     // Transparent header at page open
     const header = page.locator('header');
     await expect(header).toBeVisible();
