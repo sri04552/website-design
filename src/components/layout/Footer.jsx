@@ -134,9 +134,7 @@ export function Footer() {
         <Container>
           <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
             <p className="leading-relaxed">
-              © {currentYear} {siteConfig.name}. All rights reserved. Independent
-              freelance digital services studio based in {siteConfig.location.city},{" "}
-              {siteConfig.location.state}.
+              © {currentYear} {siteConfig.name}. All rights reserved.
             </p>
             <div className="flex items-center gap-4 shrink-0">
               <Link

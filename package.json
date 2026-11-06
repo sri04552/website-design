@@ -1,7 +1,7 @@
 {
   "name": "website-design",
   "version": "1.0.0",
-  "description": "Professional Freelancer Website - Digital Services",
+  "description": "Amogha Digital - High-Performance Web Development, Performance Marketing & AI Automation",
   "private": true,
   "scripts": {
     "dev": "next dev",

@@ -8,7 +8,7 @@ export const siteConfig = {
   name: process.env.NEXT_PUBLIC_BUSINESS_NAME || "Amogha Digital",
   tagline: "High-Performance Websites, Targeted Advertising & AI Automation",
   shortDescription:
-    "Independent freelance digital partner helping businesses in Eluru, Andhra Pradesh, and across India scale online with custom web development, paid advertising, and automated workflows.",
+    "Specialized digital systems partner helping businesses in Eluru, Andhra Pradesh, and across India scale online with custom web development, performance advertising, and automated workflows.",
   
   // Location & service reach
   location: {

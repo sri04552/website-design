@@ -33,10 +33,10 @@ export const metadata = {
   description:
     "We engineer high-performance custom websites, ROI-driven marketing campaigns, and intelligent AI automation systems designed to capture qualified leads, streamline operations, and scale modern businesses in Eluru and pan-India.",
   keywords: [
-    "Freelance Web Developer Eluru",
+    "Custom Web Development Eluru",
     "Website Design Eluru Andhra Pradesh",
     "Meta Ads Management Eluru",
-    "Google Ads Freelancer Andhra Pradesh",
+    "Google Ads Management Andhra Pradesh",
     "AI Automation Chatbots India",
     "Digital Marketing Agency Eluru",
     "Amogha Digital Web Design",

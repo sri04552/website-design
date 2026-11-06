@@ -326,7 +326,7 @@ export const servicesData = {
         "Inconsistent colors, fonts, and low-resolution logos across social media, signage, and invoices that make your business look amateur.",
         "Social media posts created hastily with busy, hard-to-read designs that get ignored in customer feeds.",
         "Low-quality print banners or visiting cards that print blurry or have mismatched colors.",
-        "No clear visual identity guidelines, resulting in every freelance designer or print shop producing completely mismatched collateral.",
+        "No clear visual identity guidelines, resulting in external vendors, designers, or print shops producing completely mismatched collateral.",
       ],
     },
     solutionStatement: {

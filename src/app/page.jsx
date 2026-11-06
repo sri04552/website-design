@@ -14,7 +14,7 @@ export const metadata = {
     "Web Development Eluru",
     "Website Design Andhra Pradesh",
     "Meta Ads Management",
-    "Google Ads Freelancer",
+    "Google Ads Management",
     "AI Automation Chatbots",
     "Digital Marketing Eluru",
     "High Performance Business Websites",
