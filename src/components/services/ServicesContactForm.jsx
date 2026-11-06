@@ -11,7 +11,6 @@ import {
   Mail,
   Clock,
   ShieldCheck,
-  ArrowRight,
   MessageSquare,
 } from "lucide-react";
 
@@ -501,29 +500,22 @@ export function ServicesContactForm() {
               )}
             </div>
 
-            {/* Submit Button & Privacy Note */}
-            <div className="pt-2 flex flex-col sm:flex-row items-center justify-between gap-4">
+            {/* Submit Button */}
+            <div className="pt-2">
               <button
                 type="submit"
                 disabled={status === "submitting"}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#0D8C7D] hover:bg-[#0B7568] active:bg-[#085E54] text-white font-semibold text-sm sm:text-base px-8 py-3.5 rounded-lg shadow-sm hover:shadow transition-all disabled:opacity-60 disabled:cursor-not-allowed cursor-pointer min-h-[48px]"
+                className="w-full inline-flex items-center justify-center gap-2 bg-[#0D8C7D] hover:bg-[#0B7568] active:bg-[#085E54] text-white font-semibold text-base py-3.5 px-6 rounded-lg shadow-sm hover:shadow transition-all disabled:opacity-60 disabled:cursor-not-allowed cursor-pointer min-h-[48px]"
               >
                 {status === "submitting" ? (
                   <>
                     <Loader2 className="w-4 h-4 animate-spin" />
-                    <span>Submitting Inquiry...</span>
+                    <span>Submitting...</span>
                   </>
                 ) : (
-                  <>
-                    <span>Submit Project Inquiry</span>
-                    <ArrowRight className="w-4 h-4" />
-                  </>
+                  <span>Submit</span>
                 )}
               </button>
-
-              <div className="text-xs text-slate-500 text-center sm:text-right">
-                100% Confidential. Zero spam. We reply within 24 hours.
-              </div>
             </div>
           </form>
         </div>
