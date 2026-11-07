@@ -265,7 +265,7 @@ export function ServicesFilterableGrid() {
                     }}
                     className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-[#0284C7] hover:text-[#00B8F0] transition-colors group/cta cursor-pointer"
                   >
-                    <span>Get a Free Quote</span>
+                    <span>Discuss Your Project</span>
                     <ArrowRight className="w-4 h-4 group-hover/cta:translate-x-1 transition-transform" />
                   </a>
                 </div>

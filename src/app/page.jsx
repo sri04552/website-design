@@ -59,9 +59,9 @@ export default function HomePage() {
           aria-hidden="true"
         />
 
-        {/* Subtle zero-overhead CSS architectural grid with radial vignette mask */}
+        {/* Subtle zero-overhead CSS architectural grid with fine small grid boxes */}
         <div
-          className="absolute inset-0 pointer-events-none z-0 bg-[linear-gradient(to_right,#14233D_1px,transparent_1px),linear-gradient(to_bottom,#14233D_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_45%,#000_65%,transparent_100%)] opacity-35"
+          className="absolute inset-0 pointer-events-none z-0 bg-[linear-gradient(to_right,#14233D_1px,transparent_1px),linear-gradient(to_bottom,#14233D_1px,transparent_1px)] bg-[size:20px_20px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_45%,#000_65%,transparent_100%)] opacity-30"
           aria-hidden="true"
         />
 

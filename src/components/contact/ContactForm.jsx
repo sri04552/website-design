@@ -170,7 +170,7 @@ export function ContactForm({ preselectedService = "" }) {
           </h3>
           <p className="text-[16px] sm:text-[15px] text-[#475569] leading-relaxed max-w-md mx-auto">
             Thank you for reaching out. We have logged your request for{" "}
-            <span className="font-semibold text-slate-900">{selectedServiceObj?.label}</span>. We are reviewing your project details right now and will reply within minutes.
+            <span className="font-semibold text-slate-900">{selectedServiceObj?.label}</span>. Our senior technical and strategy leads are evaluating your requirements and will connect with you shortly.
           </p>
         </div>
 
@@ -183,7 +183,7 @@ export function ContactForm({ preselectedService = "" }) {
               className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg bg-[#0D8C7D] hover:bg-[#0B7568] text-white font-semibold text-sm transition-all shadow-sm"
             >
               <MessageSquare className="w-4 h-4" />
-              <span>Need an Instant Reply? Connect on WhatsApp</span>
+              <span>Connect Directly on WhatsApp</span>
             </a>
           </div>
         )}
