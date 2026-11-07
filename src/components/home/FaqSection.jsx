@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Sparkles, ChevronDown, ArrowRight } from "lucide-react";
+import { ChevronDown, ArrowRight } from "lucide-react";
 
 export function FaqSection() {
   const [openIndex, setOpenIndex] = useState(0); // Open first FAQ by default

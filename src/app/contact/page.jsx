@@ -7,7 +7,7 @@ import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { ContactForm } from "@/components/contact/ContactForm";
 import { ContactFaqAccordion } from "@/components/contact/ContactFaqAccordion";
 import {
-  Sparkles,
+  Headset,
   Phone,
   Mail,
   MapPin,
@@ -125,7 +125,11 @@ export default function ContactPage() {
               />
             </div>
             <div
-              className="absolute inset-0 pointer-events-none z-0 bg-[#070D18]/80 backdrop-blur-[1px]"
+              className="absolute inset-0 pointer-events-none z-0 bg-gradient-to-r from-[#070D18]/92 via-[#070D18]/78 to-[#070D18]/45"
+              aria-hidden="true"
+            />
+            <div
+              className="absolute bottom-0 inset-x-0 h-24 pointer-events-none z-0 bg-gradient-to-t from-[#0A101D] to-transparent"
               aria-hidden="true"
             />
           </>
@@ -141,7 +145,7 @@ export default function ContactPage() {
             <div className="lg:col-span-7 space-y-6">
               {/* Dignified Eyebrow Badge */}
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#29374D] bg-[#14233D]/70 shadow-xs">
-                <Sparkles className="w-3.5 h-3.5 text-[#00B8F0] shrink-0" aria-hidden="true" />
+                <Headset className="w-3.5 h-3.5 text-[#00B8F0] shrink-0" aria-hidden="true" />
                 <span className="text-[11px] sm:text-xs font-semibold tracking-wider text-[#00B8F0] uppercase font-mono">
                   PROJECT CONSULTATION &amp; ADVISORY
                 </span>
@@ -176,7 +180,7 @@ export default function ContactPage() {
 
                 <a
                   href="#inquiry-form"
-                  className="inline-flex items-center justify-center gap-2 bg-[#14233D] hover:bg-[#1A2C4C] text-[#F5F7FC] font-semibold text-sm sm:text-base px-6 py-3.5 rounded-xl border border-[#29374D] hover:border-[#00B8F0]/40 transition-all min-h-[48px]"
+                  className="inline-flex items-center justify-center gap-2 bg-[#131F33] hover:bg-[#1A2A45] active:bg-[#0F1929] text-[#F5F7FC] font-semibold text-sm sm:text-base px-6 py-3.5 rounded-xl border border-[#2B3E5C] hover:border-[#00B8F0]/70 shadow-xs hover:shadow-[0_0_20px_rgba(0,184,240,0.15)] transition-all min-h-[48px] focus-visible:outline-[#00B8F0]"
                 >
                   <span>Submit Project Details</span>
                   <ArrowDown className="w-4 h-4 text-[#00B8F0]" />

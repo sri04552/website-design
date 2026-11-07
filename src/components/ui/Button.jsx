@@ -26,7 +26,7 @@ export function Button({
     primary:
       "bg-[#0D8C7D] text-white hover:bg-[#0B7568] active:bg-[#085E54] shadow-xs hover:shadow focus-visible:outline-[#00B8F0]",
     secondary:
-      "bg-slate-900 text-white hover:bg-slate-800 active:bg-slate-950 shadow-xs focus-visible:outline-slate-900",
+      "bg-[#131F33] text-[#F5F7FC] hover:bg-[#1A2A45] active:bg-[#0F1929] border border-[#2B3E5C] hover:border-[#00B8F0]/70 shadow-xs hover:shadow-[0_0_20px_rgba(0,184,240,0.15)] focus-visible:outline-[#00B8F0]",
     outline:
       "border border-slate-300 bg-white text-slate-800 hover:bg-slate-50 hover:border-slate-400 active:bg-slate-100 focus-visible:outline-slate-900",
     whatsapp:

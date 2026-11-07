@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight, TrendingUp } from "lucide-react";
 import { siteConfig } from "@/config/site";
 import { CapabilitiesSection } from "@/components/home/CapabilitiesSection";
 import { BottleneckSection } from "@/components/home/BottleneckSection";
@@ -67,15 +67,13 @@ export default function HomePage() {
 
         {/* Main Hero Content */}
         <div className="relative z-10 max-w-5xl mx-auto text-center flex flex-col items-center pt-8 sm:pt-12">
-          {/* Eyebrow Label with Magic Star Icon & Theme Blue Text */}
+          {/* Eyebrow Label with Growth Metric Icon & Theme Blue Text */}
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#29374D] bg-[#14233D]/80 backdrop-blur-xs mb-6 sm:mb-8 transition-colors hover:border-[#00B8F0]/40 shadow-xs">
-            {/* Magic Star Icon */}
-            <Sparkles
+            <TrendingUp
               className="w-3.5 h-3.5 text-[#00B8F0] shrink-0"
               aria-hidden="true"
             />
-            {/* Theme Blue Text */}
-            <span className="text-[11px] sm:text-xs font-semibold tracking-wider text-[#00B8F0] uppercase">
+            <span className="text-[11px] sm:text-xs font-semibold tracking-wider text-[#00B8F0] uppercase font-mono">
               Digital Presence to Business Systems
             </span>
           </div>
@@ -104,13 +102,13 @@ export default function HomePage() {
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#0D8C7D] hover:bg-[#0B7568] active:bg-[#085E54] text-white font-semibold text-base px-6 sm:px-7 py-3.5 rounded-lg shadow-sm hover:shadow transition-all duration-150 min-h-[48px] focus-visible:outline-[#00B8F0]"
             >
               <span>Start a Project</span>
-              <Sparkles className="w-4 h-4 text-white/90" />
+              <ArrowRight className="w-4 h-4 text-white/90" />
             </Link>
 
-            {/* Secondary CTA - High-contrast visible button */}
+            {/* Secondary CTA - High-contrast architectural blue-slate button */}
             <Link
               href="/services"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-slate-800/90 hover:bg-slate-700/90 active:bg-slate-800 text-white border border-slate-600 hover:border-slate-400 font-semibold text-base px-6 sm:px-7 py-3.5 rounded-lg transition-all duration-150 shadow-xs hover:shadow min-h-[48px] focus-visible:outline-[#00B8F0]"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#131F33] hover:bg-[#1A2A45] active:bg-[#0F1929] text-[#F5F7FC] border border-[#2B3E5C] hover:border-[#00B8F0]/70 font-semibold text-base px-6 sm:px-7 py-3.5 rounded-lg transition-all duration-150 shadow-xs hover:shadow-[0_0_20px_rgba(0,184,240,0.15)] min-h-[48px] focus-visible:outline-[#00B8F0]"
             >
               <span>Explore Services</span>
               <ArrowRight className="w-4 h-4 text-slate-300 group-hover:text-white transition-colors" />

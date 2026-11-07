@@ -3,7 +3,6 @@
 import { useState } from "react";
 import Image from "next/image";
 import {
-  Sparkles,
   ArrowRight,
   Maximize2,
 } from "lucide-react";

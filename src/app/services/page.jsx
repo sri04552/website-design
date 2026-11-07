@@ -10,7 +10,7 @@ import {
   ShieldCheck,
   TrendingUp,
   ArrowRight,
-  Sparkles,
+  Calendar,
   PhoneCall,
   Search,
   Layers,
@@ -123,8 +123,8 @@ export default function ServicesPage() {
           <div className="max-w-4xl mt-6 space-y-6">
             {/* Eyebrow Badge kept strictly for Hero */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#29374D] bg-[#14233D]/80 backdrop-blur-xs shadow-xs">
-              <Sparkles className="w-3.5 h-3.5 text-[#00B8F0] shrink-0" aria-hidden="true" />
-              <span className="text-[11px] sm:text-xs font-semibold tracking-wider text-[#00B8F0] uppercase">
+              <Layers className="w-3.5 h-3.5 text-[#00B8F0] shrink-0" aria-hidden="true" />
+              <span className="text-[11px] sm:text-xs font-semibold tracking-wider text-[#00B8F0] uppercase font-mono">
                 DIGITAL SERVICES &amp; SOLUTIONS
               </span>
             </div>
@@ -149,12 +149,12 @@ export default function ServicesPage() {
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#0D8C7D] hover:bg-[#0B7568] active:bg-[#085E54] text-white font-semibold text-base px-7 py-3.5 rounded-lg shadow-sm hover:shadow transition-all min-h-[48px]"
               >
                 <span>Schedule Consultation</span>
-                <Sparkles className="w-4 h-4 text-white/90" />
+                <Calendar className="w-4 h-4 text-white/90" />
               </a>
 
               <a
                 href="#service-grid"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#14233D] hover:bg-[#1A2C4C] text-[#F5F7FC] font-semibold text-base px-6 py-3.5 rounded-lg border border-[#29374D] hover:border-[#00B8F0]/40 transition-all min-h-[48px]"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#131F33] hover:bg-[#1A2A45] active:bg-[#0F1929] text-[#F5F7FC] font-semibold text-base px-6 py-3.5 rounded-lg border border-[#2B3E5C] hover:border-[#00B8F0]/70 shadow-xs hover:shadow-[0_0_20px_rgba(0,184,240,0.15)] transition-all min-h-[48px]"
               >
                 <span>Explore All 6 Services</span>
                 <ArrowRight className="w-4 h-4 text-[#00B8F0]" />

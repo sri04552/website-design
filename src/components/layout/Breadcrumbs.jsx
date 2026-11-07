@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ChevronRight, Home } from "lucide-react";
 import { siteConfig } from "@/config/site";
 
-export function Breadcrumbs({ items = [] }) {
+export function Breadcrumbs({ items = [], className = "" }) {
   if (!items || items.length === 0) return null;
 
   // JSON-LD structured data for search engines
@@ -31,15 +31,15 @@ export function Breadcrumbs({ items = [] }) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <nav aria-label="Breadcrumb" className="py-4 select-none">
-        <ol className="flex items-center flex-wrap gap-1.5 text-xs sm:text-sm text-slate-500">
+      <nav aria-label="Breadcrumb" className={`py-3 select-none ${className}`}>
+        <ol className="inline-flex items-center flex-wrap gap-1.5 px-3 py-1.5 rounded-full bg-[#14233D]/80 border border-[#29374D] backdrop-blur-md text-xs sm:text-[13px] shadow-xs">
           <li>
             <Link
               href="/"
-              className="inline-flex items-center gap-1 hover:text-blue-600 transition-colors py-1 focus-visible:outline-blue-600 rounded"
+              className="inline-flex items-center gap-1.5 text-[#9BAAC2] hover:text-[#00B8F0] transition-colors py-0.5 focus-visible:outline-[#00B8F0] rounded font-medium"
               title="Home"
             >
-              <Home className="w-3.5 h-3.5" />
+              <Home className="w-3.5 h-3.5 text-[#00B8F0] shrink-0" />
               <span>Home</span>
             </Link>
           </li>
@@ -48,10 +48,10 @@ export function Breadcrumbs({ items = [] }) {
             const isLast = index === items.length - 1;
             return (
               <li key={item.href || index} className="flex items-center gap-1.5">
-                <ChevronRight className="w-3.5 h-3.5 text-slate-400 shrink-0" />
+                <ChevronRight className="w-3.5 h-3.5 text-[#475569] shrink-0" />
                 {isLast ? (
                   <span
-                    className="font-medium text-slate-900 line-clamp-1 py-1"
+                    className="font-semibold text-[#F5F7FC] line-clamp-1 py-0.5"
                     aria-current="page"
                   >
                     {item.label}
@@ -59,7 +59,7 @@ export function Breadcrumbs({ items = [] }) {
                 ) : (
                   <Link
                     href={item.href}
-                    className="hover:text-blue-600 transition-colors py-1 focus-visible:outline-blue-600 rounded"
+                    className="text-[#9BAAC2] hover:text-[#00B8F0] transition-colors py-0.5 focus-visible:outline-[#00B8F0] rounded font-medium"
                   >
                     {item.label}
                   </Link>
