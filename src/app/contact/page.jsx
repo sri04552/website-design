@@ -234,10 +234,10 @@ export default function ContactPage() {
             <div className="lg:col-span-5 space-y-6 pt-2">
               <div className="space-y-3">
                 <h2 className="font-heading text-2xl sm:text-3.5xl lg:text-[38px] font-extrabold tracking-tight text-[#0F172A] leading-[1.18]">
-                  Connect With Our Team
+                  Get in Touch Directly
                 </h2>
                 <p className="text-[16px] sm:text-[15px] text-[#475569] leading-[1.75] font-normal">
-                  Speak directly with our senior engineers and digital marketing directors to explore your requirements, review technical feasibility, and plan your execution roadmap.
+                  Have a question or want to discuss a new project? Reach out through WhatsApp, phone, or email — we are always happy to help.
                 </p>
               </div>
 
@@ -248,7 +248,7 @@ export default function ContactPage() {
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2 text-slate-900 font-bold text-sm">
                       <Phone className="w-4 h-4 text-[#0D8C7D]" />
-                      <span>Direct Advisory Line</span>
+                      <span>Phone &amp; WhatsApp</span>
                     </div>
                     {whatsappHref && (
                       <a
@@ -258,15 +258,18 @@ export default function ContactPage() {
                         className="inline-flex items-center gap-1 text-xs font-semibold text-[#0D8C7D] hover:underline"
                       >
                         <MessageSquare className="w-3.5 h-3.5" />
-                        <span>Contact Now</span>
+                        <span>Chat on WhatsApp</span>
                       </a>
                     )}
                   </div>
-                  <p className="text-sm text-slate-700 font-medium font-mono">
+                  <a
+                    href={`tel:${siteConfig.contact.phone.replace(/[^0-9+]/g, "")}`}
+                    className="block text-sm text-slate-800 font-medium font-mono hover:text-[#0D8C7D] transition-colors"
+                  >
                     {siteConfig.contact.phone}
-                  </p>
+                  </a>
                   <p className="text-xs text-slate-500">
-                    Direct communication for scoping discussions and scheduled discovery calls.
+                    Call us directly or send a message on WhatsApp for quick answers and project discussions.
                   </p>
                 </div>
 
@@ -275,21 +278,24 @@ export default function ContactPage() {
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2 text-slate-900 font-bold text-sm">
                       <Mail className="w-4 h-4 text-[#0284C7]" />
-                      <span>Corporate Inquiries</span>
+                      <span>Email Us</span>
                     </div>
                     <a
                       href={`mailto:${siteConfig.contact.email}`}
                       className="inline-flex items-center gap-1 text-xs font-semibold text-[#0284C7] hover:underline"
                     >
-                      <span>Compose</span>
+                      <span>Send Email</span>
                       <ArrowRight className="w-3 h-3" />
                     </a>
                   </div>
-                  <p className="text-sm text-slate-700 font-medium">
+                  <a
+                    href={`mailto:${siteConfig.contact.email}`}
+                    className="block text-sm text-slate-800 font-medium hover:text-[#0284C7] transition-colors"
+                  >
                     {siteConfig.contact.email}
-                  </p>
+                  </a>
                   <p className="text-xs text-slate-500">
-                    Submit RFPs, detailed briefs, or existing platform audit requests.
+                    Send us your project requirements, website link, or questions anytime.
                   </p>
                 </div>
 
@@ -297,13 +303,13 @@ export default function ContactPage() {
                 <div className="p-5 rounded-2xl bg-white border border-slate-200/90 shadow-2xs space-y-2">
                   <div className="flex items-center gap-2 text-slate-900 font-bold text-sm">
                     <MapPin className="w-4 h-4 text-slate-700" />
-                    <span>Regional Office &amp; Global Delivery</span>
+                    <span>Office Location</span>
                   </div>
-                  <p className="text-sm text-slate-700">
-                    Based in {siteConfig.location.city}, {siteConfig.location.state}
+                  <p className="text-sm text-slate-800 font-medium">
+                    {siteConfig.location.city}, {siteConfig.location.state}, India
                   </p>
                   <p className="text-xs text-slate-500">
-                    Delivering high-performance digital solutions across India and international markets.
+                    Based in Eluru, Andhra Pradesh — working with clients locally and across India.
                   </p>
                 </div>
               </div>
