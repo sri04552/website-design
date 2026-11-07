@@ -11,15 +11,10 @@ import {
   Phone,
   Mail,
   MapPin,
-  Clock,
-  ShieldCheck,
   MessageSquare,
   ArrowRight,
   ArrowDown,
   CheckCircle2,
-  Lock,
-  Layers,
-  Compass,
 } from "lucide-react";
 
 export const metadata = {
@@ -93,21 +88,7 @@ export default function ContactPage() {
     "contact-hero-bg.webp"
   );
   const hasCustomHeroBg = fs.existsSync(heroBgCustomPath);
-
-  // Fallback to contact-hero.webp if present
-  const heroBgFallbackPath = path.join(
-    process.cwd(),
-    "public",
-    "assets",
-    "contact-hero.webp"
-  );
-  const hasFallbackHeroBg = fs.existsSync(heroBgFallbackPath);
-
-  const heroBgSrc = hasCustomHeroBg
-    ? "/assets/contact-hero-bg.webp"
-    : hasFallbackHeroBg
-    ? "/assets/contact-hero.webp"
-    : null;
+  const heroBgSrc = hasCustomHeroBg ? "/assets/contact-hero-bg.webp" : null;
 
   return (
     <>
@@ -207,76 +188,19 @@ export default function ContactPage() {
               </div>
             </div>
 
-            {/* Right Column: Executive Engagement Overview (5 cols on lg) */}
+            {/* Right Column: Visual Showcase (5 cols on lg) */}
             <div className="lg:col-span-5">
-              <div className="relative rounded-2xl border border-[#29374D] bg-[#0E1726]/90 backdrop-blur-md p-6 sm:p-7 shadow-[0_20px_50px_rgba(0,0,0,0.4)] space-y-5">
-                {/* Node Header */}
-                <div className="flex items-center justify-between border-b border-[#29374D]/80 pb-4">
-                  <div className="flex items-center gap-3">
-                    <div className="w-9 h-9 rounded-xl bg-[#14233D] border border-[#29374D] flex items-center justify-center text-[#00B8F0]">
-                      <Compass className="w-4 h-4" />
-                    </div>
-                    <div>
-                      <div className="text-xs font-bold text-white uppercase tracking-wider">
-                        Executive Advisory Desk
-                      </div>
-                      <div className="text-[11px] text-[#00B8F0] font-mono">
-                        Open for New Engagements
-                      </div>
-                    </div>
-                  </div>
-                  <span className="px-2.5 py-1 rounded-md bg-[#14233D] border border-white/10 text-[11px] font-mono text-[#9BAAC2]">
-                    Active
-                  </span>
-                </div>
-
-                {/* Engagement Standards Grid */}
-                <div className="grid grid-cols-2 gap-3 text-xs">
-                  <div className="p-3.5 rounded-xl bg-[#14233D]/60 border border-[#29374D]/80 space-y-1">
-                    <div className="text-[11px] text-[#8E9EB5]">Pricing Model</div>
-                    <div className="text-sm font-bold text-[#F5F7FC]">
-                      Fixed Scope &amp; Milestones
-                    </div>
-                  </div>
-                  <div className="p-3.5 rounded-xl bg-[#14233D]/60 border border-[#29374D]/80 space-y-1">
-                    <div className="text-[11px] text-[#8E9EB5]">Asset Rights</div>
-                    <div className="text-sm font-bold text-[#0D8C7D]">
-                      100% Direct Transfer
-                    </div>
-                  </div>
-                  <div className="p-3.5 rounded-xl bg-[#14233D]/60 border border-[#29374D]/80 space-y-1">
-                    <div className="text-[11px] text-[#8E9EB5]">Confidentiality</div>
-                    <div className="text-sm font-bold text-[#00B8F0]">
-                      Strict NDA Standards
-                    </div>
-                  </div>
-                  <div className="p-3.5 rounded-xl bg-[#14233D]/60 border border-[#29374D]/80 space-y-1">
-                    <div className="text-[11px] text-[#8E9EB5]">Initial Assessment</div>
-                    <div className="text-sm font-bold text-emerald-400">
-                      Complimentary
-                    </div>
-                  </div>
-                </div>
-
-                {/* Direct Channel Access Bar */}
-                <div className="p-4 rounded-xl bg-[#090F1C] border border-[#29374D] flex items-center justify-between text-xs">
-                  <div className="space-y-0.5">
-                    <div className="text-slate-400 text-[11px]">Direct Advisory Line:</div>
-                    <div className="text-white font-bold font-mono">
-                      {siteConfig.contact.phone}
-                    </div>
-                  </div>
-                  {whatsappHref && (
-                    <a
-                      href={whatsappHref}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="px-3.5 py-1.5 rounded-lg bg-[#0D8C7D] hover:bg-[#0B7568] text-white text-xs font-semibold transition-colors"
-                    >
-                      Contact Now
-                    </a>
-                  )}
-                </div>
+              <div className="relative aspect-[16/10] sm:aspect-[4/3] rounded-2xl overflow-hidden border border-[#29374D] shadow-[0_20px_50px_rgba(0,0,0,0.5)] group">
+                <Image
+                  src="/assets/contact-hero.webp"
+                  alt="Amogha Digital project advisory and operations"
+                  width={1586}
+                  height={992}
+                  priority
+                  sizes="(max-width: 1024px) 100vw, 42vw"
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#070D18]/70 via-transparent to-transparent pointer-events-none" />
               </div>
             </div>
           </div>
@@ -290,7 +214,7 @@ export default function ContactPage() {
       >
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
-            {/* Left Column: Direct Inquiries & Enterprise Commitments (5 cols on lg) */}
+            {/* Left Column: Direct Inquiries & Communication Channels (5 cols on lg) */}
             <div className="lg:col-span-5 space-y-6 pt-2">
               <div className="space-y-3">
                 <h2 className="font-heading text-2xl sm:text-3.5xl lg:text-[38px] font-extrabold tracking-tight text-[#0F172A] leading-[1.18]">
@@ -299,39 +223,6 @@ export default function ContactPage() {
                 <p className="text-[16px] sm:text-[15px] text-[#475569] leading-[1.75] font-normal">
                   Speak directly with our senior engineers and digital marketing directors to explore your requirements, review technical feasibility, and plan your execution roadmap.
                 </p>
-              </div>
-
-              {/* 3 Real-World Commitments */}
-              <div className="space-y-4 pt-2 border-t border-slate-200/80">
-                <div className="space-y-1">
-                  <div className="flex items-center gap-2 text-slate-900 font-bold text-sm">
-                    <Clock className="w-4 h-4 text-[#0284C7]" />
-                    <span>Dedicated Technical Review</span>
-                  </div>
-                  <p className="text-xs sm:text-[13.5px] text-[#475569] leading-relaxed pl-6">
-                    Every project inquiry is evaluated by senior engineering leads to provide a structured architectural roadmap and realistic delivery estimates.
-                  </p>
-                </div>
-
-                <div className="space-y-1">
-                  <div className="flex items-center gap-2 text-slate-900 font-bold text-sm">
-                    <ShieldCheck className="w-4 h-4 text-[#0D8C7D]" />
-                    <span>Fixed Scope &amp; Clear Milestones</span>
-                  </div>
-                  <p className="text-xs sm:text-[13.5px] text-[#475569] leading-relaxed pl-6">
-                    Transparent deliverables, agreed project timelines, and transparent commercial agreements with zero surprise invoices.
-                  </p>
-                </div>
-
-                <div className="space-y-1">
-                  <div className="flex items-center gap-2 text-slate-900 font-bold text-sm">
-                    <Lock className="w-4 h-4 text-[#0284C7]" />
-                    <span>Enterprise IP &amp; Confidentiality</span>
-                  </div>
-                  <p className="text-xs sm:text-[13.5px] text-[#475569] leading-relaxed pl-6">
-                    You retain 100% intellectual property ownership of all custom code, design assets, and marketing accounts from day one.
-                  </p>
-                </div>
               </div>
 
               {/* Direct Communication Channels Card */}
