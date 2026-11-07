@@ -21,8 +21,9 @@ export function Footer() {
             <div className="lg:col-span-2 space-y-4">
               <Link href="/" className="inline-block py-1" aria-label="Amogha Digital Home">
                 <Image
-                  src="/assets/logo-blue.webp"
-                  alt="Amogha Digital"
+                  src="/assets/amogha-digital-official-logo.webp"
+                  alt="Amogha Digital - Digital Growth & Engineering Company"
+                  title="Amogha Digital"
                   width={800}
                   height={213}
                   className="h-9 sm:h-10 w-auto object-contain"

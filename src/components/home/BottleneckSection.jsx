@@ -93,7 +93,7 @@ export function BottleneckSection() {
               >
                 <figure className="relative aspect-[16/10] w-full m-0 bg-[#E0F2FE]">
                   <Image
-                    src="/assets/bottleneck-solution.webp"
+                    src="/assets/business-growth-bottleneck-automation-solution-amogha-digital.webp"
                     alt="Comparison of common website bottlenecks like slow mobile speed and missed enquiries versus automated lead capture solutions"
                     title="Click to view full photo and zoom"
                     width={1200}
@@ -120,7 +120,7 @@ export function BottleneckSection() {
             <ImageZoomModal
               isOpen={isImageModalOpen}
               onClose={() => setIsImageModalOpen(false)}
-              src="/assets/bottleneck-solution.webp"
+              src="/assets/business-growth-bottleneck-automation-solution-amogha-digital.webp"
               alt="Website problem and solution diagnostic breakdown"
               title="Website Problem & Solution Diagnostic"
             />

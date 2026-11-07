@@ -22,7 +22,7 @@ export function CapabilitiesSection() {
       title: "Website Design & Development",
       description:
         "From custom business websites and landing pages to e-commerce stores, we build fast, mobile-friendly websites designed to rank on Google and convert local visitors into paying clients.",
-      image: "/assets/website-design.webp",
+      image: "/assets/custom-website-design-development-amogha-digital.webp",
       imageAlt:
         "Professional website design and development services for businesses in Eluru and Andhra Pradesh",
       imageTitle: "Website Design & Development",
@@ -40,7 +40,7 @@ export function CapabilitiesSection() {
       title: "Meta Ads Management (FB & IG)",
       description:
         "Targeted Facebook and Instagram ad campaigns that put your products and services directly in front of ready-to-buy customers in Eluru and across India with measurable ROI.",
-      image: "/assets/meta-ads.webp",
+      image: "/assets/meta-facebook-instagram-ads-management-amogha-digital.webp",
       imageAlt:
         "Meta Ads management dashboard displaying Facebook and Instagram advertising campaign performance and qualified lead generation",
       imageTitle: "Meta Ads Management (Facebook & Instagram)",
@@ -58,7 +58,7 @@ export function CapabilitiesSection() {
       title: "Google Ads Management",
       description:
         "High-intent Google Search and Local Service ads that capture active buyers searching for your specific products and services when purchasing intent is at its highest.",
-      image: "/assets/google-ads.webp",
+      image: "/assets/google-ads-ppc-lead-generation-agency-amogha-digital.webp",
       imageAlt:
         "Google Ads management analytics dashboard showing search campaign conversion rates and cost per acquisition metrics",
       imageTitle: "Google Ads Search & Local Services Campaign Management",
@@ -76,7 +76,7 @@ export function CapabilitiesSection() {
       title: "Business Workflow Automation & AI Chatbots",
       description:
         "Automate customer inquiries, lead qualification, and appointment bookings with 24/7 intelligent WhatsApp bots and workflow automations that sync directly with your CRM.",
-      image: "/assets/ai-automation.webp",
+      image: "/assets/ai-whatsapp-automation-workflows-amogha-digital.webp",
       imageAlt:
         "24/7 automated WhatsApp business chatbot and CRM workflow automation interface",
       imageTitle: "Business Workflow Automation & WhatsApp AI Chatbots",
@@ -94,7 +94,7 @@ export function CapabilitiesSection() {
       title: "Graphic Design & Brand Identity",
       description:
         "Cohesive brand identity packages, social media advertising creatives, marketing collateral, and print assets that establish authority and lasting brand recall.",
-      image: "/assets/graphic-design.webp",
+      image: "/assets/brand-identity-graphic-design-systems-amogha-digital.webp",
       imageAlt:
         "Professional graphic design and brand identity mockups including logo systems, social media banners, and advertising creatives",
       imageTitle: "Graphic Design & Visual Brand Identity",
@@ -112,7 +112,7 @@ export function CapabilitiesSection() {
       title: "AI Video Generation & Commercial Reels",
       description:
         "High-impact promotional video ads, product showcase reels, and localized social media video content produced quickly without expensive production crews.",
-      image: "/assets/ai-video.webp",
+      image: "/assets/ai-video-creation-marketing-reels-amogha-digital.webp",
       imageAlt:
         "AI video generation and commercial social media video reel production preview for digital marketing",
       imageTitle: "AI Video Generation & Commercial Reel Production",

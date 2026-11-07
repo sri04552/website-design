@@ -35,7 +35,7 @@ export function ServicesFilterableGrid() {
       title: "Website Design & Development",
       slug: "website-design",
       href: "/services/website-design",
-      image: "/assets/website-design.webp",
+      image: "/assets/custom-website-design-development-amogha-digital.webp",
       imageAlt: "Custom responsive website design and SEO web development",
       tagline:
         "Custom, mobile-friendly websites designed to rank high on Google search and convert visitors into paying clients.",
@@ -55,7 +55,7 @@ export function ServicesFilterableGrid() {
       title: "Meta Ads Management (FB & IG)",
       slug: "meta-ads",
       href: "/services/meta-ads",
-      image: "/assets/meta-ads.webp",
+      image: "/assets/meta-facebook-instagram-ads-management-amogha-digital.webp",
       imageAlt: "Targeted Facebook and Instagram advertising campaigns and lead generation",
       tagline:
         "Targeted advertising campaigns on Facebook and Instagram that put your offer in front of active buyers ready to purchase.",
@@ -75,7 +75,7 @@ export function ServicesFilterableGrid() {
       title: "Google Ads & Search PPC",
       slug: "google-ads",
       href: "/services/google-ads",
-      image: "/assets/google-ads.webp",
+      image: "/assets/google-ads-ppc-lead-generation-agency-amogha-digital.webp",
       imageAlt: "High-intent Google Search advertising and PPC campaign management",
       tagline:
         "Capture active buyers the moment they search for your products or services on Google Search and Google Maps.",
@@ -95,7 +95,7 @@ export function ServicesFilterableGrid() {
       title: "AI Automation & WhatsApp Chatbots",
       slug: "ai-automation",
       href: "/services/ai-automation",
-      image: "/assets/ai-automation.webp",
+      image: "/assets/ai-whatsapp-automation-workflows-amogha-digital.webp",
       imageAlt: "24/7 automated WhatsApp business customer assistant",
       tagline:
         "Automate customer inquiries, lead qualification, and appointment booking with 24/7 intelligent automated workflows.",
@@ -115,7 +115,7 @@ export function ServicesFilterableGrid() {
       title: "Brand Identity & Graphic Design",
       slug: "graphic-design",
       href: "/services/graphic-design",
-      image: "/assets/graphic-design.webp",
+      image: "/assets/brand-identity-graphic-design-systems-amogha-digital.webp",
       imageAlt: "Custom brand logos and commercial graphic design collateral",
       tagline:
         "Distinctive brand identity, memorable logos, and commercial marketing assets that build credibility and customer trust.",
@@ -135,7 +135,7 @@ export function ServicesFilterableGrid() {
       title: "AI Video Creation for Reels & Ads",
       slug: "ai-video",
       href: "/services/ai-video",
-      image: "/assets/ai-video.webp",
+      image: "/assets/ai-video-creation-marketing-reels-amogha-digital.webp",
       imageAlt: "High-retention vertical 9:16 video reels and commercial advertisements",
       tagline:
         "Engaging promotional videos and social media reels designed to build audience trust and drive customer conversions.",

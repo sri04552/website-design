@@ -101,8 +101,9 @@ export default function ServicesPage() {
         {/* Background Image Container */}
         <div className="absolute inset-0 pointer-events-none z-0">
           <Image
-            src="/assets/services-hero-bg.webp"
+            src="/assets/amogha-digital-enterprise-services-engineering-hero.webp"
             alt="Amogha Digital enterprise digital solutions and technical architecture"
+            title="Amogha Digital - Digital Services & Growth Solutions"
             fill
             priority
             sizes="100vw"

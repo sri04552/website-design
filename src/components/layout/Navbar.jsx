@@ -99,8 +99,9 @@ export function Navbar() {
             aria-label="Amogha Digital Home"
           >
             <Image
-              src={isTransparent ? "/assets/logo-blue.webp" : "/assets/logo-ribbon.webp"}
-              alt="Amogha Digital"
+              src={isTransparent ? "/assets/amogha-digital-official-logo.webp" : "/assets/amogha-digital-ribbon-logo.webp"}
+              alt="Amogha Digital - Web Development, Paid Ads & AI Automation"
+              title="Amogha Digital"
               width={800}
               height={213}
               priority

@@ -80,15 +80,27 @@ export default function ContactPage() {
       )}`
     : null;
 
-  // Check if user has placed contact-hero-bg.webp in public/assets/
+  // Check for SEO-optimized corporate office boardroom background
   const heroBgCustomPath = path.join(
+    process.cwd(),
+    "public",
+    "assets",
+    "amogha-digital-corporate-office-boardroom-contact-hero-bg.webp"
+  );
+  const heroBgFallbackPath = path.join(
     process.cwd(),
     "public",
     "assets",
     "contact-hero-bg.webp"
   );
   const hasCustomHeroBg = fs.existsSync(heroBgCustomPath);
-  const heroBgSrc = hasCustomHeroBg ? "/assets/contact-hero-bg.webp" : null;
+  const hasFallbackHeroBg = fs.existsSync(heroBgFallbackPath);
+
+  const heroBgSrc = hasCustomHeroBg
+    ? "/assets/amogha-digital-corporate-office-boardroom-contact-hero-bg.webp"
+    : hasFallbackHeroBg
+    ? "/assets/contact-hero-bg.webp"
+    : null;
 
   return (
     <>
@@ -192,8 +204,9 @@ export default function ContactPage() {
             <div className="lg:col-span-5">
               <div className="relative aspect-[16/10] sm:aspect-[4/3] rounded-2xl overflow-hidden border border-[#29374D] shadow-[0_20px_50px_rgba(0,0,0,0.5)] group">
                 <Image
-                  src="/assets/contact-hero.webp"
+                  src="/assets/amogha-digital-project-consultation-advisory-desk.webp"
                   alt="Amogha Digital project consultation and client advisory desk"
+                  title="Amogha Digital - Project Consultation & Advisory"
                   width={1586}
                   height={992}
                   priority
