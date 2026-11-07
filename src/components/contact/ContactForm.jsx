@@ -357,12 +357,12 @@ export function ContactForm({ preselectedService = "" }) {
           )}
         </div>
 
-        {/* Action Row */}
-        <div className="pt-2 flex flex-col sm:flex-row sm:items-center justify-between gap-3.5">
+        {/* Submit Button (Full Width) */}
+        <div className="pt-2">
           <button
             type="submit"
             disabled={status === "submitting"}
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#0D8C7D] hover:bg-[#0B7568] active:bg-[#085E54] text-white font-semibold text-sm sm:text-base px-8 py-3.5 rounded-xl shadow-xs hover:shadow transition-all disabled:opacity-60 disabled:cursor-not-allowed cursor-pointer min-h-[48px]"
+            className="w-full inline-flex items-center justify-center gap-2 bg-[#0D8C7D] hover:bg-[#0B7568] active:bg-[#085E54] text-white font-semibold text-sm sm:text-base px-8 py-3.5 rounded-xl shadow-xs hover:shadow transition-all disabled:opacity-60 disabled:cursor-not-allowed cursor-pointer min-h-[48px]"
           >
             {status === "submitting" ? (
               <>
@@ -376,10 +376,6 @@ export function ContactForm({ preselectedService = "" }) {
               </>
             )}
           </button>
-
-          <span className="text-xs text-slate-500 text-center sm:text-left">
-            🔒 100% confidential. No spam or sales pressure.
-          </span>
         </div>
       </form>
     </div>
