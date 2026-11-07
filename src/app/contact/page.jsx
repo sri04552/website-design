@@ -99,27 +99,27 @@ export default function ContactPage() {
 
       {/* Hero Section: High-Level Executive Project Consultation & Advisory */}
       <section className="relative min-h-[460px] border-b border-[#1E2C44] pt-[123px] pb-[48px] overflow-hidden">
-        {/* Background Image Container (No grid lines, no colored background blobs, no animations) */}
+        {/* Background Image Container (Automatically loads contact-hero-bg.webp once provided) */}
         {heroBgSrc ? (
-          <div className="absolute inset-0 pointer-events-none z-0">
-            <Image
-              src={heroBgSrc}
-              alt="Amogha Digital project advisory and operations"
-              fill
-              priority
-              sizes="100vw"
-              className="object-cover object-center"
+          <>
+            <div className="absolute inset-0 pointer-events-none z-0">
+              <Image
+                src={heroBgSrc}
+                alt="Amogha Digital corporate advisory headquarters"
+                fill
+                priority
+                sizes="100vw"
+                className="object-cover object-center"
+              />
+            </div>
+            <div
+              className="absolute inset-0 pointer-events-none z-0 bg-[#070D18]/80 backdrop-blur-[1px]"
+              aria-hidden="true"
             />
-          </div>
+          </>
         ) : (
-          <div className="absolute inset-0 bg-[#0B1220] pointer-events-none z-0" />
+          <div className="absolute inset-0 bg-[#0A101D] pointer-events-none z-0" />
         )}
-
-        {/* Sophisticated Dark Tint Overlay Color for Clear Contrast */}
-        <div
-          className="absolute inset-0 pointer-events-none z-0 bg-[#070D18]/85 backdrop-blur-[1px]"
-          aria-hidden="true"
-        />
 
         <Container className="relative z-10">
           <Breadcrumbs items={[{ label: "Contact", href: "/contact" }]} />
@@ -193,14 +193,13 @@ export default function ContactPage() {
               <div className="relative aspect-[16/10] sm:aspect-[4/3] rounded-2xl overflow-hidden border border-[#29374D] shadow-[0_20px_50px_rgba(0,0,0,0.5)] group">
                 <Image
                   src="/assets/contact-hero.webp"
-                  alt="Amogha Digital project advisory and operations"
+                  alt="Amogha Digital project consultation and client advisory desk"
                   width={1586}
                   height={992}
                   priority
                   sizes="(max-width: 1024px) 100vw, 42vw"
                   className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#070D18]/70 via-transparent to-transparent pointer-events-none" />
               </div>
             </div>
           </div>
