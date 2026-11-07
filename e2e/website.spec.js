@@ -7,7 +7,7 @@ test.describe('Midnight Signal Hero & Website Suite', () => {
     await page.waitForLoadState('domcontentloaded');
 
     // Title check
-    await expect(page).toHaveTitle(/Sri Digital Studio|Web Development|Performance Marketing/i);
+    await expect(page).toHaveTitle(/Amogha Digital|Web Development|Performance Marketing/i);
 
     // Eyebrow label with magic star icon & theme blue text
     const eyebrow = page.locator('text=WEB DEVELOPMENT • PAID ADS • AI AUTOMATION SYSTEMS');

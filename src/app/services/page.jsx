@@ -95,17 +95,23 @@ export default function ServicesPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      {/* Hero Section: Modern Editorial Layout with 48px Bottom Padding */}
-      <section className="relative bg-[#0B1220] border-b border-[#29374D] pt-[123px] pb-[48px] overflow-hidden">
-        {/* Layered Radial Mesh Lighting */}
+      {/* Hero Section: Modern Systems Engineering Layout with Distinct Blueprint Matrix Lighting */}
+      <section className="relative bg-[#080D1A] border-b border-[#1E2E48] pt-[123px] pb-[48px] overflow-hidden">
+        {/* Dynamic Dual-Angle Ambient Lighting Flares */}
         <div
-          className="absolute inset-0 pointer-events-none z-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_25%,rgba(20,35,61,0.9)_0%,rgba(11,18,32,1)_100%)]"
+          className="absolute inset-0 pointer-events-none z-0 bg-[radial-gradient(ellipse_75%_55%_at_12%_10%,rgba(0,184,240,0.18)_0%,transparent_65%),radial-gradient(ellipse_65%_55%_at_88%_90%,rgba(13,140,125,0.14)_0%,transparent_60%)]"
           aria-hidden="true"
         />
 
-        {/* Zero-Overhead CSS Architectural Grid */}
+        {/* Technical Micro Dot-Matrix Constellation Pattern */}
         <div
-          className="absolute inset-0 pointer-events-none z-0 bg-[linear-gradient(to_right,#14233D_1px,transparent_1px),linear-gradient(to_bottom,#14233D_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_40%,#000_65%,transparent_100%)] opacity-30"
+          className="absolute inset-0 pointer-events-none z-0 bg-[radial-gradient(#22385C_1.3px,transparent_1.3px)] bg-[size:24px_24px] [mask-image:linear-gradient(to_bottom,black_60%,transparent_100%)] opacity-45"
+          aria-hidden="true"
+        />
+
+        {/* Diagonal Engineering Lattice Trace Rule */}
+        <div
+          className="absolute inset-0 pointer-events-none z-0 bg-[linear-gradient(135deg,rgba(0,184,240,0.05)_1px,transparent_1px)] bg-[size:48px_48px] [mask-image:radial-gradient(ellipse_80%_60%_at_50%_40%,black_65%,transparent_100%)] opacity-50"
           aria-hidden="true"
         />
 

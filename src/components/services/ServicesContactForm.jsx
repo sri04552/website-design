@@ -220,7 +220,7 @@ export function ServicesContactForm() {
   return (
     <div className="w-full">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
-        {/* Left Editorial Studio Context (5 cols on lg) */}
+        {/* Left Editorial Company Context (5 cols on lg) */}
         <div className="lg:col-span-5 space-y-6 pt-2">
           <div className="space-y-3">
             <h2 className="font-heading text-2xl sm:text-3.5xl lg:text-[40px] font-extrabold tracking-tight text-[#0F172A] leading-[1.18]">

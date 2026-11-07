@@ -22,15 +22,19 @@ import {
 } from "lucide-react";
 
 export const metadata = {
-  title: "Contact Us | Start Your Project | Amogha Digital",
+  title: "Contact Amogha Digital | Web Development, Performance Ads & AI Automation Company",
   description:
-    "Get in touch with Amogha Digital for custom website development, Meta & Google ads management, and 24/7 AI WhatsApp automation. Fast replies within minutes.",
+    "Get in touch with Amogha Digital company for high-performance custom website development, Meta & Google Ads management, and 24/7 AI WhatsApp automation. Fast direct replies within minutes.",
   keywords: [
     "Contact Amogha Digital",
-    "Hire Web Developer India",
-    "Meta Ads Agency Contact",
-    "Google Ads Management Inquiry",
-    "WhatsApp AI Automation Consultation",
+    "Web Development Company India",
+    "Hire Next.js Developers India",
+    "Meta Ads Agency India",
+    "Google Ads Management Company",
+    "WhatsApp AI Automation Company",
+    "Digital Marketing Company India",
+    "Performance Marketing Agency",
+    "Direct Web Engineering Firm",
   ],
   alternates: {
     canonical: `${siteConfig.url}/contact`,
@@ -41,22 +45,37 @@ export default function ContactPage() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "ContactPage",
-    name: "Contact Amogha Digital",
+    name: "Contact Amogha Digital Company",
     description:
-      "Get in touch for custom website development, Meta & Google Ads management, and AI workflow automation.",
+      "Connect directly with Amogha Digital company for enterprise-grade custom web development, high-ROI paid advertising, and 24/7 WhatsApp AI automation. Direct engineer access with replies within minutes.",
     url: `${siteConfig.url}/contact`,
     mainEntity: {
-      "@type": "LocalBusiness",
+      "@type": "Organization",
       name: siteConfig.name,
+      legalName: "Amogha Digital",
       telephone: siteConfig.contact.phone,
       email: siteConfig.contact.email,
+      url: siteConfig.url,
+      contactPoint: [
+        {
+          "@type": "ContactPoint",
+          telephone: siteConfig.contact.phone,
+          contactType: "Customer Support and Project Consultation",
+          areaServed: ["IN", "Worldwide"],
+          availableLanguage: ["English", "Telugu", "Hindi"],
+        },
+      ],
       address: {
         "@type": "PostalAddress",
         addressLocality: siteConfig.location.city,
         addressRegion: siteConfig.location.state,
         addressCountry: siteConfig.location.country,
       },
-      areaServed: siteConfig.location.serviceArea,
+      sameAs: [
+        siteConfig.socialLinks?.twitter,
+        siteConfig.socialLinks?.linkedin,
+        siteConfig.socialLinks?.instagram,
+      ].filter(Boolean),
     },
   };
 
@@ -82,17 +101,23 @@ export default function ContactPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      {/* Hero Section: Distinctive 2-Column Split Studio Showcase */}
-      <section className="relative bg-[#0B1220] border-b border-[#29374D] pt-[123px] pb-[48px] overflow-hidden">
-        {/* Layered Radial Mesh Lighting */}
+      {/* Hero Section: Distinctive 2-Column Split Company Communications Showcase */}
+      <section className="relative bg-[#0A101C] border-b border-[#1E2C44] pt-[123px] pb-[48px] overflow-hidden">
+        {/* Dual-Zone Communications Lighting: Warm Emerald Direct Beacon + Cool Cyan Asset Glow */}
         <div
-          className="absolute inset-0 pointer-events-none z-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_25%,rgba(20,35,61,0.9)_0%,rgba(11,18,32,1)_100%)]"
+          className="absolute inset-0 pointer-events-none z-0 bg-[radial-gradient(circle_at_20%_40%,rgba(13,140,125,0.18)_0%,transparent_50%),radial-gradient(circle_at_80%_45%,rgba(0,184,240,0.18)_0%,transparent_55%),radial-gradient(ellipse_90%_40%_at_50%_0%,rgba(20,38,68,0.7)_0%,transparent_100%)]"
           aria-hidden="true"
         />
 
-        {/* Zero-Overhead CSS Architectural Grid */}
+        {/* Linear Telemetry Radar Pulse Scanlines & Waveform Lattice */}
         <div
-          className="absolute inset-0 pointer-events-none z-0 bg-[linear-gradient(to_right,#14233D_1px,transparent_1px),linear-gradient(to_bottom,#14233D_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_40%,#000_65%,transparent_100%)] opacity-30"
+          className="absolute inset-0 pointer-events-none z-0 bg-[linear-gradient(to_bottom,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:100%_28px] [mask-image:radial-gradient(ellipse_80%_70%_at_50%_45%,black_70%,transparent_100%)] opacity-60"
+          aria-hidden="true"
+        />
+
+        {/* Signal Broadcast Subtle Pulse Accent */}
+        <div
+          className="absolute -top-32 right-1/4 w-[500px] h-[500px] rounded-full border border-[#00B8F0]/10 pointer-events-none animate-pulse opacity-40 [mask-image:radial-gradient(circle,black_50%,transparent_100%)]"
           aria-hidden="true"
         />
 
@@ -100,7 +125,7 @@ export default function ContactPage() {
           <Breadcrumbs items={[{ label: "Contact", href: "/contact" }]} />
 
           <div className="mt-8 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-            {/* Left Column: Editorial Studio Introduction & Direct Actions (7 cols on lg) */}
+            {/* Left Column: Editorial Company Introduction & Direct Actions (7 cols on lg) */}
             <div className="lg:col-span-7 space-y-6">
               {/* Live Availability Status Pill */}
               <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full border border-emerald-500/30 bg-emerald-950/40 backdrop-blur-md shadow-xs">
@@ -109,21 +134,21 @@ export default function ContactPage() {
                   <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
                 </span>
                 <span className="text-[11px] sm:text-xs font-semibold tracking-wider text-emerald-400 uppercase font-mono">
-                  STUDIO ACTIVE • REPLIES WITHIN MINUTES
+                  TEAM ONLINE • REPLIES WITHIN MINUTES
                 </span>
               </div>
 
               {/* Asymmetric, Bold Headline */}
               <h1 className="font-heading text-3xl sm:text-4xl lg:text-[48px] font-extrabold tracking-tight text-[#F5F7FC] leading-[1.14]">
-                Direct Studio Access.{" "}
+                Direct Company Access.{" "}
                 <span className="block mt-1 sm:mt-2 text-[#00B8F0]">
-                  No Middlemen, Just Real Results.
+                  No Sales Pitch, Just Real Results.
                 </span>
               </h1>
 
               {/* Supporting Copy (16px mobile, 15px desktop) */}
               <p className="text-[16px] sm:text-[15px] text-[#9BAAC2] leading-[1.75] font-normal max-w-xl">
-                Ready to build a high-performance website, scale qualified customer acquisition with Meta &amp; Google ads, or automate client inquiries on WhatsApp? Speak directly with the engineers building your systems.
+                Ready to build a high-converting website, scale profitable customer acquisition with Meta &amp; Google ads, or automate client communications on WhatsApp? Partner directly with our core engineering and marketing team—no account managers or middlemen.
               </p>
 
               {/* Instant Quick-Connect Action Buttons */}
@@ -144,7 +169,7 @@ export default function ContactPage() {
                   href="#inquiry-form"
                   className="inline-flex items-center justify-center gap-2 bg-[#14233D] hover:bg-[#1A2C4C] text-[#F5F7FC] font-semibold text-sm sm:text-base px-6 py-3.5 rounded-xl border border-[#29374D] hover:border-[#00B8F0]/40 transition-all min-h-[48px]"
                 >
-                  <span>Project Proposal Form</span>
+                  <span>Submit Project Details</span>
                   <ArrowDown className="w-4 h-4 text-[#00B8F0]" />
                 </a>
               </div>
@@ -153,15 +178,15 @@ export default function ContactPage() {
               <div className="pt-3 border-t border-[#29374D]/70 flex flex-wrap items-center gap-y-2 gap-x-6 text-xs text-[#8E9EB5]">
                 <div className="flex items-center gap-1.5">
                   <CheckCircle2 className="w-3.5 h-3.5 text-[#0D8C7D]" />
-                  <span>Free Initial Architecture Scope</span>
+                  <span>Free Architecture &amp; Scope Review</span>
                 </div>
                 <div className="flex items-center gap-1.5">
                   <CheckCircle2 className="w-3.5 h-3.5 text-[#00B8F0]" />
-                  <span>100% Code &amp; Account Ownership</span>
+                  <span>100% Code &amp; Ad Account Ownership</span>
                 </div>
                 <div className="flex items-center gap-1.5">
                   <CheckCircle2 className="w-3.5 h-3.5 text-[#0D8C7D]" />
-                  <span>Direct Technical Lead Access</span>
+                  <span>Direct Core Team Access</span>
                 </div>
               </div>
             </div>
@@ -169,27 +194,28 @@ export default function ContactPage() {
             {/* Right Column: Hero Visual Showcase Centerpiece (5 cols on lg) */}
             <div className="lg:col-span-5">
               {hasContactHeroImage ? (
-                /* Dynamic Custom Image (Loaded once user generates contact-hero.webp) */
-                <div className="relative aspect-[16/10] sm:aspect-[4/3] rounded-2xl overflow-hidden border border-[#29374D] shadow-[0_20px_50px_rgba(0,184,240,0.12)] group">
+                /* Dynamic Custom Image (Loaded from public/assets/contact-hero.webp) */
+                <div className="relative aspect-[16/10] sm:aspect-[4/3] rounded-2xl overflow-hidden border border-[#29374D] shadow-[0_20px_50px_rgba(0,184,240,0.14)] group">
                   <Image
                     src="/assets/contact-hero.webp"
-                    alt="Amogha Digital Studio direct communications and project engineering workstation"
-                    width={1200}
-                    height={750}
+                    alt="Amogha Digital company operations, custom web development, and digital marketing command desk"
+                    title="Amogha Digital - Digital Growth & Engineering Company"
+                    width={1586}
+                    height={992}
                     priority
+                    sizes="(max-width: 1024px) 100vw, 42vw"
                     className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
-                    unoptimized
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0B1220]/80 via-transparent to-transparent pointer-events-none" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0A101C]/80 via-transparent to-transparent pointer-events-none" />
 
                   {/* Floating Real-time Status Overlay Badge */}
-                  <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between p-3.5 rounded-xl bg-[#0B1220]/85 backdrop-blur-md border border-white/10 text-xs text-white">
+                  <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between p-3.5 rounded-xl bg-[#0A101C]/90 backdrop-blur-md border border-white/10 text-xs text-white">
                     <div className="flex items-center gap-2">
                       <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
-                      <span className="font-medium">Direct Line Active</span>
+                      <span className="font-medium">Direct Company Line Active</span>
                     </div>
                     <span className="text-[#00B8F0] font-mono text-[11px]">
-                      Avg: &lt; 5 mins
+                      Avg Reply: &lt; 5 mins
                     </span>
                   </div>
                 </div>
@@ -207,10 +233,10 @@ export default function ContactPage() {
                       </div>
                       <div>
                         <div className="text-xs font-bold text-white uppercase tracking-wider">
-                          Studio Dispatch Node
+                          Company Operations Node
                         </div>
                         <div className="text-[11px] text-emerald-400 font-mono">
-                          Live • Open for New Projects
+                          Live • Open for Client Projects
                         </div>
                       </div>
                     </div>
@@ -247,7 +273,7 @@ export default function ContactPage() {
                     </div>
                   </div>
 
-                  {/* Founder Direct Line Bar */}
+                  {/* Direct Line Bar */}
                   <div className="p-4 rounded-xl bg-[#0B1220] border border-[#29374D] flex items-center justify-between text-xs">
                     <div className="space-y-0.5">
                       <div className="text-slate-400 text-[11px]">Primary WhatsApp:</div>
@@ -280,14 +306,14 @@ export default function ContactPage() {
       >
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
-            {/* Left Column: Studio Channels & Assurance (5 cols on lg) */}
+            {/* Left Column: Company Channels & Assurance (5 cols on lg) */}
             <div className="lg:col-span-5 space-y-6 pt-2">
               <div className="space-y-3">
                 <h2 className="font-heading text-2xl sm:text-3.5xl lg:text-[38px] font-extrabold tracking-tight text-[#0F172A] leading-[1.18]">
-                  Direct Studio Channels
+                  Direct Company Channels
                 </h2>
                 <p className="text-[16px] sm:text-[15px] text-[#475569] leading-[1.75] font-normal">
-                  Skip the middle managers and sales reps. You speak directly with the specialists building and optimizing your digital systems.
+                  Work directly with the digital specialists building, managing, and scaling your systems. No sales reps, no agency markups.
                 </p>
               </div>
 
@@ -380,13 +406,13 @@ export default function ContactPage() {
                 <div className="p-5 rounded-2xl bg-white border border-slate-200/90 shadow-2xs space-y-2">
                   <div className="flex items-center gap-2 text-slate-900 font-bold text-sm">
                     <MapPin className="w-4 h-4 text-slate-700" />
-                    <span>Location &amp; Delivery</span>
+                    <span>Company Location &amp; Delivery</span>
                   </div>
                   <p className="text-sm text-slate-700">
                     Based in {siteConfig.location.city}, {siteConfig.location.state}
                   </p>
                   <p className="text-xs text-slate-500">
-                    {siteConfig.contact.availabilityNote}
+                    Serving businesses across India &amp; global markets with 100% remote delivery.
                   </p>
                 </div>
               </div>

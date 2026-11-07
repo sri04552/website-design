@@ -17,7 +17,7 @@ export function Footer() {
       <div className="py-[48px]">
         <Container>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 sm:gap-12">
-            {/* Column 1: Studio Identity */}
+            {/* Column 1: Company Identity */}
             <div className="lg:col-span-2 space-y-4">
               <Link href="/" className="inline-block py-1" aria-label="Amogha Digital Home">
                 <Image
@@ -85,10 +85,10 @@ export function Footer() {
               </ul>
             </div>
 
-            {/* Column 4: Studio Navigation */}
+            {/* Column 4: Company Navigation */}
             <div className="space-y-3">
               <p className="text-xs font-semibold text-[#F5F7FC] uppercase tracking-wider">
-                Studio
+                Company
               </p>
               <ul className="space-y-2.5">
                 <li>
