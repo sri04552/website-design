@@ -61,8 +61,8 @@ export function ServicesContactForm() {
   const budgetOptions = [
     { id: "flexible", label: "Flexible / Open" },
     { id: "under-25k", label: "< ₹25,000" },
-    { id: "25k-50k", label: "₹25,000 – ₹50,000" },
-    { id: "50k-1lakh", label: "₹50,000 – ₹1,00,000" },
+    { id: "25k-50k", label: "₹25,000 to ₹50,000" },
+    { id: "50k-1lakh", label: "₹50,000 to ₹1,00,000" },
     { id: "above-1lakh", label: "₹1,00,000+" },
   ];
 

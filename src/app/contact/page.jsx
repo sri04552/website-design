@@ -237,7 +237,7 @@ export default function ContactPage() {
                   Get in Touch Directly
                 </h2>
                 <p className="text-[16px] sm:text-[15px] text-[#475569] leading-[1.75] font-normal">
-                  Have a question or want to discuss a new project? Reach out through WhatsApp, phone, or email — we are always happy to help.
+                  Have a question or want to discuss a new project? Reach out through WhatsApp, phone, or email. We are always happy to help.
                 </p>
               </div>
 
@@ -309,7 +309,7 @@ export default function ContactPage() {
                     {siteConfig.location.city}, {siteConfig.location.state}, India
                   </p>
                   <p className="text-xs text-slate-500">
-                    Based in Eluru, Andhra Pradesh — working with clients locally and across India.
+                    Based in Eluru, Andhra Pradesh, working with clients locally and across India.
                   </p>
                 </div>
               </div>
