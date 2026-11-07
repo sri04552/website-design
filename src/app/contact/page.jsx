@@ -208,9 +208,9 @@ export default function ContactPage() {
             <div className="lg:col-span-5">
               <div className="relative aspect-[16/10] sm:aspect-[4/3] rounded-2xl overflow-hidden border border-[#29374D] shadow-[0_20px_50px_rgba(0,0,0,0.5)] group">
                 <Image
-                  src="/assets/amogha-digital-project-consultation-advisory-desk.webp"
-                  alt="Amogha Digital project consultation and client advisory desk"
-                  title="Amogha Digital - Project Consultation & Advisory"
+                  src="/assets/amogha-digital-collaborative-tech-meeting-project-consultation.webp"
+                  alt="Amogha Digital technical leadership and consulting team discussing a digital transformation project with clients"
+                  title="Amogha Digital - Collaborative Project Consultation & Client Advisory Meeting"
                   width={1586}
                   height={992}
                   priority
