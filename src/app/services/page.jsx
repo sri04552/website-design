@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { siteConfig } from "@/config/site";
 import { Container } from "@/components/ui/Container";
@@ -95,23 +96,23 @@ export default function ServicesPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      {/* Hero Section: Modern Systems Engineering Layout with Distinct Blueprint Matrix Lighting */}
-      <section className="relative bg-[#080D1A] border-b border-[#1E2E48] pt-[123px] pb-[48px] overflow-hidden">
-        {/* Dynamic Dual-Angle Ambient Lighting Flares */}
-        <div
-          className="absolute inset-0 pointer-events-none z-0 bg-[radial-gradient(ellipse_75%_55%_at_12%_10%,rgba(0,184,240,0.18)_0%,transparent_65%),radial-gradient(ellipse_65%_55%_at_88%_90%,rgba(13,140,125,0.14)_0%,transparent_60%)]"
-          aria-hidden="true"
-        />
+      {/* Hero Section: Enterprise Systems & Engineering Suite */}
+      <section className="relative min-h-[460px] border-b border-[#1E2E48] pt-[123px] pb-[48px] overflow-hidden">
+        {/* Background Image Container */}
+        <div className="absolute inset-0 pointer-events-none z-0">
+          <Image
+            src="/assets/services-hero-bg.webp"
+            alt="Amogha Digital enterprise digital solutions and technical architecture"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-center"
+          />
+        </div>
 
-        {/* Technical Micro Dot-Matrix Constellation Pattern */}
+        {/* Dark Tint Overlay for Optimal Contrast */}
         <div
-          className="absolute inset-0 pointer-events-none z-0 bg-[radial-gradient(#22385C_1.3px,transparent_1.3px)] bg-[size:24px_24px] [mask-image:linear-gradient(to_bottom,black_60%,transparent_100%)] opacity-45"
-          aria-hidden="true"
-        />
-
-        {/* Diagonal Engineering Lattice Trace Rule */}
-        <div
-          className="absolute inset-0 pointer-events-none z-0 bg-[linear-gradient(135deg,rgba(0,184,240,0.05)_1px,transparent_1px)] bg-[size:48px_48px] [mask-image:radial-gradient(ellipse_80%_60%_at_50%_40%,black_65%,transparent_100%)] opacity-50"
+          className="absolute inset-0 pointer-events-none z-0 bg-[#070D18]/85 backdrop-blur-[1px]"
           aria-hidden="true"
         />
 
