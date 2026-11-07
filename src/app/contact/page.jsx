@@ -1,3 +1,6 @@
+import fs from "fs";
+import path from "path";
+import Image from "next/image";
 import Link from "next/link";
 import { siteConfig } from "@/config/site";
 import { Container } from "@/components/ui/Container";
@@ -13,7 +16,9 @@ import {
   Zap,
   MessageSquare,
   ArrowRight,
+  ArrowDown,
   CheckCircle2,
+  Radio,
 } from "lucide-react";
 
 export const metadata = {
@@ -61,6 +66,15 @@ export default function ContactPage() {
       )}`
     : null;
 
+  // Check if user has placed contact-hero.webp in public/assets/
+  const contactHeroPath = path.join(
+    process.cwd(),
+    "public",
+    "assets",
+    "contact-hero.webp"
+  );
+  const hasContactHeroImage = fs.existsSync(contactHeroPath);
+
   return (
     <>
       <script
@@ -68,7 +82,7 @@ export default function ContactPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      {/* Hero Section: Architectural Dark Layout with exact 48px bottom padding */}
+      {/* Hero Section: Distinctive 2-Column Split Studio Showcase */}
       <section className="relative bg-[#0B1220] border-b border-[#29374D] pt-[123px] pb-[48px] overflow-hidden">
         {/* Layered Radial Mesh Lighting */}
         <div
@@ -85,49 +99,185 @@ export default function ContactPage() {
         <Container className="relative z-10">
           <Breadcrumbs items={[{ label: "Contact", href: "/contact" }]} />
 
-          <div className="max-w-4xl mt-6 space-y-6">
-            {/* Eyebrow Badge strictly on Hero */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#29374D] bg-[#14233D]/80 backdrop-blur-xs shadow-xs">
-              <Sparkles className="w-3.5 h-3.5 text-[#00B8F0] shrink-0" aria-hidden="true" />
-              <span className="text-[11px] sm:text-xs font-semibold tracking-wider text-[#00B8F0] uppercase">
-                GET IN TOUCH • DIRECT COLLABORATION
-              </span>
+          <div className="mt-8 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+            {/* Left Column: Editorial Studio Introduction & Direct Actions (7 cols on lg) */}
+            <div className="lg:col-span-7 space-y-6">
+              {/* Live Availability Status Pill */}
+              <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full border border-emerald-500/30 bg-emerald-950/40 backdrop-blur-md shadow-xs">
+                <span className="relative flex h-2.5 w-2.5">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+                </span>
+                <span className="text-[11px] sm:text-xs font-semibold tracking-wider text-emerald-400 uppercase font-mono">
+                  STUDIO ACTIVE • REPLIES WITHIN MINUTES
+                </span>
+              </div>
+
+              {/* Asymmetric, Bold Headline */}
+              <h1 className="font-heading text-3xl sm:text-4xl lg:text-[48px] font-extrabold tracking-tight text-[#F5F7FC] leading-[1.14]">
+                Direct Studio Access.{" "}
+                <span className="block mt-1 sm:mt-2 text-[#00B8F0]">
+                  No Middlemen, Just Real Results.
+                </span>
+              </h1>
+
+              {/* Supporting Copy (16px mobile, 15px desktop) */}
+              <p className="text-[16px] sm:text-[15px] text-[#9BAAC2] leading-[1.75] font-normal max-w-xl">
+                Ready to build a high-performance website, scale qualified customer acquisition with Meta &amp; Google ads, or automate client inquiries on WhatsApp? Speak directly with the engineers building your systems.
+              </p>
+
+              {/* Instant Quick-Connect Action Buttons */}
+              <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full sm:w-auto">
+                {whatsappHref && (
+                  <a
+                    href={whatsappHref}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-2.5 bg-[#0D8C7D] hover:bg-[#0B7568] active:bg-[#085E54] text-white font-semibold text-sm sm:text-base px-6 py-3.5 rounded-xl shadow-sm hover:shadow transition-all min-h-[48px]"
+                  >
+                    <MessageSquare className="w-4 h-4" />
+                    <span>WhatsApp Live Chat</span>
+                  </a>
+                )}
+
+                <a
+                  href="#inquiry-form"
+                  className="inline-flex items-center justify-center gap-2 bg-[#14233D] hover:bg-[#1A2C4C] text-[#F5F7FC] font-semibold text-sm sm:text-base px-6 py-3.5 rounded-xl border border-[#29374D] hover:border-[#00B8F0]/40 transition-all min-h-[48px]"
+                >
+                  <span>Project Proposal Form</span>
+                  <ArrowDown className="w-4 h-4 text-[#00B8F0]" />
+                </a>
+              </div>
+
+              {/* Reassurance Micro-Strip */}
+              <div className="pt-3 border-t border-[#29374D]/70 flex flex-wrap items-center gap-y-2 gap-x-6 text-xs text-[#8E9EB5]">
+                <div className="flex items-center gap-1.5">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-[#0D8C7D]" />
+                  <span>Free Initial Architecture Scope</span>
+                </div>
+                <div className="flex items-center gap-1.5">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-[#00B8F0]" />
+                  <span>100% Code &amp; Account Ownership</span>
+                </div>
+                <div className="flex items-center gap-1.5">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-[#0D8C7D]" />
+                  <span>Direct Technical Lead Access</span>
+                </div>
+              </div>
             </div>
 
-            {/* High-Impact Headline */}
-            <h1 className="font-heading text-3xl sm:text-5xl lg:text-[56px] font-extrabold tracking-tight text-[#F5F7FC] leading-[1.12]">
-              Let&apos;s Discuss Your Project.{" "}
-              <span className="block mt-1 sm:mt-2 text-[#00B8F0]">
-                Direct Replies Within Minutes.
-              </span>
-            </h1>
+            {/* Right Column: Hero Visual Showcase Centerpiece (5 cols on lg) */}
+            <div className="lg:col-span-5">
+              {hasContactHeroImage ? (
+                /* Dynamic Custom Image (Loaded once user generates contact-hero.webp) */
+                <div className="relative aspect-[16/10] sm:aspect-[4/3] rounded-2xl overflow-hidden border border-[#29374D] shadow-[0_20px_50px_rgba(0,184,240,0.12)] group">
+                  <Image
+                    src="/assets/contact-hero.webp"
+                    alt="Amogha Digital Studio direct communications and project engineering workstation"
+                    width={1200}
+                    height={750}
+                    priority
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+                    unoptimized
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0B1220]/80 via-transparent to-transparent pointer-events-none" />
 
-            {/* Supporting Paragraph (16px mobile, 15px desktop) */}
-            <p className="text-[16px] sm:text-[15px] text-[#9BAAC2] leading-[1.75] font-normal max-w-2xl">
-              Whether you are launching a new website, scaling customer acquisition with Meta &amp; Google ads, or automating client inquiries on WhatsApp, we are here to help. Speak directly with our team with zero sales friction.
-            </p>
+                  {/* Floating Real-time Status Overlay Badge */}
+                  <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between p-3.5 rounded-xl bg-[#0B1220]/85 backdrop-blur-md border border-white/10 text-xs text-white">
+                    <div className="flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
+                      <span className="font-medium">Direct Line Active</span>
+                    </div>
+                    <span className="text-[#00B8F0] font-mono text-[11px]">
+                      Avg: &lt; 5 mins
+                    </span>
+                  </div>
+                </div>
+              ) : (
+                /* Polished Architectural Glass Telemetry Terminal (Active while user generates image) */
+                <div className="relative rounded-2xl border border-[#29374D] bg-gradient-to-br from-[#111C30] via-[#0F1A2D] to-[#0B1220] p-6 sm:p-7 shadow-[0_20px_50px_rgba(0,184,240,0.08)] overflow-hidden space-y-5">
+                  {/* Subtle Ambient Lighting */}
+                  <div className="absolute top-0 right-0 w-48 h-48 bg-[#00B8F0]/15 rounded-full blur-3xl pointer-events-none" />
 
-            {/* 3-Pillar Benchmark Strip */}
-            <div className="pt-4 border-t border-[#29374D]/80 grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs sm:text-[13px] text-[#9BAAC2]">
-              <div className="flex items-center gap-2">
-                <Zap className="w-4 h-4 text-[#00B8F0] shrink-0" />
-                <span>Direct Founder Discussion</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <ShieldCheck className="w-4 h-4 text-[#0D8C7D] shrink-0" />
-                <span>100% Direct Asset Ownership</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Clock className="w-4 h-4 text-[#00B8F0] shrink-0" />
-                <span>Fixed Milestone Pricing</span>
-              </div>
+                  {/* Node Header */}
+                  <div className="flex items-center justify-between border-b border-[#29374D]/80 pb-4">
+                    <div className="flex items-center gap-2.5">
+                      <div className="w-9 h-9 rounded-xl bg-[#14233D] border border-[#29374D] flex items-center justify-center text-[#00B8F0]">
+                        <Radio className="w-4 h-4 animate-pulse" />
+                      </div>
+                      <div>
+                        <div className="text-xs font-bold text-white uppercase tracking-wider">
+                          Studio Dispatch Node
+                        </div>
+                        <div className="text-[11px] text-emerald-400 font-mono">
+                          Live • Open for New Projects
+                        </div>
+                      </div>
+                    </div>
+                    <span className="px-2.5 py-1 rounded-md bg-[#14233D] border border-white/10 text-[11px] font-mono text-[#9BAAC2]">
+                      2026
+                    </span>
+                  </div>
+
+                  {/* Telemetry Metrics Grid */}
+                  <div className="grid grid-cols-2 gap-3 text-xs">
+                    <div className="p-3.5 rounded-xl bg-[#14233D]/60 border border-[#29374D]/80 space-y-1">
+                      <div className="text-[11px] text-[#8E9EB5]">Response Time</div>
+                      <div className="text-sm font-bold text-[#00B8F0] font-mono">
+                        &lt; 5 Minutes
+                      </div>
+                    </div>
+                    <div className="p-3.5 rounded-xl bg-[#14233D]/60 border border-[#29374D]/80 space-y-1">
+                      <div className="text-[11px] text-[#8E9EB5]">Asset Ownership</div>
+                      <div className="text-sm font-bold text-[#0D8C7D] font-mono">
+                        100% Direct
+                      </div>
+                    </div>
+                    <div className="p-3.5 rounded-xl bg-[#14233D]/60 border border-[#29374D]/80 space-y-1">
+                      <div className="text-[11px] text-[#8E9EB5]">Technical Middlemen</div>
+                      <div className="text-sm font-bold text-white font-mono">
+                        Zero
+                      </div>
+                    </div>
+                    <div className="p-3.5 rounded-xl bg-[#14233D]/60 border border-[#29374D]/80 space-y-1">
+                      <div className="text-[11px] text-[#8E9EB5]">Initial Estimate</div>
+                      <div className="text-sm font-bold text-emerald-400 font-mono">
+                        100% Free
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Founder Direct Line Bar */}
+                  <div className="p-4 rounded-xl bg-[#0B1220] border border-[#29374D] flex items-center justify-between text-xs">
+                    <div className="space-y-0.5">
+                      <div className="text-slate-400 text-[11px]">Primary WhatsApp:</div>
+                      <div className="text-white font-bold font-mono">
+                        {siteConfig.contact.phone}
+                      </div>
+                    </div>
+                    {whatsappHref && (
+                      <a
+                        href={whatsappHref}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="px-3.5 py-1.5 rounded-lg bg-[#0D8C7D] hover:bg-[#0B7568] text-white text-xs font-semibold transition-colors"
+                      >
+                        Message Now
+                      </a>
+                    )}
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </Container>
       </section>
 
       {/* Main Interactive Contact & Consultation Section with exact 48px padding */}
-      <section className="bg-[#F8FAFC] py-[48px] border-b border-slate-200 text-[#0F172A]">
+      <section
+        id="inquiry-form"
+        className="bg-[#F8FAFC] py-[48px] border-b border-slate-200 text-[#0F172A]"
+      >
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
             {/* Left Column: Studio Channels & Assurance (5 cols on lg) */}
