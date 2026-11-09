@@ -21,6 +21,11 @@ export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
 
+  // Hide public website navbar on all admin pages
+  if (pathname?.startsWith("/admin")) {
+    return null;
+  }
+
   // Scroll listener: transparent at top of homepage, sticky white header upon scroll
   useEffect(() => {
     let lastScrolled = window.scrollY > 20;

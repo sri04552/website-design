@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { siteConfig } from "@/config/site";
 import {
   Mail,
@@ -9,7 +12,13 @@ import {
 import { Container } from "@/components/ui/Container";
 
 export function Footer() {
+  const pathname = usePathname();
   const currentYear = new Date().getFullYear();
+
+  // Hide public footer on all admin pages
+  if (pathname?.startsWith("/admin")) {
+    return null;
+  }
 
   return (
     <footer className="bg-[#0B1220] text-[#9BAAC2] border-t border-[#29374D]">

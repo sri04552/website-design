@@ -442,9 +442,10 @@ export default function AdminDashboardPage() {
 
             <button
               onClick={handleLogout}
-              className="inline-flex items-center gap-1.5 text-xs font-semibold text-rose-300 hover:text-white bg-rose-950/40 hover:bg-rose-900/60 px-3 py-1.5 rounded-lg border border-rose-800/60 transition-colors cursor-pointer"
+              className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-white bg-rose-600 hover:bg-rose-700 active:bg-rose-800 px-3.5 py-2 rounded-xl transition-all shadow-xs hover:shadow cursor-pointer"
+              title="Sign Out of Admin Panel"
             >
-              <LogOut className="w-3.5 h-3.5" />
+              <LogOut className="w-4 h-4" />
               <span>Logout</span>
             </button>
           </div>
