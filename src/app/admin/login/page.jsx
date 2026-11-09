@@ -4,9 +4,7 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import { supabase } from "@/lib/supabase";
 import {
-  ShieldCheck,
   Mail,
   KeyRound,
   ArrowRight,
@@ -26,14 +24,16 @@ export default function AdminLoginPage() {
   const [errorMessage, setErrorMessage] = useState("");
   const [resendTimer, setResendTimer] = useState(0);
 
-  // Check if already authenticated
+  // Check if already authenticated via session API
   useEffect(() => {
-    if (!supabase) return;
-    supabase.auth.getSession().then(({ data: { session } }) => {
-      if (session?.user) {
-        router.push("/admin");
-      }
-    });
+    fetch("/api/admin/auth")
+      .then((res) => res.json())
+      .then((data) => {
+        if (data?.authenticated) {
+          router.replace("/admin");
+        }
+      })
+      .catch(() => {});
   }, [router]);
 
   // Countdown timer for resend OTP
@@ -55,31 +55,28 @@ export default function AdminLoginPage() {
       return;
     }
 
-    if (!supabase) {
-      setErrorMessage(
-        "Supabase credentials are not detected. Please verify NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY in your .env.local file."
-      );
-      return;
-    }
-
     setStatus("loading");
 
     try {
-      const { error } = await supabase.auth.signInWithOtp({
-        email: email.trim().toLowerCase(),
-        options: {
-          shouldCreateUser: true,
-        },
+      const res = await fetch("/api/admin/auth", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          action: "send-otp",
+          email: email.trim().toLowerCase(),
+        }),
       });
 
-      if (error) {
-        throw error;
+      const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data.error || "Failed to send verification code.");
       }
 
       setStatus("idle");
       setStep("otp");
       setResendTimer(60);
-      setMessage(`A 6-digit verification code has been sent to ${email.trim()}.`);
+      setMessage(data.message || `A 6-digit verification code has been sent to ${email.trim()}.`);
     } catch (err) {
       setStatus("error");
       setErrorMessage(err.message || "Failed to send verification code. Please try again.");
@@ -99,22 +96,25 @@ export default function AdminLoginPage() {
     setStatus("loading");
 
     try {
-      const { data, error } = await supabase.auth.verifyOtp({
-        email: email.trim().toLowerCase(),
-        token: cleanOtp,
-        type: "email",
+      const res = await fetch("/api/admin/auth", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          action: "verify-otp",
+          email: email.trim().toLowerCase(),
+          token: cleanOtp,
+        }),
       });
 
-      if (error) {
-        throw error;
+      const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data.error || "Invalid verification code.");
       }
 
-      if (data?.session) {
-        setStatus("success");
-        router.push("/admin");
-      } else {
-        throw new Error("Failed to create authenticated session. Please try again.");
-      }
+      setStatus("success");
+      // Hard redirect to /admin to ensure fresh cookie is picked up
+      window.location.href = "/admin";
     } catch (err) {
       setStatus("error");
       setErrorMessage(err.message || "Invalid or expired verification code. Please check and try again.");
@@ -130,37 +130,31 @@ export default function AdminLoginPage() {
       />
 
       <div className="w-full max-w-md relative z-10">
-        {/* Brand & Security Header */}
+        {/* Brand Header: Logo Only (Medium size, no brand text, no badge) */}
         <div className="text-center mb-8">
-          <Link
-            href="/"
-            className="inline-flex items-center gap-2 mb-6 group focus-visible:outline-[#00B8F0]"
-          >
-            <div className="w-10 h-10 rounded-xl bg-[#14233D] border border-[#2B3E5C] flex items-center justify-center p-2 group-hover:border-[#00B8F0]/60 transition-colors">
+          <div className="flex justify-center mb-6">
+            <Link
+              href="/"
+              title="Return to Website"
+              className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-[#14233D] border border-[#2B3E5C] flex items-center justify-center p-3 hover:border-[#00B8F0]/60 transition-all shadow-lg hover:scale-105"
+            >
               <Image
                 src="/assets/amogha-digital-official-logo.webp"
-                alt="Amogha Digital"
-                width={32}
-                height={32}
+                alt="Logo"
+                width={80}
+                height={80}
+                priority
                 className="w-full h-full object-contain"
               />
-            </div>
-            <span className="font-heading font-extrabold text-xl text-[#F5F7FC] tracking-tight">
-              Amogha<span className="text-[#00B8F0]">Digital</span>
-            </span>
-          </Link>
-
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-[#2B3E5C] bg-[#131F33]/80 text-[#00B8F0] text-xs font-semibold mb-3">
-            <ShieldCheck className="w-3.5 h-3.5" />
-            <span>Secure Admin Portal</span>
+            </Link>
           </div>
 
           <h1 className="font-heading text-2xl sm:text-3xl font-extrabold text-[#F5F7FC] tracking-tight">
-            {step === "email" ? "Sign In With Email OTP" : "Enter Verification Code"}
+            {step === "email" ? "Admin Sign In" : "Enter Verification Code"}
           </h1>
           <p className="mt-2 text-sm text-[#9BAAC2]">
             {step === "email"
-              ? "Passwordless, hacker-proof authentication. Enter your email to receive a single-use login code."
+              ? "Enter your administrator email to receive a single-use verification code."
               : `Enter the 6-digit code sent to ${email}`}
           </p>
         </div>
@@ -197,7 +191,7 @@ export default function AdminLoginPage() {
                   htmlFor="admin-email"
                   className="block text-xs font-semibold text-[#CBD5E1] tracking-wide"
                 >
-                  Admin Email Address
+                  Administrator Email Address
                 </label>
                 <div className="relative">
                   <input
@@ -222,7 +216,7 @@ export default function AdminLoginPage() {
                 {status === "loading" ? (
                   <>
                     <Loader2 className="w-4 h-4 animate-spin" />
-                    <span>Sending Login Code...</span>
+                    <span>Sending Code...</span>
                   </>
                 ) : (
                   <>

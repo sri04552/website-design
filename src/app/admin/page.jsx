@@ -98,32 +98,51 @@ export default function AdminDashboardPage() {
 
   // Auth Protection Check
   useEffect(() => {
-    if (!supabase) {
-      setLoading(false);
-      return;
+    let isMounted = true;
+
+    async function checkAuth() {
+      try {
+        // 1. Verify via server-side session check
+        const authRes = await fetch("/api/admin/auth");
+        const authData = await authRes.json();
+
+        if (!authData?.authenticated) {
+          if (isMounted) {
+            setSession(null);
+            window.location.href = "/admin/login";
+          }
+          return;
+        }
+
+        // 2. Also sync client-side Supabase session if available
+        if (supabase) {
+          const {
+            data: { session: clientSession },
+          } = await supabase.auth.getSession();
+
+          if (isMounted) {
+            setSession(clientSession || { access_token: "cookie", user: authData.user });
+            setLoading(false);
+          }
+        } else {
+          if (isMounted) {
+            setSession({ access_token: "cookie", user: authData.user });
+            setLoading(false);
+          }
+        }
+      } catch (err) {
+        if (isMounted) {
+          window.location.href = "/admin/login";
+        }
+      }
     }
 
-    supabase.auth.getSession().then(({ data: { session } }) => {
-      if (!session?.user) {
-        router.push("/admin/login");
-      } else {
-        setSession(session);
-        setLoading(false);
-      }
-    });
+    checkAuth();
 
-    const {
-      data: { subscription },
-    } = supabase.auth.onAuthStateChange((_event, session) => {
-      if (!session?.user) {
-        router.push("/admin/login");
-      } else {
-        setSession(session);
-      }
-    });
-
-    return () => subscription.unsubscribe();
-  }, [router]);
+    return () => {
+      isMounted = false;
+    };
+  }, []);
 
   // Fetch Inquiries
   const fetchInquiries = useCallback(async () => {
@@ -176,9 +195,18 @@ export default function AdminDashboardPage() {
 
   // Handle Logout
   const handleLogout = async () => {
-    if (!supabase) return;
-    await supabase.auth.signOut();
-    router.push("/admin/login");
+    try {
+      await fetch("/api/admin/auth", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ action: "logout" }),
+      });
+      if (supabase) {
+        await supabase.auth.signOut();
+      }
+    } finally {
+      window.location.href = "/admin/login";
+    }
   };
 
   // Delete Inquiry
@@ -363,10 +391,18 @@ export default function AdminDashboardPage() {
     );
   });
 
-  if (loading) {
+  if (loading || !session?.user) {
     return (
-      <div className="min-h-screen bg-[#070D18] flex items-center justify-center">
-        <Loader2 className="w-8 h-8 text-[#00B8F0] animate-spin" />
+      <div className="min-h-screen bg-[#070D18] flex flex-col items-center justify-center p-4">
+        <div className="w-12 h-12 rounded-xl bg-[#14233D] border border-[#2B3E5C] flex items-center justify-center mb-4">
+          <Loader2 className="w-6 h-6 text-[#00B8F0] animate-spin" />
+        </div>
+        <p className="text-sm font-semibold text-[#F5F7FC]">
+          Verifying security authorization...
+        </p>
+        <p className="text-xs text-[#9BAAC2] mt-1">
+          Unauthorized requests are redirected to login.
+        </p>
       </div>
     );
   }

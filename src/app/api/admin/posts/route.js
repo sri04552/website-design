@@ -1,12 +1,26 @@
 import { NextResponse } from "next/server";
+import { cookies } from "next/headers";
 import { supabase, supabaseAdmin } from "@/lib/supabase";
 
+function getAdminEmail() {
+  return (
+    process.env.ADMIN_EMAIL ||
+    process.env.NEXT_PUBLIC_ADMIN_EMAIL ||
+    process.env.NEXT_PUBLIC_CONTACT_EMAIL ||
+    "sriworkspace8@gmail.com"
+  )
+    .trim()
+    .toLowerCase();
+}
+
 async function verifyAdmin(request) {
-  const authHeader = request.headers.get("Authorization");
-  if (!authHeader || !authHeader.startsWith("Bearer ")) {
-    return null;
-  }
-  const token = authHeader.replace("Bearer ", "").trim();
+  const cookieStore = await cookies();
+  const token =
+    request.headers.get("Authorization")?.replace("Bearer ", "")?.trim() ||
+    cookieStore.get("admin_access_token")?.value;
+
+  if (!token) return null;
+
   const db = supabaseAdmin || supabase;
   if (!db) return null;
 
@@ -15,7 +29,11 @@ async function verifyAdmin(request) {
       data: { user },
       error,
     } = await db.auth.getUser(token);
-    if (error || !user) return null;
+
+    const adminEmail = getAdminEmail();
+    if (error || !user || user.email?.toLowerCase() !== adminEmail) {
+      return null;
+    }
     return user;
   } catch (err) {
     return null;
@@ -27,11 +45,11 @@ function generateSlug(text) {
     .toString()
     .toLowerCase()
     .trim()
-    .replace(/\s+/g, "-") // Replace spaces with -
-    .replace(/[^\w-]+/g, "") // Remove all non-word chars
-    .replace(/--+/g, "-") // Replace multiple - with single -
-    .replace(/^-+/, "") // Trim - from start of text
-    .replace(/-+$/, ""); // Trim - from end of text
+    .replace(/\s+/g, "-")
+    .replace(/[^\w-]+/g, "")
+    .replace(/--+/g, "-")
+    .replace(/^-+/, "")
+    .replace(/-+$/, "");
 }
 
 function calculateReadTime(content) {
