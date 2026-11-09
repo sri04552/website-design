@@ -405,25 +405,23 @@ export default function AdminDashboardPage() {
       {/* Top Header Bar (Dark Architectural Hero Nav) */}
       <header className="border-b border-[#1E2C44] bg-[#0A101D] text-white sticky top-0 z-30 shadow-md">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <Link href="/" className="flex items-center gap-2 group">
-              <div className="w-8 h-8 rounded-lg bg-[#14233D] border border-[#2B3E5C] flex items-center justify-center p-1.5 group-hover:border-[#00B8F0]/60 transition-colors">
-                <Image
-                  src="/assets/amogha-digital-ribbon-logo.webp"
-                  alt="Amogha Digital"
-                  width={28}
-                  height={28}
-                  className="w-full h-full object-contain"
-                />
-              </div>
-              <span className="font-heading font-extrabold text-base sm:text-lg text-[#F5F7FC] tracking-tight">
-                Amogha<span className="text-[#00B8F0]">Digital</span>
-              </span>
+          <div className="flex items-center">
+            <Link
+              href="/"
+              className="flex items-center group py-1"
+              aria-label="Amogha Digital Home"
+              title="Return to Website"
+            >
+              <Image
+                src="/assets/amogha-digital-official-logo.webp"
+                alt="Amogha Digital"
+                title="Amogha Digital"
+                width={800}
+                height={213}
+                priority
+                className="h-8 sm:h-9 w-auto object-contain transition-opacity duration-200"
+              />
             </Link>
-            <span className="hidden sm:inline-block text-[#2B3E5C]">|</span>
-            <span className="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-[#131F33] text-[#00B8F0] border border-[#2B3E5C]">
-              Admin Control Center
-            </span>
           </div>
 
           <div className="flex items-center gap-3">
