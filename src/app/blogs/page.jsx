@@ -24,9 +24,23 @@ export const metadata = {
 
 export const revalidate = 60; // Revalidate every 60 seconds
 
+const sampleFallbackPost = {
+  id: "sample-nextjs-architecture",
+  title: "Why High-Speed Next.js Websites Outrank Traditional Templates in 2026",
+  slug: "why-high-speed-nextjs-websites-outrank-traditional-templates",
+  excerpt:
+    "Discover why modern businesses are moving away from bloated, slow-loading templates toward custom Next.js architectures that achieve sub-second load times and dominate Google search results.",
+  category: "Website Design",
+  author: "Amogha Digital",
+  cover_image: "/assets/custom-website-design-development-amogha-digital.webp",
+  read_time: "4 min read",
+  published_at: "2026-11-09T12:00:00.000Z",
+  created_at: "2026-11-09T12:00:00.000Z",
+};
+
 async function getPublishedPosts() {
   const db = supabaseAdmin || supabase;
-  if (!db) return [];
+  if (!db) return [sampleFallbackPost];
 
   try {
     const { data, error } = await db
@@ -35,14 +49,13 @@ async function getPublishedPosts() {
       .eq("published", true)
       .order("published_at", { ascending: false });
 
-    if (error) {
-      console.error("Error fetching published posts:", error.message);
-      return [];
+    if (error || !data || data.length === 0) {
+      return [sampleFallbackPost];
     }
-    return data || [];
+    return data;
   } catch (err) {
     console.error("Failed to load posts:", err);
-    return [];
+    return [sampleFallbackPost];
   }
 }
 
