@@ -146,7 +146,7 @@ export function Navbar() {
                   <Link
                     key={item.href}
                     href={item.href}
-                    className={`relative py-1 text-[13.5px] sm:text-[14px] font-semibold tracking-wider transition-colors duration-150 group ${linkColorClass}`}
+                    className={`relative py-1 text-[15px] font-semibold font-sans tracking-wider transition-colors duration-150 group ${linkColorClass}`}
                   >
                     <span>{item.label}</span>
                     {/* Animated underline on hover and active */}
@@ -166,7 +166,7 @@ export function Navbar() {
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 bg-[#0D8C7D] hover:bg-[#0B7568] active:bg-[#085E54] text-white text-sm font-semibold px-5 py-2.5 rounded-lg shadow-sm hover:shadow transition-all duration-150 focus-visible:outline-[#00B8F0]"
+              className="inline-flex items-center justify-center gap-2 bg-[#0D8C7D] hover:bg-[#0B7568] active:bg-[#085E54] text-white text-[16px] font-semibold font-sans px-5 py-2.5 rounded-lg shadow-sm hover:shadow transition-all duration-150 focus-visible:outline-[#00B8F0]"
             >
               <span>Let&apos;s Talk</span>
               <ArrowRight className="w-4 h-4" />
@@ -237,7 +237,7 @@ export function Navbar() {
                   key={item.href}
                   href={item.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className={`px-4 py-3 rounded-xl text-base font-semibold tracking-wider transition-all min-h-[50px] flex items-center gap-3.5 ${
+                  className={`px-4 py-3 rounded-xl text-[15px] font-semibold font-sans tracking-wider transition-all min-h-[50px] flex items-center gap-3.5 ${
                     isActive
                       ? isDarkTheme
                         ? "bg-[#14233D] text-[#00B8F0] shadow-sm"
@@ -274,7 +274,7 @@ export function Navbar() {
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => setMobileMenuOpen(false)}
-            className="w-full inline-flex items-center justify-center gap-2 bg-[#0D8C7D] hover:bg-[#0B7568] active:bg-[#085E54] text-white text-base font-semibold px-6 py-3.5 rounded-lg shadow-sm transition-all min-h-[48px]"
+            className="w-full inline-flex items-center justify-center gap-2 bg-[#0D8C7D] hover:bg-[#0B7568] active:bg-[#085E54] text-white text-[16px] font-semibold font-sans px-6 py-3.5 rounded-lg shadow-sm transition-all min-h-[48px]"
           >
             <span>Start a Project Discussion</span>
             <ArrowRight className="w-4 h-4" />

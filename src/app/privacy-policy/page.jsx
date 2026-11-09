@@ -12,10 +12,10 @@ export default function PrivacyPolicyPage() {
       <Container>
         <Breadcrumbs items={[{ label: "Privacy Policy", href: "/privacy-policy" }]} />
         <div className="mt-8 max-w-2xl">
-          <h1 className="text-3xl sm:text-4xl font-extrabold text-[#F5F7FC] tracking-tight">
+          <h1 className="font-heading text-3xl sm:text-4xl font-bold text-[#F5F7FC] tracking-tight">
             Privacy Policy
           </h1>
-          <p className="mt-4 text-[16px] sm:text-[15px] text-[#9BAAC2] leading-[1.75]">
+          <p className="mt-4 text-[16px] sm:text-[15px] text-[#9BAAC2] leading-[1.75] font-normal font-sans">
             This section will be built systematically phase by phase.
           </p>
         </div>

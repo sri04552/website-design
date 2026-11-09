@@ -247,12 +247,12 @@ export default async function BlogPostPage({ params }) {
 
           <div className="mt-8 space-y-4">
             <div className="flex items-center gap-2">
-              <span className="inline-block px-3 py-1 rounded-md text-xs font-semibold uppercase tracking-wider bg-[#14233D] text-[#00B8F0] border border-[#2B3E5C] font-mono">
+              <span className="inline-block px-3 py-1 rounded-md text-xs font-medium uppercase tracking-wider bg-[#14233D] text-[#00B8F0] border border-[#2B3E5C] font-mono">
                 {post.category || "General"}
               </span>
             </div>
 
-            <h1 className="font-heading text-3xl sm:text-4xl lg:text-[44px] font-extrabold text-[#F5F7FC] tracking-tight leading-[1.18]">
+            <h1 className="font-heading text-3xl sm:text-4xl lg:text-[44px] font-bold text-[#F5F7FC] tracking-tight leading-[1.18]">
               {post.title}
             </h1>
 

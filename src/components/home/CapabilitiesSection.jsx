@@ -173,7 +173,7 @@ export function CapabilitiesSection() {
           {/* Section Main H2 */}
           <h2
             id="capabilities-heading"
-            className="text-2xl sm:text-3.5xl lg:text-[38px] font-extrabold tracking-tight text-[#0F172A] leading-[1.2]"
+            className="text-2xl sm:text-3.5xl lg:text-[38px] font-bold tracking-tight text-[#0F172A] leading-[1.2]"
           >
             Digital Services Engineered for Real Business Growth
           </h2>
@@ -222,7 +222,7 @@ export function CapabilitiesSection() {
                     {/* Tag & Icon Row */}
                     <div className="flex items-center justify-between gap-2 mb-3">
                       <span
-                        className={`inline-block px-2.5 py-0.5 rounded text-[11px] font-bold tracking-wider uppercase border ${item.tagColor}`}
+                        className={`inline-block px-2.5 py-0.5 rounded text-[11px] font-medium font-mono tracking-wider uppercase border ${item.tagColor}`}
                       >
                         {item.tag}
                       </span>

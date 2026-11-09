@@ -124,16 +124,16 @@ export default function ServicesPage() {
             {/* Eyebrow Badge kept strictly for Hero */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#29374D] bg-[#14233D]/80 backdrop-blur-xs shadow-xs">
               <Layers className="w-3.5 h-3.5 text-[#00B8F0] shrink-0" aria-hidden="true" />
-              <span className="text-[11px] sm:text-xs font-semibold tracking-wider text-[#00B8F0] uppercase font-mono">
+              <span className="text-[12px] font-medium tracking-wider text-[#00B8F0] uppercase font-mono">
                 DIGITAL SERVICES &amp; SOLUTIONS
               </span>
             </div>
 
             {/* High-Impact Headline */}
-            <h1 className="font-heading text-3xl sm:text-5xl lg:text-[56px] font-extrabold tracking-tight text-[#F5F7FC] leading-[1.12]">
+            <h1 className="font-heading text-3xl sm:text-5xl lg:text-[56px] font-bold tracking-tight text-[#F5F7FC] leading-[1.12]">
               High-Performance Systems.{" "}
               <span className="block mt-1 sm:mt-2">
-                Built for <span className="text-[#00B8F0]">Predictable Revenue</span>.
+                Built for <span className="text-[#00B8F0] font-extrabold">Predictable Revenue</span>.
               </span>
             </h1>
 

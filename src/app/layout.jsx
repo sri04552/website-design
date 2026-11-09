@@ -1,27 +1,29 @@
-import { Inter, Manrope, Orbitron } from "next/font/google";
+import { Plus_Jakarta_Sans, Inter, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 import { siteConfig } from "@/config/site";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { SmoothScroll } from "@/components/motion/SmoothScroll";
 
+const plusJakarta = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-plus-jakarta",
+  weight: ["700", "800"],
+});
+
 const inter = Inter({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-inter",
+  weight: ["400", "600"],
 });
 
-const manrope = Manrope({
+const ibmPlexMono = IBM_Plex_Mono({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-manrope",
-});
-
-const automataDisplay = Orbitron({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-automata",
-  weight: ["600", "700", "800", "900"],
+  variable: "--font-ibm-plex-mono",
+  weight: ["500"],
 });
 
 export const metadata = {
@@ -117,7 +119,7 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${manrope.variable} ${automataDisplay.variable}`}
+      className={`${inter.variable} ${plusJakarta.variable} ${ibmPlexMono.variable}`}
     >
       <head>
         <script

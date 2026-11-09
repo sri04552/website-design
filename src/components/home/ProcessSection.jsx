@@ -68,7 +68,7 @@ export function ProcessSection() {
           {/* Main H2 */}
           <h2
             id="process-heading"
-            className="text-2xl sm:text-3.5xl lg:text-[34px] font-extrabold tracking-tight text-[#0F172A] leading-[1.25]"
+            className="text-2xl sm:text-3.5xl lg:text-[34px] font-bold tracking-tight text-[#0F172A] leading-[1.25]"
           >
             From Initial Idea to Live Results in 4 Clear Steps
           </h2>

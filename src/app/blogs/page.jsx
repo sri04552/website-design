@@ -82,14 +82,14 @@ export default async function BlogsPage({ searchParams }) {
             {/* Eyebrow */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#29374D] bg-[#14233D]/70 shadow-xs">
               <BookOpen className="w-3.5 h-3.5 text-[#00B8F0]" />
-              <span className="text-[11px] sm:text-xs font-semibold tracking-wider text-[#00B8F0] uppercase font-mono">
+              <span className="text-[12px] font-medium tracking-wider text-[#00B8F0] uppercase font-mono">
                 INSIGHTS &amp; ENGINEERING GUIDES
               </span>
             </div>
 
-            <h1 className="font-heading text-3xl sm:text-4xl lg:text-[48px] font-extrabold tracking-tight text-[#F5F7FC] leading-[1.14]">
+            <h1 className="font-heading text-3xl sm:text-4xl lg:text-[48px] font-bold tracking-tight text-[#F5F7FC] leading-[1.14]">
               Digital Growth, Architecture &amp;{" "}
-              <span className="text-[#00B8F0]">Execution Guides.</span>
+              <span className="text-[#00B8F0] font-extrabold">Execution Guides.</span>
             </h1>
 
             <p className="text-[16px] sm:text-[15px] text-[#9BAAC2] leading-[1.75] font-normal">

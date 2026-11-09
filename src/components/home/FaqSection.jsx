@@ -77,7 +77,7 @@ export function FaqSection() {
             {/* Main H2 */}
             <h2
               id="faq-heading"
-              className="text-2xl sm:text-3.5xl lg:text-[34px] font-extrabold tracking-tight text-[#0F172A] leading-[1.25]"
+              className="text-2xl sm:text-3.5xl lg:text-[34px] font-bold tracking-tight text-[#0F172A] leading-[1.25]"
             >
               Everything You Need to Know Before Getting Started
             </h2>

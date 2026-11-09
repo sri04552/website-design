@@ -77,7 +77,7 @@ export function BottleneckSection() {
             {/* Main H2 */}
             <h2
               id="bottlenecks-heading"
-              className="text-2xl sm:text-3.5xl lg:text-[34px] font-extrabold tracking-tight text-[#0F172A] leading-[1.25]"
+              className="text-2xl sm:text-3.5xl lg:text-[34px] font-bold tracking-tight text-[#0F172A] leading-[1.25]"
             >
               The 3 Hidden Reasons Most Business Websites Fail to Get Calls
             </h2>
@@ -167,7 +167,7 @@ export function BottleneckSection() {
                 {/* The Problem Block with red eyebrow badge (no icons) */}
                 <div className="space-y-2">
                   <div>
-                    <span className="inline-block px-2.5 py-1 rounded-md bg-rose-50 border border-rose-200/80 text-rose-700 text-[11px] font-bold uppercase tracking-wider">
+                    <span className="inline-block px-2.5 py-1 rounded-md bg-rose-50 border border-rose-200/80 text-rose-700 text-[11px] font-medium font-mono uppercase tracking-wider">
                       The Problem
                     </span>
                   </div>
@@ -182,7 +182,7 @@ export function BottleneckSection() {
                 {/* The Solution Block with green eyebrow badge (no icons) */}
                 <div className="mt-6 space-y-2">
                   <div>
-                    <span className="inline-block px-2.5 py-1 rounded-md bg-emerald-50 border border-emerald-200/80 text-emerald-800 text-[11px] font-bold uppercase tracking-wider">
+                    <span className="inline-block px-2.5 py-1 rounded-md bg-emerald-50 border border-emerald-200/80 text-emerald-800 text-[11px] font-medium font-mono uppercase tracking-wider">
                       Our Solution
                     </span>
                   </div>

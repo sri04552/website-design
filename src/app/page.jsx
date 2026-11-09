@@ -73,21 +73,21 @@ export default function HomePage() {
               className="w-3.5 h-3.5 text-[#00B8F0] shrink-0"
               aria-hidden="true"
             />
-            <span className="text-[11px] sm:text-xs font-semibold tracking-wider text-[#00B8F0] uppercase font-mono">
+            <span className="text-[12px] font-medium tracking-wider text-[#00B8F0] uppercase font-mono">
               Digital Presence to Business Systems
             </span>
           </div>
 
           {/* Cinematic Headline */}
-          <h1 className="font-heading text-4xl sm:text-5.5xl lg:text-[64px] font-extrabold tracking-tight text-[#F5F7FC] leading-[1.12] sm:leading-[1.1] max-w-4xl">
+          <h1 className="font-heading text-4xl sm:text-5xl lg:text-[68px] font-bold text-[#F5F7FC] leading-[1.12] tracking-tight lg:tracking-[-2.5px] max-w-4xl">
             <span className="block">Grow Your Business.</span>
             <span className="block mt-1 sm:mt-2">
-              <span className="text-[#00B8F0]">Automate</span> What Comes Next.
+              <span className="text-[#00B8F0] font-extrabold">Automate</span> What Comes Next.
             </span>
           </h1>
 
-          {/* SEO-Optimized Supporting Paragraph: 16px on mobile and 16px on desktop */}
-          <p className="mt-5 sm:mt-7 text-[16px] text-[#9BAAC2] max-w-[720px] leading-[1.75] font-normal">
+          {/* SEO-Optimized Supporting Paragraph: 18px desktop, 16px mobile, line-height 1.7 */}
+          <p className="mt-5 sm:mt-7 text-base sm:text-[18px] text-[#9BAAC2] max-w-[720px] leading-[1.7] font-normal font-sans">
             We engineer high-performance custom websites, ROI-driven marketing
             campaigns, and intelligent AI automation systems designed to
             capture qualified leads, streamline operations, and scale modern
@@ -95,11 +95,11 @@ export default function HomePage() {
           </p>
 
           {/* Horizontally Aligned CTA Buttons with standard min-h-[48px] */}
-          <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
+          <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto font-sans">
             {/* Primary CTA - Darkened Teal */}
             <Link
               href="/contact"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#0D8C7D] hover:bg-[#0B7568] active:bg-[#085E54] text-white font-semibold text-base px-6 sm:px-7 py-3.5 rounded-lg shadow-sm hover:shadow transition-all duration-150 min-h-[48px] focus-visible:outline-[#00B8F0]"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#0D8C7D] hover:bg-[#0B7568] active:bg-[#085E54] text-white font-semibold text-[16px] px-6 sm:px-7 py-3.5 rounded-lg shadow-sm hover:shadow transition-all duration-150 min-h-[48px] focus-visible:outline-[#00B8F0]"
             >
               <span>Start a Project</span>
               <ArrowRight className="w-4 h-4 text-white/90" />
@@ -108,7 +108,7 @@ export default function HomePage() {
             {/* Secondary CTA - High-contrast architectural blue-slate button */}
             <Link
               href="/services"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#131F33] hover:bg-[#1A2A45] active:bg-[#0F1929] text-[#F5F7FC] border border-[#2B3E5C] hover:border-[#00B8F0]/70 font-semibold text-base px-6 sm:px-7 py-3.5 rounded-lg transition-all duration-150 shadow-xs hover:shadow-[0_0_20px_rgba(0,184,240,0.15)] min-h-[48px] focus-visible:outline-[#00B8F0]"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#131F33] hover:bg-[#1A2A45] active:bg-[#0F1929] text-[#F5F7FC] border border-[#2B3E5C] hover:border-[#00B8F0]/70 font-semibold text-[16px] px-6 sm:px-7 py-3.5 rounded-lg transition-all duration-150 shadow-xs hover:shadow-[0_0_20px_rgba(0,184,240,0.15)] min-h-[48px] focus-visible:outline-[#00B8F0]"
             >
               <span>Explore Services</span>
               <ArrowRight className="w-4 h-4 text-slate-300 group-hover:text-white transition-colors" />
