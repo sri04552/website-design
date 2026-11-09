@@ -96,7 +96,7 @@ function renderArticleContent(rawContent) {
   const flushList = () => {
     if (currentList.length > 0) {
       elements.push(
-        <ul key={`ul-${elements.length}`} className="my-4 space-y-2 list-disc list-inside text-[#CBD5E1]">
+        <ul key={`ul-${elements.length}`} className="my-4 space-y-2 list-disc list-inside text-slate-700">
           {currentList.map((item, idx) => (
             <li key={idx} className="leading-relaxed">
               {item}
@@ -126,7 +126,7 @@ function renderArticleContent(rawContent) {
       elements.push(
         <h3
           key={`h3-${index}`}
-          className="font-heading text-xl sm:text-2xl font-bold text-[#F5F7FC] mt-8 mb-3"
+          className="font-heading text-xl sm:text-2xl font-bold text-[#0F172A] mt-8 mb-3"
         >
           {trimmed.slice(4)}
         </h3>
@@ -135,7 +135,7 @@ function renderArticleContent(rawContent) {
       elements.push(
         <h2
           key={`h2-${index}`}
-          className="font-heading text-2xl sm:text-3xl font-extrabold text-[#F5F7FC] mt-10 mb-4 border-b border-[#1E2C44] pb-2.5"
+          className="font-heading text-2xl sm:text-3xl font-extrabold text-[#0F172A] mt-10 mb-4 border-b border-slate-200 pb-2.5"
         >
           {trimmed.slice(3)}
         </h2>
@@ -144,7 +144,7 @@ function renderArticleContent(rawContent) {
       elements.push(
         <blockquote
           key={`quote-${index}`}
-          className="my-6 border-l-4 border-[#00B8F0] pl-4 py-1.5 text-[#9BAAC2] italic bg-[#0F172A] rounded-r-xl"
+          className="my-6 border-l-4 border-[#0284C7] pl-4 py-2 text-slate-700 italic bg-slate-50 border-y border-r border-slate-200/80 rounded-r-xl"
         >
           {trimmed.slice(2)}
         </blockquote>
@@ -154,7 +154,7 @@ function renderArticleContent(rawContent) {
       const urlMatch = trimmed.match(/\((.*?)\)/);
       if (urlMatch) {
         elements.push(
-          <div key={`img-${index}`} className="my-8 relative aspect-[16/9] w-full rounded-2xl overflow-hidden border border-[#2B3E5C]">
+          <div key={`img-${index}`} className="my-8 relative aspect-[16/9] w-full rounded-2xl overflow-hidden border border-slate-200 shadow-md">
             <Image
               src={urlMatch[1]}
               alt={altMatch ? altMatch[1] : "Blog illustration"}
@@ -167,7 +167,7 @@ function renderArticleContent(rawContent) {
       }
     } else {
       elements.push(
-        <p key={`p-${index}`} className="my-4 text-[16px] sm:text-[15.5px] text-[#CBD5E1] leading-[1.8] font-normal">
+        <p key={`p-${index}`} className="my-4 text-[16px] sm:text-[15.5px] text-slate-700 leading-[1.85] font-normal">
           {trimmed}
         </p>
       );
@@ -229,14 +229,14 @@ export default async function BlogPostPage({ params }) {
   const shareUrl = encodeURIComponent(currentUrl);
 
   return (
-    <article className="bg-[#070D18] text-[#F5F7FC] min-h-screen">
+    <article className="bg-[#F8FAFC] min-h-screen">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
       />
 
-      {/* Hero / Header Section */}
-      <header className="relative pt-[123px] pb-[40px] border-b border-[#1E2C44]">
+      {/* Hero / Header Section (Preserved Dark Theme) */}
+      <header className="relative bg-[#070D18] text-[#F5F7FC] pt-[123px] pb-[40px] border-b border-[#1E2C44]">
         <Container className="max-w-4xl">
           <Breadcrumbs
             items={[
@@ -281,12 +281,12 @@ export default async function BlogPostPage({ params }) {
         </Container>
       </header>
 
-      {/* Main Content Body */}
-      <section className="py-[48px]">
+      {/* Main Content Body (Light Theme) */}
+      <section className="py-[48px] bg-[#F8FAFC] text-[#0F172A]">
         <Container className="max-w-4xl">
           {/* Featured Cover Image */}
           {post.cover_image && (
-            <div className="mb-10 relative aspect-[16/9] w-full rounded-2xl overflow-hidden border border-[#2B3E5C] shadow-2xl">
+            <div className="mb-10 relative aspect-[16/9] w-full rounded-2xl overflow-hidden border border-slate-200 shadow-lg">
               <Image
                 src={post.cover_image}
                 alt={post.title}
@@ -301,7 +301,7 @@ export default async function BlogPostPage({ params }) {
 
           {/* Lead Excerpt */}
           {post.excerpt && (
-            <div className="mb-8 p-5 sm:p-6 rounded-2xl bg-[#0F172A] border-l-4 border-[#00B8F0] border border-[#1E2C44] text-[#CBD5E1] text-base sm:text-lg leading-relaxed font-medium">
+            <div className="mb-8 p-5 sm:p-6 rounded-2xl bg-white border-l-4 border-[#0284C7] border border-slate-200/90 text-slate-700 text-base sm:text-lg leading-relaxed font-medium shadow-xs">
               {post.excerpt}
             </div>
           )}
@@ -310,10 +310,10 @@ export default async function BlogPostPage({ params }) {
           <div className="article-content">{renderArticleContent(post.content)}</div>
 
           {/* Share & Consultation Row */}
-          <div className="mt-12 pt-6 border-t border-[#1E2C44] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <div className="mt-12 pt-6 border-t border-slate-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
             <Link
               href="/blogs"
-              className="inline-flex items-center gap-2 text-xs font-semibold text-[#9BAAC2] hover:text-[#00B8F0] transition-colors"
+              className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-slate-600 hover:text-[#0284C7] transition-colors"
             >
               <ArrowLeft className="w-4 h-4" />
               <span>Back to All Articles</span>
@@ -321,13 +321,13 @@ export default async function BlogPostPage({ params }) {
 
             {/* Social Share Buttons */}
             <div className="flex items-center gap-2">
-              <span className="text-xs text-[#9BAAC2]">Share:</span>
+              <span className="text-xs text-slate-500 font-medium">Share:</span>
               <a
                 href={`https://wa.me/?text=${shareText}%20${shareUrl}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 title="Share on WhatsApp"
-                className="w-8 h-8 rounded-lg bg-[#0D8C7D]/20 hover:bg-[#0D8C7D] text-[#0D8C7D] hover:text-white flex items-center justify-center transition-colors"
+                className="w-8 h-8 rounded-lg bg-emerald-50 hover:bg-[#0D8C7D] text-[#0D8C7D] hover:text-white border border-emerald-200/60 flex items-center justify-center transition-colors shadow-xs"
               >
                 <MessageSquare className="w-3.5 h-3.5" />
               </a>
@@ -337,7 +337,7 @@ export default async function BlogPostPage({ params }) {
                 target="_blank"
                 rel="noopener noreferrer"
                 title="Share on Twitter / X"
-                className="w-8 h-8 rounded-lg bg-[#14233D] hover:bg-[#1A2A45] text-[#9BAAC2] hover:text-white flex items-center justify-center transition-colors"
+                className="w-8 h-8 rounded-lg bg-slate-100 hover:bg-slate-900 text-slate-600 hover:text-white border border-slate-200 flex items-center justify-center transition-colors shadow-xs"
               >
                 <Share2 className="w-3.5 h-3.5" />
               </a>
@@ -345,12 +345,12 @@ export default async function BlogPostPage({ params }) {
           </div>
 
           {/* Bottom Consultation Banner */}
-          <div className="mt-12 p-6 sm:p-8 rounded-2xl bg-[#0F172A] border border-[#2B3E5C] flex flex-col sm:flex-row items-center justify-between gap-6 shadow-xl">
+          <div className="mt-12 p-6 sm:p-8 rounded-2xl bg-white border border-slate-200/90 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-[0_2px_12px_rgba(15,23,42,0.04)]">
             <div className="space-y-1.5 text-center sm:text-left">
-              <h3 className="font-heading text-lg sm:text-xl font-bold text-[#F5F7FC]">
+              <h3 className="font-heading text-lg sm:text-xl font-bold text-[#0F172A]">
                 Need help engineering your digital platform?
               </h3>
-              <p className="text-xs sm:text-sm text-[#9BAAC2] max-w-lg">
+              <p className="text-xs sm:text-sm text-slate-600 max-w-lg">
                 Speak directly with our senior developers and advertising directors to plan your next
                 custom build with zero sales pressure.
               </p>

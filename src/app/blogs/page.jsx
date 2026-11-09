@@ -66,9 +66,9 @@ export default async function BlogsPage({ searchParams }) {
       : allPosts.filter((post) => post.category === activeCategory);
 
   return (
-    <div className="bg-[#070D18] text-[#F5F7FC] min-h-screen">
-      {/* Hero Section */}
-      <section className="relative pt-[123px] pb-[48px] border-b border-[#1E2C44] overflow-hidden">
+    <div className="bg-[#F8FAFC] min-h-screen">
+      {/* Hero Section (Preserved Dark Theme) */}
+      <section className="relative bg-[#070D18] text-[#F5F7FC] pt-[123px] pb-[48px] border-b border-[#1E2C44] overflow-hidden">
         {/* Ambient Glow */}
         <div
           className="absolute top-0 right-1/4 w-[450px] h-[450px] bg-[#00B8F0]/10 rounded-full blur-[140px] pointer-events-none"
@@ -120,20 +120,20 @@ export default async function BlogsPage({ searchParams }) {
         </Container>
       </section>
 
-      {/* Blog Posts Grid Section */}
-      <section className="py-[48px]">
+      {/* Blog Posts Grid Section (Light Theme) */}
+      <section className="py-[48px] bg-[#F8FAFC]">
         <Container>
           {filteredPosts.length === 0 ? (
-            <div className="bg-[#0F172A] rounded-2xl border border-[#1E2C44] p-12 sm:p-16 text-center max-w-xl mx-auto space-y-4">
-              <div className="w-14 h-14 rounded-full bg-[#14233D] text-[#00B8F0] border border-[#2B3E5C] flex items-center justify-center mx-auto">
+            <div className="bg-white rounded-2xl border border-slate-200/90 p-12 sm:p-16 text-center max-w-xl mx-auto space-y-4 shadow-[0_2px_12px_rgba(15,23,42,0.03)]">
+              <div className="w-14 h-14 rounded-full bg-slate-50 text-[#0284C7] border border-slate-200 flex items-center justify-center mx-auto">
                 <FileText className="w-7 h-7" />
               </div>
-              <h2 className="font-heading text-xl font-bold text-[#F5F7FC]">
+              <h2 className="font-heading text-xl font-bold text-[#0F172A]">
                 {activeCategory !== "All"
                   ? `No articles published under "${activeCategory}" yet`
                   : "New Articles Coming Soon"}
               </h2>
-              <p className="text-sm text-[#9BAAC2] leading-relaxed">
+              <p className="text-sm text-slate-600 leading-relaxed">
                 Our team is currently preparing in-depth guides on high-speed web architecture, Meta
                 Ads scaling, and AI WhatsApp automation.
               </p>
@@ -161,13 +161,13 @@ export default async function BlogsPage({ searchParams }) {
                 return (
                   <article
                     key={post.id}
-                    className="bg-[#0F172A] rounded-2xl border border-[#1E2C44] overflow-hidden flex flex-col justify-between hover:border-[#2B3E5C] hover:shadow-[0_12px_30px_rgba(0,184,240,0.06)] transition-all group"
+                    className="bg-white rounded-2xl border border-slate-200/90 overflow-hidden flex flex-col justify-between hover:border-slate-300 hover:shadow-[0_12px_28px_rgba(15,23,42,0.06)] transition-all group"
                   >
                     <div>
                       {/* Cover Image Thumbnail */}
                       <Link
                         href={`/blogs/${post.slug}`}
-                        className="relative aspect-[16/10] block w-full bg-[#131F33] overflow-hidden"
+                        className="relative aspect-[16/10] block w-full bg-slate-100 overflow-hidden"
                       >
                         {post.cover_image ? (
                           <Image
@@ -178,13 +178,13 @@ export default async function BlogsPage({ searchParams }) {
                             className="object-cover group-hover:scale-103 transition-transform duration-300"
                           />
                         ) : (
-                          <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-[#0F172A] to-[#14233D] text-[#00B8F0]">
-                            <BookOpen className="w-10 h-10 opacity-30" />
+                          <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-slate-100 to-slate-200 text-slate-400">
+                            <BookOpen className="w-10 h-10 opacity-40" />
                           </div>
                         )}
 
                         <div className="absolute top-3 left-3">
-                          <span className="inline-block px-2.5 py-1 rounded-md text-[11px] font-bold uppercase tracking-wider bg-[#070D18]/85 text-[#00B8F0] border border-[#2B3E5C] backdrop-blur-md font-mono">
+                          <span className="inline-block px-2.5 py-1 rounded-md text-[11px] font-bold uppercase tracking-wider bg-white/95 text-[#0284C7] border border-slate-200/80 shadow-xs backdrop-blur-md font-mono">
                             {post.category || "General"}
                           </span>
                         </div>
@@ -192,26 +192,26 @@ export default async function BlogsPage({ searchParams }) {
 
                       {/* Content Info */}
                       <div className="p-5 sm:p-6">
-                        <div className="flex items-center gap-3 text-xs text-[#9BAAC2] mb-3">
+                        <div className="flex items-center gap-3 text-xs text-slate-500 mb-3">
                           {dateFormatted && (
                             <div className="flex items-center gap-1.5">
-                              <Calendar className="w-3.5 h-3.5 text-[#00B8F0]" />
+                              <Calendar className="w-3.5 h-3.5 text-[#0284C7]" />
                               <span>{dateFormatted}</span>
                             </div>
                           )}
                           <span>•</span>
                           <div className="flex items-center gap-1.5">
-                            <Clock className="w-3.5 h-3.5 text-[#9BAAC2]" />
+                            <Clock className="w-3.5 h-3.5 text-slate-400" />
                             <span>{post.read_time || "4 min read"}</span>
                           </div>
                         </div>
 
-                        <h2 className="font-heading text-lg sm:text-xl font-bold text-[#F5F7FC] leading-snug group-hover:text-[#00B8F0] transition-colors line-clamp-2">
+                        <h2 className="font-heading text-lg sm:text-xl font-bold text-[#0F172A] leading-snug group-hover:text-[#0284C7] transition-colors line-clamp-2">
                           <Link href={`/blogs/${post.slug}`}>{post.title}</Link>
                         </h2>
 
                         {post.excerpt && (
-                          <p className="mt-2.5 text-xs sm:text-sm text-[#9BAAC2] line-clamp-3 leading-relaxed">
+                          <p className="mt-2.5 text-xs sm:text-sm text-slate-600 line-clamp-3 leading-relaxed">
                             {post.excerpt}
                           </p>
                         )}
@@ -222,7 +222,7 @@ export default async function BlogsPage({ searchParams }) {
                     <div className="px-5 sm:px-6 pb-5 pt-0">
                       <Link
                         href={`/blogs/${post.slug}`}
-                        className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-[#00B8F0] group-hover:text-[#38BDF8] transition-colors"
+                        className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-[#0284C7] group-hover:text-[#0369A1] transition-colors"
                       >
                         <span>Read Full Guide</span>
                         <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />

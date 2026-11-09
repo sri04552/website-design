@@ -13,22 +13,45 @@ function getAdminEmail() {
     .toLowerCase();
 }
 
-// POST /api/admin/auth - Handles OTP request, verification, and logout
 export async function POST(request) {
   try {
     const body = await request.json();
-    const { action, email, token } = body;
+    const { action, email, token, session } = body;
     const adminEmail = getAdminEmail();
     const db = supabaseAdmin || supabase;
 
+    // ACTION 1: SYNC SESSION (Called when user clicks magic link in email)
+    if (action === "sync-session") {
+      const userEmail = session?.user?.email?.toLowerCase();
+      const accessToken = session?.access_token;
+
+      if (!accessToken || userEmail !== adminEmail) {
+        return NextResponse.json(
+          { error: "Access Denied: Unauthorized admin session." },
+          { status: 403 }
+        );
+      }
+
+      const cookieStore = await cookies();
+      cookieStore.set("admin_access_token", accessToken, {
+        httpOnly: true,
+        secure: process.env.NODE_ENV === "production",
+        sameSite: "lax",
+        path: "/",
+        maxAge: 60 * 60 * 24 * 7, // 7 days
+      });
+
+      return NextResponse.json({ success: true, message: "Session synced successfully" });
+    }
+
     if (!db) {
       return NextResponse.json(
-        { error: "Database configuration is missing. Please verify your Supabase keys." },
+        { error: "Database configuration is missing. Please verify Supabase keys in Vercel or .env.local." },
         { status: 500 }
       );
     }
 
-    // ACTION 1: SEND OTP
+    // ACTION 2: SEND OTP
     if (action === "send-otp") {
       if (!email || typeof email !== "string") {
         return NextResponse.json({ error: "Email is required." }, { status: 400 });
@@ -41,17 +64,21 @@ export async function POST(request) {
         return NextResponse.json(
           {
             error:
-              "Access Denied: This email address is not registered as an authorized administrator.",
+              "Access Denied: Only the authorized administrator (sriworkspace8@gmail.com) can access this portal.",
           },
           { status: 403 }
         );
       }
 
-      // Request OTP from Supabase Auth
+      // Determine redirect URL for magic link fallback
+      const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
+      const emailRedirectTo = `${siteUrl}/admin/login`;
+
       const { error } = await db.auth.signInWithOtp({
         email: normalizedEmail,
         options: {
           shouldCreateUser: true,
+          emailRedirectTo,
         },
       });
 
@@ -64,11 +91,11 @@ export async function POST(request) {
 
       return NextResponse.json({
         success: true,
-        message: `A 6-digit verification code has been sent to ${normalizedEmail}.`,
+        message: `Verification message sent to ${normalizedEmail}. Check your inbox for the code or login link.`,
       });
     }
 
-    // ACTION 2: VERIFY OTP
+    // ACTION 3: VERIFY OTP
     if (action === "verify-otp") {
       if (!email || !token) {
         return NextResponse.json(
@@ -97,7 +124,7 @@ export async function POST(request) {
           {
             error:
               error?.message ||
-              "Invalid or expired verification code. Please check your email and try again.",
+              "Invalid or expired verification code. Please check your email or click the login link in your email.",
           },
           { status: 401 }
         );
@@ -120,7 +147,7 @@ export async function POST(request) {
       });
     }
 
-    // ACTION 3: LOGOUT
+    // ACTION 4: LOGOUT
     if (action === "logout") {
       const cookieStore = await cookies();
       cookieStore.delete("admin_access_token");

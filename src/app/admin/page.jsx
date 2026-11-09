@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
-import { useRouter } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import { supabase } from "@/lib/supabase";
@@ -28,15 +27,10 @@ import {
   Loader2,
   Lock,
   Unlock,
-  Heading1,
-  Heading2,
-  List,
-  Quote,
   ImageIcon,
 } from "lucide-react";
 
 export default function AdminDashboardPage() {
-  const router = useRouter();
   const [session, setSession] = useState(null);
   const [loading, setLoading] = useState(true);
   const [activeTab, setActiveTab] = useState("inquiries"); // 'inquiries' | 'blogs'
@@ -102,7 +96,6 @@ export default function AdminDashboardPage() {
 
     async function checkAuth() {
       try {
-        // 1. Verify via server-side session check
         const authRes = await fetch("/api/admin/auth");
         const authData = await authRes.json();
 
@@ -114,7 +107,6 @@ export default function AdminDashboardPage() {
           return;
         }
 
-        // 2. Also sync client-side Supabase session if available
         if (supabase) {
           const {
             data: { session: clientSession },
@@ -391,26 +383,27 @@ export default function AdminDashboardPage() {
     );
   });
 
+  // Strict Protection Gatekeeper: NEVER render dashboard if not authenticated
   if (loading || !session?.user) {
     return (
-      <div className="min-h-screen bg-[#070D18] flex flex-col items-center justify-center p-4">
-        <div className="w-12 h-12 rounded-xl bg-[#14233D] border border-[#2B3E5C] flex items-center justify-center mb-4">
-          <Loader2 className="w-6 h-6 text-[#00B8F0] animate-spin" />
+      <div className="min-h-screen bg-[#F8FAFC] flex flex-col items-center justify-center p-4 text-[#0F172A]">
+        <div className="w-12 h-12 rounded-xl bg-white border border-slate-200 flex items-center justify-center mb-4 shadow-sm">
+          <Loader2 className="w-6 h-6 text-[#0D8C7D] animate-spin" />
         </div>
-        <p className="text-sm font-semibold text-[#F5F7FC]">
+        <p className="text-sm font-semibold text-slate-800">
           Verifying security authorization...
         </p>
-        <p className="text-xs text-[#9BAAC2] mt-1">
-          Unauthorized requests are redirected to login.
+        <p className="text-xs text-slate-500 mt-1">
+          Redirecting to authentication login...
         </p>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-[#070D18] text-[#F5F7FC] flex flex-col">
-      {/* Top Admin Header Bar */}
-      <header className="border-b border-[#1E2C44] bg-[#0A101D]/90 backdrop-blur-md sticky top-0 z-30">
+    <div className="min-h-screen bg-[#F8FAFC] text-[#0F172A] flex flex-col">
+      {/* Top Header Bar (Dark Architectural Hero Nav) */}
+      <header className="border-b border-[#1E2C44] bg-[#0A101D] text-white sticky top-0 z-30 shadow-md">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <Link href="/" className="flex items-center gap-2 group">
@@ -439,7 +432,7 @@ export default function AdminDashboardPage() {
               target="_blank"
               className="hidden sm:inline-flex items-center gap-1.5 text-xs text-[#9BAAC2] hover:text-[#00B8F0] px-3 py-1.5 rounded-lg border border-[#2B3E5C] hover:border-[#00B8F0]/50 transition-colors"
             >
-              <span>View Live Website</span>
+              <span>View Website</span>
               <ExternalLink className="w-3 h-3" />
             </Link>
 
@@ -458,26 +451,26 @@ export default function AdminDashboardPage() {
         </div>
       </header>
 
-      {/* Main Workspace Area */}
+      {/* Main Workspace Area (Light Theme) */}
       <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Navigation Tabs */}
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8 pb-4 border-b border-[#1E2C44]">
-          <div className="inline-flex p-1 rounded-xl bg-[#0F172A] border border-[#2B3E5C] w-full sm:w-auto">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8 pb-4 border-b border-slate-200">
+          <div className="inline-flex p-1 rounded-xl bg-slate-200/80 border border-slate-300/80 w-full sm:w-auto">
             <button
               onClick={() => setActiveTab("inquiries")}
               className={`flex-1 sm:flex-none inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg text-sm font-semibold transition-all cursor-pointer ${
                 activeTab === "inquiries"
-                  ? "bg-[#00B8F0] text-[#070D18] shadow-xs"
-                  : "text-[#9BAAC2] hover:text-[#F5F7FC]"
+                  ? "bg-white text-[#0F172A] shadow-xs"
+                  : "text-slate-600 hover:text-slate-900"
               }`}
             >
-              <Inbox className="w-4 h-4" />
+              <Inbox className="w-4 h-4 text-[#0D8C7D]" />
               <span>Customer Inquiries</span>
               <span
                 className={`ml-1 text-xs px-2 py-0.5 rounded-full ${
                   activeTab === "inquiries"
-                    ? "bg-[#070D18]/20 text-[#070D18]"
-                    : "bg-[#1E2C44] text-[#CBD5E1]"
+                    ? "bg-[#0D8C7D]/10 text-[#0D8C7D] font-bold"
+                    : "bg-slate-300 text-slate-700"
                 }`}
               >
                 {inquiries.length}
@@ -488,17 +481,17 @@ export default function AdminDashboardPage() {
               onClick={() => setActiveTab("blogs")}
               className={`flex-1 sm:flex-none inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg text-sm font-semibold transition-all cursor-pointer ${
                 activeTab === "blogs"
-                  ? "bg-[#00B8F0] text-[#070D18] shadow-xs"
-                  : "text-[#9BAAC2] hover:text-[#F5F7FC]"
+                  ? "bg-white text-[#0F172A] shadow-xs"
+                  : "text-slate-600 hover:text-slate-900"
               }`}
             >
-              <FileText className="w-4 h-4" />
+              <FileText className="w-4 h-4 text-[#0284C7]" />
               <span>Blog Articles</span>
               <span
                 className={`ml-1 text-xs px-2 py-0.5 rounded-full ${
                   activeTab === "blogs"
-                    ? "bg-[#070D18]/20 text-[#070D18]"
-                    : "bg-[#1E2C44] text-[#CBD5E1]"
+                    ? "bg-[#0284C7]/10 text-[#0284C7] font-bold"
+                    : "bg-slate-300 text-slate-700"
                 }`}
               >
                 {posts.length}
@@ -517,7 +510,7 @@ export default function AdminDashboardPage() {
           )}
         </div>
 
-        {/* TAB 1: INQUIRIES / LEADS */}
+        {/* TAB 1: INQUIRIES / LEADS (Light Theme) */}
         {activeTab === "inquiries" && (
           <div className="space-y-6">
             {/* Search and Refresh Bar */}
@@ -528,18 +521,18 @@ export default function AdminDashboardPage() {
                   placeholder="Search leads by name, email, or service..."
                   value={inquiriesSearch}
                   onChange={(e) => setInquiriesSearch(e.target.value)}
-                  className="w-full px-4 py-2.5 rounded-xl border border-[#2B3E5C] bg-[#0F172A] text-sm text-[#F5F7FC] placeholder:text-[#64748B] focus:border-[#00B8F0] focus:outline-none pl-10"
+                  className="w-full px-4 py-2.5 rounded-xl border border-slate-300 bg-white text-sm text-slate-900 placeholder:text-slate-400 focus:border-[#00B8F0] focus:ring-3 focus:ring-sky-100 focus:outline-none pl-10 shadow-2xs"
                 />
-                <Search className="w-4 h-4 text-[#64748B] absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
+                <Search className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
               </div>
 
               <button
                 onClick={fetchInquiries}
                 disabled={inquiriesLoading}
-                className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl border border-[#2B3E5C] bg-[#131F33] hover:bg-[#1A2A45] text-xs font-semibold text-[#CBD5E1] transition-colors cursor-pointer"
+                className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl border border-slate-300 bg-white hover:bg-slate-50 text-xs font-semibold text-slate-700 transition-colors cursor-pointer shadow-2xs"
               >
                 <RefreshCw
-                  className={`w-3.5 h-3.5 text-[#00B8F0] ${
+                  className={`w-3.5 h-3.5 text-[#0D8C7D] ${
                     inquiriesLoading ? "animate-spin" : ""
                   }`}
                 />
@@ -549,28 +542,28 @@ export default function AdminDashboardPage() {
 
             {/* Inquiries Table / Cards */}
             {inquiriesLoading && inquiries.length === 0 ? (
-              <div className="py-16 text-center text-[#9BAAC2]">
-                <Loader2 className="w-6 h-6 animate-spin mx-auto text-[#00B8F0] mb-2" />
+              <div className="py-16 text-center text-slate-500">
+                <Loader2 className="w-6 h-6 animate-spin mx-auto text-[#0D8C7D] mb-2" />
                 <p className="text-sm">Loading inquiries from database...</p>
               </div>
             ) : filteredInquiries.length === 0 ? (
-              <div className="bg-[#0F172A] rounded-2xl border border-[#1E2C44] p-12 text-center space-y-3">
-                <div className="w-12 h-12 rounded-full bg-[#14233D] text-[#00B8F0] flex items-center justify-center mx-auto">
+              <div className="bg-white rounded-2xl border border-slate-200/90 p-12 text-center space-y-3 shadow-sm">
+                <div className="w-12 h-12 rounded-full bg-slate-100 text-[#0D8C7D] flex items-center justify-center mx-auto">
                   <Inbox className="w-6 h-6" />
                 </div>
-                <h3 className="font-heading text-lg font-bold text-[#F5F7FC]">
+                <h3 className="font-heading text-lg font-bold text-slate-900">
                   {inquiriesSearch ? "No matching inquiries found" : "No inquiries received yet"}
                 </h3>
-                <p className="text-sm text-[#9BAAC2] max-w-md mx-auto">
+                <p className="text-sm text-slate-500 max-w-md mx-auto">
                   When potential clients submit the Contact or Services forms on your website, their
                   project details will appear here instantly.
                 </p>
               </div>
             ) : (
-              <div className="bg-[#0F172A] rounded-2xl border border-[#1E2C44] overflow-hidden shadow-xl">
+              <div className="bg-white rounded-2xl border border-slate-200/90 overflow-hidden shadow-sm">
                 <div className="overflow-x-auto">
                   <table className="w-full text-left text-sm">
-                    <thead className="bg-[#131F33] text-xs font-semibold text-[#9BAAC2] uppercase tracking-wider border-b border-[#1E2C44]">
+                    <thead className="bg-slate-50 text-xs font-bold text-slate-700 uppercase tracking-wider border-b border-slate-200">
                       <tr>
                         <th className="py-3.5 px-4 sm:px-6">Client / Contact</th>
                         <th className="py-3.5 px-4">Service Needed</th>
@@ -579,7 +572,7 @@ export default function AdminDashboardPage() {
                         <th className="py-3.5 px-4 text-right">Actions</th>
                       </tr>
                     </thead>
-                    <tbody className="divide-y divide-[#1E2C44]">
+                    <tbody className="divide-y divide-slate-100">
                       {filteredInquiries.map((inq) => {
                         const cleanPhone = inq.phone ? inq.phone.replace(/[^0-9+]/g, "") : null;
                         const whatsappDigits = inq.phone ? inq.phone.replace(/[^0-9]/g, "") : null;
@@ -596,21 +589,21 @@ export default function AdminDashboardPage() {
                         return (
                           <tr
                             key={inq.id}
-                            className="hover:bg-[#131F33]/60 transition-colors group"
+                            className="hover:bg-slate-50/80 transition-colors group"
                           >
                             <td className="py-4 px-4 sm:px-6">
-                              <div className="font-semibold text-[#F5F7FC]">{inq.name}</div>
-                              <div className="text-xs text-[#9BAAC2] flex items-center gap-1.5 mt-0.5">
-                                <Mail className="w-3 h-3 text-[#00B8F0]" />
+                              <div className="font-bold text-slate-900">{inq.name}</div>
+                              <div className="text-xs text-slate-600 flex items-center gap-1.5 mt-0.5">
+                                <Mail className="w-3 h-3 text-[#0284C7]" />
                                 <a
                                   href={`mailto:${inq.email}`}
-                                  className="hover:text-[#00B8F0] transition-colors"
+                                  className="hover:text-[#0284C7] transition-colors"
                                 >
                                   {inq.email}
                                 </a>
                               </div>
                               {cleanPhone && (
-                                <div className="text-xs text-[#9BAAC2] flex items-center gap-1.5 mt-0.5 font-mono">
+                                <div className="text-xs text-slate-600 flex items-center gap-1.5 mt-0.5 font-mono">
                                   <Phone className="w-3 h-3 text-[#0D8C7D]" />
                                   <a
                                     href={`tel:${cleanPhone}`}
@@ -623,24 +616,24 @@ export default function AdminDashboardPage() {
                             </td>
 
                             <td className="py-4 px-4">
-                              <span className="inline-block px-2.5 py-1 rounded-md text-xs font-semibold bg-[#14233D] text-[#00B8F0] border border-[#2B3E5C]">
+                              <span className="inline-block px-2.5 py-1 rounded-md text-xs font-semibold bg-sky-50 text-sky-800 border border-sky-200">
                                 {inq.service || "General Inquiry"}
                               </span>
                             </td>
 
                             <td className="py-4 px-4 max-w-xs sm:max-w-md">
-                              <p className="line-clamp-2 text-xs text-[#CBD5E1] leading-relaxed">
+                              <p className="line-clamp-2 text-xs text-slate-700 leading-relaxed">
                                 {inq.message}
                               </p>
                               <button
                                 onClick={() => setSelectedInquiry(inq)}
-                                className="text-[11px] text-[#00B8F0] hover:underline mt-1 font-semibold cursor-pointer"
+                                className="text-[11px] text-[#0284C7] hover:underline mt-1 font-semibold cursor-pointer"
                               >
                                 View full details
                               </button>
                             </td>
 
-                            <td className="py-4 px-4 text-xs text-[#9BAAC2] whitespace-nowrap">
+                            <td className="py-4 px-4 text-xs text-slate-500 whitespace-nowrap">
                               {dateFormatted}
                             </td>
 
@@ -652,7 +645,7 @@ export default function AdminDashboardPage() {
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     title="Chat on WhatsApp"
-                                    className="w-8 h-8 rounded-lg bg-[#0D8C7D]/20 hover:bg-[#0D8C7D] text-[#0D8C7D] hover:text-white flex items-center justify-center transition-colors"
+                                    className="w-8 h-8 rounded-lg bg-emerald-50 hover:bg-[#0D8C7D] text-[#0D8C7D] hover:text-white flex items-center justify-center transition-colors border border-emerald-200"
                                   >
                                     <MessageSquare className="w-4 h-4" />
                                   </a>
@@ -661,7 +654,7 @@ export default function AdminDashboardPage() {
                                 <a
                                   href={`mailto:${inq.email}?subject=Regarding your inquiry at Amogha Digital`}
                                   title="Send Email"
-                                  className="w-8 h-8 rounded-lg bg-[#0284C7]/20 hover:bg-[#0284C7] text-[#00B8F0] hover:text-white flex items-center justify-center transition-colors"
+                                  className="w-8 h-8 rounded-lg bg-sky-50 hover:bg-[#0284C7] text-[#0284C7] hover:text-white flex items-center justify-center transition-colors border border-sky-200"
                                 >
                                   <Mail className="w-4 h-4" />
                                 </a>
@@ -669,7 +662,7 @@ export default function AdminDashboardPage() {
                                 <button
                                   onClick={() => handleDeleteInquiry(inq.id)}
                                   title="Delete Lead"
-                                  className="w-8 h-8 rounded-lg bg-rose-950/40 hover:bg-rose-900 text-rose-300 hover:text-white flex items-center justify-center transition-colors cursor-pointer"
+                                  className="w-8 h-8 rounded-lg bg-rose-50 hover:bg-rose-600 text-rose-700 hover:text-white flex items-center justify-center transition-colors cursor-pointer border border-rose-200"
                                 >
                                   <Trash2 className="w-4 h-4" />
                                 </button>
@@ -686,7 +679,7 @@ export default function AdminDashboardPage() {
           </div>
         )}
 
-        {/* TAB 2: BLOG CMS */}
+        {/* TAB 2: BLOG CMS (Light Theme) */}
         {activeTab === "blogs" && (
           <div className="space-y-6">
             {/* Search and Stats Bar */}
@@ -697,38 +690,38 @@ export default function AdminDashboardPage() {
                   placeholder="Search articles by title or category..."
                   value={postsSearch}
                   onChange={(e) => setPostsSearch(e.target.value)}
-                  className="w-full px-4 py-2.5 rounded-xl border border-[#2B3E5C] bg-[#0F172A] text-sm text-[#F5F7FC] placeholder:text-[#64748B] focus:border-[#00B8F0] focus:outline-none pl-10"
+                  className="w-full px-4 py-2.5 rounded-xl border border-slate-300 bg-white text-sm text-slate-900 placeholder:text-slate-400 focus:border-[#00B8F0] focus:outline-none pl-10 shadow-2xs"
                 />
-                <Search className="w-4 h-4 text-[#64748B] absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
+                <Search className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
               </div>
 
               <button
                 onClick={fetchPosts}
                 disabled={postsLoading}
-                className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl border border-[#2B3E5C] bg-[#131F33] hover:bg-[#1A2A45] text-xs font-semibold text-[#CBD5E1] transition-colors cursor-pointer"
+                className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl border border-slate-300 bg-white hover:bg-slate-50 text-xs font-semibold text-slate-700 transition-colors cursor-pointer shadow-2xs"
               >
                 <RefreshCw
-                  className={`w-3.5 h-3.5 text-[#00B8F0] ${postsLoading ? "animate-spin" : ""}`}
+                  className={`w-3.5 h-3.5 text-[#0D8C7D] ${postsLoading ? "animate-spin" : ""}`}
                 />
                 <span>Refresh Articles</span>
               </button>
             </div>
 
-            {/* Posts Grid / Table */}
+            {/* Posts Grid */}
             {postsLoading && posts.length === 0 ? (
-              <div className="py-16 text-center text-[#9BAAC2]">
-                <Loader2 className="w-6 h-6 animate-spin mx-auto text-[#00B8F0] mb-2" />
+              <div className="py-16 text-center text-slate-500">
+                <Loader2 className="w-6 h-6 animate-spin mx-auto text-[#0D8C7D] mb-2" />
                 <p className="text-sm">Loading articles...</p>
               </div>
             ) : filteredPosts.length === 0 ? (
-              <div className="bg-[#0F172A] rounded-2xl border border-[#1E2C44] p-12 text-center space-y-4">
-                <div className="w-12 h-12 rounded-full bg-[#14233D] text-[#00B8F0] flex items-center justify-center mx-auto">
+              <div className="bg-white rounded-2xl border border-slate-200/90 p-12 text-center space-y-4 shadow-sm">
+                <div className="w-12 h-12 rounded-full bg-slate-100 text-[#0284C7] flex items-center justify-center mx-auto">
                   <FileText className="w-6 h-6" />
                 </div>
-                <h3 className="font-heading text-lg font-bold text-[#F5F7FC]">
+                <h3 className="font-heading text-lg font-bold text-slate-900">
                   {postsSearch ? "No matching articles found" : "No blog posts published yet"}
                 </h3>
-                <p className="text-sm text-[#9BAAC2] max-w-md mx-auto">
+                <p className="text-sm text-slate-500 max-w-md mx-auto">
                   Start sharing your engineering insights, web speed case studies, or AI automation
                   articles with prospective clients.
                 </p>
@@ -746,11 +739,11 @@ export default function AdminDashboardPage() {
                   return (
                     <article
                       key={post.id}
-                      className="bg-[#0F172A] rounded-2xl border border-[#1E2C44] overflow-hidden flex flex-col justify-between hover:border-[#2B3E5C] transition-all group"
+                      className="bg-white rounded-2xl border border-slate-200/90 overflow-hidden flex flex-col justify-between hover:shadow-md transition-all group"
                     >
                       <div>
                         {/* Cover Image */}
-                        <div className="relative aspect-[16/9] w-full bg-[#131F33] overflow-hidden">
+                        <div className="relative aspect-[16/9] w-full bg-slate-100 overflow-hidden">
                           {post.cover_image ? (
                             <Image
                               src={post.cover_image}
@@ -760,7 +753,7 @@ export default function AdminDashboardPage() {
                               className="object-cover group-hover:scale-103 transition-transform duration-300"
                             />
                           ) : (
-                            <div className="w-full h-full flex items-center justify-center text-[#64748B]">
+                            <div className="w-full h-full flex items-center justify-center text-slate-400">
                               <ImageIcon className="w-8 h-8 opacity-40" />
                             </div>
                           )}
@@ -768,13 +761,13 @@ export default function AdminDashboardPage() {
                           {/* Status Badge */}
                           <div className="absolute top-3 left-3">
                             {post.published ? (
-                              <span className="inline-flex items-center gap-1 text-[11px] font-bold px-2.5 py-1 rounded-full bg-emerald-950/80 text-emerald-300 border border-emerald-700/80 backdrop-blur-md">
-                                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                              <span className="inline-flex items-center gap-1 text-[11px] font-bold px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200 shadow-xs">
+                                <span className="w-1.5 h-1.5 rounded-full bg-emerald-600" />
                                 Published
                               </span>
                             ) : (
-                              <span className="inline-flex items-center gap-1 text-[11px] font-bold px-2.5 py-1 rounded-full bg-amber-950/80 text-amber-300 border border-amber-700/80 backdrop-blur-md">
-                                <span className="w-1.5 h-1.5 rounded-full bg-amber-400" />
+                              <span className="inline-flex items-center gap-1 text-[11px] font-bold px-2.5 py-1 rounded-full bg-amber-50 text-amber-800 border border-amber-200 shadow-xs">
+                                <span className="w-1.5 h-1.5 rounded-full bg-amber-600" />
                                 Draft
                               </span>
                             )}
@@ -783,19 +776,19 @@ export default function AdminDashboardPage() {
 
                         {/* Article Info */}
                         <div className="p-5">
-                          <div className="flex items-center justify-between text-xs text-[#9BAAC2] mb-2.5">
-                            <span className="font-semibold text-[#00B8F0] uppercase tracking-wider font-mono">
+                          <div className="flex items-center justify-between text-xs text-slate-500 mb-2">
+                            <span className="font-bold text-[#0284C7] uppercase tracking-wider font-mono">
                               {post.category || "General"}
                             </span>
                             <span>{post.read_time || "4 min read"}</span>
                           </div>
 
-                          <h3 className="font-heading text-lg font-bold text-[#F5F7FC] line-clamp-2 leading-snug group-hover:text-[#00B8F0] transition-colors">
+                          <h3 className="font-heading text-lg font-bold text-slate-900 line-clamp-2 leading-snug group-hover:text-[#0284C7] transition-colors">
                             {post.title}
                           </h3>
 
                           {post.excerpt && (
-                            <p className="mt-2 text-xs text-[#9BAAC2] line-clamp-2 leading-relaxed">
+                            <p className="mt-2 text-xs text-slate-600 line-clamp-2 leading-relaxed">
                               {post.excerpt}
                             </p>
                           )}
@@ -803,11 +796,11 @@ export default function AdminDashboardPage() {
                       </div>
 
                       {/* Bottom Action Footer */}
-                      <div className="px-5 py-3.5 bg-[#131F33]/50 border-t border-[#1E2C44] flex items-center justify-between">
+                      <div className="px-5 py-3.5 bg-slate-50 border-t border-slate-100 flex items-center justify-between">
                         <Link
                           href={`/blogs/${post.slug}`}
                           target="_blank"
-                          className="inline-flex items-center gap-1 text-xs text-[#9BAAC2] hover:text-[#00B8F0] transition-colors"
+                          className="inline-flex items-center gap-1 text-xs font-semibold text-slate-600 hover:text-[#0284C7] transition-colors"
                         >
                           <Eye className="w-3.5 h-3.5" />
                           <span>View Live</span>
@@ -816,7 +809,7 @@ export default function AdminDashboardPage() {
                         <div className="flex items-center gap-2">
                           <button
                             onClick={() => handleOpenEditModal(post)}
-                            className="w-8 h-8 rounded-lg bg-[#14233D] hover:bg-[#1A2A45] text-[#F5F7FC] flex items-center justify-center transition-colors cursor-pointer"
+                            className="w-8 h-8 rounded-lg bg-white hover:bg-slate-100 text-slate-700 flex items-center justify-center transition-colors cursor-pointer border border-slate-200"
                             title="Edit Post"
                           >
                             <Edit3 className="w-3.5 h-3.5" />
@@ -824,7 +817,7 @@ export default function AdminDashboardPage() {
 
                           <button
                             onClick={() => handleDeletePost(post.id)}
-                            className="w-8 h-8 rounded-lg bg-rose-950/40 hover:bg-rose-900 text-rose-300 hover:text-white flex items-center justify-center transition-colors cursor-pointer"
+                            className="w-8 h-8 rounded-lg bg-white hover:bg-rose-50 text-rose-600 hover:text-rose-800 flex items-center justify-center transition-colors cursor-pointer border border-slate-200"
                             title="Delete Post"
                           >
                             <Trash2 className="w-3.5 h-3.5" />
@@ -840,25 +833,25 @@ export default function AdminDashboardPage() {
         )}
       </main>
 
-      {/* MODAL 1: VIEW INQUIRY DETAILS */}
+      {/* MODAL 1: VIEW INQUIRY DETAILS (Light Theme) */}
       {selectedInquiry && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/75 backdrop-blur-sm animate-in fade-in duration-150">
-          <div className="bg-[#0F172A] border border-[#2B3E5C] rounded-2xl w-full max-w-xl p-6 sm:p-8 shadow-2xl relative">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-xs animate-in fade-in duration-150">
+          <div className="bg-white border border-slate-200 rounded-2xl w-full max-w-xl p-6 sm:p-8 shadow-2xl relative text-slate-900">
             <button
               onClick={() => setSelectedInquiry(null)}
-              className="absolute top-5 right-5 text-[#9BAAC2] hover:text-white p-1 rounded-lg hover:bg-[#1E2C44] transition-colors cursor-pointer"
+              className="absolute top-5 right-5 text-slate-400 hover:text-slate-800 p-1 rounded-lg hover:bg-slate-100 transition-colors cursor-pointer"
             >
               <X className="w-5 h-5" />
             </button>
 
             <div className="mb-4">
-              <span className="text-xs font-semibold px-2.5 py-1 rounded-md bg-[#14233D] text-[#00B8F0] border border-[#2B3E5C]">
+              <span className="text-xs font-semibold px-2.5 py-1 rounded-md bg-sky-50 text-sky-800 border border-sky-200">
                 {selectedInquiry.service || "General Inquiry"}
               </span>
-              <h3 className="font-heading text-xl font-bold text-[#F5F7FC] mt-2">
+              <h3 className="font-heading text-xl font-bold text-slate-900 mt-2">
                 Inquiry from {selectedInquiry.name}
               </h3>
-              <p className="text-xs text-[#9BAAC2] mt-0.5">
+              <p className="text-xs text-slate-500 mt-0.5">
                 Received on{" "}
                 {new Date(selectedInquiry.created_at).toLocaleDateString("en-IN", {
                   day: "numeric",
@@ -870,30 +863,30 @@ export default function AdminDashboardPage() {
               </p>
             </div>
 
-            <div className="space-y-4 py-3 border-y border-[#1E2C44] text-xs sm:text-sm">
+            <div className="space-y-4 py-3 border-y border-slate-200 text-xs sm:text-sm">
               <div className="grid grid-cols-2 gap-3">
                 <div>
-                  <span className="text-[#9BAAC2] block text-xs">Email Address:</span>
+                  <span className="text-slate-500 block text-xs">Email Address:</span>
                   <a
                     href={`mailto:${selectedInquiry.email}`}
-                    className="text-[#00B8F0] hover:underline font-medium"
+                    className="text-[#0284C7] hover:underline font-medium"
                   >
                     {selectedInquiry.email}
                   </a>
                 </div>
                 <div>
-                  <span className="text-[#9BAAC2] block text-xs">Phone / WhatsApp:</span>
-                  <span className="text-[#F5F7FC] font-medium font-mono">
+                  <span className="text-slate-500 block text-xs">Phone / WhatsApp:</span>
+                  <span className="text-slate-900 font-medium font-mono">
                     {selectedInquiry.phone || "Not provided"}
                   </span>
                 </div>
               </div>
 
               <div>
-                <span className="text-[#9BAAC2] block text-xs mb-1 font-semibold uppercase tracking-wider">
+                <span className="text-slate-500 block text-xs mb-1 font-semibold uppercase tracking-wider">
                   Client Project Requirements / Message:
                 </span>
-                <div className="bg-[#131F33] p-4 rounded-xl text-[#F5F7FC] text-sm leading-relaxed whitespace-pre-wrap max-h-60 overflow-y-auto border border-[#1E2C44]">
+                <div className="bg-slate-50 p-4 rounded-xl text-slate-800 text-sm leading-relaxed whitespace-pre-wrap max-h-60 overflow-y-auto border border-slate-200">
                   {selectedInquiry.message}
                 </div>
               </div>
@@ -923,7 +916,7 @@ export default function AdminDashboardPage() {
 
               <button
                 onClick={() => setSelectedInquiry(null)}
-                className="px-4 py-2.5 rounded-xl border border-[#2B3E5C] text-xs font-semibold text-[#CBD5E1] hover:bg-[#1E2C44] transition-colors cursor-pointer"
+                className="px-4 py-2.5 rounded-xl border border-slate-300 text-xs font-semibold text-slate-700 hover:bg-slate-100 transition-colors cursor-pointer"
               >
                 Close
               </button>
@@ -932,28 +925,28 @@ export default function AdminDashboardPage() {
         </div>
       )}
 
-      {/* MODAL 2: FULL BLOG POST EDITOR (CREATE / EDIT) */}
+      {/* MODAL 2: FULL BLOG POST EDITOR (Light Theme) */}
       {isEditorOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-black/80 backdrop-blur-md overflow-y-auto">
-          <div className="bg-[#0F172A] border border-[#2B3E5C] rounded-2xl w-full max-w-4xl max-h-[92vh] flex flex-col shadow-2xl overflow-hidden my-auto">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-slate-900/70 backdrop-blur-xs overflow-y-auto">
+          <div className="bg-white border border-slate-200 rounded-2xl w-full max-w-4xl max-h-[92vh] flex flex-col shadow-2xl overflow-hidden my-auto text-slate-900">
             {/* Editor Header */}
-            <div className="px-6 py-4 border-b border-[#1E2C44] bg-[#131F33] flex items-center justify-between shrink-0">
+            <div className="px-6 py-4 border-b border-slate-200 bg-slate-50 flex items-center justify-between shrink-0">
               <div className="flex items-center gap-2">
-                <FileText className="w-5 h-5 text-[#00B8F0]" />
-                <h2 className="font-heading text-lg font-bold text-[#F5F7FC]">
+                <FileText className="w-5 h-5 text-[#0284C7]" />
+                <h2 className="font-heading text-lg font-bold text-slate-900">
                   {editorMode === "create" ? "Write New Blog Article" : "Edit Blog Article"}
                 </h2>
               </div>
 
               <div className="flex items-center gap-2">
-                <div className="inline-flex p-0.5 rounded-lg bg-[#070D18] border border-[#2B3E5C]">
+                <div className="inline-flex p-0.5 rounded-lg bg-slate-200 border border-slate-300">
                   <button
                     type="button"
                     onClick={() => setEditorTab("write")}
                     className={`px-3 py-1 rounded text-xs font-semibold cursor-pointer ${
                       editorTab === "write"
-                        ? "bg-[#00B8F0] text-[#070D18]"
-                        : "text-[#9BAAC2] hover:text-white"
+                        ? "bg-white text-slate-900 shadow-2xs"
+                        : "text-slate-600 hover:text-slate-900"
                     }`}
                   >
                     Editor
@@ -963,8 +956,8 @@ export default function AdminDashboardPage() {
                     onClick={() => setEditorTab("preview")}
                     className={`px-3 py-1 rounded text-xs font-semibold cursor-pointer ${
                       editorTab === "preview"
-                        ? "bg-[#00B8F0] text-[#070D18]"
-                        : "text-[#9BAAC2] hover:text-white"
+                        ? "bg-white text-slate-900 shadow-2xs"
+                        : "text-slate-600 hover:text-slate-900"
                     }`}
                   >
                     Live Preview
@@ -973,7 +966,7 @@ export default function AdminDashboardPage() {
 
                 <button
                   onClick={() => setIsEditorOpen(false)}
-                  className="text-[#9BAAC2] hover:text-white p-1 rounded-lg hover:bg-[#1E2C44] transition-colors cursor-pointer"
+                  className="text-slate-400 hover:text-slate-800 p-1 rounded-lg hover:bg-slate-200 transition-colors cursor-pointer"
                 >
                   <X className="w-5 h-5" />
                 </button>
@@ -985,9 +978,9 @@ export default function AdminDashboardPage() {
               {editorError && (
                 <div
                   role="alert"
-                  className="p-3.5 rounded-xl bg-rose-950/60 border border-rose-800 flex items-start gap-2.5 text-rose-200 text-xs sm:text-[13px]"
+                  className="p-3.5 rounded-xl bg-rose-50 border border-rose-200 flex items-start gap-2.5 text-rose-800 text-xs sm:text-[13px]"
                 >
-                  <AlertCircle className="w-4 h-4 text-rose-400 shrink-0 mt-0.5" />
+                  <AlertCircle className="w-4 h-4 text-rose-600 shrink-0 mt-0.5" />
                   <span>{editorError}</span>
                 </div>
               )}
@@ -996,7 +989,7 @@ export default function AdminDashboardPage() {
                 <form id="blog-form" onSubmit={handleSavePost} className="space-y-4">
                   {/* Title & Slug */}
                   <div className="space-y-1.5">
-                    <label className="block text-xs font-semibold text-[#CBD5E1]">
+                    <label className="block text-xs font-semibold text-slate-700">
                       Article Heading / Title <span className="text-rose-500">*</span>
                     </label>
                     <input
@@ -1012,7 +1005,7 @@ export default function AdminDashboardPage() {
                           slug: isSlugLocked ? slugify(newTitle) : prev.slug,
                         }));
                       }}
-                      className="w-full px-4 py-2.5 rounded-xl border border-[#2B3E5C] bg-[#131F33] text-sm text-[#F5F7FC] placeholder:text-[#64748B] focus:border-[#00B8F0] focus:outline-none"
+                      className="w-full px-4 py-2.5 rounded-xl border border-slate-300 bg-white text-sm text-slate-900 placeholder:text-slate-400 focus:border-[#00B8F0] focus:ring-3 focus:ring-sky-100 focus:outline-none"
                     />
                   </div>
 
@@ -1020,13 +1013,13 @@ export default function AdminDashboardPage() {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div className="space-y-1.5">
                       <div className="flex items-center justify-between">
-                        <label className="block text-xs font-semibold text-[#CBD5E1]">
+                        <label className="block text-xs font-semibold text-slate-700">
                           URL Slug (`/blogs/[slug]`)
                         </label>
                         <button
                           type="button"
                           onClick={() => setIsSlugLocked(!isSlugLocked)}
-                          className="text-[11px] text-[#00B8F0] hover:underline flex items-center gap-1 cursor-pointer"
+                          className="text-[11px] text-[#0284C7] hover:underline flex items-center gap-1 cursor-pointer"
                         >
                           {isSlugLocked ? (
                             <>
@@ -1048,12 +1041,12 @@ export default function AdminDashboardPage() {
                         onChange={(e) =>
                           setPostForm((prev) => ({ ...prev, slug: slugify(e.target.value) }))
                         }
-                        className="w-full px-4 py-2 rounded-xl border border-[#2B3E5C] bg-[#131F33] disabled:opacity-60 text-xs font-mono text-[#F5F7FC] focus:border-[#00B8F0] focus:outline-none"
+                        className="w-full px-4 py-2 rounded-xl border border-slate-300 bg-slate-50 disabled:opacity-60 text-xs font-mono text-slate-900 focus:border-[#00B8F0] focus:outline-none"
                       />
                     </div>
 
                     <div className="space-y-1.5">
-                      <label className="block text-xs font-semibold text-[#CBD5E1]">
+                      <label className="block text-xs font-semibold text-slate-700">
                         Article Category
                       </label>
                       <select
@@ -1061,7 +1054,7 @@ export default function AdminDashboardPage() {
                         onChange={(e) =>
                           setPostForm((prev) => ({ ...prev, category: e.target.value }))
                         }
-                        className="w-full px-4 py-2 rounded-xl border border-[#2B3E5C] bg-[#131F33] text-xs text-[#F5F7FC] focus:border-[#00B8F0] focus:outline-none cursor-pointer"
+                        className="w-full px-4 py-2 rounded-xl border border-slate-300 bg-white text-xs text-slate-900 focus:border-[#00B8F0] focus:outline-none cursor-pointer"
                       >
                         {categories.map((c) => (
                           <option key={c} value={c}>
@@ -1074,7 +1067,7 @@ export default function AdminDashboardPage() {
 
                   {/* Cover Image & Upload */}
                   <div className="space-y-1.5">
-                    <label className="block text-xs font-semibold text-[#CBD5E1]">
+                    <label className="block text-xs font-semibold text-slate-700">
                       Cover Image (Upload File or Paste Image URL)
                     </label>
                     <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2">
@@ -1085,13 +1078,13 @@ export default function AdminDashboardPage() {
                         onChange={(e) =>
                           setPostForm((prev) => ({ ...prev, cover_image: e.target.value }))
                         }
-                        className="flex-1 px-4 py-2 rounded-xl border border-[#2B3E5C] bg-[#131F33] text-xs text-[#F5F7FC] placeholder:text-[#64748B] focus:border-[#00B8F0] focus:outline-none"
+                        className="flex-1 px-4 py-2 rounded-xl border border-slate-300 bg-white text-xs text-slate-900 placeholder:text-slate-400 focus:border-[#00B8F0] focus:outline-none"
                       />
 
-                      <label className="inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-xl border border-[#2B3E5C] bg-[#1E2C44] hover:bg-[#2B3E5C] text-xs font-semibold text-white cursor-pointer transition-colors shrink-0">
+                      <label className="inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-xl border border-slate-300 bg-slate-100 hover:bg-slate-200 text-xs font-semibold text-slate-700 cursor-pointer transition-colors shrink-0">
                         {uploadingImage ? (
                           <>
-                            <Loader2 className="w-3.5 h-3.5 animate-spin" />
+                            <Loader2 className="w-3.5 h-3.5 animate-spin text-[#0D8C7D]" />
                             <span>Uploading...</span>
                           </>
                         ) : (
@@ -1111,7 +1104,7 @@ export default function AdminDashboardPage() {
                     </div>
 
                     {postForm.cover_image && (
-                      <div className="mt-2 relative aspect-[16/9] max-w-xs rounded-xl overflow-hidden border border-[#2B3E5C]">
+                      <div className="mt-2 relative aspect-[16/9] max-w-xs rounded-xl overflow-hidden border border-slate-300">
                         <Image
                           src={postForm.cover_image}
                           alt="Cover preview"
@@ -1125,7 +1118,7 @@ export default function AdminDashboardPage() {
 
                   {/* Excerpt */}
                   <div className="space-y-1.5">
-                    <label className="block text-xs font-semibold text-[#CBD5E1]">
+                    <label className="block text-xs font-semibold text-slate-700">
                       Short Excerpt / Google Meta Summary (1-2 sentences)
                     </label>
                     <textarea
@@ -1135,14 +1128,14 @@ export default function AdminDashboardPage() {
                       onChange={(e) =>
                         setPostForm((prev) => ({ ...prev, excerpt: e.target.value }))
                       }
-                      className="w-full px-4 py-2.5 rounded-xl border border-[#2B3E5C] bg-[#131F33] text-xs text-[#F5F7FC] placeholder:text-[#64748B] focus:border-[#00B8F0] focus:outline-none resize-none"
+                      className="w-full px-4 py-2.5 rounded-xl border border-slate-300 bg-white text-xs text-slate-900 placeholder:text-slate-400 focus:border-[#00B8F0] focus:outline-none resize-none"
                     />
                   </div>
 
                   {/* Rich Content Area with Format Helpers */}
                   <div className="space-y-1.5">
                     <div className="flex flex-wrap items-center justify-between gap-2">
-                      <label className="block text-xs font-semibold text-[#CBD5E1]">
+                      <label className="block text-xs font-semibold text-slate-700">
                         Article Content (Headings, Paragraphs, Lists) <span className="text-rose-500">*</span>
                       </label>
 
@@ -1151,7 +1144,7 @@ export default function AdminDashboardPage() {
                         <button
                           type="button"
                           onClick={() => insertContentMarkup("## Heading Title")}
-                          className="px-2 py-1 rounded bg-[#131F33] hover:bg-[#1E2C44] text-[11px] text-[#9BAAC2] hover:text-white border border-[#2B3E5C] cursor-pointer"
+                          className="px-2 py-1 rounded bg-slate-100 hover:bg-slate-200 text-[11px] text-slate-700 border border-slate-300 cursor-pointer"
                           title="Add H2 Heading"
                         >
                           H2
@@ -1159,7 +1152,7 @@ export default function AdminDashboardPage() {
                         <button
                           type="button"
                           onClick={() => insertContentMarkup("### Subheading")}
-                          className="px-2 py-1 rounded bg-[#131F33] hover:bg-[#1E2C44] text-[11px] text-[#9BAAC2] hover:text-white border border-[#2B3E5C] cursor-pointer"
+                          className="px-2 py-1 rounded bg-slate-100 hover:bg-slate-200 text-[11px] text-slate-700 border border-slate-300 cursor-pointer"
                           title="Add H3 Heading"
                         >
                           H3
@@ -1167,7 +1160,7 @@ export default function AdminDashboardPage() {
                         <button
                           type="button"
                           onClick={() => insertContentMarkup("- Bullet point 1\n- Bullet point 2")}
-                          className="px-2 py-1 rounded bg-[#131F33] hover:bg-[#1E2C44] text-[11px] text-[#9BAAC2] hover:text-white border border-[#2B3E5C] cursor-pointer"
+                          className="px-2 py-1 rounded bg-slate-100 hover:bg-slate-200 text-[11px] text-slate-700 border border-slate-300 cursor-pointer"
                           title="Add Bullet List"
                         >
                           List
@@ -1175,7 +1168,7 @@ export default function AdminDashboardPage() {
                         <button
                           type="button"
                           onClick={() => insertContentMarkup("> Important key takeaway note")}
-                          className="px-2 py-1 rounded bg-[#131F33] hover:bg-[#1E2C44] text-[11px] text-[#9BAAC2] hover:text-white border border-[#2B3E5C] cursor-pointer"
+                          className="px-2 py-1 rounded bg-slate-100 hover:bg-slate-200 text-[11px] text-slate-700 border border-slate-300 cursor-pointer"
                           title="Add Quote"
                         >
                           Quote
@@ -1185,7 +1178,7 @@ export default function AdminDashboardPage() {
                           onClick={() =>
                             insertContentMarkup("![Image Description](https://image-url.com)")
                           }
-                          className="px-2 py-1 rounded bg-[#131F33] hover:bg-[#1E2C44] text-[11px] text-[#9BAAC2] hover:text-white border border-[#2B3E5C] cursor-pointer"
+                          className="px-2 py-1 rounded bg-slate-100 hover:bg-slate-200 text-[11px] text-slate-700 border border-slate-300 cursor-pointer"
                           title="Add Inline Image"
                         >
                           Image
@@ -1215,20 +1208,20 @@ Wrap up with actionable takeaways."
                       onChange={(e) =>
                         setPostForm((prev) => ({ ...prev, content: e.target.value }))
                       }
-                      className="w-full px-4 py-3 rounded-xl border border-[#2B3E5C] bg-[#131F33] text-sm text-[#F5F7FC] placeholder:text-[#64748B] focus:border-[#00B8F0] focus:outline-none font-mono resize-y leading-relaxed"
+                      className="w-full px-4 py-3 rounded-xl border border-slate-300 bg-white text-sm text-slate-900 placeholder:text-slate-400 focus:border-[#00B8F0] focus:outline-none font-mono resize-y leading-relaxed"
                     />
                   </div>
 
                   {/* Publish Status Toggle */}
                   <div className="pt-2 flex items-center gap-3">
-                    <label className="flex items-center gap-2 cursor-pointer text-xs font-semibold text-[#CBD5E1]">
+                    <label className="flex items-center gap-2 cursor-pointer text-xs font-semibold text-slate-700">
                       <input
                         type="checkbox"
                         checked={postForm.published}
                         onChange={(e) =>
                           setPostForm((prev) => ({ ...prev, published: e.target.checked }))
                         }
-                        className="w-4 h-4 rounded border-[#2B3E5C] bg-[#131F33] text-[#00B8F0] focus:ring-0 cursor-pointer"
+                        className="w-4 h-4 rounded border-slate-300 text-[#0D8C7D] focus:ring-0 cursor-pointer"
                       />
                       <span>Publish live immediately (uncheck to save as draft)</span>
                     </label>
@@ -1236,9 +1229,9 @@ Wrap up with actionable takeaways."
                 </form>
               ) : (
                 /* LIVE PREVIEW TAB */
-                <div className="bg-[#070D18] rounded-xl p-6 border border-[#1E2C44] max-w-2xl mx-auto space-y-6">
+                <div className="bg-slate-50 rounded-xl p-6 border border-slate-200 max-w-2xl mx-auto space-y-6">
                   {postForm.cover_image && (
-                    <div className="relative aspect-[16/9] w-full rounded-xl overflow-hidden">
+                    <div className="relative aspect-[16/9] w-full rounded-xl overflow-hidden border border-slate-200">
                       <Image
                         src={postForm.cover_image}
                         alt={postForm.title || "Preview"}
@@ -1250,13 +1243,13 @@ Wrap up with actionable takeaways."
                   )}
 
                   <div className="space-y-3">
-                    <span className="text-xs font-semibold text-[#00B8F0] uppercase tracking-wider font-mono">
+                    <span className="text-xs font-bold text-[#0284C7] uppercase tracking-wider font-mono">
                       {postForm.category}
                     </span>
-                    <h1 className="text-2xl sm:text-3xl font-extrabold text-[#F5F7FC] leading-snug">
+                    <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900 leading-snug">
                       {postForm.title || "Your Post Title Here"}
                     </h1>
-                    <div className="flex items-center gap-4 text-xs text-[#9BAAC2]">
+                    <div className="flex items-center gap-4 text-xs text-slate-500">
                       <span>By {postForm.author}</span>
                       <span>•</span>
                       <span>5 min read</span>
@@ -1264,12 +1257,12 @@ Wrap up with actionable takeaways."
                   </div>
 
                   {postForm.excerpt && (
-                    <p className="text-base text-[#9BAAC2] border-l-2 border-[#00B8F0] pl-4 italic">
+                    <p className="text-base text-slate-700 border-l-4 border-[#0284C7] pl-4 italic bg-white p-3 rounded-r-lg">
                       {postForm.excerpt}
                     </p>
                   )}
 
-                  <div className="prose prose-invert max-w-none text-sm text-[#CBD5E1] space-y-4 whitespace-pre-wrap leading-relaxed">
+                  <div className="text-sm text-slate-800 space-y-4 whitespace-pre-wrap leading-relaxed">
                     {postForm.content || "Write some content to preview how it looks here..."}
                   </div>
                 </div>
@@ -1277,11 +1270,11 @@ Wrap up with actionable takeaways."
             </div>
 
             {/* Editor Footer Actions */}
-            <div className="px-6 py-4 border-t border-[#1E2C44] bg-[#131F33] flex items-center justify-between shrink-0">
+            <div className="px-6 py-4 border-t border-slate-200 bg-slate-50 flex items-center justify-between shrink-0">
               <button
                 type="button"
                 onClick={() => setIsEditorOpen(false)}
-                className="px-4 py-2.5 rounded-xl border border-[#2B3E5C] text-xs font-semibold text-[#CBD5E1] hover:bg-[#1E2C44] transition-colors cursor-pointer"
+                className="px-4 py-2.5 rounded-xl border border-slate-300 text-xs font-semibold text-slate-700 hover:bg-slate-200 transition-colors cursor-pointer"
               >
                 Cancel
               </button>
@@ -1290,7 +1283,7 @@ Wrap up with actionable takeaways."
                 type="submit"
                 form="blog-form"
                 disabled={editorLoading}
-                className="inline-flex items-center gap-2 bg-[#00B8F0] hover:bg-[#00A3D6] text-[#070D18] font-bold text-xs sm:text-sm px-6 py-2.5 rounded-xl transition-all shadow-xs disabled:opacity-60 cursor-pointer"
+                className="inline-flex items-center gap-2 bg-[#0D8C7D] hover:bg-[#0B7568] text-white font-bold text-xs sm:text-sm px-6 py-2.5 rounded-xl transition-all shadow-xs disabled:opacity-60 cursor-pointer"
               >
                 {editorLoading ? (
                   <>
