@@ -409,10 +409,10 @@ export default function AdminDashboardPage() {
             <Link href="/" className="flex items-center gap-2 group">
               <div className="w-8 h-8 rounded-lg bg-[#14233D] border border-[#2B3E5C] flex items-center justify-center p-1.5 group-hover:border-[#00B8F0]/60 transition-colors">
                 <Image
-                  src="/assets/amogha-digital-official-logo.webp"
+                  src="/assets/amogha-digital-ribbon-logo.webp"
                   alt="Amogha Digital"
-                  width={24}
-                  height={24}
+                  width={28}
+                  height={28}
                   className="w-full h-full object-contain"
                 />
               </div>

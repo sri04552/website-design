@@ -171,10 +171,10 @@ export default function AdminLoginPage() {
               className="inline-block transition-transform duration-200 hover:scale-105"
             >
               <Image
-                src="/assets/amogha-digital-official-logo.webp"
-                alt="Logo"
-                width={100}
-                height={100}
+                src="/assets/amogha-digital-ribbon-logo.webp"
+                alt="Amogha Digital Logo"
+                width={120}
+                height={120}
                 priority
                 className="w-24 h-24 sm:w-28 sm:h-28 object-contain mx-auto"
               />
