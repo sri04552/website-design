@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { supabase } from "@/lib/supabase";
+import { supabase, supabaseAdmin } from "@/lib/supabase";
 
 // Function to send email notification to the site owner
 async function sendNotificationEmail(data) {
@@ -134,8 +134,9 @@ export async function POST(request) {
     await sendNotificationEmail(cleanedData);
 
     // 2. If Supabase is configured, store the record
-    if (supabase) {
-      const { error: dbError } = await supabase
+    const dbClient = supabaseAdmin || supabase;
+    if (dbClient) {
+      const { error: dbError } = await dbClient
         .from("inquiries")
         .insert([cleanedData]);
 
