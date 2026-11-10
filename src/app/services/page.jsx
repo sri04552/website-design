@@ -97,83 +97,87 @@ export default function ServicesPage() {
       />
 
       {/* Hero Section: Enterprise Systems & Engineering Suite */}
-      <section className="relative min-h-[460px] border-b border-[#1E2E48] pt-[123px] pb-[48px] overflow-hidden">
+      <section className="relative min-h-[500px] lg:min-h-[560px] border-b border-[#1E2E48] pt-[123px] pb-[48px] lg:pb-[60px] overflow-hidden flex items-center">
         {/* Background Image Container */}
         <div className="absolute inset-0 pointer-events-none z-0">
           <Image
-            src="/assets/amogha-digital-enterprise-services-engineering-hero.webp"
-            alt="Amogha Digital enterprise digital solutions and technical architecture"
+            src="/assets/futuristic-analytics-dashboard-office.webp"
+            alt="Futuristic Analytics Dashboard Office - High-Performance Digital Solutions"
             title="Amogha Digital - Digital Services & Growth Solutions"
             fill
             priority
             sizes="100vw"
-            className="object-cover object-center"
+            className="object-cover object-right lg:object-center"
           />
         </div>
 
-        {/* Dark Tint Overlay for Optimal Contrast */}
+        {/* Dark Vignette Overlay for High Contrast & Optimal Text Readability */}
         <div
-          className="absolute inset-0 pointer-events-none z-0 bg-[#070D18]/85 backdrop-blur-[1px]"
+          className="absolute inset-0 pointer-events-none z-0 bg-gradient-to-r from-[#070D18] via-[#070D18]/88 md:via-[#070D18]/75 to-[#070D18]/40 lg:to-transparent"
+          aria-hidden="true"
+        />
+        <div
+          className="absolute inset-0 pointer-events-none z-0 bg-gradient-to-t from-[#070D18]/70 via-transparent to-transparent lg:hidden"
           aria-hidden="true"
         />
 
-        <Container className="relative z-10">
+        <Container className="relative z-10 w-full">
           <Breadcrumbs items={[{ label: "Services", href: "/services" }]} />
 
-          <div className="max-w-4xl mt-6 space-y-6">
-            {/* Eyebrow Badge kept strictly for Hero */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#29374D] bg-[#14233D]/80 backdrop-blur-xs shadow-xs">
-              <Layers className="w-3.5 h-3.5 text-[#00B8F0] shrink-0" aria-hidden="true" />
-              <span className="text-[12px] font-medium tracking-wider text-[#00B8F0] uppercase font-mono">
-                DIGITAL SERVICES &amp; SOLUTIONS
-              </span>
-            </div>
-
-            {/* High-Impact Headline */}
-            <h1 className="font-heading text-3xl sm:text-5xl lg:text-[56px] font-bold tracking-tight text-[#F5F7FC] leading-[1.12]">
+          <div className="max-w-2xl lg:max-w-3xl mt-5 space-y-5 sm:space-y-6">
+            {/* High-Impact Headline (Eyebrow removed as requested) */}
+            <h1 className="font-heading text-3xl sm:text-5xl lg:text-[54px] font-bold tracking-tight text-[#F5F7FC] leading-[1.14]">
               High-Performance Systems.{" "}
-              <span className="block mt-1 sm:mt-2">
-                Built for <span className="text-[#00B8F0] font-extrabold">Predictable Revenue</span>.
+              <span className="block mt-1 sm:mt-1.5">
+                Built for <span className="text-[#00B8F0] font-extrabold">Predictable Revenue.</span>
               </span>
             </h1>
 
-            {/* Supporting Paragraph (16px mobile, 15px desktop) */}
-            <p className="text-[16px] sm:text-[15px] text-[#9BAAC2] leading-[1.75] font-normal max-w-2xl">
-              Engineering custom websites, targeted Meta and Google advertising funnels, and 24/7 automated WhatsApp workflows designed to capture and convert qualified buyers.
+            {/* Supporting Paragraph Matching Attached Mockup */}
+            <p className="text-[15.5px] sm:text-[17px] text-[#9BAAC2] leading-[1.7] font-normal max-w-2xl font-sans">
+              Engineered custom websites, targeted Meta and Google advertising funnels, and 24/7 intelligent automation to help you attract, convert and grow.
             </p>
 
-            {/* Horizontally Aligned Action Buttons with Standard min-h-[48px] */}
-            <div className="pt-1 flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
+            {/* Horizontally Aligned Action Buttons */}
+            <div className="pt-1 flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 sm:gap-4 w-full sm:w-auto font-sans">
               <a
                 href="#proposal-form"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#0D8C7D] hover:bg-[#0B7568] active:bg-[#085E54] text-white font-semibold text-base px-7 py-3.5 rounded-lg shadow-sm hover:shadow transition-all min-h-[48px]"
+                className="inline-flex items-center justify-center gap-2 bg-[#0D8C7D] hover:bg-[#0B7568] active:bg-[#085E54] text-white font-semibold text-[15px] sm:text-[16px] px-7 py-3.5 rounded-xl shadow-sm hover:shadow transition-all min-h-[48px]"
               >
-                <span>Schedule Consultation</span>
-                <Calendar className="w-4 h-4 text-white/90" />
+                <span>Schedule a Consultation</span>
+                <ArrowRight className="w-4 h-4 text-white" />
               </a>
 
               <a
                 href="#service-grid"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#131F33] hover:bg-[#1A2A45] active:bg-[#0F1929] text-[#F5F7FC] font-semibold text-base px-6 py-3.5 rounded-lg border border-[#2B3E5C] hover:border-[#00B8F0]/70 shadow-xs hover:shadow-[0_0_20px_rgba(0,184,240,0.15)] transition-all min-h-[48px]"
+                className="inline-flex items-center justify-center gap-2 bg-[#131F33]/85 hover:bg-[#1A2A45] active:bg-[#0F1929] text-[#F5F7FC] font-semibold text-[15px] sm:text-[16px] px-6 py-3.5 rounded-xl border border-[#2B3E5C] hover:border-[#00B8F0]/70 backdrop-blur-md shadow-xs hover:shadow-[0_0_20px_rgba(0,184,240,0.15)] transition-all min-h-[48px]"
               >
-                <span>Explore All 6 Services</span>
-                <ArrowRight className="w-4 h-4 text-[#00B8F0]" />
+                <span>Explore All Services</span>
+                <ArrowRight className="w-4 h-4 text-[#9BAAC2] group-hover:text-white" />
               </a>
             </div>
 
-            {/* SEO-focused 3-Pillar Growth Strip */}
-            <div className="pt-4 border-t border-[#29374D]/80 grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs sm:text-[13px] text-[#9BAAC2]">
-              <div className="flex items-center gap-2">
-                <Search className="w-4 h-4 text-[#00B8F0] shrink-0" />
-                <span>Google Ranking &amp; SEO Optimized</span>
+            {/* Trust Badges Strip (Google Rating, 100% Client Focus, ROI-Focused Lead Gen) */}
+            <div className="pt-2 flex flex-wrap items-center gap-2.5 sm:gap-3 text-xs sm:text-[13px] text-slate-300">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#0A1424]/85 border border-[#1E2E48] backdrop-blur-md shadow-xs">
+                {/* Official Google Multi-Color G Icon */}
+                <svg className="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.8-2.4 3.65v3h3.86c2.26-2.09 3.685-5.17 3.685-9.09z" />
+                  <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.86-3c-1.08.72-2.45 1.16-4.07 1.16-3.13 0-5.78-2.11-6.73-4.96H1.26v3.09C3.26 21.3 7.36 24 12 24z" />
+                  <path fill="#FBBC05" d="M5.27 14.29c-.25-.72-.38-1.49-.38-2.29s.14-1.57.38-2.29V6.62H1.26C.46 8.23 0 10.06 0 12s.46 3.77 1.26 5.38l4.01-3.09z" />
+                  <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.36 0 3.26 2.7 1.26 6.62l4.01 3.09c.95-2.85 3.6-4.96 6.73-4.96z" />
+                </svg>
+                <span>Google Rating 4.9/5 (200+ Reviews)</span>
               </div>
-              <div className="flex items-center gap-2">
-                <ShieldCheck className="w-4 h-4 text-[#0D8C7D] shrink-0" />
-                <span>100% Direct Code &amp; Account Ownership</span>
+
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#0A1424]/85 border border-[#1E2E48] backdrop-blur-md shadow-xs">
+                <ShieldCheck className="w-3.5 h-3.5 text-[#00B8F0] shrink-0" aria-hidden="true" />
+                <span>100% Client Focus</span>
               </div>
-              <div className="flex items-center gap-2">
-                <TrendingUp className="w-4 h-4 text-[#00B8F0] shrink-0" />
-                <span>ROI-Focused Lead Generation Systems</span>
+
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#0A1424]/85 border border-[#1E2E48] backdrop-blur-md shadow-xs">
+                <TrendingUp className="w-3.5 h-3.5 text-[#00B8F0] shrink-0" aria-hidden="true" />
+                <span>ROI-Focused Lead Generation</span>
               </div>
             </div>
           </div>
