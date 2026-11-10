@@ -1,5 +1,3 @@
-import fs from "fs";
-import path from "path";
 import Image from "next/image";
 import { siteConfig } from "@/config/site";
 import { Container } from "@/components/ui/Container";
@@ -73,28 +71,6 @@ export default function ContactPage() {
       )}`
     : null;
 
-  // Check for dynamic background image availability
-  const heroBgCustomPath = path.join(
-    process.cwd(),
-    "public",
-    "assets",
-    "amogha-digital-corporate-office-boardroom-contact-hero-bg.webp"
-  );
-  const heroBgFallbackPath = path.join(
-    process.cwd(),
-    "public",
-    "assets",
-    "contact-hero-bg.webp"
-  );
-  const hasCustomHeroBg = fs.existsSync(heroBgCustomPath);
-  const hasFallbackHeroBg = fs.existsSync(heroBgFallbackPath);
-
-  const heroBgSrc = hasCustomHeroBg
-    ? "/assets/amogha-digital-corporate-office-boardroom-contact-hero-bg.webp"
-    : hasFallbackHeroBg
-    ? "/assets/contact-hero-bg.webp"
-    : null;
-
   return (
     <>
       <script
@@ -102,35 +78,17 @@ export default function ContactPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      {/* Hero Section: Project Consultation & Advisory using Services Hero Background Gradient Styles */}
-      <section className="relative min-h-[500px] lg:min-h-[560px] border-b border-[#1E2E48] pt-[123px] pb-[48px] overflow-hidden flex items-center bg-[#070D18]">
-        {/* Background Image Container if available */}
-        {heroBgSrc && (
-          <div className="absolute inset-0 pointer-events-none z-0">
-            <Image
-              src={heroBgSrc}
-              alt="Amogha Digital corporate advisory headquarters"
-              fill
-              priority
-              sizes="100vw"
-              className="object-cover object-center"
-            />
-          </div>
-        )}
-
-        {/* Atmospheric Dark Glow matching Services Hero Section */}
+      {/* Hero Section: Project Consultation & Advisory with Full-Width Background Color */}
+      <section className="relative w-full min-h-[500px] lg:min-h-[560px] border-b border-[#1E2E48] pt-[123px] pb-[48px] overflow-hidden flex items-center bg-[#070D18]">
+        {/* Full-Width Atmospheric Radial Glow matching Services Page */}
         <div
-          className="absolute inset-0 pointer-events-none z-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_0%,rgba(20,35,61,0.85)_0%,transparent_100%)]"
+          className="absolute inset-0 w-full h-full pointer-events-none z-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_0%,rgba(20,35,61,0.85)_0%,transparent_100%)]"
           aria-hidden="true"
         />
 
-        {/* Dark Vignette Overlay for High Contrast & Optimal Text Readability */}
+        {/* Full-Width Ambient Cyan/Blue Glow for Atmospheric Depth */}
         <div
-          className="absolute inset-0 pointer-events-none z-0 bg-gradient-to-r from-[#070D18] via-[#070D18]/88 md:via-[#070D18]/75 to-[#070D18]/40 lg:to-transparent"
-          aria-hidden="true"
-        />
-        <div
-          className="absolute inset-0 pointer-events-none z-0 bg-gradient-to-t from-[#070D18]/70 via-transparent to-transparent lg:hidden"
+          className="absolute top-0 right-1/4 w-[450px] h-[450px] bg-[#00B8F0]/10 rounded-full blur-[140px] pointer-events-none z-0"
           aria-hidden="true"
         />
 
