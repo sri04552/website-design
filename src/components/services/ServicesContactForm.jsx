@@ -13,6 +13,7 @@ import {
   ShieldCheck,
   ChevronDown,
   MessageSquare,
+  ArrowRight,
 } from "lucide-react";
 
 export function ServicesContactForm() {
@@ -215,58 +216,74 @@ export function ServicesContactForm() {
             </p>
           </div>
 
-          {/* 3 Core Delivery Commitments */}
-          <div className="space-y-4 pt-2 border-t border-slate-200/80">
-            <div className="space-y-1">
-              <div className="flex items-center gap-2 text-slate-900 font-bold text-sm">
-                <Clock className="w-4 h-4 text-[#0284C7]" />
-                <span>Dedicated Technical Evaluation</span>
+          {/* Contact Channels List */}
+          <div className="space-y-4 pt-3 border-t border-slate-200/80">
+            {/* Email Channel */}
+            <div className="flex items-start gap-3.5 p-3.5 rounded-xl bg-white border border-slate-200/80 shadow-2xs hover:border-sky-300 transition-colors">
+              <div className="w-10 h-10 rounded-xl bg-sky-50 text-[#00B8F0] border border-sky-100 flex items-center justify-center shrink-0">
+                <Mail className="w-5 h-5" />
               </div>
-              <p className="text-xs sm:text-[13.5px] text-[#475569] leading-relaxed pl-6">
-                Direct evaluation and tailored architectural recommendations from our senior leads.
-              </p>
+              <div className="space-y-0.5 min-w-0">
+                <h4 className="font-heading text-sm font-bold text-slate-900">Email</h4>
+                <p className="text-xs sm:text-[13.5px] text-[#475569]">
+                  <a
+                    href="mailto:contact@amoghadigital.com"
+                    className="text-[#0284C7] hover:text-[#00B8F0] font-semibold transition-colors break-all"
+                  >
+                    contact@amoghadigital.com
+                  </a>
+                </p>
+                <p className="text-[12px] text-slate-500">
+                  Send us your requirements, blueprints, or RFPs directly.
+                </p>
+              </div>
             </div>
 
-            <div className="space-y-1">
-              <div className="flex items-center gap-2 text-slate-900 font-bold text-sm">
-                <ShieldCheck className="w-4 h-4 text-[#0D8C7D]" />
-                <span>100% Asset Ownership</span>
+            {/* WhatsApp Channel */}
+            <div className="flex items-start gap-3.5 p-3.5 rounded-xl bg-white border border-slate-200/80 shadow-2xs hover:border-emerald-300 transition-colors">
+              <div className="w-10 h-10 rounded-xl bg-emerald-50 text-[#0D8C7D] border border-emerald-100 flex items-center justify-center shrink-0">
+                <MessageSquare className="w-5 h-5" />
               </div>
-              <p className="text-xs sm:text-[13.5px] text-[#475569] leading-relaxed pl-6">
-                You retain complete ownership of your code, domains, and ad accounts.
-              </p>
+              <div className="space-y-0.5 min-w-0">
+                <h4 className="font-heading text-sm font-bold text-slate-900">WhatsApp</h4>
+                <p className="text-xs sm:text-[13.5px] text-[#475569]">
+                  <a
+                    href={`https://wa.me/${siteConfig.contact.whatsappNumber || "916304299387"}?text=${encodeURIComponent(
+                      "Hello! I would like to discuss a project with Amogha Digital."
+                    )}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[#0D8C7D] hover:underline font-semibold inline-flex items-center gap-1"
+                  >
+                    <span>Message on WhatsApp</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </a>
+                </p>
+                <p className="text-[12px] text-slate-500">
+                  Fast, real-time responses for quick consultations and inquiries.
+                </p>
+              </div>
             </div>
 
-            <div className="space-y-1">
-              <div className="flex items-center gap-2 text-slate-900 font-bold text-sm">
-                <Phone className="w-4 h-4 text-[#0284C7]" />
-                <span>Direct Contact</span>
+            {/* Call Now Channel */}
+            <div className="flex items-start gap-3.5 p-3.5 rounded-xl bg-white border border-slate-200/80 shadow-2xs hover:border-blue-300 transition-colors">
+              <div className="w-10 h-10 rounded-xl bg-blue-50 text-[#0284C7] border border-blue-100 flex items-center justify-center shrink-0">
+                <Phone className="w-5 h-5" />
               </div>
-              <p className="text-xs sm:text-[13.5px] text-[#475569] leading-relaxed pl-6">
-                Direct communication with the specialists building your project.
-              </p>
-            </div>
-          </div>
-
-          {/* Direct Communication Details */}
-          <div className="p-5 rounded-2xl bg-white border border-slate-200/90 shadow-2xs space-y-2.5 text-xs sm:text-[13.5px]">
-            <div className="flex items-center gap-2 text-slate-700">
-              <Phone className="w-4 h-4 text-[#0D8C7D] shrink-0" />
-              <a
-                href={`tel:${siteConfig.contact.phone.replace(/[^0-9+]/g, "")}`}
-                className="hover:text-[#0D8C7D] transition-colors font-medium"
-              >
-                {siteConfig.contact.phone} (Phone &amp; WhatsApp)
-              </a>
-            </div>
-            <div className="flex items-center gap-2 text-slate-700">
-              <Mail className="w-4 h-4 text-[#0284C7] shrink-0" />
-              <a
-                href={`mailto:${siteConfig.contact.email}`}
-                className="hover:text-[#0284C7] transition-colors font-medium"
-              >
-                {siteConfig.contact.email}
-              </a>
+              <div className="space-y-0.5 min-w-0">
+                <h4 className="font-heading text-sm font-bold text-slate-900">Call Now</h4>
+                <p className="text-xs sm:text-[13.5px] text-[#475569]">
+                  <a
+                    href={`tel:${siteConfig.contact.phone.replace(/[^0-9+]/g, "")}`}
+                    className="text-[#0284C7] hover:text-[#00B8F0] font-semibold transition-colors"
+                  >
+                    {siteConfig.contact.phone}
+                  </a>
+                </p>
+                <p className="text-[12px] text-slate-500">
+                  Speak directly with our technical team during business hours.
+                </p>
+              </div>
             </div>
           </div>
         </div>

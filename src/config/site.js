@@ -28,7 +28,7 @@ export const siteConfig = {
     
     // Contact email
     // Set NEXT_PUBLIC_CONTACT_EMAIL in .env.local
-    email: process.env.NEXT_PUBLIC_CONTACT_EMAIL || "contact@example.com",
+    email: process.env.NEXT_PUBLIC_CONTACT_EMAIL || "contact@amoghadigital.com",
     
     // Display phone
     phone: process.env.NEXT_PUBLIC_PHONE_NUMBER || "+91 63042 99387",

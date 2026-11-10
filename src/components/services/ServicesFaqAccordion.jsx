@@ -47,46 +47,46 @@ export function ServicesFaqAccordion() {
   return (
     <div className="max-w-4xl mx-auto">
       {/* Section Header */}
-      <div className="text-center flex flex-col items-center mb-10 sm:mb-12">
+      <div className="text-center flex flex-col items-center mb-6 sm:mb-7">
         {/* Main H2 */}
-        <h2 className="font-heading text-2xl sm:text-3.5xl lg:text-[34px] font-extrabold tracking-tight text-[#0F172A] leading-[1.25]">
+        <h2 className="font-heading text-2xl sm:text-3.5xl lg:text-[32px] font-extrabold tracking-tight text-[#0F172A] leading-[1.25]">
           Frequently Asked Questions
         </h2>
 
         {/* Lead Prose */}
-        <p className="mt-3 text-[16px] sm:text-[15px] text-[#475569] leading-[1.75] font-normal max-w-2xl mx-auto">
+        <p className="mt-2.5 text-[15px] sm:text-[15px] text-[#475569] leading-relaxed max-w-2xl mx-auto font-normal font-sans">
           Have questions about our pricing, timelines, or how our services work? Here are straight, transparent answers to the questions business owners ask us most.
         </p>
       </div>
 
-      {/* FAQ Accordion Stack */}
-      <div className="space-y-4">
+      {/* FAQ Accordion Stack with decreased gap */}
+      <div className="space-y-2.5 sm:space-y-3">
         {faqs.map((faq, index) => {
           const isOpen = openIndex === index;
           return (
             <div
               key={index}
-              className="bg-white rounded-xl border border-sky-200/80 shadow-[0_2px_12px_rgba(2,132,199,0.03)] hover:border-sky-300 transition-colors overflow-hidden"
+              className="bg-white rounded-xl border border-sky-200/80 shadow-[0_2px_8px_rgba(2,132,199,0.02)] hover:border-sky-300 transition-colors overflow-hidden"
             >
               <button
                 type="button"
                 onClick={() => toggleFaq(index)}
                 aria-expanded={isOpen}
                 aria-controls={`services-faq-answer-${index}`}
-                className="w-full px-4 py-5 sm:p-6 flex items-center justify-between gap-4 text-left font-bold text-[#0F172A] hover:text-[#0284C7] transition-colors focus-visible:outline-[#00B8F0] cursor-pointer"
+                className="w-full px-4 py-3.5 sm:px-5 sm:py-4 flex items-center justify-between gap-4 text-left font-bold text-[#0F172A] hover:text-[#0284C7] transition-colors focus-visible:outline-[#00B8F0] cursor-pointer"
               >
-                <span className="text-[15px] sm:text-base leading-snug">
+                <span className="text-[14.5px] sm:text-[15.5px] leading-snug">
                   {faq.question}
                 </span>
                 <div
-                  className={`w-7 h-7 rounded-full flex items-center justify-center shrink-0 border transition-all duration-200 ${
+                  className={`w-6 h-6 sm:w-7 sm:h-7 rounded-full flex items-center justify-center shrink-0 border transition-all duration-200 ${
                     isOpen
                       ? "bg-[#0284C7] text-white border-[#0284C7] rotate-180"
                       : "bg-slate-50 text-slate-500 border-slate-200"
                   }`}
                   aria-hidden="true"
                 >
-                  <ChevronDown className="w-4 h-4" />
+                  <ChevronDown className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                 </div>
               </button>
 
@@ -94,9 +94,9 @@ export function ServicesFaqAccordion() {
                 <div
                   id={`services-faq-answer-${index}`}
                   role="region"
-                  className="px-4 sm:px-6 pb-6 pt-0"
+                  className="px-4 sm:px-5 pb-4 pt-0"
                 >
-                  <p className="pt-2 text-[16px] sm:text-[15px] text-[#475569] leading-relaxed font-normal">
+                  <p className="pt-1 text-[15px] sm:text-[14.5px] text-[#475569] leading-relaxed font-normal">
                     {faq.answer}
                   </p>
                 </div>
@@ -106,8 +106,8 @@ export function ServicesFaqAccordion() {
         })}
       </div>
 
-      {/* Bottom Support Bar with standardized card padding and equal button sizes */}
-      <div className="mt-10 sm:mt-12 bg-white rounded-2xl border border-sky-200/80 px-4 py-6 sm:p-8 shadow-xs text-center flex flex-col sm:flex-row items-center justify-between gap-4">
+      {/* Bottom Support Bar with compact padding */}
+      <div className="mt-6 sm:mt-8 bg-white rounded-2xl border border-sky-200/80 px-4 py-5 sm:px-6 sm:py-5 shadow-xs text-center flex flex-col sm:flex-row items-center justify-between gap-4">
         <div className="text-center sm:text-left">
           <h3 className="text-base font-bold text-[#0F172A]">
             Have a question not listed here?

@@ -286,8 +286,8 @@ export default function ServicesPage() {
         </Container>
       </section>
 
-      {/* Services FAQ Section with exact 48px top and bottom padding */}
-      <section className="bg-[#F0F7FF] py-[48px] border-b border-sky-100">
+      {/* Services FAQ Section with compact top and bottom padding */}
+      <section className="bg-[#F0F7FF] py-7 sm:py-9 border-b border-sky-100">
         <Container>
           <ServicesFaqAccordion />
         </Container>
