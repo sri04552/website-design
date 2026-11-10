@@ -79,7 +79,7 @@ export default function HomePage() {
           </div>
 
           {/* Cinematic Headline */}
-          <h1 className="font-heading text-4xl sm:text-5xl lg:text-[68px] font-bold text-[#F5F7FC] leading-[1.12] tracking-tight lg:tracking-[-2.5px] max-w-4xl">
+          <h1 className="font-heading text-[32px] sm:text-[44px] lg:text-[60px] font-bold text-[#F5F7FC] leading-[1.14] tracking-tight lg:tracking-[-2px] max-w-4xl">
             <span className="block">Grow Your Business.</span>
             <span className="block mt-1 sm:mt-2">
               <span className="text-[#00B8F0] font-extrabold">Automate</span> What Comes Next.

@@ -23,10 +23,10 @@ test.describe('Typography System Verification', () => {
 
     console.log('Desktop H1 Styles:', h1Styles);
     expect(h1Styles.fontFamily.toLowerCase()).toContain('plus jakarta');
-    expect(parseFloat(h1Styles.fontSize)).toBeCloseTo(68, 1);
+    expect(parseFloat(h1Styles.fontSize)).toBeCloseTo(60, 1);
     expect(parseInt(h1Styles.fontWeight, 10)).toBe(700);
-    // letter-spacing approximately -2.5px
-    expect(parseFloat(h1Styles.letterSpacing)).toBeCloseTo(-2.5, 0.5);
+    // letter-spacing approximately -2px
+    expect(parseFloat(h1Styles.letterSpacing)).toBeCloseTo(-2, 0.5);
 
     // 2. Cyan highlighted word
     const cyanWord = h1.locator('span.text-\\[\\#00B8F0\\]');
