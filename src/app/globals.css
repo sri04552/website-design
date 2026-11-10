@@ -118,17 +118,18 @@
   background: #3B4E6B;
 }
 
-/* Homepage Hero Architectural Grid Pattern - Very small grids with high visibility & instant GPU rendering */
+/* Homepage Hero Architectural Grid Pattern - Very small grids with subtle opacity & instant GPU rendering */
 .hero-grid-pattern {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   pointer-events: none;
+  opacity: 0.6;
   background-size: 20px 20px;
   background-image:
-    linear-gradient(to right, rgba(0, 184, 240, 0.15) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(0, 184, 240, 0.15) 1px, transparent 1px);
+    linear-gradient(to right, rgba(0, 184, 240, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 184, 240, 0.08) 1px, transparent 1px);
   -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 45%, #000 40%, transparent 90%);
   mask-image: radial-gradient(ellipse 80% 70% at 50% 45%, #000 40%, transparent 90%);
 }
