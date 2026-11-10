@@ -6,7 +6,6 @@ import { supabase, supabaseAdmin } from "@/lib/supabase";
 import { siteConfig } from "@/config/site";
 import {
   Calendar,
-  Clock,
   ArrowLeft,
   Share2,
   MessageSquare,
@@ -309,11 +308,6 @@ export default async function BlogPostPage({ params }) {
                   <span>{publishedDate}</span>
                 </div>
               )}
-
-              <div className="flex items-center gap-1.5">
-                <Clock className="w-3.5 h-3.5 text-[#9BAAC2]" />
-                <span>{post.read_time || "4 min read"}</span>
-              </div>
             </div>
           </div>
         </Container>

@@ -4,7 +4,6 @@ import { Container } from "@/components/ui/Container";
 import { supabase, supabaseAdmin } from "@/lib/supabase";
 import {
   Calendar,
-  Clock,
   ArrowRight,
   TrendingUp,
   FileText,
@@ -194,19 +193,12 @@ export default async function BlogsPage({ searchParams }) {
 
                       {/* Content Info */}
                       <div className="p-5 sm:p-6">
-                        <div className="flex items-center gap-3 text-xs text-slate-500 mb-3">
-                          {dateFormatted && (
-                            <div className="flex items-center gap-1.5">
-                              <Calendar className="w-3.5 h-3.5 text-[#0284C7]" />
-                              <span>{dateFormatted}</span>
-                            </div>
-                          )}
-                          <span>•</span>
-                          <div className="flex items-center gap-1.5">
-                            <Clock className="w-3.5 h-3.5 text-slate-400" />
-                            <span>{post.read_time || "4 min read"}</span>
+                        {dateFormatted && (
+                          <div className="flex items-center gap-1.5 text-xs text-slate-500 mb-3">
+                            <Calendar className="w-3.5 h-3.5 text-[#0284C7]" />
+                            <span>{dateFormatted}</span>
                           </div>
-                        </div>
+                        )}
 
                         <h2 className="font-heading text-lg sm:text-xl font-bold text-[#0F172A] leading-snug group-hover:text-[#0284C7] transition-colors line-clamp-2">
                           <Link href={`/blogs/${post.slug}`}>{post.title}</Link>
