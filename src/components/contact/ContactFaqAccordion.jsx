@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { ChevronDown } from "lucide-react";
+import { Plus } from "lucide-react";
 
 export function ContactFaqAccordion() {
   const [openIndex, setOpenIndex] = useState(0); // First item open by default
@@ -39,13 +39,13 @@ export function ContactFaqAccordion() {
   };
 
   return (
-    <div className="space-y-3 max-w-4xl mx-auto">
+    <div className="space-y-2.5 sm:space-y-3 max-w-4xl mx-auto">
       {faqs.map((faq, index) => {
         const isOpen = openIndex === index;
         return (
           <div
             key={index}
-            className={`rounded-2xl border transition-colors duration-150 overflow-hidden ${
+            className={`rounded-xl border transition-colors duration-150 overflow-hidden ${
               isOpen
                 ? "bg-white border-[#00B8F0]/40 shadow-xs"
                 : "bg-[#F8FAFC] border-slate-200/90 hover:border-slate-300 hover:bg-white"
@@ -55,7 +55,7 @@ export function ContactFaqAccordion() {
               type="button"
               onClick={() => toggle(index)}
               aria-expanded={isOpen}
-              className="w-full px-6 py-4 sm:py-5 flex items-center justify-between gap-4 text-left cursor-pointer focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-[#00B8F0]"
+              className="w-full px-4 py-3.5 sm:px-5 sm:py-4 flex items-center justify-between gap-4 text-left cursor-pointer focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-[#00B8F0]"
             >
               <span
                 className={`font-heading text-sm sm:text-base font-bold transition-colors ${
@@ -65,14 +65,14 @@ export function ContactFaqAccordion() {
                 {faq.question}
               </span>
               <span
-                className={`shrink-0 w-8 h-8 rounded-full flex items-center justify-center border transition-all duration-200 ${
+                className={`shrink-0 w-6 h-6 sm:w-7 sm:h-7 rounded-full flex items-center justify-center border transition-all duration-200 ${
                   isOpen
-                    ? "bg-[#00B8F0]/10 border-[#00B8F0]/30 text-[#0284C7] rotate-180"
-                    : "bg-white border-slate-200 text-slate-500"
+                    ? "bg-[#0284C7] text-white border-[#0284C7] rotate-45"
+                    : "bg-slate-50 text-slate-500 border-slate-200"
                 }`}
                 aria-hidden="true"
               >
-                <ChevronDown className="w-4 h-4" />
+                <Plus className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
               </span>
             </button>
 
@@ -82,7 +82,7 @@ export function ContactFaqAccordion() {
               }`}
             >
               <div className="overflow-hidden">
-                <div className="px-6 pb-5 pt-1 text-[16px] sm:text-[15px] text-slate-600 leading-[1.75] font-normal border-t border-slate-100">
+                <div className="px-4 sm:px-5 pb-4 pt-1 text-[15px] sm:text-[14.5px] text-slate-600 leading-relaxed font-normal border-t border-slate-100">
                   {faq.answer}
                 </div>
               </div>

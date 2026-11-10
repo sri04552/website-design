@@ -203,7 +203,7 @@ export default function AdminDashboardPage() {
 
   // Delete Inquiry
   const handleDeleteInquiry = async (id) => {
-    if (!confirm("Are you sure you want to delete this lead inquiry?")) return;
+    if (!confirm("Are you sure you want to delete this lead enquiry?")) return;
     try {
       const res = await fetch(`/api/admin/inquiries?id=${id}`, {
         method: "DELETE",
@@ -216,7 +216,7 @@ export default function AdminDashboardPage() {
         if (selectedInquiry?.id === id) setSelectedInquiry(null);
       }
     } catch (e) {
-      alert("Failed to delete inquiry.");
+      alert("Failed to delete enquiry.");
     }
   };
 
@@ -464,7 +464,7 @@ export default function AdminDashboardPage() {
               }`}
             >
               <Inbox className="w-4 h-4 text-[#0D8C7D]" />
-              <span>Customer Inquiries</span>
+              <span>Customer Enquiries</span>
               <span
                 className={`ml-1 text-xs px-2 py-0.5 rounded-full ${
                   activeTab === "inquiries"
@@ -509,7 +509,7 @@ export default function AdminDashboardPage() {
           )}
         </div>
 
-        {/* TAB 1: INQUIRIES / LEADS (Light Theme) */}
+        {/* TAB 1: ENQUIRIES / LEADS (Light Theme) */}
         {activeTab === "inquiries" && (
           <div className="space-y-6">
             {/* Search and Refresh Bar */}
@@ -543,7 +543,7 @@ export default function AdminDashboardPage() {
             {inquiriesLoading && inquiries.length === 0 ? (
               <div className="py-16 text-center text-slate-500">
                 <Loader2 className="w-6 h-6 animate-spin mx-auto text-[#0D8C7D] mb-2" />
-                <p className="text-sm">Loading inquiries from database...</p>
+                <p className="text-sm">Loading enquiries from database...</p>
               </div>
             ) : filteredInquiries.length === 0 ? (
               <div className="bg-white rounded-2xl border border-slate-200/90 p-12 text-center space-y-3 shadow-sm">
@@ -551,7 +551,7 @@ export default function AdminDashboardPage() {
                   <Inbox className="w-6 h-6" />
                 </div>
                 <h3 className="font-heading text-lg font-bold text-slate-900">
-                  {inquiriesSearch ? "No matching inquiries found" : "No inquiries received yet"}
+                  {inquiriesSearch ? "No matching enquiries found" : "No enquiries received yet"}
                 </h3>
                 <p className="text-sm text-slate-500 max-w-md mx-auto">
                   When potential clients submit the Contact or Services forms on your website, their
@@ -616,7 +616,7 @@ export default function AdminDashboardPage() {
 
                             <td className="py-4 px-4">
                               <span className="inline-block px-2.5 py-1 rounded-md text-xs font-semibold bg-sky-50 text-sky-800 border border-sky-200">
-                                {inq.service || "General Inquiry"}
+                                {inq.service || "General Enquiry"}
                               </span>
                             </td>
 
@@ -651,7 +651,7 @@ export default function AdminDashboardPage() {
                                 )}
 
                                 <a
-                                  href={`mailto:${inq.email}?subject=Regarding your inquiry at Amogha Digital`}
+                                  href={`mailto:${inq.email}?subject=Regarding your enquiry at Amogha Digital`}
                                   title="Send Email"
                                   className="w-8 h-8 rounded-lg bg-sky-50 hover:bg-[#0284C7] text-[#0284C7] hover:text-white flex items-center justify-center transition-colors border border-sky-200"
                                 >
@@ -832,7 +832,7 @@ export default function AdminDashboardPage() {
         )}
       </main>
 
-      {/* MODAL 1: VIEW INQUIRY DETAILS (Light Theme) */}
+      {/* MODAL 1: VIEW ENQUIRY DETAILS (Light Theme) */}
       {selectedInquiry && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-xs animate-in fade-in duration-150">
           <div className="bg-white border border-slate-200 rounded-2xl w-full max-w-xl p-6 sm:p-8 shadow-2xl relative text-slate-900">
@@ -845,10 +845,10 @@ export default function AdminDashboardPage() {
 
             <div className="mb-4">
               <span className="text-xs font-semibold px-2.5 py-1 rounded-md bg-sky-50 text-sky-800 border border-sky-200">
-                {selectedInquiry.service || "General Inquiry"}
+                {selectedInquiry.service || "General Enquiry"}
               </span>
               <h3 className="font-heading text-xl font-bold text-slate-900 mt-2">
-                Inquiry from {selectedInquiry.name}
+                Enquiry from {selectedInquiry.name}
               </h3>
               <p className="text-xs text-slate-500 mt-0.5">
                 Received on{" "}
@@ -906,7 +906,7 @@ export default function AdminDashboardPage() {
               )}
 
               <a
-                href={`mailto:${selectedInquiry.email}?subject=Regarding your project inquiry at Amogha Digital`}
+                href={`mailto:${selectedInquiry.email}?subject=Regarding your project enquiry at Amogha Digital`}
                 className="inline-flex items-center gap-2 bg-[#0284C7] hover:bg-[#0275B0] text-white text-xs font-semibold px-4 py-2.5 rounded-xl transition-colors"
               >
                 <Mail className="w-3.5 h-3.5" />

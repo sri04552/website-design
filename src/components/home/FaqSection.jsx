@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { ChevronDown, ArrowRight } from "lucide-react";
+import { Plus, ArrowRight } from "lucide-react";
 
 export function FaqSection() {
   const [openIndex, setOpenIndex] = useState(0); // Open first FAQ by default
@@ -21,7 +21,7 @@ export function FaqSection() {
     {
       question: "How does the 24/7 WhatsApp lead automation work?",
       answer:
-        "We connect an intelligent automated WhatsApp assistant that welcomes new visitors in under 2 seconds. It answers common questions about your services or pricing, collects appointment details, and immediately alerts you on your phone so you never miss an inquiry outside business hours.",
+        "We connect an intelligent automated WhatsApp assistant that welcomes new visitors in under 2 seconds. It answers common questions about your services or pricing, collects appointment details, and immediately alerts you on your phone so you never miss an enquiry outside business hours.",
     },
     {
       question: "Can we work together if my business is located outside Eluru?",
@@ -36,7 +36,7 @@ export function FaqSection() {
     {
       question: "What happens after my website or ad campaigns are launched?",
       answer:
-        "We do not disappear after launch. We provide a hands-on walkthrough showing you how to manage new inquiries, monitor early ad performance to reduce cost-per-lead, and offer ongoing direct support for updates, maintenance, and future growth.",
+        "We do not disappear after launch. We provide a hands-on walkthrough showing you how to manage new enquiries, monitor early ad performance to reduce cost-per-lead, and offer ongoing direct support for updates, maintenance, and future growth.",
     },
   ];
 
@@ -110,12 +110,12 @@ export function FaqSection() {
                     <div
                       className={`w-6 h-6 sm:w-7 sm:h-7 rounded-full flex items-center justify-center shrink-0 border transition-all duration-200 ${
                         isOpen
-                          ? "bg-[#0284C7] text-white border-[#0284C7] rotate-180"
+                          ? "bg-[#0284C7] text-white border-[#0284C7] rotate-45"
                           : "bg-slate-50 text-slate-500 border-slate-200"
                       }`}
                       aria-hidden="true"
                     >
-                      <ChevronDown className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                      <Plus className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                     </div>
                   </button>
 

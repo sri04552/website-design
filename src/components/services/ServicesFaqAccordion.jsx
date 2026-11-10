@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { ChevronDown, ArrowRight } from "lucide-react";
+import { Plus, ArrowRight } from "lucide-react";
 
 export function ServicesFaqAccordion() {
   const [openIndex, setOpenIndex] = useState(0);
@@ -29,14 +29,14 @@ export function ServicesFaqAccordion() {
         "You pay ad spend directly to Google and Meta using your own business card or UPI. We manage campaign structure, keyword research, targeting, ad creatives, and weekly optimization under a clear, transparent management retainer.",
     },
     {
-      question: "Can the 24/7 WhatsApp AI bot handle multiple languages and customer inquiries?",
+      question: "Can the 24/7 WhatsApp AI bot handle multiple languages and customer enquiries?",
       answer:
-        "Yes. Our WhatsApp automated assistants are configured to understand and respond in English, Hindi, and regional languages. It handles common inquiries, shares product or service details, captures qualified lead information, and escalates active inquiries directly to your phone.",
+        "Yes. Our WhatsApp automated assistants are configured to understand and respond in English, Hindi, and regional languages. It handles common enquiries, shares product or service details, captures qualified lead information, and escalates active enquiries directly to your phone.",
     },
     {
       question: "What happens after my website or campaign goes live?",
       answer:
-        "We do not disappear after launch. We provide a hands-on walkthrough showing you how to manage new inquiries, monitor early ad performance to reduce cost-per-lead, and offer ongoing direct support for updates, maintenance, and future growth.",
+        "We do not disappear after launch. We provide a hands-on walkthrough showing you how to manage new enquiries, monitor early ad performance to reduce cost-per-lead, and offer ongoing direct support for updates, maintenance, and future growth.",
     },
   ];
 
@@ -81,12 +81,12 @@ export function ServicesFaqAccordion() {
                 <div
                   className={`w-6 h-6 sm:w-7 sm:h-7 rounded-full flex items-center justify-center shrink-0 border transition-all duration-200 ${
                     isOpen
-                      ? "bg-[#0284C7] text-white border-[#0284C7] rotate-180"
+                      ? "bg-[#0284C7] text-white border-[#0284C7] rotate-45"
                       : "bg-slate-50 text-slate-500 border-slate-200"
                   }`}
                   aria-hidden="true"
                 >
-                  <ChevronDown className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                  <Plus className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                 </div>
               </button>
 

@@ -129,7 +129,7 @@ export function ServicesContactForm() {
       const data = await res.json();
 
       if (!res.ok) {
-        throw new Error(data.error || "Failed to submit project inquiry.");
+        throw new Error(data.error || "Failed to submit project enquiry.");
       }
 
       setStatus("success");
@@ -165,7 +165,7 @@ export function ServicesContactForm() {
 
   const whatsappHref = siteConfig.contact.whatsappNumber
     ? `https://wa.me/${siteConfig.contact.whatsappNumber}?text=${encodeURIComponent(
-        `Hello! I just submitted an inquiry for ${
+        `Hello! I just submitted an enquiry for ${
           selectedServiceObj?.label || "digital services"
         } on your services page. My name is ${formData.name || "Client"}.`
       )}`
@@ -180,7 +180,7 @@ export function ServicesContactForm() {
 
         <div className="space-y-2">
           <h3 className="font-heading text-2xl font-bold text-[#0F172A] tracking-tight">
-            Inquiry Received
+            Enquiry Received
           </h3>
           <p className="text-[15px] text-[#475569] leading-relaxed max-w-md mx-auto">
             Thank you, <span className="font-semibold text-slate-900">{formData.name}</span>. We
@@ -230,7 +230,7 @@ export function ServicesContactForm() {
               Start Your Project Discussion
             </h2>
             <p className="text-[16px] sm:text-[15px] text-[#475569] leading-[1.75] font-normal">
-              Tell us about what you are building. Every inquiry is personally reviewed by our core
+              Tell us about what you are building. Every enquiry is personally reviewed by our core
               team to outline a realistic scope, verified architecture, and fixed estimate with zero
               sales pressure.
             </p>
@@ -286,7 +286,7 @@ export function ServicesContactForm() {
                   </a>
                 </p>
                 <p className="text-[12px] text-slate-500">
-                  Fast, real-time responses for quick consultations and inquiries.
+                  Fast, real-time responses for quick consultations and enquiries.
                 </p>
               </div>
             </div>
@@ -501,11 +501,11 @@ export function ServicesContactForm() {
                   {status === "submitting" ? (
                     <>
                       <Loader2 className="w-5 h-5 animate-spin" />
-                      <span>Submitting Inquiry...</span>
+                      <span>Submitting Enquiry...</span>
                     </>
                   ) : (
                     <>
-                      <span>Submit Inquiry</span>
+                      <span>Submit Enquiry</span>
                       <Send className="w-4 h-4" />
                     </>
                   )}

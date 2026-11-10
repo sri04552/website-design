@@ -2,7 +2,6 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/ui/Container";
-import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { supabase, supabaseAdmin } from "@/lib/supabase";
 import { siteConfig } from "@/config/site";
 import {
@@ -284,14 +283,7 @@ export default async function BlogPostPage({ params }) {
       {/* Hero / Header Section (Preserved Dark Theme) */}
       <header className="relative bg-[#070D18] text-[#F5F7FC] pt-[123px] pb-[40px] border-b border-[#1E2C44]">
         <Container className="max-w-4xl">
-          <Breadcrumbs
-            items={[
-              { label: "Blogs", href: "/blogs" },
-              { label: post.title, href: `/blogs/${post.slug}` },
-            ]}
-          />
-
-          <div className="mt-8 space-y-4">
+          <div className="space-y-4">
             <div className="flex items-center gap-2">
               <span className="inline-block px-3 py-1 rounded-md text-xs font-medium uppercase tracking-wider bg-[#14233D] text-[#00B8F0] border border-[#2B3E5C] font-mono">
                 {post.category || "General"}

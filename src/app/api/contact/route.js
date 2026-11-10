@@ -25,7 +25,7 @@ async function sendNotificationEmail(data) {
           html: `
             <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 24px; border: 1px solid #e2e8f0; border-radius: 12px; background: #ffffff;">
               <div style="border-bottom: 2px solid #00B8F0; padding-bottom: 12px; margin-bottom: 20px;">
-                <h2 style="color: #0F172A; margin: 0; font-size: 20px;">New Project Inquiry Received</h2>
+                <h2 style="color: #0F172A; margin: 0; font-size: 20px;">New Project Enquiry Received</h2>
                 <p style="color: #64748B; margin: 4px 0 0 0; font-size: 13px;">A new client submitted the project form on your website.</p>
               </div>
 
@@ -93,7 +93,7 @@ export async function POST(request) {
     if (honeypot) {
       // Silently return success to mislead the bot
       return NextResponse.json(
-        { success: true, message: "Inquiry received." },
+        { success: true, message: "Enquiry received." },
         { status: 200 }
       );
     }
@@ -135,7 +135,7 @@ export async function POST(request) {
       name: name.trim().slice(0, 100),
       email: email ? email.trim().toLowerCase().slice(0, 150) : "Not provided",
       phone: phone ? phone.trim().slice(0, 30) : null,
-      service: service ? service.trim().slice(0, 60) : "General Inquiry",
+      service: service ? service.trim().slice(0, 60) : "General Enquiry",
       budget: budget ? budget.trim().slice(0, 50) : "Flexible / Discussion",
       message: message && message.trim() ? message.trim().slice(0, 2000) : "No project details provided.",
       created_at: new Date().toISOString(),
@@ -159,7 +159,7 @@ export async function POST(request) {
     return NextResponse.json(
       {
         success: true,
-        message: "Thank you for reaching out! We have received your project inquiry and our team will review your requirements and respond promptly.",
+        message: "Thank you for reaching out! We have received your project enquiry and our team will review your requirements and respond promptly.",
       },
       { status: 200 }
     );

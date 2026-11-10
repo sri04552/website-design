@@ -26,7 +26,7 @@ export function AuthoritySection() {
       icon: TrendingUp,
     },
     {
-      metric: "Inquiry Capture",
+      metric: "Enquiry Capture",
       bad: "Long 7-field forms with 80% user drop-off rate",
       good: "1-click direct WhatsApp chat & instant notification",
       icon: MessageCircle,
@@ -79,12 +79,6 @@ export function AuthoritySection() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           {/* Left Column: Local Authority & SEO Prose (7 cols on lg) */}
           <div className="lg:col-span-7 flex flex-col items-start">
-            {/* Eyebrow Pill */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-sky-200/90 text-sky-800 text-xs font-semibold tracking-wider uppercase mb-3.5 shadow-xs">
-              <MapPin className="w-3.5 h-3.5 text-[#00B8F0]" aria-hidden="true" />
-              <span>LOCAL SEARCH AUTHORITY • PAN-INDIA SCALE</span>
-            </div>
-
             {/* Main H2 */}
             <h2
               id="authority-heading"

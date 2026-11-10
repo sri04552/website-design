@@ -67,7 +67,7 @@ export async function GET(request) {
   return NextResponse.json({ inquiries: data || [] });
 }
 
-// DELETE /api/admin/inquiries - Delete an inquiry by ID
+// DELETE /api/admin/inquiries - Delete an enquiry by ID
 export async function DELETE(request) {
   const user = await verifyAdmin(request);
   if (!user) {
@@ -78,7 +78,7 @@ export async function DELETE(request) {
   const id = searchParams.get("id");
 
   if (!id) {
-    return NextResponse.json({ error: "Inquiry ID is required" }, { status: 400 });
+    return NextResponse.json({ error: "Enquiry ID is required" }, { status: 400 });
   }
 
   const db = supabaseAdmin || supabase;
@@ -88,5 +88,5 @@ export async function DELETE(request) {
     return NextResponse.json({ error: error.message }, { status: 500 });
   }
 
-  return NextResponse.json({ success: true, message: "Inquiry deleted" });
+  return NextResponse.json({ success: true, message: "Enquiry deleted" });
 }

@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { siteConfig } from "@/config/site";
 import { Container } from "@/components/ui/Container";
-import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { ServicesFilterableGrid } from "@/components/services/ServicesFilterableGrid";
 import { ServicesFaqAccordion } from "@/components/services/ServicesFaqAccordion";
 import { ServicesContactForm } from "@/components/services/ServicesContactForm";
@@ -122,9 +121,7 @@ export default function ServicesPage() {
         />
 
         <Container className="relative z-10 w-full">
-          <Breadcrumbs items={[{ label: "Services", href: "/services" }]} />
-
-          <div className="max-w-2xl lg:max-w-3xl mt-5 space-y-5 sm:space-y-6">
+          <div className="max-w-2xl lg:max-w-3xl space-y-5 sm:space-y-6">
             {/* High-Impact Headline (Eyebrow removed as requested) */}
             <h1 className="font-heading text-3xl sm:text-5xl lg:text-[54px] font-bold tracking-tight text-[#F5F7FC] leading-[1.14]">
               High-Performance Systems.{" "}
@@ -197,14 +194,6 @@ export default function ServicesPage() {
 
         <Container className="relative z-10">
           <div className="max-w-4xl mx-auto text-center mb-10 sm:mb-12">
-            {/* Eyebrow Badge matching mockup */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#E0F2FE]/80 border border-[#BAE6FD] shadow-2xs mb-4">
-              <Layers className="w-3.5 h-3.5 text-[#00B8F0] shrink-0" aria-hidden="true" />
-              <span className="text-[11.5px] font-mono font-medium tracking-wider text-[#0284C7] uppercase">
-                OUR SERVICES
-              </span>
-            </div>
-
             {/* Main Section H2 */}
             <h2 className="font-heading text-2xl sm:text-3xl lg:text-[38px] font-bold tracking-tight text-[#0F172A] leading-[1.2]">
               Digital Services Engineered for{" "}

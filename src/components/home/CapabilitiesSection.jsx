@@ -44,7 +44,7 @@ export function CapabilitiesSection() {
         "Meta Ads management dashboard displaying Facebook and Instagram advertising campaign performance and qualified lead generation",
       imageTitle: "Meta Ads Management (Facebook & Instagram)",
       imageCaption:
-        "Targeted Facebook and Instagram paid advertising campaigns generating verified inquiries and customer conversions.",
+        "Targeted Facebook and Instagram paid advertising campaigns generating verified enquiries and customer conversions.",
       href: "/services",
       ctaText: "Explore Meta Ads",
       ctaAriaLabel: "Learn more about Meta Facebook and Instagram advertising services",
@@ -74,13 +74,13 @@ export function CapabilitiesSection() {
       icon: Bot,
       title: "Business Workflow Automation & AI Chatbots",
       description:
-        "Automate customer inquiries, lead qualification, and appointment bookings with 24/7 intelligent WhatsApp bots and workflow automations that sync directly with your CRM.",
+        "Automate customer enquiries, lead qualification, and appointment bookings with 24/7 intelligent WhatsApp bots and workflow automations that sync directly with your CRM.",
       image: "/assets/ai-whatsapp-automation-workflows-amogha-digital.webp",
       imageAlt:
         "24/7 automated WhatsApp business chatbot and CRM workflow automation interface",
       imageTitle: "Business Workflow Automation & WhatsApp AI Chatbots",
       imageCaption:
-        "Intelligent WhatsApp chatbots and business workflow automation to handle inquiries and schedule appointments 24/7.",
+        "Intelligent WhatsApp chatbots and business workflow automation to handle enquiries and schedule appointments 24/7.",
       href: "/services",
       ctaText: "Explore Automation",
       ctaAriaLabel: "Learn more about business workflow automation and WhatsApp chatbot solutions",

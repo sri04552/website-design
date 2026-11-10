@@ -3,12 +3,12 @@
 import { useState } from "react";
 import { siteConfig } from "@/config/site";
 import {
+  Send,
   CheckCircle2,
   AlertCircle,
   Loader2,
-  Send,
   ChevronDown,
-  MessageSquare,
+  ArrowRight,
 } from "lucide-react";
 
 export function ContactForm({ preselectedService = "" }) {
@@ -24,7 +24,9 @@ export function ContactForm({ preselectedService = "" }) {
 
   const [touched, setTouched] = useState({
     name: false,
+    phone: false,
     email: false,
+    service: false,
     message: false,
   });
 
@@ -42,10 +44,19 @@ export function ContactForm({ preselectedService = "" }) {
     { id: "custom", label: "Custom Project / Consultation" },
   ];
 
-  // Validation rules
+  // Validation rules:
+  // - Name: Required (min 2 chars)
+  // - Phone / WhatsApp: Required (min 7 digits)
+  // - Email: Optional (validate format only if provided)
+  // - Service: Required (non-empty)
+  // - Message: Optional
   const isNameValid = formData.name.trim().length >= 2;
-  const isEmailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email.trim());
-  const isMessageValid = formData.message.trim().length >= 10;
+  const cleanedPhoneDigits = formData.phone.replace(/[^0-9]/g, "");
+  const isPhoneValid = cleanedPhoneDigits.length >= 7;
+  const isEmailValid =
+    formData.email.trim() === "" ||
+    /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email.trim());
+  const isServiceValid = Boolean(formData.service && formData.service.trim() !== "");
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -62,8 +73,10 @@ export function ContactForm({ preselectedService = "" }) {
 
     setTouched({
       name: true,
+      phone: true,
       email: true,
-      message: true,
+      service: true,
+      message: false,
     });
 
     if (!isNameValid) {
@@ -71,14 +84,19 @@ export function ContactForm({ preselectedService = "" }) {
       setErrorMessage("Please enter your name (minimum 2 characters).");
       return;
     }
-    if (!isEmailValid) {
+    if (!isPhoneValid) {
       setStatus("error");
-      setErrorMessage("Please provide a valid email address.");
+      setErrorMessage("Please enter a valid Phone / WhatsApp number (minimum 7 digits).");
       return;
     }
-    if (!isMessageValid) {
+    if (!isEmailValid) {
       setStatus("error");
-      setErrorMessage("Please share a brief note about your project (minimum 10 characters).");
+      setErrorMessage("Please provide a valid email address or leave it blank.");
+      return;
+    }
+    if (!isServiceValid) {
+      setStatus("error");
+      setErrorMessage("Please select a service needed.");
       return;
     }
 
@@ -98,7 +116,7 @@ export function ContactForm({ preselectedService = "" }) {
       const data = await res.json();
 
       if (!res.ok) {
-        throw new Error(data.error || "Failed to submit project inquiry.");
+        throw new Error(data.error || "Failed to submit project enquiry.");
       }
 
       setStatus("success");
@@ -123,7 +141,9 @@ export function ContactForm({ preselectedService = "" }) {
     });
     setTouched({
       name: false,
+      phone: false,
       email: false,
+      service: false,
       message: false,
     });
   };
@@ -132,7 +152,7 @@ export function ContactForm({ preselectedService = "" }) {
 
   const whatsappHref = siteConfig.contact.whatsappNumber
     ? `https://wa.me/${siteConfig.contact.whatsappNumber}?text=${encodeURIComponent(
-        `Hello! I just submitted an inquiry for ${
+        `Hello! I just submitted an enquiry for ${
           selectedServiceObj?.label || "digital services"
         } on your contact page. My name is ${formData.name || "Client"}.`
       )}`
@@ -140,20 +160,20 @@ export function ContactForm({ preselectedService = "" }) {
 
   if (status === "success") {
     return (
-      <div className="bg-white rounded-2xl border border-emerald-200/80 p-8 sm:p-10 text-center shadow-[0_10px_30px_rgba(13,140,125,0.06)] space-y-5">
+      <div className="bg-white rounded-2xl border border-emerald-200/80 p-8 sm:p-10 text-center shadow-[0_10px_30px_rgba(13,140,125,0.06)] max-w-2xl mx-auto space-y-5">
         <div className="w-14 h-14 bg-emerald-50 text-[#0D8C7D] border border-emerald-200 rounded-full flex items-center justify-center mx-auto">
           <CheckCircle2 className="w-7 h-7" />
         </div>
 
         <div className="space-y-2">
           <h3 className="font-heading text-2xl font-bold text-[#0F172A] tracking-tight">
-            Inquiry Received
+            Enquiry Received
           </h3>
           <p className="text-[15px] text-[#475569] leading-relaxed max-w-md mx-auto">
             Thank you, <span className="font-semibold text-slate-900">{formData.name}</span>. We
             have logged your request for{" "}
             <span className="font-semibold text-slate-900">{selectedServiceObj?.label}</span>. Our
-            technical team will evaluate your scope and reply shortly.
+            technical team will evaluate your scope and reply via WhatsApp or phone shortly.
           </p>
         </div>
 
@@ -163,10 +183,10 @@ export function ContactForm({ preselectedService = "" }) {
               href={whatsappHref}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[#0D8C7D] hover:bg-[#0B7568] text-white font-semibold text-sm transition-all shadow-xs"
+              className="inline-flex items-center justify-center gap-2 bg-[#0D8C7D] hover:bg-[#0B7568] text-white font-semibold text-sm sm:text-base px-6 py-3.5 rounded-xl shadow-sm hover:shadow transition-all min-h-[48px]"
             >
-              <MessageSquare className="w-4 h-4" />
-              <span>Continue on WhatsApp</span>
+              <span>Continue on WhatsApp for Fast Reply</span>
+              <ArrowRight className="w-4 h-4" />
             </a>
           </div>
         )}
@@ -177,7 +197,7 @@ export function ContactForm({ preselectedService = "" }) {
             onClick={resetForm}
             className="text-xs text-slate-500 hover:text-slate-800 underline transition-colors cursor-pointer"
           >
-            Send another message
+            Submit another enquiry
           </button>
         </div>
       </div>
@@ -220,17 +240,17 @@ export function ContactForm({ preselectedService = "" }) {
           </div>
         )}
 
-        {/* Row 1: Name & Email */}
+        {/* Row 1: Name & Phone / WhatsApp (Both Required) */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div className="space-y-1.5">
             <label
-              htmlFor="contact-name"
-              className="block text-xs font-semibold text-slate-700 tracking-wide"
+              htmlFor="contact-form-name"
+              className="block text-[14px] sm:text-[14.5px] font-semibold text-slate-800"
             >
               Your Name <span className="text-rose-500">*</span>
             </label>
             <input
-              id="contact-name"
+              id="contact-form-name"
               name="name"
               type="text"
               required
@@ -253,16 +273,48 @@ export function ContactForm({ preselectedService = "" }) {
 
           <div className="space-y-1.5">
             <label
-              htmlFor="contact-email"
-              className="block text-xs font-semibold text-slate-700 tracking-wide"
+              htmlFor="contact-form-phone"
+              className="block text-[14px] sm:text-[14.5px] font-semibold text-slate-800"
             >
-              Email Address <span className="text-rose-500">*</span>
+              Phone / WhatsApp <span className="text-rose-500">*</span>
             </label>
             <input
-              id="contact-email"
+              id="contact-form-phone"
+              name="phone"
+              type="tel"
+              required
+              placeholder="+91 98765 43210"
+              value={formData.phone}
+              onChange={handleChange}
+              onBlur={() => handleBlur("phone")}
+              className={`w-full px-4 py-3 rounded-xl border text-sm text-slate-900 placeholder:text-slate-400 transition-all focus:outline-none ${
+                touched.phone && !isPhoneValid
+                  ? "border-rose-300 bg-rose-50/20 focus:border-rose-500 focus:ring-3 focus:ring-rose-100"
+                  : "border-slate-200 bg-slate-50/50 hover:bg-white focus:bg-white focus:border-[#00B8F0] focus:ring-3 focus:ring-[#00B8F0]/10"
+              }`}
+            />
+            {touched.phone && !isPhoneValid && (
+              <p className="text-[11px] text-rose-600 font-medium">
+                Please enter a valid Phone / WhatsApp number (minimum 7 digits).
+              </p>
+            )}
+          </div>
+        </div>
+
+        {/* Row 2: Email (Optional) & Service Needed (Required) */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="space-y-1.5">
+            <label
+              htmlFor="contact-form-email"
+              className="block text-[14px] sm:text-[14.5px] font-semibold text-slate-800"
+            >
+              Email Address{" "}
+              <span className="text-slate-400 font-normal text-xs">(Optional)</span>
+            </label>
+            <input
+              id="contact-form-email"
               name="email"
               type="email"
-              required
               placeholder="name@company.com"
               value={formData.email}
               onChange={handleChange}
@@ -275,45 +327,26 @@ export function ContactForm({ preselectedService = "" }) {
             />
             {touched.email && !isEmailValid && (
               <p className="text-[11px] text-rose-600 font-medium">
-                Please provide a valid email address.
+                Please provide a valid email address or leave it blank.
               </p>
             )}
           </div>
-        </div>
-
-        {/* Row 2: Phone / WhatsApp & Service Dropdown */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <div className="space-y-1.5">
-            <label
-              htmlFor="contact-phone"
-              className="block text-xs font-semibold text-slate-700 tracking-wide"
-            >
-              Phone / WhatsApp <span className="text-slate-400 font-normal">(Optional)</span>
-            </label>
-            <input
-              id="contact-phone"
-              name="phone"
-              type="tel"
-              placeholder="+91 98765 43210"
-              value={formData.phone}
-              onChange={handleChange}
-              className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50/50 hover:bg-white focus:bg-white text-sm text-slate-900 placeholder:text-slate-400 focus:border-[#00B8F0] focus:ring-3 focus:ring-[#00B8F0]/10 focus:outline-none transition-all"
-            />
-          </div>
 
           <div className="space-y-1.5">
             <label
-              htmlFor="contact-service"
-              className="block text-xs font-semibold text-slate-700 tracking-wide"
+              htmlFor="contact-form-service"
+              className="block text-[14px] sm:text-[14.5px] font-semibold text-slate-800"
             >
-              Service Needed
+              Service Needed <span className="text-rose-500">*</span>
             </label>
             <div className="relative">
               <select
-                id="contact-service"
+                id="contact-form-service"
                 name="service"
+                required
                 value={formData.service}
                 onChange={handleChange}
+                onBlur={() => handleBlur("service")}
                 className="w-full appearance-none px-4 py-3 rounded-xl border border-slate-200 bg-slate-50/50 hover:bg-white focus:bg-white text-sm text-slate-900 transition-all focus:border-[#00B8F0] focus:ring-3 focus:ring-[#00B8F0]/10 focus:outline-none cursor-pointer pr-10"
               >
                 {servicesList.map((svc) => (
@@ -327,51 +360,41 @@ export function ContactForm({ preselectedService = "" }) {
           </div>
         </div>
 
-        {/* Row 3: Message / Scope */}
+        {/* Row 3: Project Details (Optional) */}
         <div className="space-y-1.5">
           <label
-            htmlFor="contact-message"
-            className="block text-xs font-semibold text-slate-700 tracking-wide"
+            htmlFor="contact-form-message"
+            className="block text-[14px] sm:text-[14.5px] font-semibold text-slate-800"
           >
-            Project Details <span className="text-rose-500">*</span>
+            Project Details{" "}
+            <span className="text-slate-400 font-normal text-xs">(Optional)</span>
           </label>
           <textarea
-            id="contact-message"
+            id="contact-form-message"
             name="message"
             rows={4}
-            required
-            placeholder="Tell us about your project, current bottlenecks, or goals..."
+            placeholder="Tell us about your project, current bottlenecks, or goals (optional)..."
             value={formData.message}
             onChange={handleChange}
-            onBlur={() => handleBlur("message")}
-            className={`w-full px-4 py-3 rounded-xl border text-sm text-slate-900 placeholder:text-slate-400 transition-all focus:outline-none resize-y ${
-              touched.message && !isMessageValid
-                ? "border-rose-300 bg-rose-50/20 focus:border-rose-500 focus:ring-3 focus:ring-rose-100"
-                : "border-slate-200 bg-slate-50/50 hover:bg-white focus:bg-white focus:border-[#00B8F0] focus:ring-3 focus:ring-[#00B8F0]/10"
-            }`}
+            className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50/50 hover:bg-white focus:bg-white text-sm text-slate-900 placeholder:text-slate-400 transition-all focus:border-[#00B8F0] focus:ring-3 focus:ring-[#00B8F0]/10 focus:outline-none resize-y"
           />
-          {touched.message && !isMessageValid && (
-            <p className="text-[11px] text-rose-600 font-medium">
-              Please share a few details about your project (minimum 10 characters).
-            </p>
-          )}
         </div>
 
-        {/* Submit Button (Full Width) */}
+        {/* Submit CTA Button */}
         <div className="pt-2">
           <button
             type="submit"
             disabled={status === "submitting"}
-            className="w-full inline-flex items-center justify-center gap-2 bg-[#0D8C7D] hover:bg-[#0B7568] active:bg-[#085E54] text-white font-semibold text-sm sm:text-base px-8 py-3.5 rounded-xl shadow-xs hover:shadow transition-all disabled:opacity-60 disabled:cursor-not-allowed cursor-pointer min-h-[48px]"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#0D8C7D] hover:bg-[#0B7568] active:bg-[#085E54] text-white font-semibold text-base px-8 py-4 rounded-xl shadow-sm hover:shadow transition-all disabled:opacity-60 disabled:cursor-not-allowed min-h-[48px] cursor-pointer"
           >
             {status === "submitting" ? (
               <>
-                <Loader2 className="w-4 h-4 animate-spin" />
-                <span>Sending...</span>
+                <Loader2 className="w-5 h-5 animate-spin" />
+                <span>Submitting Enquiry...</span>
               </>
             ) : (
               <>
-                <span>Send Message</span>
+                <span>Submit Enquiry</span>
                 <Send className="w-4 h-4" />
               </>
             )}

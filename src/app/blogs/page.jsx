@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/ui/Container";
-import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { supabase, supabaseAdmin } from "@/lib/supabase";
 import {
   Calendar,
@@ -89,17 +88,7 @@ export default async function BlogsPage({ searchParams }) {
         />
 
         <Container className="relative z-10">
-          <Breadcrumbs items={[{ label: "Blogs", href: "/blogs" }]} />
-
-          <div className="mt-8 max-w-3xl space-y-4">
-            {/* Eyebrow */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#29374D] bg-[#14233D]/70 shadow-xs">
-              <BookOpen className="w-3.5 h-3.5 text-[#00B8F0]" />
-              <span className="text-[12px] font-medium tracking-wider text-[#00B8F0] uppercase font-mono">
-                INSIGHTS &amp; ENGINEERING GUIDES
-              </span>
-            </div>
-
+          <div className="max-w-3xl space-y-4">
             <h1 className="font-heading text-3xl sm:text-4xl lg:text-[48px] font-bold tracking-tight text-[#F5F7FC] leading-[1.14]">
               Digital Growth, Architecture &amp;{" "}
               <span className="text-[#00B8F0] font-extrabold">Execution Guides.</span>
