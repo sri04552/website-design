@@ -20,7 +20,7 @@ async function sendNotificationEmail(data) {
             process.env.CONTACT_SENDER_EMAIL ||
             "Amogha Digital Leads <onboarding@resend.dev>",
           to: [receiverEmail],
-          reply_to: data.email,
+          ...(data.email && data.email.includes("@") ? { reply_to: data.email } : {}),
           subject: `New Lead [${data.service}]: ${data.name}`,
           html: `
             <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 24px; border: 1px solid #e2e8f0; border-radius: 12px; background: #ffffff;">
@@ -106,27 +106,38 @@ export async function POST(request) {
       );
     }
 
-    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    // Phone / WhatsApp is required (minimum 7 digits)
+    const phoneDigits = phone ? String(phone).replace(/[^0-9]/g, "") : "";
+    if (!phone || phoneDigits.length < 7) {
       return NextResponse.json(
-        { error: "Please provide a valid email address." },
+        { error: "Please provide a valid Phone / WhatsApp number (minimum 7 digits)." },
         { status: 400 }
       );
     }
 
-    if (!message || typeof message !== "string" || message.trim().length < 10) {
+    // Email is optional, but if provided must be valid format
+    if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())) {
       return NextResponse.json(
-        { error: "Please provide a brief message describing your project (minimum 10 characters)." },
+        { error: "Please provide a valid email address or leave it blank." },
+        { status: 400 }
+      );
+    }
+
+    // Service needed is required
+    if (!service || typeof service !== "string" || service.trim() === "") {
+      return NextResponse.json(
+        { error: "Please select a service." },
         { status: 400 }
       );
     }
 
     const cleanedData = {
       name: name.trim().slice(0, 100),
-      email: email.trim().toLowerCase().slice(0, 150),
+      email: email ? email.trim().toLowerCase().slice(0, 150) : "Not provided",
       phone: phone ? phone.trim().slice(0, 30) : null,
       service: service ? service.trim().slice(0, 60) : "General Inquiry",
       budget: budget ? budget.trim().slice(0, 50) : "Flexible / Discussion",
-      message: message.trim().slice(0, 2000),
+      message: message && message.trim() ? message.trim().slice(0, 2000) : "No project details provided.",
       created_at: new Date().toISOString(),
     };
 
