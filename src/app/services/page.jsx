@@ -184,31 +184,40 @@ export default function ServicesPage() {
         </Container>
       </section>
 
-      {/* Main Services Section with exact 48px top and bottom padding */}
+      {/* Main Services Section matching attached mockup */}
       <section
         id="service-grid"
-        className="relative bg-[#F0F7FF] py-[48px] border-b border-sky-100 text-[#0F172A] overflow-hidden"
+        className="relative bg-gradient-to-b from-[#F4F9FD] via-[#F8FBFE] to-white py-14 sm:py-20 border-b border-[#E2EBF2] text-[#0F172A] overflow-hidden"
       >
         {/* Soft Radial Ambient Wash */}
         <div
-          className="absolute top-0 inset-x-0 h-96 pointer-events-none bg-[radial-gradient(ellipse_60%_40%_at_50%_0%,rgba(224,242,254,0.85)_0%,transparent_100%)]"
+          className="absolute top-0 inset-x-0 h-96 pointer-events-none bg-[radial-gradient(ellipse_60%_40%_at_50%_0%,rgba(224,242,254,0.65)_0%,transparent_100%)]"
           aria-hidden="true"
         />
 
         <Container className="relative z-10">
-          <div className="max-w-3xl mb-10">
+          <div className="max-w-4xl mx-auto text-center mb-10 sm:mb-12">
+            {/* Eyebrow Badge matching mockup */}
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#E0F2FE]/80 border border-[#BAE6FD] shadow-2xs mb-4">
+              <Layers className="w-3.5 h-3.5 text-[#00B8F0] shrink-0" aria-hidden="true" />
+              <span className="text-[11.5px] font-mono font-medium tracking-wider text-[#0284C7] uppercase">
+                OUR SERVICES
+              </span>
+            </div>
+
             {/* Main Section H2 */}
-            <h2 className="font-heading text-2xl sm:text-3.5xl lg:text-[34px] font-extrabold tracking-tight text-[#0F172A] leading-[1.25]">
-              Digital Services Engineered for Real Business Growth
+            <h2 className="font-heading text-2xl sm:text-3xl lg:text-[38px] font-bold tracking-tight text-[#0F172A] leading-[1.2]">
+              Digital Services Engineered for{" "}
+              <span className="text-[#00B8F0] font-extrabold whitespace-nowrap">Real Business Growth</span>
             </h2>
 
             {/* Subtitle Paragraph */}
-            <p className="mt-3 text-[16px] sm:text-[15px] text-[#475569] leading-[1.75] font-normal">
-              Choose the digital solution that aligns with your growth goals. From high-converting websites to targeted ad campaigns and automation, every service is engineered for tangible business results.
+            <p className="mt-3.5 text-[15px] sm:text-[16px] text-[#475569] leading-relaxed max-w-3xl mx-auto font-normal font-sans">
+              Choose the digital solution that aligns with your growth goals. From high-converting websites to targeted ad campaigns and automation, every service is designed to deliver measurable results.
             </p>
           </div>
 
-          {/* Filterable Grid with Home Page Card Styles & New Key Highlights UI */}
+          {/* 6 Services Grid matching attached mockup */}
           <ServicesFilterableGrid />
         </Container>
       </section>
