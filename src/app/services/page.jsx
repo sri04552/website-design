@@ -97,7 +97,7 @@ export default function ServicesPage() {
       />
 
       {/* Hero Section: Enterprise Systems & Engineering Suite */}
-      <section className="relative min-h-[500px] lg:min-h-[560px] border-b border-[#1E2E48] pt-[123px] pb-[48px] lg:pb-[60px] overflow-hidden flex items-center">
+      <section className="relative min-h-[500px] lg:min-h-[560px] border-b border-[#1E2E48] pt-[123px] pb-[48px] overflow-hidden flex items-center">
         {/* Background Image Container */}
         <div className="absolute inset-0 pointer-events-none z-0">
           <Image
@@ -187,7 +187,7 @@ export default function ServicesPage() {
       {/* Main Services Section matching attached mockup */}
       <section
         id="service-grid"
-        className="relative bg-gradient-to-b from-[#F4F9FD] via-[#F8FBFE] to-white py-14 sm:py-20 border-b border-[#E2EBF2] text-[#0F172A] overflow-hidden"
+        className="relative bg-gradient-to-b from-[#F4F9FD] via-[#F8FBFE] to-white py-[48px] border-b border-[#E2EBF2] text-[#0F172A] overflow-hidden"
       >
         {/* Soft Radial Ambient Wash */}
         <div
@@ -222,63 +222,69 @@ export default function ServicesPage() {
         </Container>
       </section>
 
-      {/* Client Assurance & Guarantees Strip with exact 48px top and bottom padding */}
-      <section className="bg-[#F8FAFC] py-[48px] border-b border-slate-200 text-[#0F172A]">
-        <Container>
+      {/* Section 3: Client Assurance & Guarantees Strip using Hero Section Background Colors */}
+      <section className="relative bg-[#070D18] py-[48px] border-b border-[#1E2E48] text-[#F5F7FC] overflow-hidden">
+        {/* Atmospheric Dark Glow matching Hero */}
+        <div
+          className="absolute inset-0 pointer-events-none z-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_0%,rgba(20,35,61,0.85)_0%,transparent_100%)]"
+          aria-hidden="true"
+        />
+
+        <Container className="relative z-10">
           <div className="max-w-3xl mx-auto text-center mb-8">
-            <h2 className="font-heading text-2xl sm:text-3xl font-extrabold text-[#0F172A] tracking-tight">
+            <h2 className="font-heading text-2xl sm:text-3xl font-extrabold text-[#F5F7FC] tracking-tight">
               Built With Complete Transparency &amp; Ownership
             </h2>
-            <p className="mt-2.5 text-[16px] sm:text-[15px] text-[#475569] leading-relaxed font-normal">
+            <p className="mt-2.5 text-[16px] sm:text-[15px] text-[#9BAAC2] leading-relaxed font-normal">
               Zero guesswork, zero hostage platforms, and zero recurring lock-in fees.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="bg-white rounded-2xl border border-slate-200/90 p-6 space-y-3 shadow-2xs hover:border-sky-300 transition-colors">
-              <div className="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-100 flex items-center justify-center text-[#0D8C7D]">
+            <div className="bg-[#0B1526]/90 rounded-2xl border border-[#1E2E48] p-6 space-y-3 shadow-lg hover:border-[#00B8F0]/60 hover:shadow-[0_0_25px_rgba(0,184,240,0.12)] transition-all duration-300 group">
+              <div className="w-10 h-10 rounded-xl bg-[#0D8C7D]/20 border border-[#0D8C7D]/40 flex items-center justify-center text-[#00E5FF] group-hover:bg-[#0D8C7D]/30 transition-colors">
                 <ShieldCheck className="w-5 h-5" />
               </div>
-              <h3 className="font-bold text-slate-900 text-base">
+              <h3 className="font-heading font-bold text-[#F5F7FC] text-base group-hover:text-[#00B8F0] transition-colors">
                 100% Direct Ownership
               </h3>
-              <p className="text-[14px] sm:text-[13.5px] text-slate-600 leading-relaxed font-normal">
+              <p className="text-[14px] sm:text-[13.5px] text-[#9BAAC2] leading-relaxed font-normal">
                 You own your source code, hosting, domain, and ad accounts outright. Zero hostage platforms, no recurring vendor lock-in.
               </p>
             </div>
 
-            <div className="bg-white rounded-2xl border border-slate-200/90 p-6 space-y-3 shadow-2xs hover:border-sky-300 transition-colors">
-              <div className="w-10 h-10 rounded-xl bg-sky-50 border border-sky-100 flex items-center justify-center text-[#0284C7]">
+            <div className="bg-[#0B1526]/90 rounded-2xl border border-[#1E2E48] p-6 space-y-3 shadow-lg hover:border-[#00B8F0]/60 hover:shadow-[0_0_25px_rgba(0,184,240,0.12)] transition-all duration-300 group">
+              <div className="w-10 h-10 rounded-xl bg-[#00B8F0]/20 border border-[#00B8F0]/40 flex items-center justify-center text-[#00B8F0] group-hover:bg-[#00B8F0]/30 transition-colors">
                 <Layers className="w-5 h-5" />
               </div>
-              <h3 className="font-bold text-slate-900 text-base">
+              <h3 className="font-heading font-bold text-[#F5F7FC] text-base group-hover:text-[#00B8F0] transition-colors">
                 Transparent Updates
               </h3>
-              <p className="text-[14px] sm:text-[13.5px] text-slate-600 leading-relaxed font-normal">
+              <p className="text-[14px] sm:text-[13.5px] text-[#9BAAC2] leading-relaxed font-normal">
                 Review progress directly with live previews and straightforward milestone checkpoints. Complete visibility from start to finish.
               </p>
             </div>
 
-            <div className="bg-white rounded-2xl border border-slate-200/90 p-6 space-y-3 shadow-2xs hover:border-sky-300 transition-colors">
-              <div className="w-10 h-10 rounded-xl bg-cyan-50 border border-cyan-100 flex items-center justify-center text-[#00B8F0]">
+            <div className="bg-[#0B1526]/90 rounded-2xl border border-[#1E2E48] p-6 space-y-3 shadow-lg hover:border-[#00B8F0]/60 hover:shadow-[0_0_25px_rgba(0,184,240,0.12)] transition-all duration-300 group">
+              <div className="w-10 h-10 rounded-xl bg-[#00B8F0]/20 border border-[#00B8F0]/40 flex items-center justify-center text-[#00B8F0] group-hover:bg-[#00B8F0]/30 transition-colors">
                 <Search className="w-5 h-5" />
               </div>
-              <h3 className="font-bold text-slate-900 text-base">
+              <h3 className="font-heading font-bold text-[#F5F7FC] text-base group-hover:text-[#00B8F0] transition-colors">
                 SEO &amp; High Conversion
               </h3>
-              <p className="text-[14px] sm:text-[13.5px] text-slate-600 leading-relaxed font-normal">
+              <p className="text-[14px] sm:text-[13.5px] text-[#9BAAC2] leading-relaxed font-normal">
                 Structured to rank high on Google Search and turn online visitors into verified phone calls, messages, and appointments.
               </p>
             </div>
 
-            <div className="bg-white rounded-2xl border border-slate-200/90 p-6 space-y-3 shadow-2xs hover:border-sky-300 transition-colors">
-              <div className="w-10 h-10 rounded-xl bg-teal-50 border border-teal-100 flex items-center justify-center text-[#0D8C7D]">
+            <div className="bg-[#0B1526]/90 rounded-2xl border border-[#1E2E48] p-6 space-y-3 shadow-lg hover:border-[#00B8F0]/60 hover:shadow-[0_0_25px_rgba(0,184,240,0.12)] transition-all duration-300 group">
+              <div className="w-10 h-10 rounded-xl bg-[#0D8C7D]/20 border border-[#0D8C7D]/40 flex items-center justify-center text-[#00E5FF] group-hover:bg-[#0D8C7D]/30 transition-colors">
                 <PhoneCall className="w-5 h-5" />
               </div>
-              <h3 className="font-bold text-slate-900 text-base">
+              <h3 className="font-heading font-bold text-[#F5F7FC] text-base group-hover:text-[#00B8F0] transition-colors">
                 Direct Dedicated Support
               </h3>
-              <p className="text-[14px] sm:text-[13.5px] text-slate-600 leading-relaxed font-normal">
+              <p className="text-[14px] sm:text-[13.5px] text-[#9BAAC2] leading-relaxed font-normal">
                 Speak directly with the specialists executing your project. Fast, frictionless communication via phone and WhatsApp.
               </p>
             </div>
@@ -286,8 +292,8 @@ export default function ServicesPage() {
         </Container>
       </section>
 
-      {/* Services FAQ Section with compact top and bottom padding */}
-      <section className="bg-[#F0F7FF] py-7 sm:py-9 border-b border-sky-100">
+      {/* Services FAQ Section with exact 48px top and bottom padding */}
+      <section className="bg-[#F0F7FF] py-[48px] border-b border-sky-100">
         <Container>
           <ServicesFaqAccordion />
         </Container>
