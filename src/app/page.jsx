@@ -82,7 +82,42 @@ export default function HomePage() {
           <h1 className="font-heading text-[32px] sm:text-[44px] lg:text-[60px] font-bold text-[#F5F7FC] leading-[1.14] tracking-tight lg:tracking-[-2px] max-w-4xl">
             <span className="block">Grow Your Business.</span>
             <span className="block mt-1 sm:mt-2">
-              <span className="text-[#00B8F0] font-extrabold">Automate</span> What Comes Next.
+              <span className="relative inline-block text-[#00B8F0] font-extrabold">
+                <span>Automate</span>
+                {/* Pro-level curved underline swoosh with luminous cyan glow */}
+                <svg
+                  viewBox="0 0 260 22"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="absolute -bottom-1 sm:-bottom-2 left-0 w-full h-[8px] sm:h-[11px] lg:h-[13px] pointer-events-none select-none overflow-visible"
+                  preserveAspectRatio="none"
+                  aria-hidden="true"
+                >
+                  <defs>
+                    <linearGradient id="automate-curve-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                      <stop offset="0%" stopColor="#00B8F0" stopOpacity="0.75" />
+                      <stop offset="50%" stopColor="#38BDF8" stopOpacity="1" />
+                      <stop offset="100%" stopColor="#00E5FF" stopOpacity="0.95" />
+                    </linearGradient>
+                  </defs>
+                  {/* Ambient soft glow layer */}
+                  <path
+                    d="M 4 15 C 50 19.5, 130 20.5, 205 15 C 225 13.5, 245 10, 256 5"
+                    stroke="#00B8F0"
+                    strokeWidth="4.5"
+                    strokeLinecap="round"
+                    className="opacity-40 blur-[2px]"
+                  />
+                  {/* Crisp primary curved line */}
+                  <path
+                    d="M 4 14 C 50 18.5, 130 19.5, 205 14 C 225 12.5, 245 9, 256 4"
+                    stroke="url(#automate-curve-gradient)"
+                    strokeWidth="3.2"
+                    strokeLinecap="round"
+                  />
+                </svg>
+              </span>{" "}
+              What Comes Next.
             </span>
           </h1>
 
