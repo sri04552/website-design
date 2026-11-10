@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Plus, ArrowRight } from "lucide-react";
 
 export function ServicesFaqAccordion() {
-  const [openIndex, setOpenIndex] = useState(0);
+  const [openIndex, setOpenIndex] = useState(-1); // All FAQs closed by default
 
   const faqs = [
     {

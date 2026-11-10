@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Plus, ArrowRight } from "lucide-react";
 
 export function FaqSection() {
-  const [openIndex, setOpenIndex] = useState(0); // Open first FAQ by default
+  const [openIndex, setOpenIndex] = useState(-1); // All FAQs closed by default
 
   const faqs = [
     {

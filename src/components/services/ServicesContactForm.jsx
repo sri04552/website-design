@@ -483,20 +483,20 @@ export function ServicesContactForm() {
                 <textarea
                   id="services-contact-message"
                   name="message"
-                  rows={4}
+                  rows={2}
                   placeholder="Tell us about your project, current bottlenecks, or goals (optional)..."
                   value={formData.message}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50/50 hover:bg-white focus:bg-white text-sm text-slate-900 placeholder:text-slate-400 transition-all focus:border-[#00B8F0] focus:ring-3 focus:ring-[#00B8F0]/10 focus:outline-none resize-y"
+                  className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50/50 hover:bg-white focus:bg-white text-sm text-slate-900 placeholder:text-slate-400 transition-all focus:border-[#00B8F0] focus:ring-3 focus:ring-[#00B8F0]/10 focus:outline-none resize-y min-h-[64px]"
                 />
               </div>
 
-              {/* Submit CTA Button */}
+              {/* Submit CTA Button (Full Width) */}
               <div className="pt-2">
                 <button
                   type="submit"
                   disabled={status === "submitting"}
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#0D8C7D] hover:bg-[#0B7568] active:bg-[#085E54] text-white font-semibold text-base px-8 py-4 rounded-xl shadow-sm hover:shadow transition-all disabled:opacity-60 disabled:cursor-not-allowed min-h-[48px] cursor-pointer"
+                  className="w-full inline-flex items-center justify-center gap-2 bg-[#0D8C7D] hover:bg-[#0B7568] active:bg-[#085E54] text-white font-semibold text-base px-8 py-4 rounded-xl shadow-sm hover:shadow transition-all disabled:opacity-60 disabled:cursor-not-allowed min-h-[48px] cursor-pointer"
                 >
                   {status === "submitting" ? (
                     <>

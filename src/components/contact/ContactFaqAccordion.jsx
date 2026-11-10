@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Plus } from "lucide-react";
 
 export function ContactFaqAccordion() {
-  const [openIndex, setOpenIndex] = useState(0); // First item open by default
+  const [openIndex, setOpenIndex] = useState(-1); // All FAQs closed by default
 
   const faqs = [
     {
@@ -35,7 +35,7 @@ export function ContactFaqAccordion() {
   ];
 
   const toggle = (index) => {
-    setOpenIndex((prev) => (prev === index ? null : index));
+    setOpenIndex((prev) => (prev === index ? -1 : index));
   };
 
   return (
