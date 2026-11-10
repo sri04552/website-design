@@ -20,9 +20,9 @@ export function ServicesFilterableGrid() {
       title: "Website Design & Development",
       slug: "website-design",
       href: "/services#proposal-form",
-      image: "/assets/website-design-development-workspace-amogha-digital.webp",
+      image: "/assets/modern-website-design-workspace.webp",
       imageAlt:
-        "Custom responsive website design and SEO web development architecture by Amogha Digital",
+        "Modern Website Design Workspace and SEO web development architecture by Amogha Digital",
       description:
         "Custom, mobile-friendly websites designed to turn visitors into loyal customers.",
     },
