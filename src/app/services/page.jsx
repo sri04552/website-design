@@ -3,6 +3,7 @@ import Link from "next/link";
 import { siteConfig } from "@/config/site";
 import { Container } from "@/components/ui/Container";
 import { ServicesFilterableGrid } from "@/components/services/ServicesFilterableGrid";
+import { ServicesHeroDropdown } from "@/components/services/ServicesHeroDropdown";
 import { ServicesFaqAccordion } from "@/components/services/ServicesFaqAccordion";
 import { ServicesContactForm } from "@/components/services/ServicesContactForm";
 import {
@@ -145,13 +146,7 @@ export default function ServicesPage() {
                 <ArrowRight className="w-4 h-4 text-white" />
               </a>
 
-              <a
-                href="#service-grid"
-                className="inline-flex items-center justify-center gap-2 bg-[#131F33]/85 hover:bg-[#1A2A45] active:bg-[#0F1929] text-[#F5F7FC] font-semibold text-[15px] sm:text-[16px] px-6 py-3.5 rounded-xl border border-[#2B3E5C] hover:border-[#00B8F0]/70 backdrop-blur-md shadow-xs hover:shadow-[0_0_20px_rgba(0,184,240,0.15)] transition-all min-h-[48px]"
-              >
-                <span>Explore All Services</span>
-                <ArrowRight className="w-4 h-4 text-[#9BAAC2] group-hover:text-white" />
-              </a>
+              <ServicesHeroDropdown />
             </div>
 
             {/* Trust Badges Strip (Google Rating, 100% Client Focus, ROI-Focused Lead Gen) */}

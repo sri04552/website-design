@@ -14,6 +14,7 @@ import {
   BookOpen,
   User,
   PhoneCall,
+  ChevronDown,
 } from "lucide-react";
 
 export function Navbar() {
@@ -78,6 +79,15 @@ export function Navbar() {
     { label: "CONTACT", href: "/contact", icon: PhoneCall },
   ];
 
+  const serviceSublinks = [
+    { label: "Website Design & Development", href: "/services/website-design" },
+    { label: "Meta Ads Management", href: "/services/meta-ads" },
+    { label: "Google Ads & Search PPC", href: "/services/google-ads" },
+    { label: "AI Automations & Chatbots", href: "/services/ai-automation" },
+    { label: "Graphic Designing", href: "/services/graphic-design" },
+    { label: "AI Video Generation", href: "/services/ai-video" },
+  ];
+
   // Direct WhatsApp chat redirection for "Let's Talk" CTA
   const whatsappUrl = `https://wa.me/916304299387?text=${encodeURIComponent(
     "Hello! I would like to discuss a project with Amogha Digital."
@@ -140,6 +150,72 @@ export function Navbar() {
                     ? "text-[#0284C7] font-bold"
                     : "text-[#334155] hover:text-[#0F172A]";
                   underlineColorClass = "bg-[#0284C7]";
+                }
+
+                if (item.href === "/services") {
+                  return (
+                    <div key={item.href} className="relative group/svc py-1">
+                      <Link
+                        href={item.href}
+                        className={`relative inline-flex items-center gap-1 text-[15px] font-semibold font-sans tracking-wider transition-colors duration-150 ${linkColorClass}`}
+                      >
+                        <span>{item.label}</span>
+                        <ChevronDown className="w-3.5 h-3.5 transition-transform duration-200 group-hover/svc:rotate-180" />
+                        {/* Animated underline on hover and active */}
+                        <span
+                          className={`absolute bottom-[-2px] left-0 h-[2px] transition-all duration-200 ${
+                            isActive ? "w-full" : "w-0 group-hover/svc:w-full"
+                          } ${underlineColorClass}`}
+                          aria-hidden="true"
+                        />
+                      </Link>
+
+                      {/* Desktop Services Dropdown Flyout */}
+                      <div className="absolute top-full left-1/2 -translate-x-1/2 pt-2 w-72 transition-all duration-200 opacity-0 invisible group-hover/svc:opacity-100 group-hover/svc:visible pointer-events-none group-hover/svc:pointer-events-auto z-50">
+                        <div
+                          className={`rounded-2xl border p-2 shadow-2xl backdrop-blur-xl ${
+                            isTransparent
+                              ? "bg-[#0B1526]/98 border-[#1E2E48] text-[#F5F7FC]"
+                              : "bg-white/98 border-slate-200 text-[#0F172A]"
+                          }`}
+                        >
+                          <div className="px-3 py-1.5 border-b border-slate-100 dark:border-[#1E2E48]/80 mb-1 flex items-center justify-between">
+                            <span className="text-[10px] font-bold uppercase tracking-wider text-[#00B8F0] font-mono">
+                              Amogha Services
+                            </span>
+                            <span className="text-[10px] text-slate-400 font-mono">6 Solutions</span>
+                          </div>
+                          <div className="space-y-0.5">
+                            {serviceSublinks.map((sub) => (
+                              <Link
+                                key={sub.href}
+                                href={sub.href}
+                                className={`block px-3 py-2 rounded-lg text-xs font-medium transition-colors ${
+                                  isTransparent
+                                    ? "hover:bg-[#131F33] text-[#F5F7FC] hover:text-[#00B8F0]"
+                                    : "hover:bg-sky-50 text-slate-700 hover:text-[#0284C7]"
+                                }`}
+                              >
+                                {sub.label}
+                              </Link>
+                            ))}
+                          </div>
+                          <div className="mt-1 pt-1 border-t border-slate-100 dark:border-[#1E2E48]/80">
+                            <Link
+                              href="/services"
+                              className={`block px-3 py-1.5 rounded-lg text-[11px] font-semibold text-center transition-colors ${
+                                isTransparent
+                                  ? "text-[#00B8F0] hover:bg-[#131F33]"
+                                  : "text-[#0284C7] hover:bg-sky-50"
+                              }`}
+                            >
+                              All Services Overview &rarr;
+                            </Link>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  );
                 }
 
                 return (
@@ -231,6 +307,61 @@ export function Navbar() {
                   : pathname.startsWith(item.href);
 
               const isDarkTheme = pathname === "/" && !isScrolled;
+
+              if (item.href === "/services") {
+                return (
+                  <div key={item.href} className="space-y-1">
+                    <Link
+                      href={item.href}
+                      onClick={() => setMobileMenuOpen(false)}
+                      className={`px-4 py-3 rounded-xl text-[15px] font-semibold font-sans tracking-wider transition-all min-h-[50px] flex items-center justify-between ${
+                        isActive
+                          ? isDarkTheme
+                            ? "bg-[#14233D] text-[#00B8F0] shadow-sm"
+                            : "bg-sky-50 text-[#0284C7] font-bold shadow-xs"
+                          : isDarkTheme
+                          ? "text-[#9BAAC2] hover:bg-[#14233D]/60 hover:text-[#F5F7FC]"
+                          : "text-[#334155] hover:bg-slate-100 hover:text-[#0F172A]"
+                      }`}
+                    >
+                      <div className="flex items-center gap-3.5">
+                        <div
+                          className={`w-8 h-8 rounded-lg flex items-center justify-center shrink-0 transition-colors ${
+                            isActive
+                              ? isDarkTheme
+                                ? "bg-[#00B8F0]/20 text-[#00B8F0]"
+                                : "bg-[#0284C7]/10 text-[#0284C7]"
+                              : isDarkTheme
+                              ? "bg-[#14233D] text-slate-400"
+                              : "bg-slate-100 text-slate-500"
+                          }`}
+                        >
+                          <Icon className="w-4 h-4" aria-hidden="true" />
+                        </div>
+                        <span>{item.label}</span>
+                      </div>
+                    </Link>
+
+                    {/* 6 Services Sublinks in Drawer */}
+                    <div className="pl-6 pr-2 py-1 space-y-1 ml-4 border-l border-[#00B8F0]/30">
+                      {serviceSublinks.map((sub) => (
+                        <Link
+                          key={sub.href}
+                          href={sub.href}
+                          onClick={() => setMobileMenuOpen(false)}
+                          className={`block px-3 py-1.5 rounded-lg text-xs font-medium transition-colors ${
+                            isDarkTheme
+                              ? "text-[#9BAAC2] hover:text-[#00B8F0] hover:bg-[#14233D]/40"
+                              : "text-slate-600 hover:text-[#0284C7] hover:bg-slate-50"
+                          }`}
+                        >
+                          {sub.label}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                );
+              }
 
               return (
                 <Link
