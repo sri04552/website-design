@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { siteConfig } from "@/config/site";
 import { Container } from "@/components/ui/Container";
 import { ContactForm } from "@/components/contact/ContactForm";
@@ -91,60 +90,41 @@ export default function ContactPage() {
         />
 
         <Container className="relative z-10 w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-            {/* Left Column: Authoritative Editorial Introduction & Direct Actions (7 cols on lg) */}
-            <div className="lg:col-span-7 space-y-6">
-              {/* Bold Headline (Eyebrow removed as requested) */}
-              <h1 className="font-heading text-3xl sm:text-4xl lg:text-[52px] font-bold tracking-tight text-[#F5F7FC] leading-[1.12]">
-                Let’s Build What’s Next.{" "}
-                <span className="block mt-1 sm:mt-2 text-[#00B8F0] font-extrabold">
-                  Start a Conversation.
-                </span>
-              </h1>
+          <div className="max-w-2xl lg:max-w-3xl space-y-5 sm:space-y-6">
+            {/* Bold Headline (Eyebrow removed as requested) */}
+            <h1 className="font-heading text-3xl sm:text-4xl lg:text-[52px] font-bold tracking-tight text-[#F5F7FC] leading-[1.12]">
+              Let’s Build What’s Next.{" "}
+              <span className="block mt-1 sm:mt-2 text-[#00B8F0] font-extrabold">
+                Start a Conversation.
+              </span>
+            </h1>
 
-              {/* Supporting Copy (16px mobile, 15px desktop) */}
-              <p className="text-[16px] sm:text-[15px] text-[#9BAAC2] leading-[1.75] font-normal max-w-xl">
-                Whether you are looking to engineer a high-performance web platform, accelerate qualified customer acquisition through targeted advertising, or automate operations with AI systems, our specialists are ready to help you plan, execute, and scale.
-              </p>
+            {/* Supporting Copy (16px mobile, 15px desktop) */}
+            <p className="text-[16px] sm:text-[15px] text-[#9BAAC2] leading-[1.75] font-normal max-w-2xl font-sans">
+              Whether you are looking to engineer a high-performance web platform, accelerate qualified customer acquisition through targeted advertising, or automate operations with AI systems, our specialists are ready to help you plan, execute, and scale.
+            </p>
 
-              {/* Instant Action Buttons with Standard min-h-[48px] */}
-              <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 w-full sm:w-auto">
-                {whatsappHref && (
-                  <a
-                    href={whatsappHref}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2.5 bg-[#0D8C7D] hover:bg-[#0B7568] active:bg-[#085E54] text-white font-semibold text-sm sm:text-base px-6 py-3.5 rounded-xl shadow-sm hover:shadow transition-all min-h-[48px]"
-                  >
-                    <MessageSquare className="w-4 h-4" />
-                    <span>Contact Now</span>
-                  </a>
-                )}
-
+            {/* Instant Action Buttons with Standard min-h-[48px] */}
+            <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 w-full sm:w-auto font-sans">
+              {whatsappHref && (
                 <a
-                  href="#enquiry-form"
-                  className="inline-flex items-center justify-center gap-2 bg-[#131F33] hover:bg-[#1A2A45] active:bg-[#0F1929] text-[#F5F7FC] font-semibold text-sm sm:text-base px-6 py-3.5 rounded-xl border border-[#2B3E5C] hover:border-[#00B8F0]/70 shadow-xs hover:shadow-[0_0_20px_rgba(0,184,240,0.15)] transition-all min-h-[48px] focus-visible:outline-[#00B8F0]"
+                  href={whatsappHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2.5 bg-[#0D8C7D] hover:bg-[#0B7568] active:bg-[#085E54] text-white font-semibold text-sm sm:text-base px-6 py-3.5 rounded-xl shadow-sm hover:shadow transition-all min-h-[48px]"
                 >
-                  <span>Submit Project Details</span>
-                  <ArrowDown className="w-4 h-4 text-[#00B8F0]" />
+                  <MessageSquare className="w-4 h-4" />
+                  <span>Contact Now</span>
                 </a>
-              </div>
-            </div>
+              )}
 
-            {/* Right Column: Visual Showcase (5 cols on lg) */}
-            <div className="lg:col-span-5">
-              <div className="relative aspect-[16/10] sm:aspect-[4/3] rounded-2xl overflow-hidden border border-[#1E2E48] shadow-[0_20px_50px_rgba(0,0,0,0.5)] group">
-                <Image
-                  src="/assets/amogha-digital-collaborative-tech-meeting-project-consultation.webp"
-                  alt="Amogha Digital technical leadership and consulting team discussing a digital transformation project with clients"
-                  title="Amogha Digital - Collaborative Project Consultation & Client Advisory Meeting"
-                  width={1586}
-                  height={992}
-                  priority
-                  sizes="(max-width: 1024px) 100vw, 42vw"
-                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
-                />
-              </div>
+              <a
+                href="#enquiry-form"
+                className="inline-flex items-center justify-center gap-2 bg-[#131F33] hover:bg-[#1A2A45] active:bg-[#0F1929] text-[#F5F7FC] font-semibold text-sm sm:text-base px-6 py-3.5 rounded-xl border border-[#2B3E5C] hover:border-[#00B8F0]/70 shadow-xs hover:shadow-[0_0_20px_rgba(0,184,240,0.15)] transition-all min-h-[48px] focus-visible:outline-[#00B8F0]"
+              >
+                <span>Submit Project Details</span>
+                <ArrowDown className="w-4 h-4 text-[#00B8F0]" />
+              </a>
             </div>
           </div>
         </Container>

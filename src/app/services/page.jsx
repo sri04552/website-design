@@ -276,17 +276,17 @@ export default function ServicesPage() {
         </Container>
       </section>
 
-      {/* Services FAQ Section with exact 48px top and bottom padding */}
-      <section className="bg-[#F0F7FF] py-[48px] border-b border-sky-100">
+      {/* Section 4: Project Proposal & Discussion Form */}
+      <section id="proposal-form" className="bg-[#F8FAFC] py-[48px] border-b border-slate-200/90 text-[#0F172A]">
         <Container>
-          <ServicesFaqAccordion />
+          <ServicesContactForm />
         </Container>
       </section>
 
-      {/* Last Section: Project Proposal & Discussion Form */}
-      <section id="proposal-form" className="bg-[#F8FAFC] py-[48px] border-t border-slate-200/90 text-[#0F172A]">
+      {/* Section 5: Services FAQ Section with exact 48px top and bottom padding */}
+      <section className="bg-[#F0F7FF] py-[48px] border-b border-sky-100">
         <Container>
-          <ServicesContactForm />
+          <ServicesFaqAccordion />
         </Container>
       </section>
     </>
