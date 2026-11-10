@@ -171,7 +171,7 @@ export function Navbar() {
                       </Link>
 
                       {/* Desktop Services Dropdown Flyout */}
-                      <div className="absolute top-full left-1/2 -translate-x-1/2 pt-2 w-72 transition-all duration-200 opacity-0 invisible group-hover/svc:opacity-100 group-hover/svc:visible pointer-events-none group-hover/svc:pointer-events-auto z-50">
+                      <div className="absolute top-full left-1/2 -translate-x-1/2 pt-2 w-72 sm:w-80 transition-all duration-200 opacity-0 invisible group-hover/svc:opacity-100 group-hover/svc:visible pointer-events-none group-hover/svc:pointer-events-auto z-50">
                         <div
                           className={`rounded-2xl border p-2 shadow-2xl backdrop-blur-xl ${
                             isTransparent
@@ -179,38 +179,20 @@ export function Navbar() {
                               : "bg-white/98 border-slate-200 text-[#0F172A]"
                           }`}
                         >
-                          <div className="px-3 py-1.5 border-b border-slate-100 dark:border-[#1E2E48]/80 mb-1 flex items-center justify-between">
-                            <span className="text-[10px] font-bold uppercase tracking-wider text-[#00B8F0] font-mono">
-                              Amogha Services
-                            </span>
-                            <span className="text-[10px] text-slate-400 font-mono">6 Solutions</span>
-                          </div>
                           <div className="space-y-0.5">
                             {serviceSublinks.map((sub) => (
                               <Link
                                 key={sub.href}
                                 href={sub.href}
-                                className={`block px-3 py-2 rounded-lg text-xs font-medium transition-colors ${
+                                className={`block px-3.5 py-2.5 rounded-xl text-[15px] font-medium transition-colors ${
                                   isTransparent
                                     ? "hover:bg-[#131F33] text-[#F5F7FC] hover:text-[#00B8F0]"
-                                    : "hover:bg-sky-50 text-slate-700 hover:text-[#0284C7]"
+                                    : "hover:bg-sky-50 text-slate-800 hover:text-[#0284C7]"
                                 }`}
                               >
                                 {sub.label}
                               </Link>
                             ))}
-                          </div>
-                          <div className="mt-1 pt-1 border-t border-slate-100 dark:border-[#1E2E48]/80">
-                            <Link
-                              href="/services"
-                              className={`block px-3 py-1.5 rounded-lg text-[11px] font-semibold text-center transition-colors ${
-                                isTransparent
-                                  ? "text-[#00B8F0] hover:bg-[#131F33]"
-                                  : "text-[#0284C7] hover:bg-sky-50"
-                              }`}
-                            >
-                              All Services Overview &rarr;
-                            </Link>
                           </div>
                         </div>
                       </div>
@@ -349,10 +331,10 @@ export function Navbar() {
                           key={sub.href}
                           href={sub.href}
                           onClick={() => setMobileMenuOpen(false)}
-                          className={`block px-3 py-1.5 rounded-lg text-xs font-medium transition-colors ${
+                          className={`block px-3 py-2 rounded-xl text-[15px] font-medium transition-colors ${
                             isDarkTheme
                               ? "text-[#9BAAC2] hover:text-[#00B8F0] hover:bg-[#14233D]/40"
-                              : "text-slate-600 hover:text-[#0284C7] hover:bg-slate-50"
+                              : "text-slate-700 hover:text-[#0284C7] hover:bg-slate-50"
                           }`}
                         >
                           {sub.label}
