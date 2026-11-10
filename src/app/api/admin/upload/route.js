@@ -7,7 +7,7 @@ function getAdminEmail() {
     process.env.ADMIN_EMAIL ||
     process.env.NEXT_PUBLIC_ADMIN_EMAIL ||
     process.env.NEXT_PUBLIC_CONTACT_EMAIL ||
-    "sriworkspace8@gmail.com"
+    "contact@amoghadigital.com"
   )
     .trim()
     .toLowerCase();

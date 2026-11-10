@@ -7,7 +7,7 @@ function getAdminEmail() {
     process.env.ADMIN_EMAIL ||
     process.env.NEXT_PUBLIC_ADMIN_EMAIL ||
     process.env.NEXT_PUBLIC_CONTACT_EMAIL ||
-    "sriworkspace8@gmail.com"
+    "contact@amoghadigital.com"
   )
     .trim()
     .toLowerCase();
@@ -63,8 +63,7 @@ export async function POST(request) {
       if (normalizedEmail !== adminEmail) {
         return NextResponse.json(
           {
-            error:
-              "Access Denied: Only the authorized administrator (sriworkspace8@gmail.com) can access this portal.",
+            error: `Access Denied: Only the authorized administrator (${adminEmail}) can access this portal.`,
           },
           { status: 403 }
         );
